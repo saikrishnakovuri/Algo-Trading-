@@ -1,0 +1,43 @@
+
+# ============================================================
+# LOSS ANALYSIS ROUTE
+# ============================================================
+
+@api_router.get("/journal/losses/analysis")
+async def get_loss_analysis():
+    cursor = db.trade_journal.find({"result": "LOSS"}, {"_id": 0})
+    losses = await cursor.to_list(1000)
+    
+    if not losses:
+        return {"total_losses": 0, "message": "No losing trades found"}
+        
+    import pandas as pd
+    df = pd.DataFrame(losses)
+    
+    analysis = {
+        "total_losses": len(df),
+        "total_lost": round(df['pnl'].sum(), 2),
+        "avg_loss": round(df['pnl'].mean(), 2),
+        "worst_loss": round(df['pnl'].min(), 2),
+        "by_strategy": [],
+        "by_day": [],
+        "by_hour": []
+    }
+    
+    if 'strategy_name' in df.columns:
+        for s, g in df.groupby('strategy_name'):
+            analysis["by_strategy"].append({
+                "strategy": s, "count": len(g), "total_lost": round(g['pnl'].sum(), 2)
+            })
+        analysis["by_strategy"].sort(key=lambda x: x['total_lost'])
+        
+    if 'day_of_week' in df.columns:
+        for d, g in df.groupby('day_of_week'):
+            analysis["by_day"].append({
+                "day": d, "count": len(g), "total_lost": round(g['pnl'].sum(), 2)
+            })
+            
+    # Save a snapshot
+    await db.loss_analysis.insert_one({**analysis, "timestamp": datetime.now(timezone.utc).isoformat()})
+    
+    return analysis

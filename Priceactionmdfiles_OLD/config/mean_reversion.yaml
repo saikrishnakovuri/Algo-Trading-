@@ -1,0 +1,58 @@
+anti_trend_filter:
+  atr_expansion_threshold: 2.2
+  ema_spread_max_pct: 0.8
+  enabled: false
+  min_bars_outside_band: 1
+  rsi_trending_zone:
+  - 45
+  - 55
+indicators:
+  atr_period: 14
+  bb_period: 20
+  bb_std_entry: 1.1
+  bb_std_extreme: 3.0
+  ema_fast: 9
+  ema_flat_threshold_pct: 0.15
+  ema_slow: 20
+  rsi_extreme_overbought: 65
+  rsi_extreme_oversold: 35
+  rsi_overbought: 62
+  rsi_oversold: 38
+  rsi_period: 14
+  vwap_band_extreme: 2.5
+  vwap_band_std: 0.7
+risk:
+  breakeven_after_bars: 3
+  default_target_r: 1.5
+  max_hold_bars: 6
+  max_sl_points: 5.0
+  sl_atr_multiplier: 0.5
+  sl_method: band_based
+  target_1: vwap
+  target_2: bb_midline
+  target_method: mean
+scoring:
+  bb_touch_2sigma: 3
+  bb_touch_3sigma: 5
+  consecutive_outside_bars: 2
+  ema_flat_bonus: 2
+  min_score_threshold: 6
+  rsi_extreme: 4
+  rsi_oversold_overbought: 2
+  volume_spike_bonus: 1
+  vwap_touch_1_5std: 3
+  vwap_touch_2_5std: 5
+signals:
+  bollinger_reversion:
+    enabled: true
+    require_rsi_confirm: true
+    weight: 3
+  rsi_extreme:
+    enabled: true
+    require_band_confirm: true
+    weight: 2
+  vwap_reversion:
+    enabled: true
+    require_rsi_confirm: true
+    weight: 3
+timeframe: 5m

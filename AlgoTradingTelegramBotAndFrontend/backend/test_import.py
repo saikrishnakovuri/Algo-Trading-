@@ -1,0 +1,1 @@
+import sys; import os; from pathlib import Path; root = str(Path(__file__).parent.parent.parent); sys.path.insert(0, root); import backtest_engine; print(f"Imported backtest_engine from: {backtest_engine.__file__}"); print("run found" if hasattr(backtest_engine, "run") else "run not found")

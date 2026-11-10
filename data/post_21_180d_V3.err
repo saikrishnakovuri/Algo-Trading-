@@ -1,0 +1,10 @@
+Traceback (most recent call last):
+  File "scripts/fast_backtest.py", line 237, in <module>
+    main()
+  File "scripts/fast_backtest.py", line 218, in main
+    trades, master = run_fast_backtest(args.days, symbols)
+  File "scripts/fast_backtest.py", line 153, in run_fast_backtest
+    signal = master.select_best_signal(sub_df, symbol, 14.0, current_time=now)
+  File "scripts\..\modules\strategy_selector.py", line 169, in select_best_signal
+    candidates = self.strategy_mapper.get_candidates(ctx)
+NameError: name 'ctx' is not defined

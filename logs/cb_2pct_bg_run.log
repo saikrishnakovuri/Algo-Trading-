@@ -1,0 +1,33 @@
+[START] Month 2025-05-01. Equity: Rs 1248800.00
+[BPCL] HIGH_VOL penalty applied: -10 confidence
+[BAJFINANCE] HIGH_VOL penalty applied: -10 confidence
+[CIPLA] HIGH_VOL penalty applied: -10 confidence
+[ASIANPAINT] HIGH_VOL penalty applied: -10 confidence
+[CIPLA] HIGH_VOL penalty applied: -10 confidence
+[BAJAJFINSV] HIGH_VOL penalty applied: -10 confidence
+[ASIANPAINT] HIGH_VOL penalty applied: -10 confidence
+[BRITANNIA] HIGH_VOL penalty applied: -10 confidence
+[BHARTIARTL] HIGH_VOL penalty applied: -10 confidence
+[2025-05-13 11:00:00+05:30] [STOP] DAILY 2% CIRCUIT BREAKER. PnL: -45482.83
+[ASIANPAINT] HIGH_VOL penalty applied: -10 confidence
+[ASIANPAINT] HIGH_VOL penalty applied: -10 confidence
+[BAJAJFINSV] VETO: ATR>1.8x avg (chaos).
+[2025-05-16 12:55:00+05:30] [STOP] DAILY 2% CIRCUIT BREAKER. PnL: -69533.20
+[APOLLOHOSP] HIGH_VOL penalty applied: -10 confidence
+[BAJAJFINSV] HIGH_VOL penalty applied: -10 confidence
+[2025-05-20 10:25:00+05:30] [STOP] DAILY 2% CIRCUIT BREAKER. PnL: -43829.33
+[2025-05-22 11:00:00+05:30] [STOP] DAILY 2% CIRCUIT BREAKER. PnL: -71981.97
+[ADANIENT] HIGH_VOL penalty applied: -10 confidence
+[AXISBANK] VETO: ATR>1.8x avg (chaos).
+[BRITANNIA] HIGH_VOL penalty applied: -10 confidence
+[ADANIPORTS] HIGH_VOL penalty applied: -10 confidence
+[APOLLOHOSP] HIGH_VOL penalty applied: -10 confidence
+[BAJAJFINSV] VETO: ATR>1.8x avg (chaos).
+[CIPLA] VETO: ATR>1.8x avg (chaos).
+[ADANIPORTS] HIGH_VOL penalty applied: -10 confidence
+[BAJAJ-AUTO] HIGH_VOL penalty applied: -10 confidence
+[APOLLOHOSP] HIGH_VOL penalty applied: -10 confidence
+[AXISBANK] HIGH_VOL penalty applied: -10 confidence
+[2025-05-29 12:45:00+05:30] [STOP] DAILY 2% CIRCUIT BREAKER. PnL: -67435.95
+[ASIANPAINT] HIGH_VOL penalty applied: -10 confidence
+[2025-05-30 13:35:00+05:30] [STOP] DAILY 2% CIRCUIT BREAKER. PnL: -67151.48

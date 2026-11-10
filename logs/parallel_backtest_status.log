@@ -1,0 +1,12 @@
+Starting Top 10 Parallel Backtest at Sun May 17 10:06:02 2026
+STARTING MODE: NORMAL
+Launching Chunk 1: ['ADANIENT', 'ADANIPORTS', 'APOLLOHOSP', 'ASIANPAINT', 'AXISBANK']
+Chunk 1 Complete.
+Launching Chunk 2: ['BAJAJ-AUTO', 'BAJAJFINSV', 'BAJFINANCE', 'BHARTIARTL', 'BPCL']
+Chunk 2 Complete.
+STARTING MODE: BALANCED
+Launching Chunk 1: ['ADANIENT', 'ADANIPORTS', 'APOLLOHOSP', 'ASIANPAINT', 'AXISBANK']
+Chunk 1 Complete.
+Launching Chunk 2: ['BAJAJ-AUTO', 'BAJAJFINSV', 'BAJFINANCE', 'BHARTIARTL', 'BPCL']
+Chunk 2 Complete.
+ALL MODES COMPLETE.

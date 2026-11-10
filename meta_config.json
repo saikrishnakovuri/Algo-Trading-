@@ -1,0 +1,7 @@
+{
+  "allowed_stocks": [],
+  "allowed_setups": [
+    "TRAP_REVERSAL",
+    "ZONE_REJECTION"
+  ]
+}

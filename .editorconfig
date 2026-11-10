@@ -1,0 +1,29 @@
+name: SaiKrishna AI
+version: 1.0.0
+schema: v1
+
+models:
+  - name: Claude Haiku OpenRouter
+    provider: openrouter
+    model: anthropic/claude-3-haiku
+    apiKey: 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
+    roles:
+      - chat
+      - edit
+      - apply
+      - autocomplete
+
+  - name: Claude Sonnet OpenRouter
+    provider: openrouter
+    model: anthropic/claude-3.5-sonnet
+    apiKey: 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
+    roles:
+      - chat
+      - edit
+      - apply
+
+context:
+  - provider: code
+  - provider: docs
+  - provider: diff
+  - provider: terminal

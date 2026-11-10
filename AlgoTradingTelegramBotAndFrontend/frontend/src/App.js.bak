@@ -1,0 +1,52 @@
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Sidebar from './components/Sidebar';
+import Dashboard from './pages/Dashboard';
+import Trades from './pages/Trades';
+import NewTrade from './pages/NewTrade';
+import Analytics from './pages/Analytics';
+import AlertLogs from './pages/AlertLogs';
+import RiskLab from './pages/RiskLab';
+import Backtesting from './pages/Backtesting';
+import Integration from './pages/Integration';
+import Settings from './pages/Settings';
+import PADashboard from './pages/PADashboard';
+import TradeJournal from './pages/TradeJournal';
+import ControlCenter from './pages/ControlCenter';
+import MarketAnalysis from './pages/MarketAnalysis';
+import ConfigExplorer from './pages/ConfigExplorer';
+
+function App() {
+  return (
+    <Router>
+      <div className="flex min-h-screen bg-[#0f1117] text-gray-100 font-sans selection:bg-[#00bcd4]/30">
+        {/* Sidebar */}
+        <Sidebar />
+
+        {/* Main Content Area */}
+        <main className="flex-1 overflow-y-auto">
+          <div className="max-w-[1600px] mx-auto">
+            <Routes>
+              <Route path="/" element={<Dashboard />} />
+              <Route path="/trades" element={<Trades />} />
+              <Route path="/alerts" element={<AlertLogs />} />
+              <Route path="/new-trade" element={<NewTrade />} />
+              <Route path="/analytics" element={<Analytics />} />
+              <Route path="/risk-lab" element={<RiskLab />} />
+              <Route path="/backtest" element={<Backtesting />} />
+              <Route path="/integration" element={<Integration />} />
+              <Route path="/settings" element={<Settings />} />
+              <Route path="/pa-engine" element={<PADashboard />} />
+              <Route path="/journal" element={<TradeJournal />} />
+              <Route path="/control-center" element={<ControlCenter />} />
+              <Route path="/analysis" element={<MarketAnalysis />} />
+              <Route path="/config-explorer" element={<ConfigExplorer />} />
+            </Routes>
+          </div>
+        </main>
+      </div>
+    </Router>
+  );
+}
+
+export default App;

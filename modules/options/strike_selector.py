@@ -1,0 +1,171 @@
+import pandas as pd
+import numpy as np
+from datetime import datetime, time, timedelta
+import logging
+
+logger = logging.getLogger("OptionSelector")
+
+class OptionSelector:
+    """
+    Selects the optimal strike, expiry, and strategy (Buy/Spread) for a signal.
+    
+    Logic: ATM/OTM selection based on signal strength and time of day.
+    Expiry management: Handles Wed/Thurs theta bomb by shifting to next week.
+    Strategy shift: Switches to Credit Spreads if IV/VIX is too high.
+    """
+    
+    def __init__(self, broker=None):
+        self.broker = broker # Reserved for live API calls
+        self.nifty_step = 50
+        self.bn_step = 100
+        
+    def _get_atm_strike(self, price: float, symbol: str) -> int:
+        step = self.bn_step if symbol == "BANKNIFTY" else self.nifty_step
+        return int(round(price / step) * step)
+
+    def _select_expiry_date(self, current_ts: datetime, expiry_list: list, symbol: str) -> str:
+        """
+        Logic for selecting the right weekly expiry.
+        - If today is expiry day, use NEXT week.
+        - If today is 1 day before expiry and after 13:00, use NEXT week.
+        """
+        current_date = current_ts.date()
+        current_time = current_ts.time()
+        
+        # Sort expiries chronologically
+        expiries = sorted([datetime.strptime(e, '%Y-%m-%d').date() for e in expiry_list])
+        
+        # Filter out past expiries
+        valid_expiries = [e for e in expiries if e >= current_date]
+        if not valid_expiries: return None
+        
+        nearest_expiry = valid_expiries[0]
+        
+        # Dynamic Shift Logic based on distance to nearest expiry
+        days_to_expiry = (nearest_expiry - current_date).days
+        is_expiry_day_afternoon = (days_to_expiry == 0 and current_time >= time(13, 0))
+
+        if is_expiry_day_afternoon:
+            # Shift to next week if available (Expiry Day after 1:00 PM)
+            return valid_expiries[1].strftime('%Y-%m-%d') if len(valid_expiries) > 1 else nearest_expiry.strftime('%Y-%m-%d')
+
+        return nearest_expiry.strftime('%Y-%m-%d')
+    def select_option(self, 
+                      signal_direction: str, 
+                      signal_strength: int, 
+                      spot_price: float, 
+                      vix_level: float,
+                      expiry_list: list,
+                      option_chain: pd.DataFrame,
+                      current_ts: datetime) -> dict:
+        """
+        Selects the exact option contract to trade.
+        """
+        if spot_price is None or spot_price <= 0:
+            logger.warning("Invalid spot price provided to OptionSelector")
+            return None
+            
+        symbol = "BANKNIFTY" if spot_price > 30000 else "NIFTY"
+        current_time = current_ts.time()
+        
+        # 1. Determine Expiry
+        expiry = self._select_expiry_date(current_ts, expiry_list, symbol)
+        if not expiry: return None
+        
+        # 2. Determine Moneyness (Time-Based Enhancement)
+        # Morning: 1-strike OTM allowed for leverage if signal is moderate.
+        # Afternoon: Strictly ATM to combat theta.
+        is_morning = current_time < time(11, 30)
+        atm_strike = self._get_atm_strike(spot_price, symbol)
+        
+        strike_to_buy = atm_strike
+        step = self.bn_step if symbol == "BANKNIFTY" else self.nifty_step
+        
+        if is_morning and signal_strength < 80:
+            # Shift 1-strike OTM
+            strike_to_buy = atm_strike + step if signal_direction == 'CE' else atm_strike - step
+        
+        # 3. Strategy Switch: Debit vs Credit (High IV Enhancement)
+        # If VIX > 20, buying is expensive. Switch to a Credit Spread logic (placeholder for next phase)
+        strategy_type = "NAKED_BUY"
+        if vix_level > 20.0:
+            strategy_type = "CREDIT_SPREAD" # Logic will be implemented in Phase 3
+            # For now, we proceed with caution or skip
+            logger.info(f"[{symbol}] High VIX {vix_level}. Strategy: {strategy_type}")
+
+        # 4. Fetch Contract Data & Validate
+        # Filter chain for selected expiry and strike
+        contract = option_chain[(option_chain['expiry'] == expiry) & 
+                                (option_chain['strike'] == strike_to_buy) & 
+                                (option_chain['type'] == signal_direction)]
+        
+        if contract.empty:
+            logger.warning(f"No contract found for {symbol} {expiry} {strike_to_buy} {signal_direction}")
+            return None
+            
+        target_contract = contract.iloc[0]
+        premium = target_contract['ltp']
+        delta = target_contract.get('delta', 0.5)
+        theta = target_contract.get('theta', 0.0)
+        bid = target_contract.get('bid', premium)
+        ask = target_contract.get('ask', premium)
+        spread = ask - bid
+        oi = target_contract.get('oi', 0)
+        vol = target_contract.get('volume', 0)
+
+        # --- 5. DYNAMIC LIQUIDITY VALIDATIONS ---
+        # Instead of fixed 500k OI, use relative checks or relaxed thresholds
+        # ATM options are inherently liquid; we allow lower OI for them.
+        
+        # Base requirements
+        is_atm = (strike_to_buy == atm_strike)
+        min_oi = 200000 if is_atm else 500000
+        
+        # OI & Volume Check
+        if oi < min_oi and vol < 20000:
+            # Check if spread is still tight - if so, allow it (Market Maker is active)
+            if spread > 2.0:
+                logger.info(f"[{symbol}] Low Liquidity (OI: {oi}, Vol: {vol}) and wide spread {spread}. Skipping.")
+                return None
+            else:
+                logger.info(f"[{symbol}] Low OI/Vol but tight spread {spread}. Allowing trade.")
+            
+        # Delta Check
+        if abs(delta) < 0.25:
+            logger.info(f"[{symbol}] Low Delta {delta}. Option too far OTM.")
+            return None
+
+        # 6. Contract Specs
+        from modules.v3_utils import NIFTY_LOT_SIZE, BANKNIFTY_LOT_SIZE, FINNIFTY_LOT_SIZE
+        lot_size = BANKNIFTY_LOT_SIZE if symbol == "BANKNIFTY" else NIFTY_LOT_SIZE if symbol == "NIFTY" else FINNIFTY_LOT_SIZE
+        
+        # Lookup real token and tradingsymbol from ScripMaster
+        from modules.options.scrip_master import scrip_master
+        res = scrip_master.lookup_option(symbol, expiry, strike_to_buy, signal_direction)
+        
+        # If found via components, use real Angel symbol and token
+        if res:
+            token = res['token']
+            real_symbol = res['symbol']
+        else:
+            # Fallback: construct likely Angel symbol for logging
+            real_symbol = f"{symbol}{datetime.strptime(expiry, '%Y-%m-%d').strftime('%y%b').upper()}{strike_to_buy}{signal_direction}"
+            token = None
+            logger.warning(f"Token not found in ScripMaster for {symbol} {expiry} {strike_to_buy} {signal_direction}. Constructing: {real_symbol}")
+            
+        return {
+            'symbol': symbol,
+            'strike': strike_to_buy,
+            'option_type': signal_direction,
+            'expiry': expiry,
+            'premium': premium,
+            'token': token,
+            'tradingsymbol': real_symbol,
+            'delta': delta,
+            'theta': theta,
+            'lot_size': lot_size,
+            'bid': bid,
+            'ask': ask,
+            'strategy_type': strategy_type,
+            'timestamp': current_ts
+        }

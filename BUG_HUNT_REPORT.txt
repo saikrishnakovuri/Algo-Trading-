@@ -1,0 +1,123 @@
+CODEBASE BUG HUNT REPORT
+========================
+
+FILE: debug_p17_5.py
+  - [RISK] .iloc[-1] without explicit empty/len check.
+
+FILE: orchestrator.py
+  - [RISK] .iloc[-1] without explicit empty/len check.
+
+FILE: pa_analysis_runner.py
+  - [RISK] .iloc[-1] without explicit empty/len check.
+
+FILE: verify_rollback.py
+  - [RISK] .iloc[-1] without explicit empty/len check.
+
+FILE: modules\smc\engine.py
+  - [RISK] .iloc[-1] without explicit empty/len check.
+
+FILE: Priceactionmdfiles\backup_engine_v1\engine\candlestick_patterns\bearish_engulfing.py
+  - [RISK] .iloc[-1] without explicit empty/len check.
+
+FILE: Priceactionmdfiles\backup_engine_v1\engine\candlestick_patterns\bullish_engulfing.py
+  - [RISK] .iloc[-1] without explicit empty/len check.
+
+FILE: Priceactionmdfiles\backup_engine_v1\engine\candlestick_patterns\dark_cloud_cover.py
+  - [RISK] .iloc[-1] without explicit empty/len check.
+
+FILE: Priceactionmdfiles\backup_engine_v1\engine\candlestick_patterns\doji.py
+  - [RISK] .iloc[-1] without explicit empty/len check.
+
+FILE: Priceactionmdfiles\backup_engine_v1\engine\candlestick_patterns\hammer.py
+  - [RISK] .iloc[-1] without explicit empty/len check.
+
+FILE: Priceactionmdfiles\backup_engine_v1\engine\candlestick_patterns\neutral_patterns.py
+  - [RISK] .iloc[-1] without explicit empty/len check.
+
+FILE: Priceactionmdfiles\backup_engine_v1\engine\candlestick_patterns\piercing_pattern.py
+  - [RISK] .iloc[-1] without explicit empty/len check.
+
+FILE: Priceactionmdfiles\backup_engine_v1\engine\candlestick_patterns\shooting_star.py
+  - [RISK] .iloc[-1] without explicit empty/len check.
+
+FILE: Priceactionmdfiles\backup_engine_v1\engine\candlestick_patterns\spinning_top.py
+  - [RISK] .iloc[-1] without explicit empty/len check.
+
+FILE: Priceactionmdfiles\backup_engine_v1\engine\price_action_patterns\falling_wedge.py
+  - [RISK] .iloc[-1] without explicit empty/len check.
+
+FILE: Priceactionmdfiles\backup_engine_v1\engine\price_action_patterns\rising_wedge.py
+  - [RISK] .iloc[-1] without explicit empty/len check.
+
+FILE: Priceactionmdfiles\backup_engine_v1\engine\price_action_patterns\symmetrical_triangle.py
+  - [RISK] .iloc[-1] without explicit empty/len check.
+
+FILE: Priceactionmdfiles\backup_engine_v1\engine\support_resistance\breakout.py
+  - [RISK] .iloc[-1] without explicit empty/len check.
+
+FILE: Priceactionmdfiles\backup_engine_v1\engine\support_resistance\breakout_trap.py
+  - [RISK] .iloc[-1] without explicit empty/len check.
+
+FILE: Priceactionmdfiles\backup_engine_v1\engine\support_resistance\liquidity_grab.py
+  - [RISK] .iloc[-1] without explicit empty/len check.
+
+FILE: Priceactionmdfiles\backup_engine_v1\engine\support_resistance\resistance_breakout.py
+  - [RISK] .iloc[-1] without explicit empty/len check.
+
+FILE: Priceactionmdfiles\backup_engine_v1\engine\support_resistance\support_breakdown.py
+  - [RISK] .iloc[-1] without explicit empty/len check.
+
+FILE: Priceactionmdfiles\engine\candlestick_patterns\bearish_engulfing.py
+  - [RISK] .iloc[-1] without explicit empty/len check.
+
+FILE: Priceactionmdfiles\engine\candlestick_patterns\bullish_engulfing.py
+  - [RISK] .iloc[-1] without explicit empty/len check.
+
+FILE: Priceactionmdfiles\engine\candlestick_patterns\dark_cloud_cover.py
+  - [RISK] .iloc[-1] without explicit empty/len check.
+
+FILE: Priceactionmdfiles\engine\candlestick_patterns\doji.py
+  - [RISK] .iloc[-1] without explicit empty/len check.
+
+FILE: Priceactionmdfiles\engine\candlestick_patterns\hammer.py
+  - [RISK] .iloc[-1] without explicit empty/len check.
+
+FILE: Priceactionmdfiles\engine\candlestick_patterns\neutral_patterns.py
+  - [RISK] .iloc[-1] without explicit empty/len check.
+
+FILE: Priceactionmdfiles\engine\candlestick_patterns\piercing_pattern.py
+  - [RISK] .iloc[-1] without explicit empty/len check.
+
+FILE: Priceactionmdfiles\engine\candlestick_patterns\shooting_star.py
+  - [RISK] .iloc[-1] without explicit empty/len check.
+
+FILE: Priceactionmdfiles\engine\candlestick_patterns\spinning_top.py
+  - [RISK] .iloc[-1] without explicit empty/len check.
+
+FILE: Priceactionmdfiles\engine\price_action_patterns\falling_wedge.py
+  - [RISK] .iloc[-1] without explicit empty/len check.
+
+FILE: Priceactionmdfiles\engine\price_action_patterns\rising_wedge.py
+  - [RISK] .iloc[-1] without explicit empty/len check.
+
+FILE: Priceactionmdfiles\engine\price_action_patterns\symmetrical_triangle.py
+  - [RISK] .iloc[-1] without explicit empty/len check.
+
+FILE: Priceactionmdfiles\engine\support_resistance\breakout.py
+  - [RISK] .iloc[-1] without explicit empty/len check.
+
+FILE: Priceactionmdfiles\engine\support_resistance\breakout_trap.py
+  - [RISK] .iloc[-1] without explicit empty/len check.
+
+FILE: Priceactionmdfiles\engine\support_resistance\liquidity_grab.py
+  - [RISK] .iloc[-1] without explicit empty/len check.
+
+FILE: Priceactionmdfiles\engine\support_resistance\resistance_breakout.py
+  - [RISK] .iloc[-1] without explicit empty/len check.
+
+FILE: Priceactionmdfiles\engine\support_resistance\support_breakdown.py
+  - [RISK] .iloc[-1] without explicit empty/len check.
+
+FILE: Priceactionmdfiles\modules\smc\engine.py
+  - [RISK] .iloc[-1] without explicit empty/len check.
+

@@ -1,0 +1,13 @@
+node_modules/
+dist/
+build/
+.venv/
+venv/
+__pycache__/
+.git/
+
+*.log
+*.sqlite
+*.db
+
+Priceactionmdfiles/

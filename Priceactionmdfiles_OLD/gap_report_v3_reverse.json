@@ -1,0 +1,141 @@
+{
+  "phase": 4,
+  "gaps": [
+    {
+      "gap_id": "R_API_000",
+      "backend_element_type": "api_endpoint",
+      "backend_element": "/api/backtest/${name}",
+      "required_ui": "Remove or fix frontend button/call",
+      "current_state": "broken_link",
+      "priority": "P1"
+    },
+    {
+      "gap_id": "R_API_001",
+      "backend_element_type": "api_endpoint",
+      "backend_element": "/api/strategies",
+      "required_ui": "Remove or fix frontend button/call",
+      "current_state": "broken_link",
+      "priority": "P1"
+    },
+    {
+      "gap_id": "R_API_003",
+      "backend_element_type": "api_endpoint",
+      "backend_element": "/api/control/${type}",
+      "required_ui": "Remove or fix frontend button/call",
+      "current_state": "broken_link",
+      "priority": "P1"
+    },
+    {
+      "gap_id": "R_API_005",
+      "backend_element_type": "api_endpoint",
+      "backend_element": "/api/content/${name}",
+      "required_ui": "Remove or fix frontend button/call",
+      "current_state": "broken_link",
+      "priority": "P1"
+    },
+    {
+      "gap_id": "R_API_006",
+      "backend_element_type": "api_endpoint",
+      "backend_element": "GET /api/backtest/result/${activeJobId}",
+      "required_ui": "Remove or fix frontend button/call",
+      "current_state": "broken_link",
+      "priority": "P1"
+    },
+    {
+      "gap_id": "R_API_009",
+      "backend_element_type": "api_endpoint",
+      "backend_element": "/api/files",
+      "required_ui": "Remove or fix frontend button/call",
+      "current_state": "broken_link",
+      "priority": "P1"
+    },
+    {
+      "gap_id": "R_API_010",
+      "backend_element_type": "api_endpoint",
+      "backend_element": "POST /api/control/${type}",
+      "required_ui": "Remove or fix frontend button/call",
+      "current_state": "broken_link",
+      "priority": "P1"
+    },
+    {
+      "gap_id": "R_API_011",
+      "backend_element_type": "api_endpoint",
+      "backend_element": "/api/content/${selected}",
+      "required_ui": "Remove or fix frontend button/call",
+      "current_state": "broken_link",
+      "priority": "P1"
+    },
+    {
+      "gap_id": "R_API_012",
+      "backend_element_type": "api_endpoint",
+      "backend_element": "GET /api/backtest/status/${activeJobId}",
+      "required_ui": "Remove or fix frontend button/call",
+      "current_state": "broken_link",
+      "priority": "P1"
+    },
+    {
+      "gap_id": "R_API_013",
+      "backend_element_type": "api_endpoint",
+      "backend_element": "/api/config",
+      "required_ui": "Remove or fix frontend button/call",
+      "current_state": "broken_link",
+      "priority": "P1"
+    },
+    {
+      "gap_id": "R_API_014",
+      "backend_element_type": "api_endpoint",
+      "backend_element": "/api/montecarlo",
+      "required_ui": "Remove or fix frontend button/call",
+      "current_state": "broken_link",
+      "priority": "P1"
+    },
+    {
+      "gap_id": "R_API_016",
+      "backend_element_type": "api_endpoint",
+      "backend_element": "/api/edge",
+      "required_ui": "Remove or fix frontend button/call",
+      "current_state": "broken_link",
+      "priority": "P1"
+    },
+    {
+      "gap_id": "R_API_017",
+      "backend_element_type": "api_endpoint",
+      "backend_element": "/api/backtest/files",
+      "required_ui": "Remove or fix frontend button/call",
+      "current_state": "broken_link",
+      "priority": "P1"
+    },
+    {
+      "gap_id": "R_API_019",
+      "backend_element_type": "api_endpoint",
+      "backend_element": "/api/summary",
+      "required_ui": "Remove or fix frontend button/call",
+      "current_state": "broken_link",
+      "priority": "P1"
+    },
+    {
+      "gap_id": "R_API_020",
+      "backend_element_type": "api_endpoint",
+      "backend_element": "/api/strategies/${encodeURIComponent(name)}/toggle",
+      "required_ui": "Remove or fix frontend button/call",
+      "current_state": "broken_link",
+      "priority": "P1"
+    },
+    {
+      "gap_id": "R_API_022",
+      "backend_element_type": "api_endpoint",
+      "backend_element": "/api/losses/analysis",
+      "required_ui": "Remove or fix frontend button/call",
+      "current_state": "broken_link",
+      "priority": "P1"
+    },
+    {
+      "gap_id": "R_API_023",
+      "backend_element_type": "api_endpoint",
+      "backend_element": "/api/import-backtest",
+      "required_ui": "Remove or fix frontend button/call",
+      "current_state": "broken_link",
+      "priority": "P1"
+    }
+  ]
+}

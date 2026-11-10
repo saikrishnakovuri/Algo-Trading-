@@ -1,0 +1,58 @@
+[
+  {
+    "symbol": "RELIANCE",
+    "date": "2026-03-12 11:25",
+    "time": "11:25",
+    "type": "CE",
+    "setup": "PULLBACK",
+    "qty": 291,
+    "entry": 1407.706651575,
+    "sl": 1390.55,
+    "target": 1409.3732142857143,
+    "outcome": "TARGET HIT",
+    "score": 5.0625,
+    "pnl": 484.97
+  },
+  {
+    "symbol": "RELIANCE",
+    "date": "2026-03-16 11:10",
+    "time": "11:10",
+    "type": "CE",
+    "setup": "PULLBACK",
+    "qty": 288,
+    "entry": 1377.97694415,
+    "sl": 1360.65,
+    "target": 1378.3107142857143,
+    "outcome": "TARGET HIT",
+    "score": 1.9500000000000002,
+    "pnl": 96.13
+  },
+  {
+    "symbol": "RELIANCE",
+    "date": "2026-03-17 11:10",
+    "time": "11:10",
+    "type": "CE",
+    "setup": "TRAP_REVERSAL",
+    "qty": 275,
+    "entry": 1401.300249975,
+    "sl": 1383.15,
+    "target": 1424.1714285714288,
+    "outcome": "TIME_CUT_20M_LOSING",
+    "score": 6.0,
+    "pnl": -522.57
+  },
+  {
+    "symbol": "HDFCBANK",
+    "date": "2026-03-04 10:40",
+    "time": "10:40",
+    "type": "CE",
+    "setup": "PULLBACK",
+    "qty": 484,
+    "entry": 875.2746185999999,
+    "sl": 864.95,
+    "target": 901.0861650999997,
+    "outcome": "TIME_CUT_20M_LOSING",
+    "score": 5.8125,
+    "pnl": -11.92
+  }
+]

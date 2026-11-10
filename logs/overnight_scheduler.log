@@ -1,0 +1,116 @@
+2026-04-30 08:52:14,444 | INFO | TelegramNotifier initialized with background worker
+2026-04-30 08:52:19,384 | INFO | TelegramNotifier initialized with background worker
+2026-04-30 08:52:24,417 | INFO | TelegramNotifier initialized with background worker
+2026-04-30 08:52:29,410 | INFO | TelegramNotifier initialized with background worker
+2026-04-30 09:01:04,705 | INFO | TelegramNotifier initialized with background worker
+2026-04-30 09:01:04,705 | INFO | Overnight Scheduler Online (APScheduler). Waiting for 20:45 IST...
+2026-04-30 09:01:04,730 | INFO | Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-04-30 09:01:04,742 | INFO | Added job "nightly_sequence" to job store "default"
+2026-04-30 09:01:04,743 | INFO | Scheduler started
+2026-04-30 09:03:47,818 | INFO | TelegramNotifier initialized with background worker
+2026-04-30 09:03:47,819 | INFO | Overnight Scheduler Online (APScheduler). Waiting for 20:45 IST...
+2026-04-30 09:03:47,831 | INFO | Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-04-30 09:03:47,834 | INFO | Added job "nightly_sequence" to job store "default"
+2026-04-30 09:03:47,834 | INFO | Scheduler started
+2026-04-30 09:12:37,273 | INFO | TelegramNotifier initialized with background worker
+2026-04-30 09:12:37,273 | INFO | Overnight Scheduler Online (APScheduler). Waiting for 20:45 IST...
+2026-04-30 09:12:37,284 | INFO | Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-04-30 09:12:37,286 | INFO | Added job "nightly_sequence" to job store "default"
+2026-04-30 09:12:37,286 | INFO | Scheduler started
+2026-04-30 09:22:49,151 | INFO | TelegramNotifier initialized with background worker
+2026-04-30 09:22:49,152 | INFO | Overnight Scheduler Online (APScheduler). Waiting for 20:45 IST...
+2026-04-30 09:22:49,162 | INFO | Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-04-30 09:22:49,164 | INFO | Added job "nightly_sequence" to job store "default"
+2026-04-30 09:22:49,164 | INFO | Scheduler started
+2026-04-30 09:28:27,833 | INFO | TelegramNotifier initialized with background worker
+2026-04-30 09:28:27,833 | INFO | Overnight Scheduler Online (APScheduler). Waiting for 20:45 IST...
+2026-04-30 09:28:27,847 | INFO | Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-04-30 09:28:27,848 | INFO | Added job "nightly_sequence" to job store "default"
+2026-04-30 09:28:27,849 | INFO | Scheduler started
+2026-04-30 09:33:01,528 | INFO | TelegramNotifier initialized with background worker
+2026-04-30 09:33:01,528 | INFO | DRY RUN: Executing nightly sequence immediately...
+2026-04-30 09:33:01,528 | INFO | === STARTING NIGHTLY SEQUENCE ===
+2026-04-30 09:33:01,528 | INFO | STARTING TASK: Walk-Forward Optimization (walk_forward_optimizer.py)
+2026-04-30 09:33:02,686 | ERROR | FAILED TASK: Walk-Forward Optimization | Error: Traceback (most recent call last):
+  File "walk_forward_optimizer.py", line 224, in <module>
+    run_enhanced_wfo()
+  File "walk_forward_optimizer.py", line 144, in run_enhanced_wfo
+    update_configs(test_params)
+  File "walk_forward_optimizer.py", line 92, in update_configs
+    with open(mr_path, "r") as f: mr = yaml.safe_load(f)
+  File "C:\Program Files\Python37\lib\site-packages\yaml\__init__.py", line 125, in safe_load
+    return load(stream, SafeLoader)
+  File "C:\Program Files\Python37\lib\site-packages\yaml\__init__.py", line 79, in load
+    loader = Loader(stream)
+  File "C:\Program Files\Python37\lib\site-packages\yaml\loader.py", line 34, in __init__
+    Reader.__init__(self, stream)
+  File "C:\Program Files\Python37\lib\site-packages\yaml\reader.py", line 85, in __init__
+    self.determine_encoding()
+  File "C:\Program Files\Python37\lib\site-packages\yaml\reader.py", line 124, in determine_encoding
+    self.update_raw()
+  File "C:\Program Files\Python37\lib\site-packages\yaml\reader.py", line 178, in update_raw
+    data = self.stream.read(size)
+  File "C:\Program Files\Python37\lib\encodings\cp1252.py", line 23, in decode
+    return codecs.charmap_decode(input,self.errors,decoding_table)[0]
+UnicodeDecodeError: 'charmap' codec can't decode byte 0x90 in position 4: character maps to <undefined>
+
+2026-04-30 09:33:02,687 | INFO | === NIGHTLY SEQUENCE FINISHED ===
+2026-04-30 09:34:16,132 | INFO | TelegramNotifier initialized with background worker
+2026-04-30 09:34:16,133 | INFO | DRY RUN: Executing nightly sequence immediately...
+2026-04-30 09:34:16,133 | INFO | === STARTING NIGHTLY SEQUENCE ===
+2026-04-30 09:34:16,133 | INFO | STARTING TASK: Walk-Forward Optimization (walk_forward_optimizer.py)
+2026-04-30 09:49:27,167 | INFO | TelegramNotifier initialized with background worker
+2026-04-30 09:49:27,167 | INFO | Overnight Scheduler Online (APScheduler). Waiting for 20:45 IST...
+2026-04-30 09:49:27,182 | INFO | Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-04-30 09:49:27,183 | INFO | Added job "nightly_sequence" to job store "default"
+2026-04-30 09:49:27,183 | INFO | Scheduler started
+2026-04-30 10:13:09,041 | INFO | TelegramNotifier initialized with background worker
+2026-04-30 10:13:09,041 | INFO | Overnight Scheduler Online (APScheduler). Waiting for 20:45 IST...
+2026-04-30 10:13:09,053 | INFO | Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-04-30 10:13:09,055 | INFO | Added job "nightly_sequence" to job store "default"
+2026-04-30 10:13:09,055 | INFO | Scheduler started
+2026-04-30 10:34:46,832 | INFO | TelegramNotifier initialized with background worker
+2026-04-30 10:34:46,832 | INFO | Overnight Scheduler Online (APScheduler). Waiting for 20:45 IST...
+2026-04-30 10:34:46,843 | INFO | Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-04-30 10:34:46,845 | INFO | Added job "nightly_sequence" to job store "default"
+2026-04-30 10:34:46,845 | INFO | Scheduler started
+2026-04-30 10:44:29,819 | INFO | TelegramNotifier initialized with background worker
+2026-04-30 10:44:29,820 | INFO | Overnight Scheduler Online (APScheduler). Waiting for 20:45 IST...
+2026-04-30 10:44:29,829 | INFO | Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-04-30 10:44:29,830 | INFO | Added job "nightly_sequence" to job store "default"
+2026-04-30 10:44:29,830 | INFO | Scheduler started
+2026-04-30 10:46:43,565 | INFO | TelegramNotifier initialized with background worker
+2026-04-30 10:46:43,565 | INFO | Overnight Scheduler Online (APScheduler). Waiting for 20:45 IST...
+2026-04-30 10:46:43,574 | INFO | Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-04-30 10:46:43,575 | INFO | Added job "nightly_sequence" to job store "default"
+2026-04-30 10:46:43,576 | INFO | Scheduler started
+2026-04-30 10:49:50,285 | INFO | TelegramNotifier initialized with background worker
+2026-04-30 10:49:50,286 | INFO | Overnight Scheduler Online (APScheduler). Waiting for 20:45 IST...
+2026-04-30 10:49:50,296 | INFO | Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-04-30 10:49:50,297 | INFO | Added job "nightly_sequence" to job store "default"
+2026-04-30 10:49:50,297 | INFO | Scheduler started
+2026-04-30 11:43:09,546 | INFO | TelegramNotifier initialized with background worker
+2026-04-30 11:43:09,547 | INFO | Overnight Scheduler Online (APScheduler). Waiting for 20:45 IST...
+2026-04-30 11:43:09,555 | INFO | Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-04-30 11:43:09,556 | INFO | Added job "nightly_sequence" to job store "default"
+2026-04-30 11:43:09,557 | INFO | Scheduler started
+2026-04-30 14:54:23,389 | INFO | TelegramNotifier initialized with background worker
+2026-04-30 14:54:23,390 | INFO | Overnight Scheduler Online (APScheduler). Waiting for 20:45 IST...
+2026-04-30 14:54:23,405 | INFO | Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-04-30 14:54:23,406 | INFO | Added job "nightly_sequence" to job store "default"
+2026-04-30 14:54:23,407 | INFO | Scheduler started
+2026-05-02 19:40:21,302 | INFO | TelegramNotifier initialized with background worker
+2026-05-02 19:40:21,302 | INFO | Overnight Scheduler Online (APScheduler). Waiting for 20:45 IST...
+2026-05-02 19:40:21,325 | INFO | Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-05-02 19:40:21,326 | INFO | Added job "nightly_sequence" to job store "default"
+2026-05-02 19:40:21,326 | INFO | Scheduler started
+2026-05-02 20:01:00,328 | INFO | TelegramNotifier initialized with background worker
+2026-05-02 20:01:00,329 | INFO | Overnight Scheduler Online (APScheduler). Waiting for 20:45 IST...
+2026-05-02 20:01:00,390 | INFO | Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-05-02 20:01:00,392 | INFO | Added job "nightly_sequence" to job store "default"
+2026-05-02 20:01:00,392 | INFO | Scheduler started
+2026-05-06 10:05:21,710 | INFO | TelegramNotifier initialized with background worker
+2026-05-06 10:05:21,711 | INFO | Overnight Scheduler Online (APScheduler). Waiting for 20:45 IST...
+2026-05-06 10:05:21,723 | INFO | Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-05-06 10:05:21,725 | INFO | Added job "nightly_sequence" to job store "default"
+2026-05-06 10:05:21,728 | INFO | Scheduler started

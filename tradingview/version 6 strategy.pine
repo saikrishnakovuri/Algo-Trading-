@@ -1,0 +1,59 @@
+//@version=5
+strategy("Krishna AI Strategy", overlay=true, pyramiding=0, initial_capital=100000, process_orders_on_close=true, calc_on_order_fills=true)
+
+ema9  = ta.ema(close, 9)
+ema21 = ta.ema(close, 21)
+
+buy  = ta.crossover(ema9, ema21)
+sell = ta.crossunder(ema9, ema21)
+
+atr   = ta.atr(14)
+risk  = atr * 2.5
+rr    = 1.5
+
+var float entry = na
+var float sl = na
+var float tp = na
+var int pos = 0
+
+longEntry = buy and pos <= 0
+shortEntry = sell and pos >= 0
+
+if longEntry
+    entry := close
+    sl := entry - risk
+    tp := entry + risk * rr
+    pos := 1
+    strategy.entry("LONG", strategy.long)
+
+if shortEntry
+    entry := close
+    sl := entry + risk
+    tp := entry - risk * rr
+    pos := -1
+    strategy.entry("SHORT", strategy.short)
+
+exitLong  = pos == 1 and (low <= sl or high >= tp or sell)
+exitShort = pos == -1 and (high >= sl or low <= tp or buy)
+exitSignal = exitLong or exitShort
+
+if pos == 1
+    strategy.exit("LONG EXIT", "LONG", stop=sl, limit=tp)
+
+if pos == -1
+    strategy.exit("SHORT EXIT", "SHORT", stop=sl, limit=tp)
+
+if exitSignal
+    strategy.close_all()
+    exitPrice = exitLong ? (low <= sl ? sl : tp) : exitShort ? (high >= sl ? sl : tp) : close
+    pnlPts = not na(entry) ? (pos == 1 ? exitPrice - entry : entry - exitPrice) : na
+    pnlPct = not na(entry) and entry != 0 ? pnlPts / entry * 100.0 : na
+    label.new(bar_index, high, "EXIT\nExit: " + str.tostring(exitPrice, format.mintick) + "\nP&L: " + str.tostring(pnlPts, format.mintick) + " (" + str.tostring(pnlPct, "#.##") + "%)", style=label.style_label_down, color=pnlPts >= 0 ? color.green : color.red, textcolor=color.white)
+    pos := 0
+    entry := na
+    sl := na
+    tp := na
+
+plotshape(longEntry, style=shape.labelup, location=location.belowbar, color=color.green, text="BUY", textcolor=color.white, size=size.normal)
+plotshape(shortEntry, style=shape.labeldown, location=location.abovebar, color=color.red, text="SELL", textcolor=color.white, size=size.normal)
+plotshape(exitSignal, style=shape.labeldown, location=location.abovebar, color=color.orange, text="EXIT", textcolor=color.white, size=size.small)

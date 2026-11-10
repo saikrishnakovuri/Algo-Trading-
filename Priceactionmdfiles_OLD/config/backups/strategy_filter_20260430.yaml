@@ -1,0 +1,26 @@
+default_enabled: true
+strategies:
+  BREAKOUT:
+    allowed_symbols: ALL
+    enabled: true
+    min_score_override: 5.5
+  LIQUIDITY_SWEEP:
+    allowed_symbols: ALL
+    enabled: true
+    min_score_override: 5.5
+  OB_MITIGATION:
+    allowed_symbols: ALL
+    enabled: true
+    min_score_override: 5.5
+  TRAP_REVERSAL:
+    allowed_symbols: ALL
+    enabled: true
+    min_score_override: 5.5
+  TREND_CONTINUATION:
+    allowed_symbols: ALL
+    enabled: true
+    min_score_override: 5.5
+  ZONE_REJECTION:
+    allowed_symbols: ALL
+    enabled: true
+    min_score_override: 5.5

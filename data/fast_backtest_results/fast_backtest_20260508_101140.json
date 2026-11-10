@@ -1,0 +1,23 @@
+{
+    "summary": {
+        "Total Trades": 2003,
+        "WR": "47.4%",
+        "Net PnL": "INR 309,953",
+        "PF": 1.4,
+        "Max DD": "1.95%"
+    },
+    "strategies": [
+        {
+            "Strategy": "CANDLESTICK",
+            "Trades": 1883,
+            "WR": "49.4%",
+            "Net PnL": "INR 346,668"
+        },
+        {
+            "Strategy": "MEAN_REVERSION",
+            "Trades": 120,
+            "WR": "15.8%",
+            "Net PnL": "INR -36,715"
+        }
+    ]
+}

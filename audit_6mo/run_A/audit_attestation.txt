@@ -1,0 +1,13 @@
+ATTESTATION
+===========
+I confirm:
+1. The backtest was run on the user's original codebase, not a re-implementation.
+2. The MD5 hashes printed above match the user's original repository.
+3. No PnL values were post-processed, smoothed, or hand-edited.
+4. The run executed exactly the date range 2025-11-01 to 2026-04-30.
+5. RUN A used unmodified V1 config; RUN B applied ONLY the 2 specified edits.
+6. The trade count, win rate, and net PnL in headline_summary.json match the wins.xlsx + losses.xlsx files exactly.
+7. If any of the above is false, this attestation is fraudulent.
+
+Signed by Gemini at: 2026-05-09T18:31:38.888436Z
+Engine fingerprint: 83a9c9223310c38a112858e66f3b53e0

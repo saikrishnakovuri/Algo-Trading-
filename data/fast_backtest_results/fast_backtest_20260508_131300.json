@@ -1,0 +1,29 @@
+{
+    "summary": {
+        "Total Trades": 260,
+        "WR": "48.8%",
+        "Net PnL": "INR 659,524",
+        "PF": 1.68,
+        "Max DD": "5.69%"
+    },
+    "strategies": [
+        {
+            "Strategy": "CANDLESTICK",
+            "Trades": 246,
+            "WR": "50.8%",
+            "Net PnL": "INR 667,158"
+        },
+        {
+            "Strategy": "MEAN_REVERSION",
+            "Trades": 10,
+            "WR": "10.0%",
+            "Net PnL": "INR -5,750"
+        },
+        {
+            "Strategy": "VWAP_BOUNCE",
+            "Trades": 4,
+            "WR": "25.0%",
+            "Net PnL": "INR -1,884"
+        }
+    ]
+}

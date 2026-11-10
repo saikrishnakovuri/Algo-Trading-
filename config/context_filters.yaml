@@ -1,0 +1,104 @@
+chop:
+  rcr_threshold: 0.7
+  bbr_threshold: 0.35
+  zzd_threshold: 7
+  vd_threshold: 0.25
+  weights:
+    rcr: 0.35
+    bbr: 0.25
+    zzd: 0.25
+    vd: 0.15
+  veto_score: 0.60
+  warn_score: 0.40
+  regime_overrides:
+    TRENDING_HIGH_VOL:
+      veto_score: 0.75
+    MEAN_REVERTING:
+      veto_score: 0.50
+    CHOPPY_UNTRADEABLE:
+      veto_score: 0.00
+
+time_of_day:
+  timezone: "Asia/Kolkata"
+  windows:
+    opening_burst:
+      start: "09:15:00"
+      end:   "09:45:00"
+      min_1m_bars_before_entry: 10
+      trap_fade_weight: 1.0
+      trend_continuation_weight: 1.0
+      breakout_weight: 0.8
+      threshold_delta: 0.0
+    trend_development:
+      start: "09:45:00"
+      end:   "14:45:00"
+      trap_fade_weight: 0.7
+      trend_continuation_weight: 1.0
+      breakout_weight: 1.0
+      ob_mitigation_weight: 1.0
+      threshold_delta: 0.3
+      sub_windows:
+        pre_lunch:
+          start: "09:45:00"
+          end: "11:45:00"
+          threshold_delta: 0.3
+        lunch_dead:
+          start: "11:45:00"
+          end: "13:00:00"
+          threshold_delta: 0.5
+        afternoon_resume:
+          start: "13:00:00"
+          end: "14:45:00"
+          threshold_delta: 0.4
+    no_new_entries:
+      start: "14:45:00"
+      end:   "15:30:00"
+      force_squareoff_start: "15:20:00"
+  special_days:
+    weekly_expiry:
+      end_override: "12:30:00"
+      threshold_bump: 0.3
+    monthly_expiry:
+      end_override: "13:00:00"
+      threshold_bump: 0.3
+    event_blackout:
+      window_before_min: 30
+      window_after_min: 60
+
+gap:
+  categories:
+    micro:
+      pct: 0.15
+      atr: 0.25
+    small:
+      pct: 0.40
+      atr: 0.60
+    medium:
+      pct: 0.80
+      atr: 1.10
+    large:
+      pct: 1.50
+      atr: 1.80
+  extreme_blackout_minutes: 15
+  retracement_thresholds:
+    medium_contra_min: 0.50
+    large_contra_min:  0.30
+  weight_multipliers:
+    aligned:
+      micro: 1.0
+      small: 1.0
+      medium: 1.0
+      large: 0.9
+      extreme: 0.75
+    contra:
+      micro: 0.95
+      small: 0.85
+  gap_and_go_threshold: 0.70
+  gap_and_go_volume_ratio: 1.5
+  gap_and_go_fade_penalty: -0.3
+  gap_and_go_aligned_bonus: 0.2
+  stock_vs_index_tier_gap: 2
+  stats_path: "data/gap_stats.parquet"
+
+calendar:
+  yaml_path: "config/trading_calendar.yaml"

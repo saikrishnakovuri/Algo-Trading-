@@ -1,0 +1,84 @@
+# ═══════════════════════════════════════════════════════════════
+# Candlestick Pattern Recognition Engine Configuration
+# ═══════════════════════════════════════════════════════════════
+
+timeframe: "5m"
+
+# ── Pattern Enable/Disable ──────────────────────────────────
+patterns:
+  engulfing:
+    enabled: true
+    min_score: 6
+    priority: 1          # highest priority pattern
+  hammer_shooting_star:
+    enabled: true
+    min_score: 6
+    priority: 2
+  inside_bar:
+    enabled: true
+    min_score: 5          # lower threshold — breakout play
+    priority: 3
+  morning_evening_star:
+    enabled: true
+    min_score: 6
+    priority: 4
+  doji:
+    enabled: true
+    min_score: 5
+    priority: 5           # confirmation-only, lowest priority
+
+# ── Indicator Parameters ────────────────────────────────────
+indicators:
+  ema_fast: 9
+  ema_slow: 20
+  rsi_period: 14
+  rsi_bullish_zone: [40, 60]    # RSI must be in this range for bullish patterns
+  rsi_bearish_zone: [40, 60]    # RSI must be in this range for bearish patterns
+  vwap_proximity_pct: 0.5       # price within 0.5% of VWAP counts as "near VWAP"
+
+# ── Pattern-Specific Thresholds ─────────────────────────────
+engulfing:
+  min_body_ratio: 0.6           # engulfing candle body must be >= 60% of total range
+  must_fully_engulf: true       # body must fully engulf previous body
+  volume_confirm: true          # engulfing candle volume > previous candle volume
+
+hammer_shooting_star:
+  min_wick_body_ratio: 2.0      # wick must be >= 2x body size
+  max_opposite_wick_ratio: 0.3  # opposite wick must be <= 30% of body
+  near_level_required: true     # must be near VWAP or S/R
+
+inside_bar:
+  min_mother_bar_atr_ratio: 0.8 # mother bar must be >= 0.8x ATR (meaningful candle)
+  false_breakout_bonus: 3       # extra score points for false breakout detection
+  breakout_confirm_bars: 1      # bars to wait for breakout confirmation
+
+morning_evening_star:
+  min_first_candle_body: 0.5    # first candle body ratio (strong trend candle)
+  max_middle_candle_body: 0.3   # middle candle body must be small (indecision)
+  min_third_candle_body: 0.5    # third candle must be strong reversal
+  third_candle_must_close_past_midpoint: true  # 3rd candle close > 50% of 1st candle body
+
+doji:
+  max_body_range_ratio: 0.1     # body <= 10% of total range = doji
+  require_confirmation: true    # NEVER trade doji alone — wait for next candle
+  confirmation_break_type: "close"  # "close" above/below doji high/low
+
+# ── Risk Parameters ─────────────────────────────────────────
+risk:
+  max_sl_points: 5.0            # hard maximum SL in points
+  default_target_r: 2.0         # default R-multiple target
+  engulfing_target_r: 2.0       # 1:2 RR
+  hammer_target_r: 2.5          # 1:2.5 RR (best RR pattern)
+  inside_bar_target_r: 1.5      # 1:1.5 for breakout, 2.0 for trap
+  morning_star_target_r: 2.0    # 1:2 RR
+  doji_target_r: 1.2            # conservative
+
+# ── Master Filters ──────────────────────────────────────────
+master_filter:
+  require_vwap_alignment: true
+  require_rsi_slope: true
+  require_ema_alignment: true
+  max_bars_in_trade: 3          # exit if no movement in 3 candles (15 min on 5m)
+  no_trade_rsi_flat_threshold: 2.0  # RSI change < 2 points over lookback = "flat"
+  rsi_slope_lookback: 3         # bars to check RSI slope
+  vwap_max_distance_pct: 1.0    # no trade if price > 1% away from VWAP

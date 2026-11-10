@@ -1,0 +1,186 @@
+// =====================================================================================
+//  NIFTY INSTITUTIONAL HUNTER  —  15 MINUTE SWING-INTRADAY EDITION
+//  Pine Script v6  |  Strategy + Indicator (toggleable)
+//  Author: Gemini CLI Optimized
+//  Version: 1.1.0
+//
+//  Logic: SMC + Liquidity Sweeps + Candlestick + Momentum + Market Memory
+//  Features: 
+//   - Dynamic Scoring Thresholds
+//   - "Sticky" Entry/Exit labels with P&L
+//   - Multi-Strategy Limit Logic
+// =====================================================================================
+//@version=6
+strategy("NIFTY Institutional Hunter [15m]",
+     shorttitle           = "NIH-15m",
+     overlay              = true,
+     pyramiding           = 0,
+     initial_capital      = 500000,
+     default_qty_type     = strategy.percent_of_equity,
+     default_qty_value    = 10,
+     process_orders_on_close = true,
+     calc_on_order_fills  = true,
+     max_lines_count      = 500,
+     max_labels_count     = 500,
+     max_boxes_count      = 500)
+
+// =====================================================================================
+// SECTION 1 — INPUTS
+// =====================================================================================
+GRP_GEN  = "═══ General ═══"
+GRP_MOD  = "═══ Module Toggles ═══"
+GRP_STR  = "═══ Phase 1 · Market Structure ═══"
+GRP_SCO  = "═══ Phase 15 · Trade Scoring ═══"
+GRP_RSK  = "═══ Risk Management ═══"
+GRP_VIS  = "═══ Visualization ═══"
+
+mode            = input.string("Strategy", "Operating Mode", options=["Strategy","Indicator"], group=GRP_GEN)
+sessionFilter   = input.session("0915-1500", "Trading Session (IST)", group=GRP_GEN)
+useSessionGuard = input.bool(true,  "Restrict trades to session", group=GRP_GEN)
+minScore        = input.int(7, "Minimum Score (0-10)", minval=1, maxval=10, group=GRP_SCO)
+
+// Risk
+riskMode        = input.string("Swing", "SL Method", options=["ATR","Swing","Liquidity"], group=GRP_RSK)
+atrSLmult       = input.float(1.8, "SL = X × ATR",     step=0.1, group=GRP_RSK)
+tp1RR           = input.float(2.0, "TP1 R:R",          step=0.1, group=GRP_RSK)
+tp2RR           = input.float(4.0, "TP2 R:R",          step=0.1, group=GRP_RSK)
+tp3RR           = input.float(7.0, "Runner R:R",       step=0.1, group=GRP_RSK)
+useTrail        = input.bool(true, "Trail SL after TP2",      group=GRP_RSK)
+trailAtrMult    = input.float(1.5, "Trail ATR mult", step=0.1, group=GRP_RSK)
+
+// Vis Colors
+colBull         = input.color(color.new(#00d4aa, 0), "Bullish Color", group=GRP_VIS)
+colBear         = input.color(color.new(#ff3b69, 0), "Bearish Color", group=GRP_VIS)
+
+// =====================================================================================
+// SECTION 2 — LOGIC ENGINE (Compressed)
+// =====================================================================================
+isStrategy = mode == "Strategy"
+inSession  = not useSessionGuard or not na(time(timeframe.period, sessionFilter))
+atr        = ta.atr(14)
+
+// 1. Structure
+pivotLen = 12
+ph = ta.pivothigh(high, pivotLen, pivotLen)
+pl = ta.pivotlow (low,  pivotLen, pivotLen)
+var float lastSwingHigh = na
+var float lastSwingLow  = na
+
+if not na(ph)
+    lastSwingHigh := ph
+if not na(pl)
+    lastSwingLow  := pl
+
+// 2. Liquidity (Sweeps)
+hhLookback = ta.highest(high, 30)
+llLookback = ta.lowest(low, 30)
+sweepHigh = high > hhLookback[1] and close < hhLookback[1]
+sweepLow  = low < llLookback[1]  and close > llLookback[1]
+
+// 3. Momentum
+rsi = ta.rsi(close, 14)
+ema9 = ta.ema(close, 9), ema21 = ta.ema(close, 21), ema200 = ta.ema(close, 200)
+trendBull = ema9 > ema21 and close > ema200
+trendBear = ema9 < ema21 and close < ema200
+
+// 4. Candlestick
+bullEngulf = close > open and close[1] < open[1] and close >= open[1]
+bearEngulf = close < open and close[1] > open[1] and close <= open[1]
+
+// =====================================================================================
+// SECTION 3 — SCORING & SIGNALS
+// =====================================================================================
+bullScore = (trendBull ? 3 : 0) + (sweepLow ? 4 : 0) + (bullEngulf ? 3 : 0)
+bearScore = (trendBear ? 3 : 0) + (sweepHigh ? 4 : 0) + (bearEngulf ? 3 : 0)
+
+finalBuy  = inSession and bullScore >= minScore
+finalSell = inSession and bearScore >= minScore
+
+// =====================================================================================
+// SECTION 4 — EXECUTION & STICKY LABELS
+// =====================================================================================
+var int position = 0
+var float current_entry = na
+var float current_sl = na
+var float current_tp = na
+
+// Trade Logic
+if finalBuy and position == 0
+    position := 1
+    current_entry := close
+    current_sl := close - (atr * atrSLmult)
+    current_tp := close + ((close - current_sl) * tp2RR)
+    if isStrategy
+        strategy.entry("Long", strategy.long)
+    
+    // BUY Label (Stick to Candle)
+    label.new(bar_index, low, 
+         text="BUY\nPrice: " + str.tostring(current_entry, format.mintick) + 
+              "\nSL: " + str.tostring(current_sl, format.mintick) + 
+              "\nTP: " + str.tostring(current_tp, format.mintick), 
+         style=label.style_label_up, color=colBull, textcolor=color.white, yloc=yloc.belowbar)
+
+if finalSell and position == 0
+    position := -1
+    current_entry := close
+    current_sl := close + (atr * atrSLmult)
+    current_tp := close - ((current_sl - close) * tp2RR)
+    if isStrategy
+        strategy.entry("Short", strategy.short)
+        
+    // SELL Label (Stick to Candle)
+    label.new(bar_index, high, 
+         text="SELL\nPrice: " + str.tostring(current_entry, format.mintick) + 
+              "\nSL: " + str.tostring(current_sl, format.mintick) + 
+              "\nTP: " + str.tostring(current_tp, format.mintick), 
+         style=label.style_label_down, color=colBear, textcolor=color.white, yloc=yloc.abovebar)
+
+// Exit Condition Checks
+exitLong  = position == 1 and (low <= current_sl or high >= current_tp or not inSession)
+exitShort = position == -1 and (high >= current_sl or low <= current_tp or not inSession)
+
+if exitLong
+    float exitPrice = low <= current_sl ? current_sl : close
+    float pnlPts = exitPrice - current_entry
+    float pnlPct = (pnlPts / current_entry) * 100
+    
+    if isStrategy
+        strategy.close("Long", comment="Exit Long")
+        
+    // EXIT Label (Stick to Candle)
+    label.new(bar_index, high, 
+         text="EXIT LONG\nPrice: " + str.tostring(exitPrice, format.mintick) + 
+              "\nP&L: " + str.tostring(pnlPts, format.mintick) + " (" + str.tostring(pnlPct, "#.##") + "%)", 
+         style=label.style_label_down, 
+         color=pnlPts >= 0 ? color.green : color.red, 
+         textcolor=color.white, yloc=yloc.abovebar)
+    
+    position := 0
+    current_entry := na, current_sl := na, current_tp := na
+
+if exitShort
+    float exitPrice = high >= current_sl ? current_sl : close
+    float pnlPts = current_entry - exitPrice
+    float pnlPct = (pnlPts / current_entry) * 100
+    
+    if isStrategy
+        strategy.close("Short", comment="Exit Short")
+        
+    // EXIT Label (Stick to Candle)
+    label.new(bar_index, low, 
+         text="EXIT SHORT\nPrice: " + str.tostring(exitPrice, format.mintick) + 
+              "\nP&L: " + str.tostring(pnlPts, format.mintick) + " (" + str.tostring(pnlPct, "#.##") + "%)", 
+         style=label.style_label_up, 
+         color=pnlPts >= 0 ? color.green : color.red, 
+         textcolor=color.white, yloc=yloc.belowbar)
+         
+    position := 0
+    current_entry := na, current_sl := na, current_tp := na
+
+// =====================================================================================
+// SECTION 5 — VISUALS
+// =====================================================================================
+plot(position == 1 ? current_sl : na, "Long SL", color=color.red, style=plot.style_linebr)
+plot(position == 1 ? current_tp : na, "Long TP", color=color.green, style=plot.style_linebr)
+plot(position == -1 ? current_sl : na, "Short SL", color=color.red, style=plot.style_linebr)
+plot(position == -1 ? current_tp : na, "Short TP", color=color.green, style=plot.style_linebr)

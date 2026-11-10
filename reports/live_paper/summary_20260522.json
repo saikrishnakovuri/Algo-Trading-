@@ -1,0 +1,17 @@
+{
+  "generated_at": "2026-05-22T22:52:58.883962",
+  "portfolio": {
+    "starting_equity": 501781.5,
+    "total_equity": 505437.75,
+    "realized_pnl": 3656.25,
+    "unrealized_pnl": 2385.5,
+    "daily_pnl": 6041.75,
+    "active_risk": 0.0,
+    "max_trade_risk": 5054.38,
+    "daily_circuit_breaker": -10035.63,
+    "circuit_breaker_tripped": false,
+    "circuit_breaker_reason": null
+  },
+  "open_positions": [],
+  "trade_events": 329
+}

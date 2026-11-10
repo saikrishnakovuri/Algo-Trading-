@@ -1,0 +1,96 @@
+# ═══════════════════════════════════════════════════════════════
+# Mean Reversion Engine Configuration (Option 3)
+# ═══════════════════════════════════════════════════════════════
+# Strategy: Fade overextended moves at statistical extremes
+# Core idea: Price reverts to mean when stretched beyond normal range
+
+timeframe: "5m"
+
+# ── Indicator Parameters ────────────────────────────────────
+indicators:
+  # Bollinger Bands
+  bb_period: 20
+  bb_std_entry: 2.0          # enter when price touches ±2σ band
+  bb_std_extreme: 3.0        # strong signal at ±3σ (rare but powerful)
+
+  # VWAP Bands (standard deviation bands around VWAP)
+  vwap_band_std: 1.5         # VWAP ± 1.5 std dev = entry zone
+  vwap_band_extreme: 2.5     # VWAP ± 2.5 std dev = strong entry zone
+
+  # RSI
+  rsi_period: 14
+  rsi_oversold: 30            # RSI below 30 = oversold (LONG signal)
+  rsi_overbought: 70          # RSI above 70 = overbought (SHORT signal)
+  rsi_extreme_oversold: 20    # RSI below 20 = extreme oversold (strong LONG)
+  rsi_extreme_overbought: 80  # RSI above 80 = extreme overbought (strong SHORT)
+
+  # EMA (for trend context — mean reversion works BEST in ranging markets)
+  ema_fast: 9
+  ema_slow: 20
+  ema_flat_threshold_pct: 0.15  # EMA gap < 0.15% of price = "flat" = ranging market
+
+  # ATR (for dynamic band width and SL calculation)
+  atr_period: 14
+
+# ── Signal Types ────────────────────────────────────────────
+# Three independent signal generators. Trade fires if ANY ONE hits threshold.
+# Multiple signals on same bar = higher score (confluence).
+signals:
+  bollinger_reversion:
+    enabled: true
+    weight: 3                 # score contribution when triggered
+    require_rsi_confirm: true # RSI must also be in extreme zone
+
+  vwap_reversion:
+    enabled: true
+    weight: 3
+    require_rsi_confirm: true
+
+  rsi_extreme:
+    enabled: true
+    weight: 2                 # RSI alone is weaker signal
+    require_band_confirm: true # must also be near BB or VWAP band
+
+# ── Confluence Scoring ──────────────────────────────────────
+scoring:
+  # Individual signal scores
+  bb_touch_2sigma: 3          # price at ±2σ Bollinger Band
+  bb_touch_3sigma: 5          # price at ±3σ (rare, high conviction)
+  vwap_touch_1_5std: 3        # price at ±1.5σ VWAP band
+  vwap_touch_2_5std: 5        # price at ±2.5σ VWAP band
+  rsi_oversold_overbought: 2  # RSI in 30/70 zone
+  rsi_extreme: 4              # RSI in 20/80 zone (strong)
+
+  # Context bonuses
+  ema_flat_bonus: 2           # +2 if market is ranging (EMA 9 ≈ EMA 20)
+  volume_spike_bonus: 1       # +1 if volume > 1.5x avg (capitulation)
+  consecutive_outside_bars: 2 # +2 if 2+ bars outside the band (overextension building)
+
+  # Minimum score to trade
+  min_score_threshold: 6      # need at least 6 points to trigger
+
+# ── Risk Parameters ─────────────────────────────────────────
+risk:
+  max_sl_points: 5.0          # hard maximum SL in points (your rule)
+  sl_method: "band_based"     # SL placed beyond the extreme band
+  sl_atr_multiplier: 0.5      # SL = 0.5 ATR beyond entry (tight for reversion)
+
+  # Targets: mean reversion targets the MEAN, not a breakout
+  target_method: "mean"       # target = VWAP or BB midline (the mean)
+  target_1: "vwap"            # first target: VWAP (partial exit)
+  target_2: "bb_midline"      # second target: BB midline (20-period SMA)
+  default_target_r: 1.5       # fallback if mean is too close
+
+  # Time-based exit (mean reversion should be FAST)
+  max_hold_bars: 6            # 6 bars × 5min = 30 minutes max hold
+  breakeven_after_bars: 3     # move SL to breakeven after 3 bars (15 min)
+
+# ── Anti-Trend Filter ──────────────────────────────────────
+# Mean reversion FAILS in strong trends. These filters prevent that.
+anti_trend_filter:
+  enabled: true
+  # Do NOT take mean reversion trades when:
+  ema_spread_max_pct: 0.8     # if EMA9 vs EMA20 gap > 0.8% → trending, skip
+  rsi_trending_zone: [40, 60] # if RSI is in 40-60 zone, it's NOT extreme enough
+  min_bars_outside_band: 1    # price must be outside band for at least 1 bar
+  atr_expansion_threshold: 1.5 # if current ATR > 1.5x average ATR → volatility expanding, skip

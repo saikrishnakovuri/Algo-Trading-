@@ -1,0 +1,143 @@
+{
+  "theme": "dark",
+  "archetype": "2 (Performance Pro / Terminal)",
+  "emotional_tone": "Professional, authoritative, high-energy, data-dense, quantitative",
+  "colors": {
+    "background": {
+      "main": "#050505",
+      "card": "#0A0A0A",
+      "hover": "#141414"
+    },
+    "text": {
+      "primary": "#FFFFFF",
+      "secondary": "#A0A0A0",
+      "muted": "#666666",
+      "inverse": "#000000"
+    },
+    "primary": "#007AFF",
+    "primary_hover": "#0056b3",
+    "accent": {
+      "buy": "#34C759",
+      "sell": "#FF3B30",
+      "neutral": "#007AFF",
+      "warning": "#FF9500"
+    },
+    "border": "#222222",
+    "surface": {
+      "glass": "backdrop-blur-xl bg-black/60",
+      "terminal": "bg-[#0A0A0A] border border-[#222222]"
+    }
+  },
+  "typography": {
+    "font_families": {
+      "heading": "Chivo, sans-serif",
+      "body": "IBM Plex Sans, sans-serif",
+      "mono": "JetBrains Mono, monospace"
+    },
+    "sizes": {
+      "h1": "text-2xl sm:text-3xl tracking-tight font-bold",
+      "h2": "text-xl sm:text-2xl tracking-tight font-semibold",
+      "h3": "text-lg sm:text-xl tracking-tight font-medium",
+      "body": "text-sm",
+      "small": "text-xs",
+      "data": "text-sm font-mono tracking-tight"
+    },
+    "rules": [
+      "Use JetBrains Mono for all tickers, prices, and numerical data.",
+      "Headings must use tight letter spacing.",
+      "Overlines/Labels must be uppercase, tiny (text-[10px] or text-xs), and wide spacing (tracking-[0.1em])."
+    ]
+  },
+  "layout_and_spacing": {
+    "strategy": "The 'Control Room' Grid",
+    "container_padding": "p-4 sm:p-6 lg:p-8",
+    "grid_gap": "gap-4 sm:gap-6",
+    "rules": [
+      "Base grid: grid-cols-1 md:grid-cols-3 lg:grid-cols-4.",
+      "Every pixel must be utilized. Use h-full on children.",
+      "Card padding should be consistent (p-4 or p-5).",
+      "Grid Borders strategy: expose the skeleton with 1px borders."
+    ]
+  },
+  "surfaces_and_micro_themes": {
+    "dashboard_cards": {
+      "background": "bg-[#0A0A0A]",
+      "border": "border border-[#222222]",
+      "shadow": "shadow-none",
+      "radius": "rounded-none sm:rounded-md",
+      "hover": "hover:border-[#444444] transition-colors duration-200"
+    },
+    "header": {
+      "style": "solid background with hard bottom border",
+      "classes": "bg-[#050505] border-b border-[#222222]"
+    },
+    "buttons": {
+      "primary": "bg-[#007AFF] text-white hover:bg-[#0056b3] rounded-md px-4 py-2 font-medium transition-all",
+      "buy": "bg-[#34C759]/10 text-[#34C759] border border-[#34C759]/30 hover:bg-[#34C759]/20 rounded-md px-4 py-2 font-mono text-sm uppercase",
+      "sell": "bg-[#FF3B30]/10 text-[#FF3B30] border border-[#FF3B30]/30 hover:bg-[#FF3B30]/20 rounded-md px-4 py-2 font-mono text-sm uppercase"
+    }
+  },
+  "components": {
+    "charts": {
+      "library": "Recharts (wrapped in Shadcn Chart components)",
+      "rules": [
+        "Use area charts for PnL with gradient fill (green or red based on value).",
+        "Hide excessive grid lines; use very subtle horizontal grid lines (stroke #222222).",
+        "Tooltip must match the tactical dark theme."
+      ]
+    },
+    "tables": {
+      "style": "dense",
+      "header": "text-xs uppercase text-[#A0A0A0] border-b border-[#222222] bg-[#0A0A0A]",
+      "row": "border-b border-[#222222] hover:bg-[#141414] transition-colors text-sm",
+      "cell": "py-2 px-3 font-mono"
+    },
+    "badges": {
+      "buy": "bg-[#34C759]/10 text-[#34C759] border border-[#34C759]/20 px-2 py-0.5 rounded text-xs font-mono uppercase",
+      "sell": "bg-[#FF3B30]/10 text-[#FF3B30] border border-[#FF3B30]/20 px-2 py-0.5 rounded text-xs font-mono uppercase",
+      "neutral": "bg-[#007AFF]/10 text-[#007AFF] border border-[#007AFF]/20 px-2 py-0.5 rounded text-xs font-mono uppercase"
+    },
+    "forms": {
+      "input": "bg-[#0A0A0A] border border-[#222222] text-white rounded-md focus:border-[#007AFF] focus:ring-1 focus:ring-[#007AFF] transition-all font-mono text-sm",
+      "label": "text-xs uppercase text-[#A0A0A0] tracking-wider mb-1 block"
+    }
+  },
+  "motion": {
+    "hover": "transition-colors duration-200 ease-in-out",
+    "chart_animation": "minimal, load in 500ms",
+    "toast": "slide-in from bottom right"
+  },
+  "icons": {
+    "library": "lucide-react",
+    "stroke_width": 1.5,
+    "rules": [
+      "Use strict geometric icons.",
+      "Don't use filled icons, keep them outlined for a technical look."
+    ]
+  },
+  "media": {
+    "images": [
+      {
+        "category": "auth_background",
+        "description": "A black background with a pattern of squares",
+        "url": "https://images.unsplash.com/photo-1708778002477-75611274f23d?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAxODF8MHwxfHNlYXJjaHwyfHxkYXJrJTIwYWJzdHJhY3QlMjBnZW9tZXRyeXxlbnwwfHx8fDE3NzY4MDAzOTZ8MA&ixlib=rb-4.1.0&q=85"
+      },
+      {
+        "category": "abstract_accent",
+        "description": "Abstract glowing crosses against dark background",
+        "url": "https://images.unsplash.com/photo-1760992795200-52321e30d64c?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAxODF8MHwxfHNlYXJjaHwxfHxkYXJrJTIwYWJzdHJhY3QlMjBnZW9tZXRyeXxlbnwwfHx8fDE3NzY4MDAzOTZ8MA&ixlib=rb-4.1.0&q=85"
+      }
+    ]
+  },
+  "instructions_to_main_agent": [
+    "Build a tactical, dark-mode 'Terminal' dashboard for algorithmic trading.",
+    "Data density is paramount. Avoid excessive white space inside cards.",
+    "Use pure HTML/Tailwind for layout wrappers, and Shadcn UI strictly for interactive components (dropdowns, dialogs, toasts).",
+    "Heavily customize Shadcn to remove generic Vercel look (change border radii to rounded-md, borders to #222222).",
+    "Use 'JetBrains Mono' for all numerical data, symbols, and tickers.",
+    "For PnL and trade direction, strictly use the defined Buy (#34C759) and Sell (#FF3B30) colors.",
+    "Include data-testid attributes on all buttons, forms, and key metric displays.",
+    "Implement Recharts for the PnL chart with a subtle gradient area chart, no thick lines.",
+    "The sidebar or top nav should be extremely minimalistic, relying on Lucide icons."
+  ]
+}

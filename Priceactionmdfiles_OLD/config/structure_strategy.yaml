@@ -1,0 +1,59 @@
+structure_strategy:
+  enabled: true
+  
+  # --- Signal Generation Rules ---
+  signals:
+    # Lower base confidence to force confluence
+    zone_bounce:
+      enabled: true
+      min_zone_touches: 3
+      max_distance_from_zone_pct: 0.2
+      require_rejection_candle: true
+      require_volume_spike: true
+      confidence_base: 40
+      
+    fvg_fill:
+      enabled: true
+      min_gap_size_pct: 0.2
+      max_age_bars: 50
+      require_momentum_alignment: true
+      confidence_base: 35
+    
+    ob_retest:
+      enabled: true
+      only_fresh_obs: true
+      require_bos_before: true
+      confidence_base: 45
+    
+    trendline_bounce:
+      enabled: true
+      min_trendline_touches: 3
+      max_distance_from_line_pct: 0.15
+      require_candle_confirmation: true
+      confidence_base: 40
+      
+    vp_poc_bounce:
+      enabled: true
+      poc_zone_buffer_pct: 0.2
+      above_value_area_short: true
+      below_value_area_long: true
+      confidence_base: 35
+
+  # --- Confluence Scoring ---
+  confluence:
+    zone_at_ob: 20           # Increased weight
+    zone_at_fvg: 15
+    zone_at_trendline: 15
+    zone_at_vp_node: 15
+    multi_timeframe: 20
+    
+  # --- Entry/Exit ---
+  entry:
+    min_confidence_pct: 75   # Forces at least 2-3 confluences
+    entry_at: "confirmation_close"
+    
+  risk:
+    sl_placement: "beyond_structure"
+    sl_buffer_pct: 0.15
+    min_rr: 2.0
+    target_method: "next_structure"

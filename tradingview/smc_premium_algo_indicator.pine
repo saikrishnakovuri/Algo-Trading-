@@ -1,0 +1,416 @@
+//@version=5
+indicator("Institution SMC Algo Indicator [BOS CHOCH FVG Sweep OB]", overlay=true, max_labels_count=500, max_lines_count=500, max_boxes_count=500)
+
+//------------------------------------------------------------------------------
+// Inputs
+//------------------------------------------------------------------------------
+groupCore = "Core Logic"
+swingLen = input.int(3, "Swing Strength", minval=2, maxval=10, group=groupCore)
+atrLen = input.int(14, "ATR Length", minval=5, maxval=50, group=groupCore)
+structFreshBars = input.int(15, "Recent BOS/CHOCH Window", minval=3, maxval=100, group=groupCore)
+sweepLookback = input.int(20, "Sweep Liquidity Lookback", minval=5, maxval=100, group=groupCore)
+sweepLifetime = input.int(20, "Active Sweep Lifetime", minval=3, maxval=100, group=groupCore)
+minAtrPct = input.float(0.10, "Min ATR %", minval=0.0, step=0.01, group=groupCore)
+minRR = input.float(2.0, "Minimum R:R", minval=0.5, step=0.25, group=groupCore)
+setupThreshold = input.float(1.5, "Signal Score Threshold", minval=0.5, maxval=3.5, step=0.1, group=groupCore)
+
+groupTrend = "Trend Filters"
+useTrendFilter = input.bool(false, "Require EMA/VWAP Alignment", group=groupTrend)
+fastLen = input.int(9, "Fast EMA", minval=2, maxval=100, group=groupTrend)
+slowLen = input.int(20, "Slow EMA", minval=3, maxval=200, group=groupTrend)
+htfTf = input.timeframe("15", "HTF Bias Timeframe", group=groupTrend)
+htfLen = input.int(20, "HTF EMA Length", minval=5, maxval=100, group=groupTrend)
+
+groupSMC = "SMC Footprints"
+showStructure = input.bool(false, "Show BOS / CHOCH", group=groupSMC)
+showFVG = input.bool(false, "Show Fair Value Gaps", group=groupSMC)
+showOB = input.bool(false, "Show Order Blocks", group=groupSMC)
+showSweeps = input.bool(false, "Show Liquidity Sweeps", group=groupSMC)
+fvgMinAtr = input.float(0.25, "FVG Min Gap ATR", minval=0.0, step=0.05, group=groupSMC)
+obDispAtr = input.float(1.5, "OB Displacement ATR", minval=0.25, step=0.25, group=groupSMC)
+volMult = input.float(1.5, "Volume Spike Multiplier", minval=0.5, step=0.1, group=groupSMC)
+
+groupConfirm = "Candle Confirmations"
+requireCandleConfirm = input.bool(false, "Require Candle Confirmation", group=groupConfirm)
+wickBodyRatio = input.float(2.0, "Rejection Wick:Body", minval=0.5, step=0.25, group=groupConfirm)
+engulfBodyRatio = input.float(1.2, "Engulfing Body Ratio", minval=0.5, step=0.1, group=groupConfirm)
+
+groupRisk = "Risk / Targets"
+slMode = input.string("Structure", "SL Mode", options=["Structure", "ATR", "Sweep"], group=groupRisk)
+slAtrMult = input.float(1.5, "ATR SL Multiple", minval=0.25, step=0.25, group=groupRisk)
+tp1R = input.float(2.0, "TP1 R Multiple", minval=0.5, step=0.25, group=groupRisk)
+tp2R = input.float(3.0, "TP2 R Multiple", minval=0.5, step=0.25, group=groupRisk)
+tp3R = input.float(5.0, "TP3 R Multiple", minval=0.5, step=0.25, group=groupRisk)
+
+groupVisual = "Premium Visuals"
+paintCandles = input.bool(false, "Colored Candles", group=groupVisual)
+showSignals = input.bool(true, "Show BUY / SELL Labels", group=groupVisual)
+showRiskLines = input.bool(false, "SL/TP Lines", group=groupVisual)
+showDashboard = input.bool(false, "Trend Bias Panel", group=groupVisual)
+showSessions = input.bool(false, "Session Boxes", group=groupVisual)
+showInternalPlots = input.bool(false, "Show Internal EMA/VWAP", group=groupVisual)
+sessionInput = input.session("0915-1530", "Trading Session", group=groupVisual)
+
+//------------------------------------------------------------------------------
+// Colors
+//------------------------------------------------------------------------------
+bull = color.rgb(0, 180, 130)
+bear = color.rgb(230, 75, 85)
+neutral = color.rgb(145, 150, 165)
+blue = color.rgb(45, 125, 255)
+gold = color.rgb(245, 180, 50)
+panelBg = color.rgb(18, 22, 30)
+panelText = color.rgb(235, 238, 245)
+
+//------------------------------------------------------------------------------
+// Core calculations
+//------------------------------------------------------------------------------
+atr = ta.atr(atrLen)
+atrPct = atr / close * 100.0
+emaFast = ta.ema(close, fastLen)
+emaSlow = ta.ema(close, slowLen)
+vwapVal = ta.vwap(hlc3)
+volAvg = ta.sma(volume, 20)
+volSpike = volume >= volAvg * volMult
+
+htfEma = request.security(syminfo.tickerid, htfTf, ta.ema(close, htfLen), barmerge.gaps_off, barmerge.lookahead_off)
+htfEmaPrev = request.security(syminfo.tickerid, htfTf, ta.ema(close, htfLen)[1], barmerge.gaps_off, barmerge.lookahead_off)
+htfBull = htfEma > htfEmaPrev
+htfBear = htfEma < htfEmaPrev
+
+trendBull = emaFast > emaSlow and close >= vwapVal and htfBull
+trendBear = emaFast < emaSlow and close <= vwapVal and htfBear
+volOk = atrPct >= minAtrPct
+
+//------------------------------------------------------------------------------
+// Market structure: BOS / CHOCH
+//------------------------------------------------------------------------------
+ph = ta.pivothigh(high, swingLen, swingLen)
+pl = ta.pivotlow(low, swingLen, swingLen)
+
+var float lastSwingHigh = na
+var float prevSwingHigh = na
+var int lastSwingHighBar = na
+var float lastSwingLow = na
+var float prevSwingLow = na
+var int lastSwingLowBar = na
+
+if not na(ph)
+    prevSwingHigh := lastSwingHigh
+    lastSwingHigh := ph
+    lastSwingHighBar := bar_index - swingLen
+
+if not na(pl)
+    prevSwingLow := lastSwingLow
+    lastSwingLow := pl
+    lastSwingLowBar := bar_index - swingLen
+
+structureUp = not na(prevSwingHigh) and not na(prevSwingLow) and lastSwingHigh > prevSwingHigh and lastSwingLow > prevSwingLow
+structureDown = not na(prevSwingHigh) and not na(prevSwingLow) and lastSwingHigh < prevSwingHigh and lastSwingLow < prevSwingLow
+
+bullBOS = not na(lastSwingHigh) and ta.crossover(close, lastSwingHigh)
+bearBOS = not na(lastSwingLow) and ta.crossunder(close, lastSwingLow)
+bullCHOCH = structureDown and not na(lastSwingHigh) and ta.crossover(close, lastSwingHigh)
+bearCHOCH = structureUp and not na(lastSwingLow) and ta.crossunder(close, lastSwingLow)
+
+var int trendState = 0
+if bullBOS or bullCHOCH
+    trendState := 1
+if bearBOS or bearCHOCH
+    trendState := -1
+
+var int lastBullStructBar = na
+var int lastBearStructBar = na
+if bullBOS or bullCHOCH
+    lastBullStructBar := bar_index
+if bearBOS or bearCHOCH
+    lastBearStructBar := bar_index
+
+recentBullStruct = not na(lastBullStructBar) and bar_index - lastBullStructBar <= structFreshBars
+recentBearStruct = not na(lastBearStructBar) and bar_index - lastBearStructBar <= structFreshBars
+
+if showStructure and bullBOS
+    label.new(bar_index, high, "BOS", style=label.style_label_down, textcolor=color.white, color=color.new(bull, 0), size=size.tiny)
+if showStructure and bearBOS
+    label.new(bar_index, low, "BOS", style=label.style_label_up, textcolor=color.white, color=color.new(bear, 0), size=size.tiny)
+if showStructure and bullCHOCH
+    label.new(bar_index, low, "CHOCH", style=label.style_label_up, textcolor=color.white, color=color.new(blue, 0), size=size.tiny)
+if showStructure and bearCHOCH
+    label.new(bar_index, high, "CHOCH", style=label.style_label_down, textcolor=color.white, color=color.new(gold, 0), size=size.tiny)
+
+//------------------------------------------------------------------------------
+// Liquidity sweeps
+//------------------------------------------------------------------------------
+rangeHigh = ta.highest(high[1], sweepLookback)
+rangeLow = ta.lowest(low[1], sweepLookback)
+priorDayHigh = request.security(syminfo.tickerid, "D", high[1], barmerge.gaps_off, barmerge.lookahead_off)
+priorDayLow = request.security(syminfo.tickerid, "D", low[1], barmerge.gaps_off, barmerge.lookahead_off)
+
+highSweepRange = high > rangeHigh and close < rangeHigh
+lowSweepRange = low < rangeLow and close > rangeLow
+highSweepPDH = high > priorDayHigh and close < priorDayHigh
+lowSweepPDL = low < priorDayLow and close > priorDayLow
+
+highSweep = (highSweepRange or highSweepPDH) and volSpike
+lowSweep = (lowSweepRange or lowSweepPDL) and volSpike
+
+var int lastLowSweepBar = na
+var int lastHighSweepBar = na
+var float lastLowSweepPrice = na
+var float lastHighSweepPrice = na
+if lowSweep
+    lastLowSweepBar := bar_index
+    lastLowSweepPrice := low
+if highSweep
+    lastHighSweepBar := bar_index
+    lastHighSweepPrice := high
+
+activeLowSweep = not na(lastLowSweepBar) and bar_index - lastLowSweepBar <= sweepLifetime
+activeHighSweep = not na(lastHighSweepBar) and bar_index - lastHighSweepBar <= sweepLifetime
+
+if showSweeps and lowSweep
+    label.new(bar_index, low, "LIQ SWEEP", style=label.style_label_up, textcolor=color.white, color=color.new(bull, 0), size=size.tiny)
+if showSweeps and highSweep
+    label.new(bar_index, high, "LIQ SWEEP", style=label.style_label_down, textcolor=color.white, color=color.new(bear, 0), size=size.tiny)
+
+//------------------------------------------------------------------------------
+// FVG detection and boxes
+//------------------------------------------------------------------------------
+bullFvg = high[2] < low and (low - high[2]) >= atr * fvgMinAtr
+bearFvg = low[2] > high and (low[2] - high) >= atr * fvgMinAtr
+
+var float activeBullFvgMid = na
+var float activeBearFvgMid = na
+if bullFvg
+    activeBullFvgMid := (low + high[2]) / 2.0
+    if showFVG
+        box.new(bar_index - 2, low, bar_index + 30, high[2], border_color=color.new(bull, 70), bgcolor=color.new(bull, 88))
+if bearFvg
+    activeBearFvgMid := (low[2] + high) / 2.0
+    if showFVG
+        box.new(bar_index - 2, low[2], bar_index + 30, high, border_color=color.new(bear, 70), bgcolor=color.new(bear, 88))
+
+nearBullFvg = not na(activeBullFvgMid) and math.abs(close - activeBullFvgMid) <= atr
+nearBearFvg = not na(activeBearFvgMid) and math.abs(close - activeBearFvgMid) <= atr
+
+//------------------------------------------------------------------------------
+// Order block approximation: last opposite candle before displacement
+//------------------------------------------------------------------------------
+bullDisp = close > open and close[1] > open[1] and close[2] > open[2] and math.abs(close - open[2]) >= atr * obDispAtr and volume >= volAvg * 1.3
+bearDisp = close < open and close[1] < open[1] and close[2] < open[2] and math.abs(open[2] - close) >= atr * obDispAtr and volume >= volAvg * 1.3
+
+newBullOB = bullDisp and close[3] < open[3]
+newBearOB = bearDisp and close[3] > open[3]
+
+var float bullObHigh = na
+var float bullObLow = na
+var float bearObHigh = na
+var float bearObLow = na
+
+if newBullOB
+    bullObHigh := high[3]
+    bullObLow := low[3]
+    if showOB
+        box.new(bar_index - 3, bullObHigh, bar_index + 80, bullObLow, border_color=color.new(bull, 55), bgcolor=color.new(bull, 84))
+
+if newBearOB
+    bearObHigh := high[3]
+    bearObLow := low[3]
+    if showOB
+        box.new(bar_index - 3, bearObHigh, bar_index + 80, bearObLow, border_color=color.new(bear, 55), bgcolor=color.new(bear, 84))
+
+nearBullOB = not na(bullObHigh) and low <= bullObHigh and close >= bullObLow
+nearBearOB = not na(bearObLow) and high >= bearObLow and close <= bearObHigh
+
+//------------------------------------------------------------------------------
+// Candle confirmations
+//------------------------------------------------------------------------------
+body = math.max(math.abs(close - open), syminfo.mintick)
+upperWick = high - math.max(open, close)
+lowerWick = math.min(open, close) - low
+prevBody = math.max(math.abs(close[1] - open[1]), syminfo.mintick)
+
+bullEngulf = close > open and close[1] < open[1] and open <= close[1] and close >= open[1] and body >= prevBody * engulfBodyRatio and volume > volume[1]
+bearEngulf = close < open and close[1] > open[1] and open >= close[1] and close <= open[1] and body >= prevBody * engulfBodyRatio and volume > volume[1]
+bullReject = lowerWick >= body * wickBodyRatio and upperWick <= body * 1.2 and close > open
+bearReject = upperWick >= body * wickBodyRatio and lowerWick <= body * 1.2 and close < open
+
+bullConfirm = bullEngulf or bullReject or volSpike
+bearConfirm = bearEngulf or bearReject or volSpike
+
+//------------------------------------------------------------------------------
+// Scoring and signals
+//------------------------------------------------------------------------------
+longTrendOk = not useTrendFilter or trendBull
+shortTrendOk = not useTrendFilter or trendBear
+longCandleOk = not requireCandleConfirm or bullConfirm
+shortCandleOk = not requireCandleConfirm or bearConfirm
+
+longScore = 0.0
+longScore += activeLowSweep ? 1.0 : 0.0
+longScore += nearBullOB ? 0.9 : 0.0
+longScore += recentBullStruct ? 0.7 : 0.0
+longScore += nearBullFvg ? 0.3 : 0.0
+longScore += trendBull ? 0.4 : 0.0
+longScore += bullConfirm ? 0.2 : 0.0
+
+shortScore = 0.0
+shortScore += activeHighSweep ? 1.0 : 0.0
+shortScore += nearBearOB ? 0.9 : 0.0
+shortScore += recentBearStruct ? 0.7 : 0.0
+shortScore += nearBearFvg ? 0.3 : 0.0
+shortScore += trendBear ? 0.4 : 0.0
+shortScore += bearConfirm ? 0.2 : 0.0
+
+longSLStruct = slMode == "Sweep" and not na(lastLowSweepPrice) ? lastLowSweepPrice - syminfo.mintick : not na(lastSwingLow) ? lastSwingLow - atr * 0.15 : close - atr * slAtrMult
+shortSLStruct = slMode == "Sweep" and not na(lastHighSweepPrice) ? lastHighSweepPrice + syminfo.mintick : not na(lastSwingHigh) ? lastSwingHigh + atr * 0.15 : close + atr * slAtrMult
+longSL = slMode == "ATR" ? close - atr * slAtrMult : longSLStruct
+shortSL = slMode == "ATR" ? close + atr * slAtrMult : shortSLStruct
+
+longRisk = close - longSL
+shortRisk = shortSL - close
+longTP1 = close + longRisk * tp1R
+longTP2 = close + longRisk * tp2R
+longTP3 = close + longRisk * tp3R
+shortTP1 = close - shortRisk * tp1R
+shortTP2 = close - shortRisk * tp2R
+shortTP3 = close - shortRisk * tp3R
+
+longRR = longRisk > 0 ? math.abs((ta.highest(high, 20) - close) / longRisk) : 0.0
+shortRR = shortRisk > 0 ? math.abs((close - ta.lowest(low, 20)) / shortRisk) : 0.0
+
+buy = longScore >= setupThreshold and longTrendOk and longCandleOk and volOk and longRisk > 0 and longRR >= minRR
+sell = shortScore >= setupThreshold and shortTrendOk and shortCandleOk and volOk and shortRisk > 0 and shortRR >= minRR
+
+//------------------------------------------------------------------------------
+// Professional visuals
+//------------------------------------------------------------------------------
+candleColor = trendState == 1 ? color.new(bull, 0) : trendState == -1 ? color.new(bear, 0) : color.new(neutral, 0)
+barcolor(paintCandles ? candleColor : na)
+plot(showInternalPlots ? emaFast : na, "Fast EMA", color=color.new(blue, 0), linewidth=1)
+plot(showInternalPlots ? emaSlow : na, "Slow EMA", color=color.new(gold, 0), linewidth=1)
+plot(showInternalPlots ? vwapVal : na, "VWAP", color=color.new(color.white, 35), linewidth=1)
+
+var int positionState = 0
+var float activeEntry = na
+var float activeSL = na
+var float activeTP1 = na
+var int activeDir = 0
+entryBuy = buy and positionState <= 0
+entrySell = sell and positionState >= 0
+
+longExitBySL = positionState == 1 and not na(activeSL) and low <= activeSL
+longExitByTP = positionState == 1 and not na(activeTP1) and high >= activeTP1
+longExitByFlip = positionState == 1 and sell
+shortExitBySL = positionState == -1 and not na(activeSL) and high >= activeSL
+shortExitByTP = positionState == -1 and not na(activeTP1) and low <= activeTP1
+shortExitByFlip = positionState == -1 and buy
+exitLong = longExitBySL or longExitByTP or longExitByFlip
+exitShort = shortExitBySL or shortExitByTP or shortExitByFlip
+exitSignal = exitLong or exitShort
+exitPrice = exitLong ? longExitBySL ? activeSL : longExitByTP ? activeTP1 : close : exitShort ? shortExitBySL ? activeSL : shortExitByTP ? activeTP1 : close : na
+exitPnl = exitSignal and not na(activeEntry) ? activeDir == 1 ? exitPrice - activeEntry : activeEntry - exitPrice : na
+exitPnlPct = exitSignal and not na(activeEntry) and activeEntry != 0 ? exitPnl / activeEntry * 100.0 : na
+buyConf = math.min(100.0, longScore / 3.5 * 100.0)
+sellConf = math.min(100.0, shortScore / 3.5 * 100.0)
+
+if showSignals and entryBuy
+    label.new(bar_index, low, "BUY\nEntry: " + str.tostring(close, format.mintick) + "\nConf: " + str.tostring(buyConf, "#.##") + "%", style=label.style_label_up, color=color.green, textcolor=color.white, size=size.normal)
+if showSignals and entrySell
+    label.new(bar_index, high, "SELL\nEntry: " + str.tostring(close, format.mintick) + "\nConf: " + str.tostring(sellConf, "#.##") + "%", style=label.style_label_down, color=color.red, textcolor=color.white, size=size.normal)
+if showSignals and exitSignal
+    label.new(bar_index, high, "EXIT\nExit: " + str.tostring(exitPrice, format.mintick) + "\nP&L: " + str.tostring(exitPnl, format.mintick) + " (" + str.tostring(exitPnlPct, "#.##") + "%)", style=label.style_label_down, color=exitPnl >= 0 ? color.green : color.red, textcolor=color.white, size=size.normal)
+
+if exitSignal
+    positionState := 0
+    activeEntry := na
+    activeSL := na
+    activeTP1 := na
+    activeDir := 0
+if entryBuy
+    positionState := 1
+    activeEntry := close
+    activeSL := longSL
+    activeTP1 := longTP1
+    activeDir := 1
+if entrySell
+    positionState := -1
+    activeEntry := close
+    activeSL := shortSL
+    activeTP1 := shortTP1
+    activeDir := -1
+
+var line slLine = na
+var line tp1Line = na
+var line tp2Line = na
+var line tp3Line = na
+var label riskLabel = na
+
+if showRiskLines and (entryBuy or entrySell)
+    line.delete(slLine)
+    line.delete(tp1Line)
+    line.delete(tp2Line)
+    line.delete(tp3Line)
+    label.delete(riskLabel)
+    sigSL = entryBuy ? longSL : shortSL
+    sigTP1 = entryBuy ? longTP1 : shortTP1
+    sigTP2 = entryBuy ? longTP2 : shortTP2
+    sigTP3 = entryBuy ? longTP3 : shortTP3
+    sigText = entryBuy ? "LONG PLAN" : "SHORT PLAN"
+    slLine := line.new(bar_index, sigSL, bar_index + 30, sigSL, color=color.new(bear, 0), width=2)
+    tp1Line := line.new(bar_index, sigTP1, bar_index + 30, sigTP1, color=color.new(bull, 0), width=1)
+    tp2Line := line.new(bar_index, sigTP2, bar_index + 30, sigTP2, color=color.new(bull, 0), width=1)
+    tp3Line := line.new(bar_index, sigTP3, bar_index + 30, sigTP3, color=color.new(bull, 0), width=1)
+    riskLabel := label.new(bar_index + 30, sigTP2, sigText + "\nSL " + str.tostring(sigSL, format.mintick) + "\nTP1 " + str.tostring(sigTP1, format.mintick) + "\nTP2 " + str.tostring(sigTP2, format.mintick) + "\nTP3 " + str.tostring(sigTP3, format.mintick), style=label.style_label_left, color=color.new(panelBg, 0), textcolor=panelText, size=size.small)
+
+// Session box
+inSession = not na(time(timeframe.period, sessionInput))
+newSession = inSession and not inSession[1]
+endSession = not inSession and inSession[1]
+var box sessionBox = na
+var float sessHigh = na
+var float sessLow = na
+if showSessions and newSession
+    sessHigh := high
+    sessLow := low
+    sessionBox := box.new(bar_index, sessHigh, bar_index, sessLow, border_color=color.new(blue, 70), bgcolor=color.new(blue, 92))
+if showSessions and inSession and not na(sessionBox)
+    sessHigh := math.max(sessHigh, high)
+    sessLow := math.min(sessLow, low)
+    box.set_right(sessionBox, bar_index)
+    box.set_top(sessionBox, sessHigh)
+    box.set_bottom(sessionBox, sessLow)
+if showSessions and endSession and not na(sessionBox)
+    box.set_right(sessionBox, bar_index)
+
+// Dashboard
+var table dash = table.new(position.top_right, 2, 9, border_width=1, border_color=color.new(color.white, 85))
+if showDashboard and barstate.islast
+    biasText = trendState == 1 ? "BULLISH" : trendState == -1 ? "BEARISH" : "TRANSITION"
+    biasColor = trendState == 1 ? bull : trendState == -1 ? bear : neutral
+    tier = math.max(longScore, shortScore) >= 3.0 ? "MONEY" : math.max(longScore, shortScore) >= 2.0 ? "ELITE" : math.max(longScore, shortScore) >= 1.5 ? "STRONG" : math.max(longScore, shortScore) >= 1.0 ? "GOOD" : "WAIT"
+    table.cell(dash, 0, 0, "SMC ALGO", text_color=color.white, bgcolor=color.rgb(10, 12, 18))
+    table.cell(dash, 1, 0, syminfo.ticker, text_color=color.white, bgcolor=color.rgb(10, 12, 18))
+    table.cell(dash, 0, 1, "Bias", text_color=panelText, bgcolor=panelBg)
+    table.cell(dash, 1, 1, biasText, text_color=color.white, bgcolor=color.new(biasColor, 0))
+    table.cell(dash, 0, 2, "HTF", text_color=panelText, bgcolor=panelBg)
+    table.cell(dash, 1, 2, htfBull ? "BULL" : htfBear ? "BEAR" : "FLAT", text_color=color.white, bgcolor=htfBull ? color.new(bull, 0) : htfBear ? color.new(bear, 0) : color.new(neutral, 0))
+    table.cell(dash, 0, 3, "Sweep", text_color=panelText, bgcolor=panelBg)
+    table.cell(dash, 1, 3, activeLowSweep ? "LOW ACTIVE" : activeHighSweep ? "HIGH ACTIVE" : "NONE", text_color=panelText, bgcolor=panelBg)
+    table.cell(dash, 0, 4, "Order Block", text_color=panelText, bgcolor=panelBg)
+    table.cell(dash, 1, 4, nearBullOB ? "BULL REACT" : nearBearOB ? "BEAR REACT" : "WAIT", text_color=panelText, bgcolor=panelBg)
+    table.cell(dash, 0, 5, "FVG", text_color=panelText, bgcolor=panelBg)
+    table.cell(dash, 1, 5, nearBullFvg ? "BULL" : nearBearFvg ? "BEAR" : "NONE", text_color=panelText, bgcolor=panelBg)
+    table.cell(dash, 0, 6, "ATR %", text_color=panelText, bgcolor=panelBg)
+    table.cell(dash, 1, 6, str.tostring(atrPct, "#.##") + "%", text_color=volOk ? color.white : bear, bgcolor=panelBg)
+    table.cell(dash, 0, 7, "Score", text_color=panelText, bgcolor=panelBg)
+    table.cell(dash, 1, 7, str.tostring(math.max(longScore, shortScore), "#.##") + " " + tier, text_color=color.white, bgcolor=math.max(longScore, shortScore) >= setupThreshold ? color.new(bull, 0) : panelBg)
+    table.cell(dash, 0, 8, "Signal", text_color=panelText, bgcolor=panelBg)
+    table.cell(dash, 1, 8, entryBuy ? "BUY" : entrySell ? "SELL" : exitSignal ? "EXIT" : "WAIT", text_color=color.white, bgcolor=entryBuy ? color.new(bull, 0) : entrySell ? color.new(bear, 0) : exitSignal ? color.new(neutral, 0) : panelBg)
+
+//------------------------------------------------------------------------------
+// Alerts
+//------------------------------------------------------------------------------
+alertcondition(entryBuy, title="BUY SIGNAL", message="BUY {{ticker}} {{interval}}")
+alertcondition(entrySell, title="SELL SIGNAL", message="SELL {{ticker}} {{interval}}")
+alertcondition(exitSignal, title="EXIT SIGNAL", message="EXIT {{ticker}} {{interval}}")

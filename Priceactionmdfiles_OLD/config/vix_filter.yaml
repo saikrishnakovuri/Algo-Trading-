@@ -1,0 +1,18 @@
+vix_filter:
+  enabled: true
+  
+  # Thresholds for VIX classification
+  spike_threshold_pct: 3.0          # Single candle +3% = SPIKE (crash)
+  spike_3bar_threshold_pct: 5.0     # 3-candle +5% = SPIKE
+  rising_threshold_pct: 0.5         # Single candle +0.5% = RISING
+  rising_3bar_threshold_pct: 1.5    # 3-candle +1.5% = RISING
+  falling_threshold_pct: -0.5       # Below = FALLING
+  falling_3bar_threshold_pct: -1.5
+  
+  # Confidence adjustments
+  spike_long_block: true            # Completely block longs during spike
+  spike_short_boost: 15             # +15% confidence for shorts in spike
+  rising_long_penalty: 15           # -15% for longs when VIX rising
+  rising_short_boost: 10            # +10% for shorts when VIX rising
+  falling_long_boost: 10            # +10% for longs when VIX falling
+  falling_short_penalty: 15         # -15% for shorts when VIX falling

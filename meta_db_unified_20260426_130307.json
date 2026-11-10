@@ -1,0 +1,16 @@
+[
+  {
+    "symbol": "RELIANCE",
+    "date": "2026-03-10 14:15",
+    "time": "14:15",
+    "type": "PE",
+    "setup": "TRAP_REVERSAL",
+    "qty": 302,
+    "entry": 1410.38855295,
+    "sl": 1426.9,
+    "target": 1409.050714285714,
+    "outcome": "TARGET HIT",
+    "score": 5.699999999999999,
+    "pnl": 404.03
+  }
+]

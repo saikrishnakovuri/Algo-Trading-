@@ -1,0 +1,4 @@
+live:
+  forced_observation: false   # Enable active trade execution
+  websocket_log_path: "logs/ws_integrity.log"
+  heartbeat_interval_sec: 60

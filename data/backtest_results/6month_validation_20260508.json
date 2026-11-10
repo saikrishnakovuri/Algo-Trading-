@@ -1,0 +1,106 @@
+{
+    "summary": {
+        "Total Trades": 1505,
+        "WR": "30.0%",
+        "Net PnL": "INR 982,727",
+        "Max DD": "17.70%",
+        "Sharpe": 0.82,
+        "PF": 1.29,
+        "Trades/Day": 12.04
+    },
+    "monthly": [
+        {
+            "Month": "2025-10",
+            "Trades": 53,
+            "WR": "26.4%",
+            "Net PnL": "INR -53,635",
+            "PF": 0.36,
+            "Regimes": "LOW_VOL, TRENDING_UP, BREAKOUT_SETUP, TRENDING_DOWN"
+        },
+        {
+            "Month": "2025-11",
+            "Trades": 218,
+            "WR": "28.0%",
+            "Net PnL": "INR -73,549",
+            "PF": 0.78,
+            "Regimes": "LOW_VOL, BREAKOUT_SETUP, TRENDING_UP, TRENDING_DOWN, CHOPPY, RANGING"
+        },
+        {
+            "Month": "2025-12",
+            "Trades": 276,
+            "WR": "32.2%",
+            "Net PnL": "INR -51,418",
+            "PF": 0.84,
+            "Regimes": "BREAKOUT_SETUP, TRENDING_DOWN, TRENDING_UP, LOW_VOL, RANGING, CHOPPY"
+        },
+        {
+            "Month": "2026-01",
+            "Trades": 209,
+            "WR": "24.4%",
+            "Net PnL": "INR -130,300",
+            "PF": 0.65,
+            "Regimes": "LOW_VOL, BREAKOUT_SETUP, TRENDING_DOWN, RANGING, TRENDING_UP, CHOPPY"
+        },
+        {
+            "Month": "2026-02",
+            "Trades": 251,
+            "WR": "25.9%",
+            "Net PnL": "INR -4,204",
+            "PF": 0.99,
+            "Regimes": "LOW_VOL, TRENDING_DOWN, TRENDING_UP, BREAKOUT_SETUP, CHOPPY, RANGING, HIGH_VOL"
+        },
+        {
+            "Month": "2026-03",
+            "Trades": 271,
+            "WR": "36.9%",
+            "Net PnL": "INR 1,175,913",
+            "PF": 2.31,
+            "Regimes": "TRENDING_DOWN, LOW_VOL, BREAKOUT_SETUP, TRENDING_UP, RANGING, CHOPPY"
+        },
+        {
+            "Month": "2026-04",
+            "Trades": 227,
+            "WR": "31.3%",
+            "Net PnL": "INR 119,918",
+            "PF": 1.13,
+            "Regimes": "TRENDING_UP, LOW_VOL, TRENDING_DOWN, CHOPPY, BREAKOUT_SETUP, RANGING"
+        }
+    ],
+    "strategies": [
+        {
+            "Strategy": "CANDLESTICK",
+            "Trades": 174,
+            "WR": "50.0%",
+            "Net PnL": "INR 467,709",
+            "Avg R": 0.68
+        },
+        {
+            "Strategy": "MEAN_REVERSION",
+            "Trades": 72,
+            "WR": "11.1%",
+            "Net PnL": "INR 260,482",
+            "Avg R": 1.24
+        },
+        {
+            "Strategy": "MOMENTUM_BREAKOUT",
+            "Trades": 429,
+            "WR": "21.7%",
+            "Net PnL": "INR -963",
+            "Avg R": -0.04
+        },
+        {
+            "Strategy": "STRUCTURE_BOUNCE",
+            "Trades": 6,
+            "WR": "50.0%",
+            "Net PnL": "INR -13,641",
+            "Avg R": 0.5
+        },
+        {
+            "Strategy": "VWAP_BOUNCE",
+            "Trades": 824,
+            "WR": "31.6%",
+            "Net PnL": "INR 269,140",
+            "Avg R": -0.07
+        }
+    ]
+}

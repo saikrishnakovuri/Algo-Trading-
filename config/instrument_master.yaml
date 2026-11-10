@@ -1,0 +1,5 @@
+lot_sizes:
+  NIFTY: 65
+  BANKNIFTY: 30
+  FINNIFTY: 40
+  SENSEX: 20

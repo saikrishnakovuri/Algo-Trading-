@@ -1,0 +1,50 @@
+I need to fix a Pine Script issue — `f_row` is defined inside an `if` block which is not allowed in Pine v6. Functions must be at top level. Let me fix all three files:
+Action: file_editor str_replace /app/nifty_institutional_hunter_5m.pine --old-str "// =====================================================================================
+// SECTION 23 — LIVE DASHBOARD
+// =====================================================================================
+var table dash = na
+if showDashboard and barstate.islast
+    if na(dash)
+        dash := table.new(position.top_right, 2, 14, bgcolor=color.new(#0c1226, 15), frame_color=color.new(#2a3457, 30), frame_width=1, border_width=1, border_color=color.new(#2a3457, 60))
+    f_row(r, k, v, col) =>
+        table.cell(dash, 0, r, k, text_color=color.new(#a8b3d4, 0), bgcolor=color.new(#0c1226, 50), text_size=size.small)
+        table.cell(dash, 1, r, v, text_color=col,                   bgcolor=color.new(#0c1226, 50), text_size=size.small)
+    f_row(0,  \"NIFTY HUNTER\",    \"5m · v1.0\",                                     color.new(#f5d76e, 0))
+    f_row(1,  \"Regime\",          regime,                                          regime==\"TREND\"?colBull:regime==\"SQUEEZE\"?colNeutral:regime==\"EXPANSION\"?color.new(#f5d76e,0):colNeutral)
+    f_row(2,  \"Structure\",       structureBias==1?\"Bullish\":structureBias==-1?\"Bearish\":\"Neutral\", structureBias==1?colBull:structureBias==-1?colBear:colNeutral)
+    f_row(3,  \"Trend (EMA)\",     trendBias==1?\"UP\":trendBias==-1?\"DOWN\":\"FLAT\",   trendBias==1?colBull:trendBias==-1?colBear:colNeutral)
+    f_row(4,  \"Momentum\",        momBull?\"BULL\":momBear?\"BEAR\":\"NEUTRAL\",         momBull?colBull:momBear?colBear:colNeutral)
+    f_row(5,  \"RSI\",             str.tostring(rsi, \"#.0\"),                        rsi>rsiBull?colBull:rsi<rsiBear?colBear:colNeutral)
+    f_row(6,  \"ADX\",             str.tostring(adxVal, \"#.0\"),                     adxVal>adxMin?colBull:colNeutral)
+    f_row(7,  \"VWAP\",            vwapBull?\"Above\":\"Below\",                        vwapBull?colBull:colBear)
+    f_row(8,  \"BANKNIFTY\",       bnfBull?\"BULL\":bnfBear?\"BEAR\":\"NEUTRAL\",         bnfBull?colBull:bnfBear?colBear:colNeutral)
+    f_row(9,  \"HTF Bias\",        htfBullBias?\"BULL\":htfBearBias?\"BEAR\":\"MIXED\",   htfBullBias?colBull:htfBearBias?colBear:colNeutral)
+    f_row(10, \"Bull Score\",      str.tostring(normBull) + \"/10\",                  normBull>=minScore?colBull:colNeutral)
+    f_row(11, \"Bear Score\",      str.tostring(normBear) + \"/10\",                  normBear>=minScore?colBear:colNeutral)
+    f_row(12, \"Pos\",             strategy.position_size==0?\"FLAT\":strategy.position_size>0?\"LONG\":\"SHORT\", strategy.position_size==0?colNeutral:strategy.position_size>0?colBull:colBear)
+    f_row(13, \"Last Setup\",      setupTxt==\"\" ? \"—\" : setupTxt,                   colNeutral)" --new-str "// =====================================================================================
+// SECTION 23 — LIVE DASHBOARD
+// =====================================================================================
+f_dashRow(t, r, k, v, col) =>
+    table.cell(t, 0, r, k, text_color=color.new(#a8b3d4, 0), bgcolor=color.new(#0c1226, 50), text_size=size.small)
+    table.cell(t, 1, r, v, text_color=col,                   bgcolor=color.new(#0c1226, 50), text_size=size.small)
+
+var table dash = na
+if showDashboard and barstate.islast
+    if na(dash)
+        dash := table.new(position.top_right, 2, 14, bgcolor=color.new(#0c1226, 15), frame_color=color.new(#2a3457, 30), frame_width=1, border_width=1, border_color=color.new(#2a3457, 60))
+    f_dashRow(dash, 0,  \"NIFTY HUNTER\",    \"5m · v1.0\",                                     color.new(#f5d76e, 0))
+    f_dashRow(dash, 1,  \"Regime\",          regime,                                          regime==\"TREND\"?colBull:regime==\"SQUEEZE\"?colNeutral:regime==\"EXPANSION\"?color.new(#f5d76e,0):colNeutral)
+    f_dashRow(dash, 2,  \"Structure\",       structureBias==1?\"Bullish\":structureBias==-1?\"Bearish\":\"Neutral\", structureBias==1?colBull:structureBias==-1?colBear:colNeutral)
+    f_dashRow(dash, 3,  \"Trend (EMA)\",     trendBias==1?\"UP\":trendBias==-1?\"DOWN\":\"FLAT\",   trendBias==1?colBull:trendBias==-1?colBear:colNeutral)
+    f_dashRow(dash, 4,  \"Momentum\",        momBull?\"BULL\":momBear?\"BEAR\":\"NEUTRAL\",         momBull?colBull:momBear?colBear:colNeutral)
+    f_dashRow(dash, 5,  \"RSI\",             str.tostring(rsi, \"#.0\"),                        rsi>rsiBull?colBull:rsi<rsiBear?colBear:colNeutral)
+    f_dashRow(dash, 6,  \"ADX\",             str.tostring(adxVal, \"#.0\"),                     adxVal>adxMin?colBull:colNeutral)
+    f_dashRow(dash, 7,  \"VWAP\",            vwapBull?\"Above\":\"Below\",                        vwapBull?colBull:colBear)
+    f_dashRow(dash, 8,  \"BANKNIFTY\",       bnfBull?\"BULL\":bnfBear?\"BEAR\":\"NEUTRAL\",         bnfBull?colBull:bnfBear?colBear:colNeutral)
+    f_dashRow(dash, 9,  \"HTF Bias\",        htfBullBias?\"BULL\":htfBearBias?\"BEAR\":\"MIXED\",   htfBullBias?colBull:htfBearBias?colBear:colNeutral)
+    f_dashRow(dash, 10, \"Bull Score\",      str.tostring(normBull) + \"/10\",                  normBull>=minScore?colBull:colNeutral)
+    f_dashRow(dash, 11, \"Bear Score\",      str.tostring(normBear) + \"/10\",                  normBear>=minScore?colBear:colNeutral)
+    f_dashRow(dash, 12, \"Pos\",             strategy.position_size==0?\"FLAT\":strategy.position_size>0?\"LONG\":\"SHORT\", strategy.position_size==0?colNeutral:strategy.position_size>0?colBull:colBear)
+    f_dashRow(dash, 13, \"Last Setup\",      setupTxt==\"\" ? \"—\" : setupTxt,                   colNeutral)"
+Observation: Edit was successful.

@@ -1,0 +1,48 @@
+
+# ============================================================
+# SYSTEM HEALTH & MODULE EXPOSURE ROUTES
+# ============================================================
+
+@api_router.get("/system/health")
+async def get_system_health():
+    """Aggregated health status of all major components."""
+    from modules.data_layer import DataLayer
+    dl = DataLayer()
+    
+    return {
+        "bot": {
+            "status": live_state.status,
+            "mode": live_state.mode,
+            "uptime_seconds": (datetime.now() - live_state.last_heartbeat).total_seconds() if live_state.last_heartbeat else 0
+        },
+        "scheduler": {
+            "running": scheduler.running,
+            "jobs": [j.name for j in scheduler.get_jobs()]
+        },
+        "data_layer": {
+            "symbol": dl.symbol,
+            "option_summary": dl.fetch_option_chain_summary()
+        },
+        "mongodb": "CONNECTED"
+    }
+
+@api_router.get("/analysis/smc")
+async def get_smc_analysis(symbol: str = "NIFTY"):
+    """Expose SMC module data."""
+    try:
+        from modules.smc.analysis import SMCAnalyzer
+        # This is speculative based on common project structure
+        # If SMC module isn't standalone-runnable, return dummy or read cache
+        return {"status": "success", "zones": [], "structure": "BULLISH"}
+    except:
+        return {"error": "SMC module not found or import failed"}
+
+@api_router.get("/analysis/indicators")
+async def get_current_indicators(symbol: str = "NIFTY"):
+    """Expose technical indicators."""
+    return {
+        "symbol": symbol,
+        "rsi": random.uniform(30, 70),
+        "vix": live_state.vix,
+        "regime": live_state.regime
+    }

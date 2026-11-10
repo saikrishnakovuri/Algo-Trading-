@@ -1,0 +1,37 @@
+strategies:
+  TRAP_REVERSAL:
+    enabled: true
+    allowed_symbols: "ALL"
+    min_score_override: null
+    
+  ZONE_REJECTION:
+    enabled: true
+    allowed_symbols:
+      - HDFCBANK
+      - ICICIBANK
+      - KOTAKBANK
+      - AXISBANK
+    min_score_override: 7.0
+    
+  OB_MITIGATION:
+    enabled: true
+    allowed_symbols: "ALL"
+    min_score_override: null
+    
+  LIQUIDITY_SWEEP:
+    enabled: true
+    allowed_symbols: "ALL"
+    min_score_override: null
+
+  TREND_CONTINUATION:
+    enabled: true
+    allowed_symbols: "ALL"
+    min_score_override: null
+
+  BREAKOUT:
+    enabled: true
+    allowed_symbols: "ALL"
+    min_score_override: null
+
+# Default: any strategy NOT listed here is ENABLED on ALL symbols
+default_enabled: true

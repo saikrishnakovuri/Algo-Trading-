@@ -1,0 +1,26 @@
+no_trade_dates:
+  # Dates where the bot stays FLAT (no new entries)
+  annual_events:
+    - "BUDGET_DAY"          # Union Budget (usually Feb 1)
+    - "RBI_POLICY"          # RBI monetary policy (6 times/year)
+    - "ELECTION_RESULTS"    # General election result day
+    - "EXPIRY_DAY"          # Monthly F&O expiry (last Thursday)
+  
+  # Static dates for 2026 (update yearly):
+  blocked_dates:
+    "2026-02-01": "Union Budget Day"
+    "2026-01-16": "Heavy Earnings Day"
+    "2026-04-22": "Earnings Season Start"
+    "2026-01-30": "Budget Expectation Buildup"
+    "2026-03-04": "Global Market Shock"
+  
+  # Per-symbol earnings blackout:
+  # Block a stock 1 day before AND on its earnings date
+  earnings_blackout:
+    RELIANCE: ["2026-01-16", "2026-04-22"]
+    INFY: ["2026-01-16", "2026-04-15"]
+    HDFCBANK: ["2026-01-19", "2026-04-20"]
+    ICICIBANK: ["2026-01-20", "2026-04-18"]
+  
+  # Behavior on blocked dates:
+  action: "NO_NEW_ENTRIES"  # Keep existing positions, just don't open NEW ones

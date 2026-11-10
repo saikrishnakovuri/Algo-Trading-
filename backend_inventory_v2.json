@@ -1,0 +1,411 @@
+{
+  "phase": 1,
+  "generated_at": "2026-05-11T03:59:20.372367",
+  "api_endpoints": [
+    {
+      "method": "POST",
+      "path": "/run",
+      "router": "backtest.py",
+      "purpose": "Endpoint in backtest.py"
+    },
+    {
+      "method": "GET",
+      "path": "/status/{job_id}",
+      "router": "backtest.py",
+      "purpose": "Endpoint in backtest.py"
+    },
+    {
+      "method": "GET",
+      "path": "/result/{job_id}",
+      "router": "backtest.py",
+      "purpose": "Endpoint in backtest.py"
+    },
+    {
+      "method": "GET",
+      "path": "/history",
+      "router": "backtest.py",
+      "purpose": "Endpoint in backtest.py"
+    },
+    {
+      "method": "GET",
+      "path": "/list",
+      "router": "configs.py",
+      "purpose": "Endpoint in configs.py"
+    },
+    {
+      "method": "GET",
+      "path": "/{name}",
+      "router": "configs.py",
+      "purpose": "Endpoint in configs.py"
+    },
+    {
+      "method": "POST",
+      "path": "/{name}",
+      "router": "configs.py",
+      "purpose": "Endpoint in configs.py"
+    },
+    {
+      "method": "POST",
+      "path": "/{name}/revert",
+      "router": "configs.py",
+      "purpose": "Endpoint in configs.py"
+    },
+    {
+      "method": "GET",
+      "path": "/list",
+      "router": "docs.py",
+      "purpose": "Endpoint in docs.py"
+    },
+    {
+      "method": "GET",
+      "path": "/{name}",
+      "router": "docs.py",
+      "purpose": "Endpoint in docs.py"
+    },
+    {
+      "method": "GET",
+      "path": "/search",
+      "router": "docs.py",
+      "purpose": "Endpoint in docs.py"
+    },
+    {
+      "method": "GET",
+      "path": "/tail",
+      "router": "logs.py",
+      "purpose": "Endpoint in logs.py"
+    },
+    {
+      "method": "GET",
+      "path": "/subscriptions",
+      "router": "notifications.py",
+      "purpose": "Endpoint in notifications.py"
+    },
+    {
+      "method": "POST",
+      "path": "/toggle",
+      "router": "notifications.py",
+      "purpose": "Endpoint in notifications.py"
+    },
+    {
+      "method": "POST",
+      "path": "/test-send",
+      "router": "notifications.py",
+      "purpose": "Endpoint in notifications.py"
+    },
+    {
+      "method": "GET",
+      "path": "/current",
+      "router": "regime.py",
+      "purpose": "Endpoint in regime.py"
+    },
+    {
+      "method": "GET",
+      "path": "/history",
+      "router": "regime.py",
+      "purpose": "Endpoint in regime.py"
+    },
+    {
+      "method": "POST",
+      "path": "/thresholds",
+      "router": "regime.py",
+      "purpose": "Endpoint in regime.py"
+    },
+    {
+      "method": "GET",
+      "path": "/state",
+      "router": "riskguard.py",
+      "purpose": "Endpoint in riskguard.py"
+    },
+    {
+      "method": "POST",
+      "path": "/limits",
+      "router": "riskguard.py",
+      "purpose": "Endpoint in riskguard.py"
+    },
+    {
+      "method": "POST",
+      "path": "/reset",
+      "router": "riskguard.py",
+      "purpose": "Endpoint in riskguard.py"
+    },
+    {
+      "method": "GET",
+      "path": "/list",
+      "router": "strategies.py",
+      "purpose": "Endpoint in strategies.py"
+    },
+    {
+      "method": "POST",
+      "path": "/toggle",
+      "router": "strategies.py",
+      "purpose": "Endpoint in strategies.py"
+    },
+    {
+      "method": "POST",
+      "path": "/min_confidence",
+      "router": "strategies.py",
+      "purpose": "Endpoint in strategies.py"
+    },
+    {
+      "method": "POST",
+      "path": "/start",
+      "router": "system.py",
+      "purpose": "Endpoint in system.py"
+    },
+    {
+      "method": "POST",
+      "path": "/stop",
+      "router": "system.py",
+      "purpose": "Endpoint in system.py"
+    },
+    {
+      "method": "POST",
+      "path": "/kill-switch",
+      "router": "system.py",
+      "purpose": "Endpoint in system.py"
+    },
+    {
+      "method": "GET",
+      "path": "/status",
+      "router": "system.py",
+      "purpose": "Endpoint in system.py"
+    },
+    {
+      "method": "GET",
+      "path": "/live",
+      "router": "trades.py",
+      "purpose": "Endpoint in trades.py"
+    },
+    {
+      "method": "GET",
+      "path": "/history",
+      "router": "trades.py",
+      "purpose": "Endpoint in trades.py"
+    }
+  ],
+  "websocket_endpoints": [
+    {
+      "path": "/ws/live-pnl",
+      "purpose": "WS in live_pnl.py"
+    },
+    {
+      "path": "/ws/logs",
+      "purpose": "WS in logs.py"
+    }
+  ],
+  "config_fields": [
+    {
+      "file": "config/assets.yaml",
+      "path": "root"
+    },
+    {
+      "file": "config/candlestick.yaml",
+      "path": "root"
+    },
+    {
+      "file": "config/charting.yaml",
+      "path": "root"
+    },
+    {
+      "file": "config/context_filters.yaml",
+      "path": "root"
+    },
+    {
+      "file": "config/events.yaml",
+      "path": "root"
+    },
+    {
+      "file": "config/intermarket.yaml",
+      "path": "root"
+    },
+    {
+      "file": "config/market_hours.yaml",
+      "path": "root"
+    },
+    {
+      "file": "config/mean_reversion.yaml",
+      "path": "root"
+    },
+    {
+      "file": "config/momentum.yaml",
+      "path": "root"
+    },
+    {
+      "file": "config/multi_strategy.yaml",
+      "path": "root"
+    },
+    {
+      "file": "config/no_trade_dates.yaml",
+      "path": "root"
+    },
+    {
+      "file": "config/paper_mode.yaml",
+      "path": "root"
+    },
+    {
+      "file": "config/portfolio_limits.yaml",
+      "path": "root"
+    },
+    {
+      "file": "config/regime.yaml",
+      "path": "root"
+    },
+    {
+      "file": "config/regime_gating.yaml",
+      "path": "root"
+    },
+    {
+      "file": "config/risk_execution.yaml",
+      "path": "root"
+    },
+    {
+      "file": "config/smc.yaml",
+      "path": "root"
+    },
+    {
+      "file": "config/strategy_filter.yaml",
+      "path": "root"
+    },
+    {
+      "file": "config/structure_strategy.yaml",
+      "path": "root"
+    },
+    {
+      "file": "config/sweep_retest.yaml",
+      "path": "root"
+    },
+    {
+      "file": "config/trading_calendar.yaml",
+      "path": "root"
+    },
+    {
+      "file": "config/trailing_sl.yaml",
+      "path": "root"
+    },
+    {
+      "file": "config/universe.yaml",
+      "path": "root"
+    },
+    {
+      "file": "config/universe_full.yaml",
+      "path": "root"
+    },
+    {
+      "file": "config/vix_filter.yaml",
+      "path": "root"
+    },
+    {
+      "file": "config/vp_avwap.yaml",
+      "path": "root"
+    }
+  ],
+  "v3_utils_constants": [
+    {
+      "name": "TOTAL_CAPITAL"
+    },
+    {
+      "name": "NIFTY_LOT_SIZE"
+    },
+    {
+      "name": "BANKNIFTY_LOT_SIZE"
+    },
+    {
+      "name": "MAX_RISK_PCT_EQUITY"
+    },
+    {
+      "name": "MAX_RISK_PCT_OPTIONS"
+    },
+    {
+      "name": "MAX_TRADES_PER_DAY"
+    },
+    {
+      "name": "MAX_SIMULTANEOUS"
+    },
+    {
+      "name": "MAX_CONSECUTIVE_LOSSES"
+    },
+    {
+      "name": "DAILY_LOSS_LIMIT_PCT"
+    },
+    {
+      "name": "WEEKLY_LOSS_LIMIT_PCT"
+    },
+    {
+      "name": "MAX_LEVERAGE"
+    },
+    {
+      "name": "NO_ENTRY_AFTER"
+    },
+    {
+      "name": "FORCE_CLOSE_AT"
+    },
+    {
+      "name": "MARKET_OPEN"
+    },
+    {
+      "name": "SIGNAL_GATE"
+    },
+    {
+      "name": "COOLDOWN_AFTER_2_LOSSES_MIN"
+    },
+    {
+      "name": "BROKERAGE_EQUITY"
+    },
+    {
+      "name": "BROKERAGE_OPTIONS"
+    },
+    {
+      "name": "DASHBOARD_URL"
+    },
+    {
+      "name": "NO_TRADE_ZONES"
+    },
+    {
+      "name": "REGIME_TYPES"
+    },
+    {
+      "name": "ENTRY_STRATEGIES"
+    },
+    {
+      "name": "SL_TYPES"
+    },
+    {
+      "name": "TP_TYPES"
+    },
+    {
+      "name": "STOCK_UNIVERSE"
+    }
+  ],
+  "data_file_fields": [],
+  "strategy_components": [],
+  "log_levels_observed": [
+    "INFO",
+    "WARNING",
+    "ERROR",
+    "DEBUG"
+  ],
+  "notification_types": [
+    {
+      "type": "trade_entry",
+      "channel": "telegram"
+    },
+    {
+      "type": "trade_exit",
+      "channel": "telegram"
+    }
+  ],
+  "subprocess_capabilities": [
+    {
+      "action": "start_live_trader",
+      "command": "python live_options_trader.py"
+    },
+    {
+      "action": "stop_live_trader",
+      "command": "SIGTERM"
+    },
+    {
+      "action": "run_backtest",
+      "command": "python main_backtest.py"
+    }
+  ]
+}

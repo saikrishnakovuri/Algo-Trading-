@@ -1,0 +1,183 @@
+[START] Month 2025-04-01. Equity: Rs 1248800.00
+[2025-04-01 13:55:00+05:30] [STOP] DAILY 2% CIRCUIT BREAKER. PnL: -30061.40
+[ADANIENT] HIGH_VOL penalty applied: -10 confidence
+[BAJFINANCE] VETO: ATR>1.8x avg (chaos).
+[BAJFINANCE] HIGH_VOL penalty applied: -10 confidence
+[CIPLA] VETO: ATR>1.8x avg (chaos).
+[ADANIENT] HIGH_VOL penalty applied: -10 confidence
+[ADANIPORTS] HIGH_VOL penalty applied: -10 confidence
+[APOLLOHOSP] VETO: ATR>1.8x avg (chaos).
+[ASIANPAINT] HIGH_VOL penalty applied: -10 confidence
+[BAJAJ-AUTO] HIGH_VOL penalty applied: -10 confidence
+[BAJAJFINSV] HIGH_VOL penalty applied: -10 confidence
+[CIPLA] VETO: ATR>1.8x avg (chaos).
+[BPCL] HIGH_VOL penalty applied: -10 confidence
+[CIPLA] VETO: ATR>1.8x avg (chaos).
+[CIPLA] HIGH_VOL penalty applied: -10 confidence
+[2025-04-04 10:55:00+05:30] [STOP] DAILY 2% CIRCUIT BREAKER. PnL: -39847.04
+[BHARTIARTL] VETO: ATR>1.8x avg (chaos).
+[BHARTIARTL] VETO: ATR>1.8x avg (chaos).
+[2025-04-07 10:15:00+05:30] [STOP] DAILY 2% CIRCUIT BREAKER. PnL: -27351.75
+[2025-04-08 11:50:00+05:30] [STOP] DAILY 2% CIRCUIT BREAKER. PnL: -31450.30
+[2025-04-09 10:20:00+05:30] [STOP] DAILY 2% CIRCUIT BREAKER. PnL: -25996.59
+[2025-04-16 11:35:00+05:30] [STOP] DAILY 2% CIRCUIT BREAKER. PnL: -25776.34
+[BHARTIARTL] HIGH_VOL penalty applied: -10 confidence
+[CIPLA] HIGH_VOL penalty applied: -10 confidence
+[BRITANNIA] HIGH_VOL penalty applied: -10 confidence
+[AXISBANK] HIGH_VOL penalty applied: -10 confidence
+[2025-04-23 10:15:00+05:30] [STOP] DAILY 2% CIRCUIT BREAKER. PnL: -35654.93
+[2025-04-24 12:10:00+05:30] [STOP] DAILY 2% CIRCUIT BREAKER. PnL: -28171.00
+[BAJAJFINSV] VETO: ATR>1.8x avg (chaos).
+[ADANIPORTS] HIGH_VOL penalty applied: -10 confidence
+[APOLLOHOSP] HIGH_VOL penalty applied: -10 confidence
+[AXISBANK] HIGH_VOL penalty applied: -10 confidence
+[BAJAJ-AUTO] HIGH_VOL penalty applied: -10 confidence
+[BAJAJFINSV] VETO: ATR>1.8x avg (chaos).
+[BAJFINANCE] VETO: ATR>1.8x avg (chaos).
+[CIPLA] HIGH_VOL penalty applied: -10 confidence
+[ADANIENT] HIGH_VOL penalty applied: -10 confidence
+[BAJFINANCE] VETO: ATR>1.8x avg (chaos).
+[ADANIPORTS] HIGH_VOL penalty applied: -10 confidence
+[BAJFINANCE] HIGH_VOL penalty applied: -10 confidence
+[BAJAJFINSV] HIGH_VOL penalty applied: -10 confidence
+[BAJFINANCE] HIGH_VOL penalty applied: -10 confidence
+[2025-04-29 10:00:00+05:30] [STOP] DAILY 2% CIRCUIT BREAKER. PnL: -33398.31
+[START] Month 2025-05-01. Equity: Rs 1255578.77
+[BPCL] HIGH_VOL penalty applied: -10 confidence
+[BAJFINANCE] HIGH_VOL penalty applied: -10 confidence
+[CIPLA] HIGH_VOL penalty applied: -10 confidence
+[ASIANPAINT] HIGH_VOL penalty applied: -10 confidence
+[CIPLA] HIGH_VOL penalty applied: -10 confidence
+[BAJAJFINSV] HIGH_VOL penalty applied: -10 confidence
+[2025-05-09 10:50:00+05:30] [STOP] DAILY 2% CIRCUIT BREAKER. PnL: -50152.73
+[ASIANPAINT] HIGH_VOL penalty applied: -10 confidence
+[BRITANNIA] HIGH_VOL penalty applied: -10 confidence
+[BHARTIARTL] HIGH_VOL penalty applied: -10 confidence
+[2025-05-13 11:00:00+05:30] [STOP] DAILY 2% CIRCUIT BREAKER. PnL: -45270.23
+[ASIANPAINT] HIGH_VOL penalty applied: -10 confidence
+[ASIANPAINT] HIGH_VOL penalty applied: -10 confidence
+[BAJAJFINSV] VETO: ATR>1.8x avg (chaos).
+[2025-05-16 12:55:00+05:30] [STOP] DAILY 2% CIRCUIT BREAKER. PnL: -69907.64
+[APOLLOHOSP] HIGH_VOL penalty applied: -10 confidence
+[BAJAJFINSV] HIGH_VOL penalty applied: -10 confidence
+[2025-05-20 10:25:00+05:30] [STOP] DAILY 2% CIRCUIT BREAKER. PnL: -43799.46
+[2025-05-22 11:00:00+05:30] [STOP] DAILY 2% CIRCUIT BREAKER. PnL: -70260.47
+[ADANIENT] HIGH_VOL penalty applied: -10 confidence
+[AXISBANK] VETO: ATR>1.8x avg (chaos).
+[BRITANNIA] HIGH_VOL penalty applied: -10 confidence
+[ADANIPORTS] HIGH_VOL penalty applied: -10 confidence
+[APOLLOHOSP] HIGH_VOL penalty applied: -10 confidence
+[BAJAJFINSV] VETO: ATR>1.8x avg (chaos).
+[CIPLA] VETO: ATR>1.8x avg (chaos).
+[ADANIPORTS] HIGH_VOL penalty applied: -10 confidence
+[BAJAJ-AUTO] HIGH_VOL penalty applied: -10 confidence
+[APOLLOHOSP] HIGH_VOL penalty applied: -10 confidence
+[AXISBANK] HIGH_VOL penalty applied: -10 confidence
+[2025-05-29 12:45:00+05:30] [STOP] DAILY 2% CIRCUIT BREAKER. PnL: -66255.94
+[ASIANPAINT] HIGH_VOL penalty applied: -10 confidence
+[2025-05-30 13:35:00+05:30] [STOP] DAILY 2% CIRCUIT BREAKER. PnL: -65973.53
+[START] Month 2025-07-01. Equity: Rs 2479959.76
+[2025-07-01 14:55:00+05:30] [STOP] DAILY 2% CIRCUIT BREAKER. PnL: -58005.31
+[BAJAJFINSV] HIGH_VOL penalty applied: -10 confidence
+[CIPLA] HIGH_VOL penalty applied: -10 confidence
+[BAJAJ-AUTO] HIGH_VOL penalty applied: -10 confidence
+[BAJAJ-AUTO] HIGH_VOL penalty applied: -10 confidence
+[CIPLA] HIGH_VOL penalty applied: -10 confidence
+[ASIANPAINT] HIGH_VOL penalty applied: -10 confidence
+[2025-07-14 11:35:00+05:30] [STOP] DAILY 2% CIRCUIT BREAKER. PnL: -81124.52
+[ASIANPAINT] HIGH_VOL penalty applied: -10 confidence
+[2025-07-17 12:15:00+05:30] [STOP] DAILY 2% CIRCUIT BREAKER. PnL: -110331.53
+[ADANIPORTS] HIGH_VOL penalty applied: -10 confidence
+[ADANIPORTS] HIGH_VOL penalty applied: -10 confidence
+[ADANIPORTS] HIGH_VOL penalty applied: -10 confidence
+[2025-07-21 10:00:00+05:30] [STOP] DAILY 2% CIRCUIT BREAKER. PnL: -104321.60
+[BHARTIARTL] HIGH_VOL penalty applied: -10 confidence
+[2025-07-22 11:40:00+05:30] [STOP] DAILY 2% CIRCUIT BREAKER. PnL: -108562.84
+[2025-07-23 13:10:00+05:30] [STOP] DAILY 2% CIRCUIT BREAKER. PnL: -108660.27
+[ADANIPORTS] HIGH_VOL penalty applied: -10 confidence
+[ADANIENT] HIGH_VOL penalty applied: -10 confidence
+[2025-07-24 11:45:00+05:30] [STOP] DAILY 2% CIRCUIT BREAKER. PnL: -108143.27
+[BRITANNIA] HIGH_VOL penalty applied: -10 confidence
+[BAJAJ-AUTO] HIGH_VOL penalty applied: -10 confidence
+[BAJAJFINSV] HIGH_VOL penalty applied: -10 confidence
+[ADANIENT] HIGH_VOL penalty applied: -10 confidence
+[2025-07-28 10:35:00+05:30] [STOP] DAILY 2% CIRCUIT BREAKER. PnL: -105202.97
+[2025-07-29 10:50:00+05:30] [STOP] DAILY 2% CIRCUIT BREAKER. PnL: -101394.55
+[BAJAJFINSV] HIGH_VOL penalty applied: -10 confidence
+[2025-07-30 11:20:00+05:30] [STOP] DAILY 2% CIRCUIT BREAKER. PnL: -100209.61
+[START] Month 2025-10-01. Equity: Rs 4035450.54
+[2025-10-03 10:20:00+05:30] [STOP] DAILY 2% CIRCUIT BREAKER. PnL: -101205.50
+[2025-10-07 13:20:00+05:30] [STOP] DAILY 2% CIRCUIT BREAKER. PnL: -84206.51
+[CIPLA] HIGH_VOL penalty applied: -10 confidence
+[BAJAJFINSV] HIGH_VOL penalty applied: -10 confidence
+[ADANIPORTS] HIGH_VOL penalty applied: -10 confidence
+[AXISBANK] HIGH_VOL penalty applied: -10 confidence
+[ADANIPORTS] HIGH_VOL penalty applied: -10 confidence
+[ADANIENT] HIGH_VOL penalty applied: -10 confidence
+[BAJAJ-AUTO] HIGH_VOL penalty applied: -10 confidence
+[CIPLA] HIGH_VOL penalty applied: -10 confidence
+[2025-10-14 10:50:00+05:30] [STOP] DAILY 2% CIRCUIT BREAKER. PnL: -147342.46
+[2025-10-23 14:15:00+05:30] [STOP] DAILY 2% CIRCUIT BREAKER. PnL: -119052.23
+[ADANIENT] HIGH_VOL penalty applied: -10 confidence
+[CIPLA] HIGH_VOL penalty applied: -10 confidence
+[ADANIENT] HIGH_VOL penalty applied: -10 confidence
+[ADANIPORTS] HIGH_VOL penalty applied: -10 confidence
+[2025-10-27 11:55:00+05:30] [STOP] DAILY 2% CIRCUIT BREAKER. PnL: -101626.28
+[BAJAJFINSV] VETO: ATR>1.8x avg (chaos).
+[BAJFINANCE] HIGH_VOL penalty applied: -10 confidence
+[BAJAJFINSV] HIGH_VOL penalty applied: -10 confidence
+[ADANIENT] HIGH_VOL penalty applied: -10 confidence
+[ADANIPORTS] HIGH_VOL penalty applied: -10 confidence
+[BRITANNIA] HIGH_VOL penalty applied: -10 confidence
+[BAJAJ-AUTO] HIGH_VOL penalty applied: -10 confidence
+[2025-10-30 10:35:00+05:30] [STOP] DAILY 2% CIRCUIT BREAKER. PnL: -112098.21
+[START] Month 2025-11-01. Equity: Rs 4892684.46
+[BAJAJ-AUTO] VETO: ATR>1.8x avg (chaos).
+[BAJAJ-AUTO] VETO: ATR>1.8x avg (chaos).
+[ADANIPORTS] HIGH_VOL penalty applied: -10 confidence
+[ADANIPORTS] HIGH_VOL penalty applied: -10 confidence
+[AXISBANK] HIGH_VOL penalty applied: -10 confidence
+[BHARTIARTL] VETO: ATR>1.8x avg (chaos).
+[BAJFINANCE] HIGH_VOL penalty applied: -10 confidence
+[BRITANNIA] HIGH_VOL penalty applied: -10 confidence
+[BPCL] HIGH_VOL penalty applied: -10 confidence
+[ASIANPAINT] HIGH_VOL penalty applied: -10 confidence
+[2025-11-10 11:25:00+05:30] [STOP] DAILY 2% CIRCUIT BREAKER. PnL: -127535.87
+[BHARTIARTL] HIGH_VOL penalty applied: -10 confidence
+[BAJAJ-AUTO] HIGH_VOL penalty applied: -10 confidence
+[BAJAJ-AUTO] HIGH_VOL penalty applied: -10 confidence
+[BAJAJ-AUTO] HIGH_VOL penalty applied: -10 confidence
+[BPCL] HIGH_VOL penalty applied: -10 confidence
+[BAJAJFINSV] HIGH_VOL penalty applied: -10 confidence
+[BRITANNIA] HIGH_VOL penalty applied: -10 confidence
+[2025-11-18 11:45:00+05:30] [STOP] DAILY 2% CIRCUIT BREAKER. PnL: -143246.20
+[ADANIENT] HIGH_VOL penalty applied: -10 confidence
+[2025-11-21 12:50:00+05:30] [STOP] DAILY 2% CIRCUIT BREAKER. PnL: -156037.03
+[2025-11-25 12:20:00+05:30] [STOP] DAILY 2% CIRCUIT BREAKER. PnL: -158199.76
+[2025-11-26 10:15:00+05:30] [STOP] DAILY 2% CIRCUIT BREAKER. PnL: -159054.96
+[BRITANNIA] HIGH_VOL penalty applied: -10 confidence
+[BRITANNIA] HIGH_VOL penalty applied: -10 confidence
+[2025-11-28 10:00:00+05:30] [STOP] DAILY 2% CIRCUIT BREAKER. PnL: -168030.24
+[START] Month 2026-03-01. Equity: Rs 6829424.42
+[BAJFINANCE] HIGH_VOL penalty applied: -10 confidence
+[BHARTIARTL] HIGH_VOL penalty applied: -10 confidence
+[2026-03-05 10:55:00+05:30] [STOP] DAILY 2% CIRCUIT BREAKER. PnL: -174709.97
+[2026-03-06 10:45:00+05:30] [STOP] DAILY 2% CIRCUIT BREAKER. PnL: -146310.39
+[ADANIENT] HIGH_VOL penalty applied: -10 confidence
+[BRITANNIA] HIGH_VOL penalty applied: -10 confidence
+[BAJFINANCE] HIGH_VOL penalty applied: -10 confidence
+[ADANIENT] HIGH_VOL penalty applied: -10 confidence
+[2026-03-13 11:25:00+05:30] [STOP] DAILY 2% CIRCUIT BREAKER. PnL: -238956.02
+[2026-03-16 11:10:00+05:30] [STOP] DAILY 2% CIRCUIT BREAKER. PnL: -205721.08
+[ASIANPAINT] HIGH_VOL penalty applied: -10 confidence
+[AXISBANK] HIGH_VOL penalty applied: -10 confidence
+[BPCL] HIGH_VOL penalty applied: -10 confidence
+[BRITANNIA] HIGH_VOL penalty applied: -10 confidence
+[BAJAJ-AUTO] HIGH_VOL penalty applied: -10 confidence
+[2026-03-19 10:35:00+05:30] [STOP] DAILY 2% CIRCUIT BREAKER. PnL: -320617.69
+[2026-03-20 12:10:00+05:30] [STOP] DAILY 2% CIRCUIT BREAKER. PnL: -195867.71
+[ADANIENT] HIGH_VOL penalty applied: -10 confidence
+[2026-03-24 10:40:00+05:30] [STOP] DAILY 2% CIRCUIT BREAKER. PnL: -227735.54
+[ADANIENT] HIGH_VOL penalty applied: -10 confidence
+[BAJFINANCE] HIGH_VOL penalty applied: -10 confidence
+[BAJAJFINSV] HIGH_VOL penalty applied: -10 confidence

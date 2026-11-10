@@ -1,0 +1,291 @@
+{
+  "config": {
+    "capital": 500000,
+    "target_roi_pct": 70,
+    "simulation_months": 12,
+    "n_simulations": 10000,
+    "ruin_threshold_pct": 50,
+    "risk_levels_to_test": [
+      0.5,
+      0.75,
+      1.0,
+      1.25,
+      1.5,
+      2.0,
+      2.5,
+      3.0
+    ],
+    "trades_per_month_estimate": null
+  },
+  "at_current_risk": {
+    "config": {
+      "capital": 500000,
+      "n_simulations": 10000,
+      "trades_per_simulation": 3006,
+      "risk_multiplier": 1.0,
+      "effective_risk_pct": 1.0
+    },
+    "final_capital": {
+      "mean": 3.514161797009064e+19,
+      "median": 1.1145850212820734e+19,
+      "std": 1.0548729450865036e+20,
+      "p5": 9.818117736440545e+17,
+      "p10": 1.678738624584115e+18,
+      "p25": 4.130242048933298e+18,
+      "p50": 1.1145850212820734e+19,
+      "p75": 3.093366853660643e+19,
+      "p90": 7.680990724332487e+19,
+      "p95": 1.3292350790201816e+20,
+      "p99": 3.939185049455728e+20,
+      "min": 4.937563207308431e+16,
+      "max": 4.761117222422668e+21
+    },
+    "roi": {
+      "mean_pct": 7028323594018028.0,
+      "median_pct": 2229170042564047.0,
+      "p5_pct": 196362354728710.9,
+      "p95_pct": 2.6584701580403532e+16
+    },
+    "probabilities": {
+      "profit": 100.0,
+      "target_70pct_roi": 100.0,
+      "double_capital": 100.0,
+      "ruin": 0.0,
+      "lose_10pct": 0.0,
+      "lose_20pct": 0.0,
+      "lose_30pct": 0.0,
+      "gain_50pct": 100.0,
+      "gain_100pct": 100.0,
+      "gain_200pct": 100.0
+    },
+    "drawdown": {
+      "mean_max_dd_pct": 16.55,
+      "median_max_dd_pct": 16.06,
+      "p95_max_dd_pct": 21.55,
+      "p99_max_dd_pct": 25.0,
+      "worst_dd_pct": 35.74,
+      "mean_dd_duration_trades": 44.3,
+      "max_dd_duration_trades": 162
+    },
+    "time_to_milestone": {
+      "target_70pct_roi": {
+        "mean_trades": 54.0,
+        "median_trades": 51.0,
+        "p25_trades": 40.0,
+        "p75_trades": 65.0
+      },
+      "double_capital": {
+        "mean_trades": 70.0,
+        "median_trades": 67.0
+      }
+    }
+  },
+  "at_optimal_risk": {
+    "config": {
+      "capital": 500000,
+      "n_simulations": 10000,
+      "trades_per_simulation": 3006,
+      "risk_multiplier": 5.0,
+      "effective_risk_pct": 5.0
+    },
+    "final_capital": {
+      "mean": 2.3223778645269823e+70,
+      "median": 3.7375211473215406e+62,
+      "std": 1.1837910382827626e+72,
+      "p5": 2.126423897358875e+57,
+      "p10": 3.6222972703661554e+58,
+      "p25": 3.0447009924145083e+60,
+      "p50": 3.7375211473215406e+62,
+      "p75": 4.187776626143109e+64,
+      "p90": 3.338620618719259e+66,
+      "p95": 4.214483889526494e+67,
+      "p99": 5.693345447854442e+69,
+      "min": 237630.2,
+      "max": 1.1149528527205535e+74
+    },
+    "roi": {
+      "mean_pct": 4.644755729053964e+66,
+      "median_pct": 7.475042294643081e+58,
+      "p5_pct": 4.2528477947177495e+53,
+      "p95_pct": 8.428967779052989e+63
+    },
+    "probabilities": {
+      "profit": 99.36,
+      "target_70pct_roi": 99.36,
+      "double_capital": 99.36,
+      "ruin": 0.64,
+      "lose_10pct": 0.64,
+      "lose_20pct": 0.64,
+      "lose_30pct": 0.64,
+      "gain_50pct": 99.36,
+      "gain_100pct": 99.36,
+      "gain_200pct": 99.36
+    },
+    "drawdown": {
+      "mean_max_dd_pct": 60.89,
+      "median_max_dd_pct": 60.28,
+      "p95_max_dd_pct": 72.52,
+      "p99_max_dd_pct": 77.92,
+      "worst_dd_pct": 88.63,
+      "mean_dd_duration_trades": 50.9,
+      "max_dd_duration_trades": 156
+    },
+    "time_to_milestone": {
+      "target_70pct_roi": {
+        "mean_trades": 14.0,
+        "median_trades": 11.0,
+        "p25_trades": 7.0,
+        "p75_trades": 18.0
+      },
+      "double_capital": {
+        "mean_trades": 18.0,
+        "median_trades": 15.0
+      }
+    }
+  },
+  "kelly_optimization": [
+    {
+      "risk_pct": 0.25,
+      "median_roi": 273620.4,
+      "p5_roi": 143760.46,
+      "prob_profit": 100.0,
+      "prob_ruin": 0.0,
+      "prob_70pct": 100.0,
+      "median_dd": 4.22,
+      "p95_dd": 5.9,
+      "geometric_growth": 93.1392
+    },
+    {
+      "risk_pct": 0.5,
+      "median_roi": 638910847.33,
+      "p5_roi": 178918937.41,
+      "prob_profit": 100.0,
+      "prob_ruin": 0.0,
+      "prob_70pct": 100.0,
+      "median_dd": 8.21,
+      "p95_dd": 11.4,
+      "geometric_growth": 268.1188
+    },
+    {
+      "risk_pct": 0.75,
+      "median_roi": 1254740689470.76,
+      "p5_roi": 195971733494.67,
+      "prob_profit": 100.0,
+      "prob_ruin": 0.0,
+      "prob_70pct": 100.0,
+      "median_dd": 12.3,
+      "p95_dd": 16.67,
+      "geometric_growth": 591.6182
+    },
+    {
+      "risk_pct": 1.0,
+      "median_roi": 2241548220135487.0,
+      "p5_roi": 183236222522132.25,
+      "prob_profit": 100.0,
+      "prob_ruin": 0.0,
+      "prob_70pct": 100.0,
+      "median_dd": 16.09,
+      "p95_dd": 21.55,
+      "geometric_growth": 1189.214
+    },
+    {
+      "risk_pct": 1.25,
+      "median_roi": 3.2345122756022246e+18,
+      "p5_roi": 1.4280815797295222e+17,
+      "prob_profit": 100.0,
+      "prob_ruin": 0.0,
+      "prob_70pct": 100.0,
+      "median_dd": 19.75,
+      "p95_dd": 26.37,
+      "geometric_growth": 2260.8656
+    },
+    {
+      "risk_pct": 1.5,
+      "median_roi": 3.7408460241219e+21,
+      "p5_roi": 9.66334511003082e+19,
+      "prob_profit": 100.0,
+      "prob_ruin": 0.0,
+      "prob_70pct": 100.0,
+      "median_dd": 23.16,
+      "p95_dd": 30.65,
+      "geometric_growth": 4144.4866
+    },
+    {
+      "risk_pct": 1.75,
+      "median_roi": 4.7036239957714635e+24,
+      "p5_roi": 7.884775864715241e+22,
+      "prob_profit": 100.0,
+      "prob_ruin": 0.0,
+      "prob_70pct": 100.0,
+      "median_dd": 26.35,
+      "p95_dd": 35.44,
+      "geometric_growth": 7584.1916
+    },
+    {
+      "risk_pct": 2.0,
+      "median_roi": 4.29165072609799e+27,
+      "p5_roi": 4.016964189522157e+25,
+      "prob_profit": 100.0,
+      "prob_ruin": 0.0,
+      "prob_70pct": 100.0,
+      "median_dd": 29.49,
+      "p95_dd": 39.12,
+      "geometric_growth": 13445.2946
+    },
+    {
+      "risk_pct": 2.5,
+      "median_roi": 2.9486964040163937e+33,
+      "p5_roi": 5.029748039346069e+30,
+      "prob_profit": 100.0,
+      "prob_ruin": 0.0,
+      "prob_70pct": 100.0,
+      "median_dd": 36.02,
+      "p95_dd": 46.01,
+      "geometric_growth": 41322.347
+    },
+    {
+      "risk_pct": 3.0,
+      "median_roi": 6.725741570699849e+38,
+      "p5_roi": 5.687581684754268e+35,
+      "prob_profit": 100.0,
+      "prob_ruin": 0.0,
+      "prob_70pct": 100.0,
+      "median_dd": 41.89,
+      "p95_dd": 53.63,
+      "geometric_growth": 115472.0037
+    },
+    {
+      "risk_pct": 4.0,
+      "median_roi": 2.263672262371455e+49,
+      "p5_roi": 2.1061480926959e+45,
+      "prob_profit": 100.0,
+      "prob_ruin": 0.0,
+      "prob_70pct": 100.0,
+      "median_dd": 52.04,
+      "p95_dd": 64.62,
+      "geometric_growth": 867576.3236
+    },
+    {
+      "risk_pct": 5.0,
+      "median_roi": 6.202139036168589e+58,
+      "p5_roi": 6.993440282040269e+53,
+      "prob_profit": 99.3,
+      "prob_ruin": 0.7,
+      "prob_70pct": 99.3,
+      "median_dd": 60.28,
+      "p95_dd": 73.17,
+      "geometric_growth": 5287581.1729
+    }
+  ],
+  "kelly_optimal": {
+    "risk_pct": 5.0,
+    "median_roi": 6.202139036168589e+58,
+    "p5_roi": 6.993440282040269e+53,
+    "prob_profit": 99.3,
+    "prob_ruin": 0.7,
+    "prob_70pct": 99.3,
+    "median_dd": 60.28,
+    "p95_dd": 73.17,
+    "geometric_growth": 5287581.1729
+  }
+}

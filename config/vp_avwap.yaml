@@ -1,0 +1,35 @@
+vp:
+  bin_size_atr_multiplier: 0.05
+  min_bin_size_ticks: 2
+  value_area_pct: 70
+  hvn_lvn_top_n: 3
+  recency_decay_hours: 3.0
+composite:
+  windows_days: [5, 20]
+  refresh_time_ist: "09:00"
+  cache_dir: "data/composites/"
+avwap:
+  zigzag_threshold_atr: 0.5
+  swing_lookback_5m_bars: 50
+  gap_threshold_pct: 0.3
+  bands: [1, 2, 3]
+ib:
+  duration_minutes: 60
+  expected_range_lookback_days: 20
+  day_type_classification_time_ist: "11:30"
+merger:
+  cluster_distance_atr: 0.15
+scoring:
+  confluence_bonuses:
+    triple_elite: 2.5        # count≥3, strength≥0.8
+    triple: 1.8              # count≥3, strength≥0.6
+    double: 1.2              # count==2, strength≥0.5
+    single_elite: 0.6        # count==1 of POC/VAH/VAL/AVWAP_PDH/AVWAP_Session
+  penalties:
+    in_lvn: -1.0
+    counter_session_avwap_in_trend: -1.5
+    chase_into_supply: -2.0
+  regime_weights:
+    TRENDING_HIGH_VOL: 0.6
+    TRENDING_LOW_VOL: 1.0
+    MEAN_REVERTING: 1.3

@@ -1,0 +1,54 @@
+confirmation:
+  entry:
+    entry_at: confirmation_candle_close
+    max_concurrent_sweep_trades: 2
+    min_confidence_pct: 55
+  rejection_candle:
+    engulfing_body_ratio: 1.2
+    min_wick_to_body: 2.0
+  require_any_of:
+  - rejection_candle
+  - bos_in_direction
+  - volume_spike
+  - momentum_shift
+  volume_spike_multiplier: 1.5
+enabled: true
+multi_timeframe:
+  enabled: true
+  entry_timeframe: 1m
+  sweep_timeframe: 5m
+retest_zone:
+  fallback_zone_atr_multiple: 0.5
+  zone_buffer_pct: 0.15
+  zone_sources:
+  - ORDER_BLOCK
+  - FVG
+  - BREAKOUT_LEVEL
+risk:
+  min_rr_ratio: 2.0
+  sl_buffer_points: 2
+  sl_placement: beyond_sweep_extreme
+  sl_type_options:
+  - SWEEP_EXTREME
+  - ATR_BASED
+  - TIGHT
+  target_r_multiples:
+  - 2.0
+  - 3.0
+  - 5.0
+  tight_sl_points: 5
+state_machine:
+  cooldown_bars_after_expire: 10
+  max_bars_retest_to_confirm: 5
+  max_bars_sweep_to_retest: 30
+sweep:
+  equal_level_tolerance_pct: 0.1
+  lookback_bars: 20
+  min_liquidity_touches: 1
+  min_wick_body_ratio: 2.0
+  require_close_inside: true
+  sweep_types:
+  - WICK_SWEEP
+  - EQUAL_HIGH_SWEEP
+  - EQUAL_LOW_SWEEP
+  - RANGE_SWEEP

@@ -1,0 +1,331 @@
+//@version=5
+strategy("Krishna AI Strategy - Project Port", overlay=true, pyramiding=0, initial_capital=100000, default_qty_type=strategy.percent_of_equity, default_qty_value=15, commission_type=strategy.commission.percent, commission_value=0.10, slippage=2, process_orders_on_close=true, calc_on_order_fills=true, max_labels_count=500, max_boxes_count=50)
+
+//------------------------------------------------------------------------------
+// Inputs mapped from project configs
+//------------------------------------------------------------------------------
+groupEntry = "Entry Gates"
+minConfNormal = input.float(75.0, "Min Confidence Normal", minval=1, maxval=100, group=groupEntry)
+minConfDanger = input.float(80.0, "Min Confidence Danger", minval=1, maxval=100, group=groupEntry)
+entrySession = input.session("0915-1330", "New Entry Window", group=groupEntry)
+tradeSession = input.session("0915-1530", "Trading Session", group=groupEntry)
+forceExitSession = input.session("1515-1530", "Force Exit Window", group=groupEntry)
+cooldownBars = input.int(3, "Cooldown Bars After Exit", minval=0, maxval=100, group=groupEntry)
+
+groupSMC = "SMC Logic"
+swingLen = input.int(3, "Swing Strength", minval=2, maxval=10, group=groupSMC)
+sweepLookback = input.int(20, "Liquidity Lookback", minval=5, maxval=100, group=groupSMC)
+freshBars = input.int(15, "Recent Structure Window", minval=3, maxval=100, group=groupSMC)
+fvgMinAtr = input.float(0.25, "FVG Min ATR", minval=0.0, step=0.05, group=groupSMC)
+obDispAtr = input.float(1.5, "OB Displacement ATR", minval=0.25, step=0.25, group=groupSMC)
+volMult = input.float(1.5, "Volume Spike Multiplier", minval=0.5, step=0.1, group=groupSMC)
+
+groupMR = "Mean Reversion"
+useMeanReversion = input.bool(true, "Use Confirmed MR Engine", group=groupMR)
+bbLen = input.int(20, "BB Length", minval=5, maxval=100, group=groupMR)
+bbMult = input.float(2.0, "BB StdDev", minval=0.5, step=0.25, group=groupMR)
+rsiLen = input.int(14, "RSI Length", minval=5, maxval=50, group=groupMR)
+rsiOversold = input.float(30, "RSI Oversold", minval=1, maxval=50, group=groupMR)
+rsiOverbought = input.float(70, "RSI Overbought", minval=50, maxval=99, group=groupMR)
+
+groupRisk = "Risk / Exit"
+atrLen = input.int(14, "ATR Length", minval=5, maxval=50, group=groupRisk)
+slAtrMult = input.float(2.5, "SL ATR Multiple", minval=0.5, step=0.25, group=groupRisk)
+t1R = input.float(1.5, "Target R", minval=0.5, step=0.25, group=groupRisk)
+beTriggerR = input.float(0.7, "Break-Even Trigger R", minval=0.1, step=0.1, group=groupRisk)
+maxBarsInTrade = input.int(60, "Max Bars In Trade", minval=1, maxval=300, group=groupRisk)
+
+groupVisual = "Visuals"
+showLabels = input.bool(true, "Show BUY / SELL / EXIT Labels", group=groupVisual)
+showDebug = input.bool(false, "Show Debug Plots", group=groupVisual)
+
+//------------------------------------------------------------------------------
+// Core state
+//------------------------------------------------------------------------------
+atr = ta.atr(atrLen)
+atrAvg = ta.sma(atr, 50)
+volAvg = ta.sma(volume, 20)
+volSpike = volume >= volAvg * volMult
+vwapVal = ta.vwap(hlc3)
+rsi = ta.rsi(close, rsiLen)
+
+inEntrySession = not na(time(timeframe.period, entrySession))
+inTradeSession = not na(time(timeframe.period, tradeSession))
+forceExitNow = not na(time(timeframe.period, forceExitSession))
+
+[diPlus, diMinus, adx] = ta.dmi(14, 14)
+bbBasis = ta.sma(close, bbLen)
+bbDev = bbMult * ta.stdev(close, bbLen)
+bbUpper = bbBasis + bbDev
+bbLower = bbBasis - bbDev
+bbWidthPct = bbBasis != 0 ? (bbUpper - bbLower) / bbBasis * 100.0 : 0.0
+emaFast = ta.ema(close, 9)
+emaSlow = ta.ema(close, 21)
+trendUp = emaFast > emaSlow and diPlus > diMinus
+trendDown = emaFast < emaSlow and diMinus > diPlus
+
+dangerRegime = (atrAvg > 0 and atr > atrAvg * 1.5) or adx < 14 or bbWidthPct < 0.35
+minConf = dangerRegime ? minConfDanger : minConfNormal
+
+//------------------------------------------------------------------------------
+// Project-style SMC structure: swings, BOS, CHOCH
+//------------------------------------------------------------------------------
+ph = ta.pivothigh(high, swingLen, swingLen)
+pl = ta.pivotlow(low, swingLen, swingLen)
+
+var float lastSwingHigh = na
+var float prevSwingHigh = na
+var float lastSwingLow = na
+var float prevSwingLow = na
+
+if not na(ph)
+    prevSwingHigh := lastSwingHigh
+    lastSwingHigh := ph
+
+if not na(pl)
+    prevSwingLow := lastSwingLow
+    lastSwingLow := pl
+
+structureUp = not na(prevSwingHigh) and not na(prevSwingLow) and lastSwingHigh > prevSwingHigh and lastSwingLow > prevSwingLow
+structureDown = not na(prevSwingHigh) and not na(prevSwingLow) and lastSwingHigh < prevSwingHigh and lastSwingLow < prevSwingLow
+
+bullBOS = not na(lastSwingHigh) and ta.crossover(close, lastSwingHigh)
+bearBOS = not na(lastSwingLow) and ta.crossunder(close, lastSwingLow)
+bullCHOCH = structureDown and not na(lastSwingHigh) and ta.crossover(close, lastSwingHigh)
+bearCHOCH = structureUp and not na(lastSwingLow) and ta.crossunder(close, lastSwingLow)
+
+var int lastBullStructBar = na
+var int lastBearStructBar = na
+if bullBOS or bullCHOCH
+    lastBullStructBar := bar_index
+if bearBOS or bearCHOCH
+    lastBearStructBar := bar_index
+
+recentBullStruct = not na(lastBullStructBar) and bar_index - lastBullStructBar <= freshBars
+recentBearStruct = not na(lastBearStructBar) and bar_index - lastBearStructBar <= freshBars
+
+//------------------------------------------------------------------------------
+// Liquidity sweeps: PDH/PDL + local pool sweep and close back inside
+//------------------------------------------------------------------------------
+priorDayHigh = request.security(syminfo.tickerid, "D", high[1], barmerge.gaps_off, barmerge.lookahead_off)
+priorDayLow = request.security(syminfo.tickerid, "D", low[1], barmerge.gaps_off, barmerge.lookahead_off)
+rangeHigh = ta.highest(high[1], sweepLookback)
+rangeLow = ta.lowest(low[1], sweepLookback)
+
+highSweep = ((high > rangeHigh and close < rangeHigh) or (high > priorDayHigh and close < priorDayHigh)) and volSpike
+lowSweep = ((low < rangeLow and close > rangeLow) or (low < priorDayLow and close > priorDayLow)) and volSpike
+
+//------------------------------------------------------------------------------
+// FVG and OB footprints, simplified but lifecycle-aware enough for Pine
+//------------------------------------------------------------------------------
+bullFvg = high[2] < low and (low - high[2]) >= atr * fvgMinAtr
+bearFvg = low[2] > high and (low[2] - high) >= atr * fvgMinAtr
+
+var float bullFvgMid = na
+var float bearFvgMid = na
+if bullFvg
+    bullFvgMid := (low + high[2]) / 2.0
+if bearFvg
+    bearFvgMid := (low[2] + high) / 2.0
+
+nearBullFvg = not na(bullFvgMid) and math.abs(close - bullFvgMid) <= atr
+nearBearFvg = not na(bearFvgMid) and math.abs(close - bearFvgMid) <= atr
+
+bullDisp = close > open and close[1] > open[1] and close[2] > open[2] and math.abs(close - open[2]) >= atr * obDispAtr and volume >= volAvg * 1.3
+bearDisp = close < open and close[1] < open[1] and close[2] < open[2] and math.abs(open[2] - close) >= atr * obDispAtr and volume >= volAvg * 1.3
+newBullOB = bullDisp and close[3] < open[3]
+newBearOB = bearDisp and close[3] > open[3]
+
+var float bullObHigh = na
+var float bullObLow = na
+var float bearObHigh = na
+var float bearObLow = na
+
+if newBullOB
+    bullObHigh := high[3]
+    bullObLow := low[3]
+if newBearOB
+    bearObHigh := high[3]
+    bearObLow := low[3]
+
+nearBullOB = not na(bullObHigh) and low <= bullObHigh and close >= bullObLow
+nearBearOB = not na(bearObLow) and high >= bearObLow and close <= bearObHigh
+
+//------------------------------------------------------------------------------
+// Candle confirmation
+//------------------------------------------------------------------------------
+body = math.max(math.abs(close - open), syminfo.mintick)
+prevBody = math.max(math.abs(close[1] - open[1]), syminfo.mintick)
+upperWick = high - math.max(open, close)
+lowerWick = math.min(open, close) - low
+
+bullEngulf = close > open and close[1] < open[1] and open <= close[1] and close >= open[1] and body >= prevBody * 1.2
+bearEngulf = close < open and close[1] > open[1] and open >= close[1] and close <= open[1] and body >= prevBody * 1.2
+bullReject = close > open and lowerWick >= body * 2.0
+bearReject = close < open and upperWick >= body * 2.0
+bullConfirm = bullEngulf or bullReject or close > high[1]
+bearConfirm = bearEngulf or bearReject or close < low[1]
+
+//------------------------------------------------------------------------------
+// Engines
+// 1. Liquidity trap / SMC reversal
+// 2. Confirmed mean reversion fallback
+//------------------------------------------------------------------------------
+smcLongScore = 0.0
+smcLongScore += lowSweep ? 26.0 : 0.0
+smcLongScore += nearBullOB ? 22.0 : 0.0
+smcLongScore += recentBullStruct ? 18.0 : 0.0
+smcLongScore += nearBullFvg ? 8.0 : 0.0
+smcLongScore += bullConfirm ? 14.0 : 0.0
+smcLongScore += trendUp ? 12.0 : 0.0
+
+smcShortScore = 0.0
+smcShortScore += highSweep ? 26.0 : 0.0
+smcShortScore += nearBearOB ? 22.0 : 0.0
+smcShortScore += recentBearStruct ? 18.0 : 0.0
+smcShortScore += nearBearFvg ? 8.0 : 0.0
+smcShortScore += bearConfirm ? 14.0 : 0.0
+smcShortScore += trendDown ? 12.0 : 0.0
+
+mrLongRaw = (close[1] < bbLower[1] or close[1] < vwapVal[1] - atr[1] or rsi[1] < rsiOversold) and close > close[1] and close > open
+mrShortRaw = (close[1] > bbUpper[1] or close[1] > vwapVal[1] + atr[1] or rsi[1] > rsiOverbought) and close < close[1] and close < open
+mrLongScore = useMeanReversion and mrLongRaw ? 55.0 + (rsi[1] < rsiOversold ? 15.0 : 0.0) + (close[1] < bbLower[1] ? 15.0 : 0.0) + (not trendDown ? 10.0 : 0.0) : 0.0
+mrShortScore = useMeanReversion and mrShortRaw ? 55.0 + (rsi[1] > rsiOverbought ? 15.0 : 0.0) + (close[1] > bbUpper[1] ? 15.0 : 0.0) + (not trendUp ? 10.0 : 0.0) : 0.0
+
+longConf = math.min(100.0, math.max(smcLongScore, mrLongScore))
+shortConf = math.min(100.0, math.max(smcShortScore, mrShortScore))
+longEngine = smcLongScore >= mrLongScore ? "SMC_TRAP" : "CONFIRMED_MR"
+shortEngine = smcShortScore >= mrShortScore ? "SMC_TRAP" : "CONFIRMED_MR"
+
+var int lastExitBar = na
+cooldownOk = na(lastExitBar) or bar_index - lastExitBar > cooldownBars
+flat = strategy.position_size == 0
+canEnter = flat and inEntrySession and inTradeSession and cooldownOk and atr > syminfo.mintick
+
+longSignal = canEnter and longConf >= minConf and longConf > shortConf
+shortSignal = canEnter and shortConf >= minConf and shortConf > longConf
+
+//------------------------------------------------------------------------------
+// Orders: V8-style SL, T1, break-even, EOD/time stop
+//------------------------------------------------------------------------------
+var float tradeEntry = na
+var float tradeSL = na
+var float tradeT1 = na
+var float tradeRisk = na
+var float tradeConf = na
+var string tradeEngine = ""
+var int tradeEntryBar = na
+var bool beActive = false
+
+if longSignal
+    tradeEntry := close
+    tradeRisk := atr * slAtrMult
+    tradeSL := tradeEntry - tradeRisk
+    tradeT1 := tradeEntry + tradeRisk * t1R
+    tradeConf := longConf
+    tradeEngine := longEngine
+    tradeEntryBar := bar_index
+    beActive := false
+    strategy.entry("LONG", strategy.long)
+    if showLabels
+        label.new(bar_index, low, "BUY\nEntry: " + str.tostring(tradeEntry, format.mintick) + "\nConf: " + str.tostring(tradeConf, "#.##") + "%", style=label.style_label_up, color=color.green, textcolor=color.white, size=size.normal)
+
+if shortSignal
+    tradeEntry := close
+    tradeRisk := atr * slAtrMult
+    tradeSL := tradeEntry + tradeRisk
+    tradeT1 := tradeEntry - tradeRisk * t1R
+    tradeConf := shortConf
+    tradeEngine := shortEngine
+    tradeEntryBar := bar_index
+    beActive := false
+    strategy.entry("SHORT", strategy.short)
+    if showLabels
+        label.new(bar_index, high, "SELL\nEntry: " + str.tostring(tradeEntry, format.mintick) + "\nConf: " + str.tostring(tradeConf, "#.##") + "%", style=label.style_label_down, color=color.red, textcolor=color.white, size=size.normal)
+
+inLong = strategy.position_size > 0
+inShort = strategy.position_size < 0
+
+if inLong and not beActive and not na(tradeEntry) and high >= tradeEntry + tradeRisk * beTriggerR
+    beActive := true
+    tradeSL := tradeEntry
+
+if inShort and not beActive and not na(tradeEntry) and low <= tradeEntry - tradeRisk * beTriggerR
+    beActive := true
+    tradeSL := tradeEntry
+
+longSLHit = inLong and not na(tradeSL) and low <= tradeSL
+longT1Hit = inLong and not na(tradeT1) and high >= tradeT1
+shortSLHit = inShort and not na(tradeSL) and high >= tradeSL
+shortT1Hit = inShort and not na(tradeT1) and low <= tradeT1
+timeStop = strategy.position_size != 0 and not na(tradeEntryBar) and bar_index - tradeEntryBar >= maxBarsInTrade
+manualExit = strategy.position_size != 0 and (forceExitNow or timeStop or not inTradeSession)
+exitSignal = longSLHit or longT1Hit or shortSLHit or shortT1Hit or manualExit
+exitPrice = longSLHit ? tradeSL : longT1Hit ? tradeT1 : shortSLHit ? tradeSL : shortT1Hit ? tradeT1 : manualExit ? close : na
+exitPnlPts = exitSignal and not na(tradeEntry) ? inLong ? exitPrice - tradeEntry : tradeEntry - exitPrice : na
+exitPnlPct = exitSignal and not na(tradeEntry) and tradeEntry != 0 ? exitPnlPts / tradeEntry * 100.0 : na
+var int lastExitLabelBar = na
+
+canPrintExitLabel = showLabels and exitSignal and (na(lastExitLabelBar) or lastExitLabelBar != bar_index)
+if canPrintExitLabel
+    label.new(bar_index, high, "EXIT\nExit: " + str.tostring(exitPrice, format.mintick) + "\nP&L: " + str.tostring(exitPnlPts, format.mintick) + " (" + str.tostring(exitPnlPct, "#.##") + "%)", style=label.style_label_down, color=exitPnlPts >= 0 ? color.green : color.red, textcolor=color.white, size=size.normal)
+    lastExitLabelBar := bar_index
+
+plotshape(showLabels and exitSignal, title="EXIT", text="EXIT", style=shape.labeldown, location=location.abovebar, color=color.orange, textcolor=color.white, size=size.small)
+
+if inLong
+    strategy.exit("LONG EXIT", "LONG", stop=tradeSL, limit=tradeT1)
+if inShort
+    strategy.exit("SHORT EXIT", "SHORT", stop=tradeSL, limit=tradeT1)
+
+if manualExit
+    strategy.close_all()
+
+//------------------------------------------------------------------------------
+// Exit labels from actual strategy closed trades
+//------------------------------------------------------------------------------
+var int closedCount = 0
+positionClosed = strategy.position_size[1] != 0 and strategy.position_size == 0
+positionClosedDir = strategy.position_size[1] > 0 ? 1 : strategy.position_size[1] < 0 ? -1 : 0
+positionClosedEntry = strategy.position_avg_price[1]
+positionClosedExit = close
+positionClosedPnlPts = positionClosed and positionClosedDir != 0 and not na(positionClosedEntry) ? positionClosedDir == 1 ? positionClosedExit - positionClosedEntry : positionClosedEntry - positionClosedExit : na
+positionClosedPnlPct = positionClosed and not na(positionClosedEntry) and positionClosedEntry != 0 ? positionClosedPnlPts / positionClosedEntry * 100.0 : na
+
+if showLabels and positionClosed and (na(lastExitLabelBar) or lastExitLabelBar != bar_index)
+    label.new(bar_index, positionClosedDir == 1 ? high : low, "EXIT\nExit: " + str.tostring(positionClosedExit, format.mintick) + "\nP&L: " + str.tostring(positionClosedPnlPts, format.mintick) + " (" + str.tostring(positionClosedPnlPct, "#.##") + "%)", style=positionClosedDir == 1 ? label.style_label_down : label.style_label_up, color=positionClosedPnlPts >= 0 ? color.green : color.red, textcolor=color.white, size=size.large)
+    lastExitLabelBar := bar_index
+
+plotshape(showLabels and positionClosed, title="POSITION EXIT", text="EXIT", style=shape.labeldown, location=location.top, color=color.orange, textcolor=color.white, size=size.normal)
+
+if strategy.closedtrades > closedCount
+    idx = strategy.closedtrades - 1
+    exPrice = strategy.closedtrades.exit_price(idx)
+    pnl = strategy.closedtrades.profit(idx)
+    pnlPct = strategy.closedtrades.entry_price(idx) != 0 ? (exPrice - strategy.closedtrades.entry_price(idx)) / strategy.closedtrades.entry_price(idx) * 100.0 * (strategy.closedtrades.size(idx) > 0 ? 1 : -1) : na
+    if showLabels and (na(lastExitLabelBar) or lastExitLabelBar != bar_index)
+        label.new(bar_index, high, "EXIT\nExit: " + str.tostring(exPrice, format.mintick) + "\nP&L: " + str.tostring(pnl, "#.##") + " (" + str.tostring(pnlPct, "#.##") + "%)", style=label.style_label_down, color=pnl >= 0 ? color.green : color.red, textcolor=color.white, size=size.normal)
+        lastExitLabelBar := bar_index
+    closedCount := strategy.closedtrades
+    lastExitBar := bar_index
+    tradeEntry := na
+    tradeSL := na
+    tradeT1 := na
+    tradeRisk := na
+    tradeConf := na
+    tradeEngine := ""
+    tradeEntryBar := na
+    beActive := false
+
+//------------------------------------------------------------------------------
+// Alerts and optional debug
+//------------------------------------------------------------------------------
+alertcondition(longSignal, title="BUY SIGNAL", message="BUY {{ticker}} {{interval}}")
+alertcondition(shortSignal, title="SELL SIGNAL", message="SELL {{ticker}} {{interval}}")
+alertcondition(exitSignal or positionClosed, title="EXIT SIGNAL", message="EXIT {{ticker}} {{interval}}")
+
+plot(showDebug ? emaFast : na, "EMA 9", color=color.new(color.green, 0))
+plot(showDebug ? emaSlow : na, "EMA 21", color=color.new(color.red, 0))
+plot(showDebug ? vwapVal : na, "VWAP", color=color.new(color.blue, 0))
+plot(showDebug ? longConf : na, "Long Confidence", color=color.new(color.green, 0), display=display.data_window)
+plot(showDebug ? shortConf : na, "Short Confidence", color=color.new(color.red, 0), display=display.data_window)

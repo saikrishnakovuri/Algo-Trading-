@@ -1,0 +1,35 @@
+{
+    "summary": {
+        "total_trades": 201,
+        "win_rate": "24.88%",
+        "net_profit": 7952.52,
+        "profit_factor": 1.780209559689192,
+        "max_drawdown_pct": "0.26%"
+    },
+    "metrics": {
+        "total_trades": 201,
+        "manipulation_veto_count": 0,
+        "reclaim_invalidation_count": 0,
+        "stale_setup_expiry_count": 0,
+        "fake_bos_prevented": 0,
+        "wick_only_breaks_rejected": 0,
+        "double_sweep_detections": 0,
+        "memory_persistence_success": 0,
+        "bullish_bos_accuracy": {
+            "wins": 0,
+            "total": 0
+        },
+        "bearish_bos_accuracy": {
+            "wins": 0,
+            "total": 0
+        },
+        "choch_accuracy": {
+            "wins": 0,
+            "total": 0
+        },
+        "liquidity_bos_accuracy": {
+            "wins": 0,
+            "total": 0
+        }
+    }
+}

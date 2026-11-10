@@ -1,0 +1,65 @@
+enabled: true
+
+# --- Sweep Detection Parameters ---
+sweep:
+  lookback_bars: 20              # How far back to find swing highs/lows
+  min_wick_body_ratio: 2.0       # Wick must be 2x the body for wick-based sweep
+  require_close_inside: true     # Candle must CLOSE back inside the range (no close beyond)
+  equal_level_tolerance_pct: 0.1 # Two highs/lows within 0.1% are "equal levels"
+  min_liquidity_touches: 2       # Level must have been tested 2+ times to be "liquidity"
+  sweep_types: ["WICK_SWEEP", "EQUAL_HIGH_SWEEP", "EQUAL_LOW_SWEEP", "RANGE_SWEEP"]
+
+# --- State Machine Timing ---
+state_machine:
+  max_bars_sweep_to_retest: 15   # Max candles to wait for retest after sweep (then EXPIRE)
+  max_bars_retest_to_confirm: 5  # Max candles in retest zone to get confirmation (then EXPIRE)
+  cooldown_bars_after_expire: 10 # After expiry, don't re-trigger on same level for N bars
+
+# --- Retest Zone Definition ---
+retest_zone:
+  # Where should price return to for a valid retest?
+  # Priority order: order_block > fair_value_gap > breakout_level > fixed_zone
+  zone_sources: ["ORDER_BLOCK", "FVG", "BREAKOUT_LEVEL"]
+  zone_buffer_pct: 0.15          # Zone extends 0.15% above/below the exact level
+  # If no OB or FVG found, use this fixed offset from sweep candle:
+  fallback_zone_atr_multiple: 0.5  # Entry zone = sweep_level ± 0.5 * ATR
+
+# --- Confirmation Conditions ---
+confirmation:
+  # At least ONE of these must be true in the retest zone:
+  require_any_of:
+    - rejection_candle            # Pin bar or engulfing in the zone
+    - bos_in_direction            # Break of structure confirming direction
+    - volume_spike                # Volume > 1.5x average in the zone
+    - momentum_shift              # RSI divergence or MACD crossover
+
+  # Rejection candle parameters:
+  rejection_candle:
+    min_wick_to_body: 1.5        # Pin bar: wick ≥ 1.5x body
+    engulfing_body_ratio: 1.2    # Engulfing: body ≥ 1.2x previous body
+  
+  # Volume spike threshold:
+  volume_spike_multiplier: 1.5   # Current volume > 1.5x 20-bar average
+  
+  # BOS confirmation: use existing modules/smc/structure.py detection
+
+# --- Entry Rules ---
+  entry:
+    entry_at: "confirmation_candle_close"   # Enter at close of confirmation candle
+    min_confidence_pct: 65                  # Minimum confidence score to trigger
+    max_concurrent_sweep_trades: 2          # Max active sweep-retest trades
+
+# --- Risk Management ---
+risk:
+  sl_placement: "beyond_sweep_extreme"    # SL goes below sweep low / above sweep high
+  sl_buffer_points: 2                     # Add 2 points beyond sweep extreme
+  sl_type_options: ["SWEEP_EXTREME", "ATR_BASED", "TIGHT"]
+  tight_sl_points: 5                      # For TIGHT mode (high confidence only, >80%)
+  min_rr_ratio: 2.0                       # Minimum 1:2 Risk-Reward
+  target_r_multiples: [2.0, 3.0, 5.0]    # Same partial exit schedule as TrailingSLManager
+
+# --- Multi-Timeframe (Optional Enhancement) ---
+multi_timeframe:
+  enabled: true
+  sweep_timeframe: "5m"           # Detect sweep on 5m chart
+  entry_timeframe: "1m"           # Look for confirmation on 1m chart

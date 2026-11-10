@@ -1,0 +1,30 @@
+[
+  {
+    "symbol": "RELIANCE",
+    "date": "2026-03-10 14:15",
+    "time": "14:15",
+    "type": "PE",
+    "setup": "TRAP_REVERSAL",
+    "qty": 302,
+    "entry": 1410.38855295,
+    "sl": 1426.9,
+    "target": 1409.050714285714,
+    "outcome": "TARGET HIT",
+    "score": 5.699999999999999,
+    "pnl": 404.03
+  },
+  {
+    "symbol": "RELIANCE",
+    "date": "2026-03-18 13:15",
+    "time": "13:15",
+    "type": "PE",
+    "setup": "PULLBACK",
+    "qty": 309,
+    "entry": 1407.691252275,
+    "sl": 1423.85,
+    "target": 1367.2943829624999,
+    "outcome": "TIME_CUT_20M_LOSING",
+    "score": 4.3125,
+    "pnl": -589.8
+  }
+]

@@ -1,0 +1,31 @@
+{
+    "summary": {
+        "Total Trades": 24,
+        "WR": "29.2%",
+        "Gross PnL": "INR 131",
+        "Costs": "INR 2,359",
+        "Net PnL": "INR -2,228",
+        "PF": 0.08,
+        "Max DD": "2.23%"
+    },
+    "strategies": [
+        {
+            "Strategy": "MEAN_REVERSION",
+            "Trades": 1,
+            "WR": "0.0%",
+            "Net PnL": "INR -138"
+        },
+        {
+            "Strategy": "MOMENTUM_BREAKOUT",
+            "Trades": 18,
+            "WR": "33.3%",
+            "Net PnL": "INR -1,448"
+        },
+        {
+            "Strategy": "VWAP_BOUNCE",
+            "Trades": 5,
+            "WR": "20.0%",
+            "Net PnL": "INR -642"
+        }
+    ]
+}

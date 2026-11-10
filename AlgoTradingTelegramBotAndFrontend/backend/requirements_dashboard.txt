@@ -1,0 +1,14 @@
+fastapi
+uvicorn
+pydantic
+PyYAML
+psutil
+motor
+pymongo
+pytz
+apscheduler
+python-dotenv
+aiofiles
+websockets
+pandas
+openpyxl

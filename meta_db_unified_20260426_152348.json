@@ -1,0 +1,44 @@
+[
+  {
+    "symbol": "INFY",
+    "date": "2026-03-04 13:00",
+    "time": "13:00",
+    "type": "CE",
+    "setup": "ZONE_REJECTION",
+    "qty": 311,
+    "entry": 1306.30532625,
+    "sl": 1290.25,
+    "target": 1320.277142857143,
+    "outcome": "BREAKEVEN",
+    "score": 7.1,
+    "pnl": -203.13
+  },
+  {
+    "symbol": "INFY",
+    "date": "2026-03-04 13:30",
+    "time": "13:30",
+    "type": "PE",
+    "setup": "ZONE_REJECTION",
+    "qty": 320,
+    "entry": 1295.9031243,
+    "sl": 1311.5,
+    "target": 1286.7428571428572,
+    "outcome": "TIME_CUT_20M_LOSING",
+    "score": 7.497,
+    "pnl": -511.0
+  },
+  {
+    "symbol": "INFY",
+    "date": "2026-03-06 12:50",
+    "time": "12:50",
+    "type": "PE",
+    "setup": "PULLBACK",
+    "qty": 319,
+    "entry": 1308.7902275249999,
+    "sl": 1324.45,
+    "target": 1308.7857142857144,
+    "outcome": "TARGET HIT",
+    "score": 5.715,
+    "pnl": 1.44
+  }
+]

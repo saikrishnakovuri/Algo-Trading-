@@ -1,0 +1,9 @@
+active_adapter: angelone
+angelone:
+  use_smartapi_v2: true
+binance:
+  rest_base: https://api.binance.com/api/v3
+  symbol_mapping:
+    BANKNIFTY: ETHUSDT
+    NIFTY: BTCUSDT
+  ws_base: wss://stream.binance.com:9443/ws

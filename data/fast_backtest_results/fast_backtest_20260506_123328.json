@@ -1,0 +1,29 @@
+{
+    "summary": {
+        "Total Trades": 117,
+        "WR": "36.8%",
+        "Net PnL": "\u20b9-84,618",
+        "PF": 0.91,
+        "Max DD": "18.40%"
+    },
+    "strategies": [
+        {
+            "Strategy": "CANDLESTICK",
+            "Trades": 43,
+            "WR": "53.5%",
+            "Net PnL": "\u20b995,215"
+        },
+        {
+            "Strategy": "MOMENTUM_BREAKOUT",
+            "Trades": 3,
+            "WR": "66.7%",
+            "Net PnL": "\u20b9-5,613"
+        },
+        {
+            "Strategy": "VWAP_BOUNCE",
+            "Trades": 71,
+            "WR": "25.4%",
+            "Net PnL": "\u20b9-174,219"
+        }
+    ]
+}

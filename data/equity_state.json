@@ -1,0 +1,47 @@
+{
+  "initial_capital": 1000000.0,
+  "current_capital": 973088.0800000003,
+  "daily_returns": [
+    {
+      "date": "2026-04-30",
+      "pnl": -4485.32,
+      "return_pct": -0.448532,
+      "trades": 9
+    },
+    {
+      "date": "2026-04-30",
+      "pnl": -4485.32,
+      "return_pct": -0.45055287381598425,
+      "trades": 9
+    },
+    {
+      "date": "2026-04-30",
+      "pnl": -4485.32,
+      "return_pct": -0.4525920402600382,
+      "trades": 9
+    },
+    {
+      "date": "2026-04-30",
+      "pnl": -4485.32,
+      "return_pct": -0.45464974883432463,
+      "trades": 9
+    },
+    {
+      "date": "2026-04-30",
+      "pnl": -4485.32,
+      "return_pct": -0.4567262535991737,
+      "trades": 9
+    },
+    {
+      "date": "2026-04-30",
+      "pnl": -4485.32,
+      "return_pct": -0.4588218132776525,
+      "trades": 9
+    }
+  ],
+  "peak_capital": 1000000.0,
+  "max_drawdown_pct": 2.6911919999999694,
+  "inception_date": "2026-04-30",
+  "total_trades": 54,
+  "total_wins": 0
+}

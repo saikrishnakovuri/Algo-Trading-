@@ -1,0 +1,130 @@
+
+# ============================================================
+# PA ENGINE ROUTES
+# ============================================================
+import sys, os
+PA_ENGINE_DIR = os.path.join(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))), "Priceactionmdfiles")
+ROOT_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+sys.path.insert(0, ROOT_DIR)
+sys.path.insert(0, PA_ENGINE_DIR)
+
+try:
+    from modules.pa_engine_bridge import PAEngineBridge
+    PA_AVAILABLE = True
+except:
+    PA_AVAILABLE = False
+
+from fastapi import Request
+
+# --- PA ENGINE CONFIG ---
+@app.get("/api/pa/config")
+def get_pa_config():
+    if not PA_AVAILABLE: return {"error": "PA engine not available"}
+    return PAEngineBridge.get_config()
+
+@app.put("/api/pa/config")
+async def save_pa_config(request: Request):
+    if not PA_AVAILABLE: return {"error": "PA engine not available"}
+    data = await request.json()
+    PAEngineBridge.save_config(data)
+    return {"status": "saved"}
+
+# --- PA STRATEGIES ---
+@app.get("/api/pa/strategies")
+def get_pa_strategies():
+    if not PA_AVAILABLE: return {"error": "PA engine not available"}
+    config = PAEngineBridge.get_config()
+    active = set(config.get("strategies", []))
+    all_configs = config.get("strategy_configs", {})
+    strategies = []
+    for name, cfg in all_configs.items():
+        strategies.append({
+            "name": name, "active": name in active,
+            "confidence": cfg.get("optimal_confidence", 0),
+            "profit_factor": cfg.get("profit_factor_at_threshold", 0),
+            "direction": cfg.get("preferred_direction", "ANY"),
+            "regimes": cfg.get("allowed_regimes", []),
+        })
+    return sorted(strategies, key=lambda x: x['profit_factor'], reverse=True)
+
+@app.put("/api/pa/strategies/{name}/toggle")
+def toggle_pa_strategy(name: str):
+    if not PA_AVAILABLE: return {"error": "PA engine not available"}
+    config = PAEngineBridge.get_config()
+    strategies = config.get("strategies", [])
+    if name in strategies:
+        strategies.remove(name); action = "disabled"
+    else:
+        strategies.append(name); action = "enabled"
+    config["strategies"] = strategies
+    PAEngineBridge.save_config(config)
+    return {"strategy": name, "action": action}
+
+# --- PA EDGE MONITOR ---
+@app.get("/api/pa/edge")
+def get_pa_edge():
+    if not PA_AVAILABLE: return {"error": "PA engine not available"}
+    return PAEngineBridge.get_edge_status()
+
+# --- PA MONTE CARLO ---
+@app.get("/api/pa/montecarlo")
+def get_pa_monte_carlo():
+    if not PA_AVAILABLE: return {"error": "PA engine not available"}
+    return PAEngineBridge.get_monte_carlo() or {"error": "No MC results"}
+
+# --- PA BACKTEST RESULTS ---
+@app.get("/api/pa/backtest/files")
+def get_pa_backtest_files():
+    if not PA_AVAILABLE: return {"error": "PA engine not available"}
+    return PAEngineBridge.get_backtest_results()
+
+@app.get("/api/pa/backtest/{filename}")
+def get_pa_backtest_file(filename: str):
+    if not PA_AVAILABLE: return {"error": "PA engine not available"}
+    import pandas as pd
+    path = os.path.join(PA_ENGINE_DIR, "pipeline", "results", filename)
+    if not os.path.exists(path): return {"error": "File not found"}
+    if filename.endswith('.csv'):
+        df = pd.read_csv(path)
+        return {"data": df.tail(1000).to_dict(orient='records'), "total": len(df)}
+    elif filename.endswith('.json'):
+        import json
+        with open(path) as f: return json.load(f)
+    else:
+        with open(path) as f: return {"content": f.read()}
+
+# --- PA SCHEDULE/RISK SETTINGS ---
+@app.get("/api/pa/schedule")
+def get_pa_schedule():
+    if not PA_AVAILABLE: return {"error": "PA engine not available"}
+    config = PAEngineBridge.get_config()
+    return {
+        "allowed_hours": config.get("allowed_hours", []),
+        "allowed_days": config.get("allowed_days", []),
+        "sl_method": config.get("sl_method", ""),
+    }
+
+@app.put("/api/pa/schedule")
+async def save_pa_schedule(request: Request):
+    if not PA_AVAILABLE: return {"error": "PA engine not available"}
+    data = await request.json()
+    config = PAEngineBridge.get_config()
+    if "allowed_hours" in data: config["allowed_hours"] = data["allowed_hours"]
+    if "allowed_days" in data: config["allowed_days"] = data["allowed_days"]
+    if "sl_method" in data: config["sl_method"] = data["sl_method"]
+    PAEngineBridge.save_config(config)
+    return {"status": "saved"}
+
+@app.get("/api/pa/risk")
+def get_pa_risk():
+    if not PA_AVAILABLE: return {"error": "PA engine not available"}
+    return PAEngineBridge.get_config().get("risk_management", {})
+
+@app.put("/api/pa/risk")
+async def save_pa_risk(request: Request):
+    if not PA_AVAILABLE: return {"error": "PA engine not available"}
+    data = await request.json()
+    config = PAEngineBridge.get_config()
+    config["risk_management"] = data
+    PAEngineBridge.save_config(config)
+    return {"status": "saved"}

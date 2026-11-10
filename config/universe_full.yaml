@@ -1,0 +1,5007 @@
+universe:
+  name: NSE_TOP_1000_DYNAMIC
+  tiers:
+    TIER_1:
+    - SETFNIF50
+    - AARON
+    - NGLFINE
+    - RAMASTEEL
+    - AURUM
+    - SHAREINDIA
+    - KRBL
+    - TCI
+    - SHREEPUSHK
+    - TEAMGTY
+    - INDIAMART
+    - SPORTKING
+    - ZENSARTECH
+    - SYRMA
+    - DCMNVL
+    - INDIGO
+    - VARDHACRLC
+    - HDFCGROWTH
+    - HDFCVALUE
+    - LUXIND
+    - AFFLE
+    - DHANBANK
+    - VAIBHAVGBL
+    - GIPCL
+    - LICNETFSEN
+    - KRIDHANINF
+    - TRACXN
+    - ASTRAMICRO
+    - DWARKESH
+    - GMBREW
+    - JSWSTEEL
+    - SAKSOFT
+    - CYBERMEDIA
+    - SHAHALLOYS
+    - GRANULES
+    - DCXINDIA
+    - GUJALKALI
+    - KRISHANA
+    - GSEC10IETF
+    - GPIL
+    - PIONEEREMB
+    - GRINDWELL
+    - INFOMEDIA
+    - FIEMIND
+    - SHIVAMAUTO
+    - RUCHIRA
+    - VENUSREM
+    - BANCOINDIA
+    - HIRECT
+    - NETWORK18
+    - PITTIENG
+    - GOLDETF
+    - GODREJAGRO
+    - HSCL
+    - KIRLFER
+    - AROGRANITE
+    - ALPHAGEO
+    - KMSUGAR
+    - GUJAPOLLO
+    - IDBI
+    - 061NSETEST
+    - ASTERDM
+    - DELTACORP
+    - RELIGARE
+    - INDHOTEL
+    - SVLL
+    - LICNFNHGP
+    - CORDSCABLE
+    - VGUARD
+    - APCOTEXIND
+    - BAJAJFINSV
+    - HGINFRA
+    - DPWIRES
+    - INDBANK
+    - ALKALI
+    - MAWANASUG
+    - CROMPTON
+    - SHRIPISTON
+    - PAKKA
+    - JAYSREETEA
+    - SENCO
+    - PREMEXPLN
+    - NETWEB
+    - INCREDIBLE
+    - MOLDTECH
+    - SUNTECK
+    - SHILPAMED
+    - KANPRPLA
+    - NESTLEIND
+    - JYOTISTRUC
+    - JIOFIN
+    - AEROFLEX
+    - IVZINGOLD
+    - VPRPL
+    - KCP
+    - NDGL
+    - GNA
+    - CARYSIL
+    - SIGNATURE
+    - MANAPPURAM
+    - NBIFIN
+    - LIBERTSHOE
+    - DEEPAKNTR
+    - FLAIR
+    - GRAVITA
+    - CHENNPETRO
+    - BHAGYANGR
+    - AZAD
+    - MANGLMCEM
+    - FMNL
+    - STARCEMENT
+    - ASHOKLEY
+    - DIGIDRIVE
+    - DGCONTENT
+    - DYCL
+    - AXISBNKETF
+    - RAMRAT
+    - SADBHIN
+    - MOMENTUM
+    - OAL
+    - DREAMFOLKS
+    - GRMOVER
+    - HDFCSILVER
+    - GODREJIND
+    - JSL
+    - UPL
+    - GTECJAINX
+    - PTC
+    - PVTBANIETF
+    - SALZERELEC
+    - CENTEXT
+    - EMIL
+    - TCS
+    - TEXINFRA
+    - GULFPETRO
+    - HPIL
+    - ALLDIGI
+    - SSWL
+    - KENNAMET
+    - KANSAINER
+    - JSWHL
+    - SUZLON
+    - FIVESTAR
+    - BASML
+    - HDFCPVTBAN
+    - ROUTE
+    - SAFARI
+    - IIFLCAPS
+    - EKC
+    - M&MFIN
+    TIER_2:
+    - NITCO
+    - KFINTECH
+    - KKCL
+    - HIMATSEIDE
+    - VIDHIING
+    - VGL
+    - BAIDFIN
+    - NFL
+    - HINDUNILVR
+    - LIQUID1
+    - HINDOILEXP
+    - HINDPETRO
+    - PTL
+    - REDINGTON
+    - DIVGIITTS
+    - PHOENIXLTD
+    - TGBHOTELS
+    - CHEMBOND
+    - NAGREEKEXP
+    - TIMETECHNO
+    - 021NSETEST
+    - 071NSETEST
+    - 091NSETEST
+    - VIPCLOTHNG
+    - IFBIND
+    - CENTRALBK
+    - KPRMILL
+    - LAL
+    - GSEC10YEAR
+    - INDOWIND
+    - MAANALU
+    - CERA
+    - KALYANIFRG
+    - TARIL
+    - MANAKSIA
+    - ARIES
+    - PATINTLOG
+    - RPOWER
+    - BANG
+    - QGOLDHALF
+    - NAHARCAP
+    - PIGL
+    - LATTEYS
+    - HINDWAREAP
+    - BAJAJ-AUTO
+    - GOKUL
+    - RPGLIFE
+    - QNIFTY
+    - IKIO
+    - ALBERTDAVD
+    - UTKARSHBNK
+    - ADANIPOWER
+    - JINDALPOLY
+    - EXPLEOSOL
+    - SENSEXADD
+    - LTM
+    - RISHABH
+    - BIGBLOC
+    - POWERINDIA
+    - MASKINVEST
+    - MAZDA
+    - JSWINFRA
+    - LAURUSLABS
+    - IMFA
+    - TERASOFT
+    - AHLEAST
+    - IITL
+    - UGARSUGAR
+    - BLUEJET
+    - LMW
+    - ESAFSFB
+    - EGOLD
+    - INTENTECH
+    - TASTYBITE
+    - JWL
+    - INDIGOPNTS
+    - PRUDMOULI
+    - INOXINDIA
+    - JINDWORLD
+    - RPPINFRA
+    - HAPPYFORGE
+    - PALASHSECU
+    - GANGESSECU
+    - MOM100
+    - NEXT50BETA
+    - DAVANGERE
+    - TEXRAIL
+    - BANKBETF
+    - DHUNINV
+    - MAXHEALTH
+    - RPTECH
+    - BESTAGRO
+    - MUKKA
+    - GOPAL
+    - SMCGLOBAL
+    - NURECA
+    - JNKINDIA
+    - LIQUIDBETF
+    - BOROSCI
+    - NIRLON
+    - EMCURE
+    - OILIETF
+    - MAITHANALL
+    - RUSHIL
+    - METALIETF
+    - MFML
+    - MULTICAP
+    - RVTH
+    - KROSS
+    - PNGJL
+    - NIRAJ
+    - SHAKTIPUMP
+    - GROWWDEFNC
+    - LLOYDSENT
+    - LEMONTREE
+    - HERANBA
+    - EMULTIMQ
+    - VSSL
+    - PRAKASH
+    - PRECWIRE
+    - CINELINE
+    - RACLGEAR
+    - HALEOSLABS
+    - APEX
+    - LIQUIDCASE
+    - GENCON
+    - NIFTYBETF
+    - MIRCELECTR
+    - MACPOWER
+    - HDFCNIFBAN
+    - HDFCPSUBK
+    - MOTOGENFIN
+    - MOSMALL250
+    - NCC
+    - JAYNECOIND
+    - UEL
+    - MUTHOOTFIN
+    - MIDSMALL
+    - RETAIL
+    - DEEDEV
+    - NKIND
+    - ADL
+    - SUYOG
+    - WINDMACHIN
+    - BCLIND
+    - BALAJEE
+    - DSSL
+    - AMJLAND
+    - SEAMECLTD
+    - POLYPLEX
+    - SAGILITY
+    - SWANCORP
+    - EIEL
+    - SAMPANN
+    - JUBLINGREA
+    - INNOVANA
+    - VMM
+    - RAJSREESUG
+    - RANASUG
+    - IGIL
+    - CRAFTSMAN
+    - CEWATER
+    - RELIANCE
+    - RIIL
+    - MOHITIND
+    - NEXT30ADD
+    - HEXT
+    - SAKHTISUG
+    - UNIONGOLD
+    - NIFTY100EW
+    - WONDERLA
+    - ORIENTCEM
+    - PRABHA
+    - ISHANCH
+    - VEDL
+    - UFBL
+    - SKFINDIA
+    - SPIC
+    - SUDARSCHEM
+    - BALKRISIND
+    - TAINWALCHM
+    - BANARISUG
+    - TIRUMALCHM
+    - TITAN
+    - VLSFINANCE
+    - MAHLOG
+    - WIMPLAST
+    - GOCLCORP
+    - PVP
+    - NAVA
+    - SANGAMIND
+    - KHADIM
+    - SOMATEX
+    - VISAKAIND
+    - WENDT
+    - JAGSNPHARM
+    - OSWALGREEN
+    - SBCL
+    - INDNIPPON
+    - PHARMABEES
+    - EXXARO
+    - EPIGRAL
+    - VIJAYA
+    - CEMPRO
+    - SHANTI
+    - AXISBANK
+    - CYBERTECH
+    - LICNETFGSC
+    - ABREL
+    - IRIS
+    - JINDALSTEL
+    - NIPPOBATRY
+    - LATENTVIEW
+    - CHOLAFIN
+    - RPPL
+    - AARTIIND
+    - ANANDRATHI
+    - ABSLNN50ET
+    - SUPRIYA
+    - MANAKALUCO
+    - HECPROJECT
+    - EVIETF
+    - SILVER360
+    - RAJOOENG
+    - AONENIFTY
+    - MOMGF
+    - DIGITIDE
+    - ATHERENERG
+    - RMDRIP
+    - LOTUSDEV
+    - GROWWPOWER
+    - ALLTIME
+    - KALPATARU
+    - LAXMIINDIA
+    - VMSTMT
+    - BLUESTONE
+    - RUBICON
+    - EASEMYTRIP
+    - RALLIS
+    - RAYMOND
+    - DAMCAPITAL
+    - SANATHAN
+    - INDOFARM
+    - SETL
+    - STALLION
+    - PROTEAN
+    - SAIL
+    - JUBLCPL
+    - GUJTHEM
+    - VIVIDHA
+    - AONETOTAL
+    - ATULAUTO
+    - GOLD360
+    - ABFRL
+    - SAMMAANCAP
+    - SPECTRUM
+    - AONELIQUID
+    - TIINDIA
+    - SIEMENS
+    - JPOLYINVST
+    - SPMLINFRA
+    - SUNFLAG
+    - TATACHEM
+    - TFCILTD
+    - TATASTEEL
+    - TNPETRO
+    - TECILCHEM
+    - MOKSH
+    - UNITECH
+    - AXISHCETF
+    - VINDHYATEL
+    - FINEORG
+    - WEIZMANIND
+    - VINEETLAB
+    - BEML
+    - SOMANYCERA
+    - CAPLIPOINT
+    - BEPL
+    - SILINV
+    - SENSEXIETF
+    - RUCHINFRA
+    - SHYAMMETL
+    - ETERNAL
+    - CIGNITITEC
+    - STYLAMIND
+    - KOVAI
+    - CARTRADE
+    - APTUS
+    - PAR
+    - INTELLECT
+    - CARBORUNIV
+    - ABSLAMC
+    - LAMBODHARA
+    - NIFTYETF
+    - TECH
+    - FOODSIN
+    - VISHNU
+    - GANECOS
+    - MENONBE
+    - HESTERBIO
+    - MAPMYINDIA
+    - HCLTECH
+    - JTLIND
+    - SETFNN50
+    - MOTOUR
+    - EBGNG
+    - JSLL
+    - PROSTARM
+    - MOSILVER
+    - SGFIN
+    - SML100CASE
+    - GKENERGY
+    - TRUALT
+    - BMWVENTLTD
+    - TATACAP
+    - MOENERGY
+    - SOLEX
+    - SKFINDUS
+    - MIDCAPADD
+    - DIVIDEND
+    - BHARATCOAL
+    - KOTYARK
+    - SBINMID150
+    - AARNAV
+    - BNALTD
+    - PRAVEG
+    - SHARDUL
+    - WELSPLSOL
+    - DALMIASUG
+    - AUTOBEES
+    - DCM
+    - GRWRHITECH
+    - DCW
+    - SILVERBEES
+    - AJANTPHARM
+    - DEEPAKFERT
+    - XELPMOC
+    - DRREDDY
+    - PIXTRANS
+    - TPLPLASTEH
+    - KRITIKA
+    - DPABHUSHAN
+    - CAMPUS
+    - TRU
+    - TAJGVK
+    - RAINBOW
+    - POLYCAB
+    - NEOGEN
+    - ELIQUID
+    - MOMENTUM30
+    TIER_3:
+    - SMALL250
+    - GROWWCAPM
+    - SRTL
+    - LGEINDIA
+    - ICICIAMC
+    - KNAGRI
+    - DSFCL
+    - HEALTHCARE
+    - GICL
+    - DEFENCE
+    - ABSLMSCIN
+    - ALGOQUANT
+    - HSBCGOLD
+    - VALUE
+    - AMIRCHAND
+    - 3BBLACKBIO
+    - BTTL
+    - DECNGOLD
+    - EMPOWER
+    - GNRL
+    - INVPRECQ
+    - MENNPIS
+    - SCANSTL
+    - SHBAJRG
+    - THAKDEV
+    - ALEMBICLTD
+    - MAHLIFE
+    - DEVIT
+    - CHOICEIN
+    - NOVARTIND
+    - ROTO
+    - EIHOTEL
+    - SKIPPER
+    - SPLPETRO
+    - HIKAL
+    - PARADEEP
+    - ETHOSLTD
+    - ALANKIT
+    - EMAMIPAP
+    - CSLFINANCE
+    - LUPIN
+    - POWERMECH
+    - MOHEALTH
+    - BHARTIARTL
+    - HDFCNEXT50
+    - NIFTYQLITY
+    - GVPTECH
+    - RADAAN
+    - KSOLVES
+    - HDFCQUAL
+    - SUVEN
+    - UNIENTER
+    - BIOCON
+    - NDTV
+    - GLAXO
+    - LT
+    - GNFC
+    - SUPRAJIT
+    - JPPOWER
+    - GEOJITFSL
+    - MEDANTA
+    - GOLDIAM
+    - GOODYEAR
+    - IMPAL
+    - TRIVENI
+    - VIMTALABS
+    - REPRO
+    - NITINSPIN
+    - FACT
+    - SCHAEFFLER
+    - MANORAMA
+    - PPL
+    - JISLJALEQS
+    - STEELCITY
+    - INFRAIETF
+    - CANBK
+    - GABRIEL
+    - LIQUIDBEES
+    - SATIA
+    - STCINDIA
+    - CNL
+    - GHCL
+    - NSIL
+    - IGL
+    - DREDGECORP
+    - MAHABANK
+    - RKFORGE
+    - NIITLTD
+    - COFORGE
+    - WESTLIFE
+    - JBMA
+    - PATELENG
+    - XCHANGING
+    - ACEINTEG
+    - GOYALALUM
+    - GLAND
+    - SHOPERSTOP
+    - WELCORP
+    - SEMAC
+    - YESBANK
+    - RML
+    - HTMEDIA
+    - BBTCL
+    - ZIMLAB
+    - ENIL
+    - SULA
+    - HCL-INSYS
+    - BLKASHYAP
+    - HDFCBANK
+    - GALLANTT
+    - UTTAMSUGAR
+    - BALPHARMA
+    - ACE
+    - HGM
+    - SKYGOLD
+    - AERONEU
+    - HCC
+    - SUTLEJTEX
+    - LTFOODS
+    - DONEAR
+    - JINDRILL
+    - PLASTIBLEN
+    - PRAENG
+    - ABSLBANETF
+    - LUMAXTECH
+    - AGI
+    - HINDZINC
+    - HDFCBSE500
+    - APOLLOPIPE
+    - LAOPALA
+    - HLVLTD
+    - GOKULAGRO
+    - FORTIS
+    - WEBELSOLAR
+    - 141NSETEST
+    - AXSENSEX
+    - 011NSETEST
+    - 131NSETEST
+    - 161NSETEST
+    - ASIANTILES
+    - PSUBNKBEES
+    - AVALON
+    - PSUBANK
+    - SILVERBETA
+    - COLPAL
+    - JYOTHYLAB
+    - PPAP
+    - ACL
+    - KIRIINDUS
+    - KOKUYOCMLN
+    - ARTEMISMED
+    - JOCIL
+    - ASHOKAMET
+    - TPHQ
+    - PATANJALI
+    - CYIENTDLM
+    - GLOBUSSPR
+    - NV20IETF
+    - MGL
+    - DAMODARIND
+    - PVTBANKADD
+    - QUESS
+    - SARDAEN
+    - TREL
+    - LLOYDSENGG
+    - HINDCOPPER
+    - MMTC
+    - SBICARD
+    - CONCORDBIO
+    - JUBLFOOD
+    - HATHWAY
+    - ORIENTLTD
+    - SAMHI
+    - ENDURANCE
+    - KSL
+    - RAJRATAN
+    - KIRLOSIND
+    - SENSEXETF
+    - AARTISURF
+    - MONIFTY500
+    - EMAMIREAL
+    - KSB
+    - ESILVER
+    - SHAH
+    - PRESTIGE
+    - INDIASHLTR
+    - SCHAND
+    - PSPPROJECT
+    - PSB
+    - SUMMITSEC
+    - DYNPRO
+    - OSIAHYPER
+    - 11NSETEST
+    - ABB
+    - UNIPARTS
+    - NAHARINDUS
+    - QUICKHEAL
+    - GSPL
+    - CENTURYPLY
+    - RAMANEWS
+    - MANOMAY
+    - GESHIP
+    - MMFL
+    - IGPL
+    - NSLNISP
+    - FSL
+    - RAJTV
+    - PAGEIND
+    - NAHARPOLY
+    - HILTON
+    - GOACARBON
+    - DLF
+    - 121NSETEST
+    - 151NSETEST
+    - IFBAGRO
+    - SAHYADRI
+    - RBA
+    - KSCL
+    - BAJAJELEC
+    - ADANIPORTS
+    - BRIGADE
+    - UJJIVANSFB
+    - INDIANHUME
+    - RKEC
+    - TARC
+    - MGEL
+    - TATAINVEST
+    - LINDEINDIA
+    - GHCLTEXTIL
+    - MKPL
+    - SINDHUTRAD
+    - GATECHDVR
+    - SHARIABEES
+    - ARMANFIN
+    - BLS
+    - GKWLIMITED
+    - LANDSMILL
+    - RTNPOWER
+    - POKARNA
+    - ASTEC
+    - YATHARTH
+    - GROBTEA
+    - GILLANDERS
+    - BAYERCROP
+    - ADVENZYMES
+    - KPIL
+    - DOLPHIN
+    - KANORICHEM
+    - KARURVYSYA
+    - TCPLPACK
+    - RATNAVEER
+    - ARE&M
+    - LTTS
+    - HPL
+    - GODREJCP
+    - ORICONENT
+    - KALAMANDIR
+    - IDFNIFTYET
+    - BALKRISHNA
+    - SUNDARAM
+    - RADHIKAJWE
+    - ARVSMART
+    - CUMMINSIND
+    - RAMAPHO
+    - KIOCL
+    - KOPRAN
+    - TI
+    - HEADSUP
+    - MNC
+    - BLISSGVS
+    - BOROLTD
+    - ROSSARI
+    - JUNIORBEES
+    - MARUTI
+    - INFOBEAN
+    - ALPHAETF
+    - GPPL
+    - NATHBIOGEN
+    - LIBAS
+    - ADFFOODS
+    - DANGEE
+    - LICHSGFIN
+    - HARSHA
+    - COFFEEDAY
+    - UNIDT
+    - APOLLO
+    - LICNETFN50
+    - PETRONET
+    - ARIHANTSUP
+    - AKSHARCHEM
+    - GICHSGFIN
+    - LUMAXIND
+    - TTKHLTCARE
+    - TIPSFILMS
+    - XPROINDIA
+    - BANKBEES
+    - CCL
+    - NV20
+    - HDFCLOWVOL
+    - HDFCNIFTY
+    - LALPATHLAB
+    - ALKEM
+    - IIFL
+    - NH
+    - JKPAPER
+    - VHL
+    - NECLIFE
+    - ACI
+    - HDFCNIFIT
+    - GSFC
+    - AMBUJACEM
+    - M&M
+    - V1NSETEST
+    - RAMCOCEM
+    - BAJEL
+    - ROHLTD
+    - JKCEMENT
+    - AFSL
+    - KEI
+    - MUTHOOTMF
+    - HEG
+    - SUNTV
+    - RSYSTEMS
+    - ELIN
+    - RATNAMANI
+    - AKASH
+    - MUNJALAU
+    - JMFINANCIL
+    - ELECON
+    - INNOVACAP
+    - CDSL
+    - GLOBALVECT
+    - NAUKRI
+    - JYOTICNC
+    - STEELXIND
+    - BBL
+    - MANALIPETC
+    - STEL
+    - HBLENGINE
+    - BRNL
+    - MATRIMONY
+    - VEEDOL
+    - BTML
+    - ACC
+    - NCLIND
+    - JKTYRE
+    - BIRLANU
+    - ICRA
+    - GSLSU
+    - ADVANIHOTR
+    - 101NSETEST
+    - LOWVOL
+    - WSI
+    - KAUSHALYA
+    - MODTHREAD
+    - CEATLTD
+    - TOTAL
+    - KNRCON
+    - IRB
+    - ITBETA
+    - SHALPAINTS
+    - HEALTHADD
+    - EIHAHOTELS
+    - ATAM
+    - NESCO
+    - DPSCLTD
+    - APOLLOHOSP
+    - JSFB
+    - GPTHEALTH
+    - EXICOM
+    - FAIRCHEMOR
+    - IOC
+    - BECTORFOOD
+    - MMP
+    - ANDHRAPAP
+    - MOREALTY
+    - CPSEETF
+    - ALMONDZ
+    - LOTUSEYE
+    - VINYLINDIA
+    - SICAGEN
+    - ZFCVINDIA
+    - PALREDTEC
+    - SUMICHEM
+    - PARAGMILK
+    - NAVNETEDUL
+    - ASPINWALL
+    - VINATIORGA
+    - CONTROLPR
+    - BBNPNBETF
+    - IVZINNIFTY
+    - LTGILTBEES
+    - REFEX
+    - CONSUMBEES
+    - LIQUIDSHRI
+    - DELPHIFX
+    - GEEKAYWIRE
+    - RELTD
+    - RUBFILA
+    - BEARDSELL
+    - COHANCE
+    - AWHCL
+    - TRF
+    - UNITEDTEA
+    - ONWARDTEC
+    - ADANIENT
+    - KAMATHOTEL
+    - TEXMOPIPES
+    - LORDSCHLO
+    - LGBBROSLTD
+    - SANDUMA
+    - SANOFICONR
+    - BAJAJHFL
+    - RBLBANK
+    - ISFT
+    - NORTHARC
+    - KESORAMIND
+    - RRKABEL
+    - DIAMINESQ
+    - TRITURBINE
+    - NUVAMA
+    - PNBHOUSING
+    - JISLDVREQS
+    - APLAPOLLO
+    - SFL
+    - TCIEXP
+    - THEJO
+    - PRAJIND
+    - BHANDARI
+    - MTARTECH
+    - PRICOLLTD
+    - TRENT
+    - ORISSAMINE
+    - THEINVEST
+    - SASTASUNDR
+    - SIS
+    - URJA
+    - ASHAPURMIN
+    - RESPONIND
+    - IOLCP
+    - HOMEFIRST
+    - AXISGOLD
+    - PENIND
+    - VTL
+    - SURAJEST
+    - SUNCLAY
+    - MODIRUBBER
+    - KICL
+    - TEJASNET
+    - BANKBETA
+    - AUBANK
+    - AXISNIFTY
+    - MURUDCERA
+    - KRYSTAL
+    - BSLGOLDETF
+    - NEULANDLAB
+    - NILKAMAL
+    - PIIND
+    - VADILALIND
+    - ESTER
+    - AGIIL
+    - BSLNIFTY
+    - FIRSTCRY
+    - SSDL
+    - INVENTURE
+    - INTERARCH
+    - MODEFENCE
+    - EUREKAFORB
+    - TOP10ADD
+    - SYNGENE
+    - KAYA
+    - PGHH
+    - NIFTYBETA
+    - PGEL
+    - UFLEX
+    - SENSEXBETA
+    - SHARDAMOTR
+    - INDOUS
+    - HDFCNIF100
+    - INDOTHAI
+    - GENESYS
+    - OMAXAUTO
+    - RADICO
+    - RUPA
+    - SRD
+    - UCOBANK
+    - KANANIIND
+    - VINCOFE
+    - VAL30IETF
+    - SIL
+    - MUKANDLTD
+    - 3PLAND
+    - GODAVARIB
+    - DATAMATICS
+    - AMBICAAGAR
+    - ULTRACEMCO
+    - FORCEMOT
+    - GUFICBIO
+    - WELENT
+    - NARMADA
+  mappings:
+    SETFNIF50:
+      name: SETFNIF50
+      token: '10176'
+      tier: 1
+    AARON:
+      name: AARON
+      token: '1030'
+      tier: 1
+    NGLFINE:
+      name: NGLFINE
+      token: '10277'
+      tier: 1
+    RAMASTEEL:
+      name: RAMASTEEL
+      token: '10300'
+      tier: 1
+    AURUM:
+      name: AURUM
+      token: '10310'
+      tier: 1
+    SHAREINDIA:
+      name: SHAREINDIA
+      token: '104'
+      tier: 1
+    KRBL:
+      name: KRBL
+      token: '10577'
+      tier: 1
+    TCI:
+      name: TCI
+      token: '10580'
+      tier: 1
+    SHREEPUSHK:
+      name: SHREEPUSHK
+      token: '10588'
+      tier: 1
+    TEAMGTY:
+      name: TEAMGTY
+      token: '10717'
+      tier: 1
+    INDIAMART:
+      name: INDIAMART
+      token: '10726'
+      tier: 1
+    SPORTKING:
+      name: SPORTKING
+      token: '10733'
+      tier: 1
+    ZENSARTECH:
+      name: ZENSARTECH
+      token: '1076'
+      tier: 1
+    SYRMA:
+      name: SYRMA
+      token: '10793'
+      tier: 1
+    DCMNVL:
+      name: DCMNVL
+      token: '11039'
+      tier: 1
+    INDIGO:
+      name: INDIGO
+      token: '11195'
+      tier: 1
+    VARDHACRLC:
+      name: VARDHACRLC
+      token: '11220'
+      tier: 1
+    HDFCGROWTH:
+      name: HDFCGROWTH
+      token: '11241'
+      tier: 1
+    HDFCVALUE:
+      name: HDFCVALUE
+      token: '11260'
+      tier: 1
+    LUXIND:
+      name: LUXIND
+      token: '11301'
+      tier: 1
+    AFFLE:
+      name: AFFLE
+      token: '11343'
+      tier: 1
+    DHANBANK:
+      name: DHANBANK
+      token: '11359'
+      tier: 1
+    VAIBHAVGBL:
+      name: VAIBHAVGBL
+      token: '11364'
+      tier: 1
+    GIPCL:
+      name: GIPCL
+      token: '1145'
+      tier: 1
+    LICNETFSEN:
+      name: LICNETFSEN
+      token: '11441'
+      tier: 1
+    KRIDHANINF:
+      name: KRIDHANINF
+      token: '11480'
+      tier: 1
+    TRACXN:
+      name: TRACXN
+      token: '11582'
+      tier: 1
+    ASTRAMICRO:
+      name: ASTRAMICRO
+      token: '11618'
+      tier: 1
+    DWARKESH:
+      name: DWARKESH
+      token: '11667'
+      tier: 1
+    GMBREW:
+      name: GMBREW
+      token: '1168'
+      tier: 1
+    JSWSTEEL:
+      name: JSWSTEEL
+      token: '11723'
+      tier: 1
+    SAKSOFT:
+      name: SAKSOFT
+      token: '11794'
+      tier: 1
+    CYBERMEDIA:
+      name: CYBERMEDIA
+      token: '11842'
+      tier: 1
+    SHAHALLOYS:
+      name: SHAHALLOYS
+      token: '11856'
+      tier: 1
+    GRANULES:
+      name: GRANULES
+      token: '11872'
+      tier: 1
+    DCXINDIA:
+      name: DCXINDIA
+      token: '11895'
+      tier: 1
+    GUJALKALI:
+      name: GUJALKALI
+      token: '1267'
+      tier: 1
+    KRISHANA:
+      name: KRISHANA
+      token: '12847'
+      tier: 1
+    GSEC10IETF:
+      name: GSEC10IETF
+      token: '13143'
+      tier: 1
+    GPIL:
+      name: GPIL
+      token: '13409'
+      tier: 1
+    PIONEEREMB:
+      name: PIONEEREMB
+      token: '13463'
+      tier: 1
+    GRINDWELL:
+      name: GRINDWELL
+      token: '13560'
+      tier: 1
+    INFOMEDIA:
+      name: INFOMEDIA
+      token: '13693'
+      tier: 1
+    FIEMIND:
+      name: FIEMIND
+      token: '13710'
+      tier: 1
+    SHIVAMAUTO:
+      name: SHIVAMAUTO
+      token: '13756'
+      tier: 1
+    RUCHIRA:
+      name: RUCHIRA
+      token: '13821'
+      tier: 1
+    VENUSREM:
+      name: VENUSREM
+      token: '13859'
+      tier: 1
+    BANCOINDIA:
+      name: BANCOINDIA
+      token: '13880'
+      tier: 1
+    HIRECT:
+      name: HIRECT
+      token: '13890'
+      tier: 1
+    NETWORK18:
+      name: NETWORK18
+      token: '14111'
+      tier: 1
+    PITTIENG:
+      name: PITTIENG
+      token: '14134'
+      tier: 1
+    GOLDETF:
+      name: GOLDETF
+      token: '14286'
+      tier: 1
+    GODREJAGRO:
+      name: GODREJAGRO
+      token: '144'
+      tier: 1
+    HSCL:
+      name: HSCL
+      token: '14334'
+      tier: 1
+    KIRLFER:
+      name: KIRLFER
+      token: '14466'
+      tier: 1
+    AROGRANITE:
+      name: AROGRANITE
+      token: '14557'
+      tier: 1
+    ALPHAGEO:
+      name: ALPHAGEO
+      token: '14597'
+      tier: 1
+    KMSUGAR:
+      name: KMSUGAR
+      token: '14667'
+      tier: 1
+    GUJAPOLLO:
+      name: GUJAPOLLO
+      token: '14677'
+      tier: 1
+    IDBI:
+      name: IDBI
+      token: '1476'
+      tier: 1
+    061NSETEST:
+      name: 061NSETEST
+      token: '14762'
+      tier: 1
+    ASTERDM:
+      name: ASTERDM
+      token: '1508'
+      tier: 1
+    DELTACORP:
+      name: DELTACORP
+      token: '15044'
+      tier: 1
+    RELIGARE:
+      name: RELIGARE
+      token: '15068'
+      tier: 1
+    INDHOTEL:
+      name: INDHOTEL
+      token: '1512'
+      tier: 1
+    SVLL:
+      name: SVLL
+      token: '15121'
+      tier: 1
+    LICNFNHGP:
+      name: LICNFNHGP
+      token: '15229'
+      tier: 1
+    CORDSCABLE:
+      name: CORDSCABLE
+      token: '15271'
+      tier: 1
+    VGUARD:
+      name: VGUARD
+      token: '15362'
+      tier: 1
+    APCOTEXIND:
+      name: APCOTEXIND
+      token: '154'
+      tier: 1
+    BAJAJFINSV:
+      name: BAJAJFINSV
+      token: '16675'
+      tier: 1
+    HGINFRA:
+      name: HGINFRA
+      token: '1672'
+      tier: 1
+    DPWIRES:
+      name: DPWIRES
+      token: '16900'
+      tier: 1
+    INDBANK:
+      name: INDBANK
+      token: '16933'
+      tier: 1
+    ALKALI:
+      name: ALKALI
+      token: '16959'
+      tier: 1
+    MAWANASUG:
+      name: MAWANASUG
+      token: '17022'
+      tier: 1
+    CROMPTON:
+      name: CROMPTON
+      token: '17094'
+      tier: 1
+    SHRIPISTON:
+      name: SHRIPISTON
+      token: '17186'
+      tier: 1
+    PAKKA:
+      name: PAKKA
+      token: '17197'
+      tier: 1
+    JAYSREETEA:
+      name: JAYSREETEA
+      token: '1720'
+      tier: 1
+    SENCO:
+      name: SENCO
+      token: '17271'
+      tier: 1
+    PREMEXPLN:
+      name: PREMEXPLN
+      token: '17397'
+      tier: 1
+    NETWEB:
+      name: NETWEB
+      token: '17433'
+      tier: 1
+    INCREDIBLE:
+      name: INCREDIBLE
+      token: '17507'
+      tier: 1
+    MOLDTECH:
+      name: MOLDTECH
+      token: '17625'
+      tier: 1
+    SUNTECK:
+      name: SUNTECK
+      token: '17641'
+      tier: 1
+    SHILPAMED:
+      name: SHILPAMED
+      token: '17752'
+      tier: 1
+    KANPRPLA:
+      name: KANPRPLA
+      token: '1782'
+      tier: 1
+    NESTLEIND:
+      name: NESTLEIND
+      token: '17963'
+      tier: 1
+    JYOTISTRUC:
+      name: JYOTISTRUC
+      token: '1802'
+      tier: 1
+    JIOFIN:
+      name: JIOFIN
+      token: '18143'
+      tier: 1
+    AEROFLEX:
+      name: AEROFLEX
+      token: '18268'
+      tier: 1
+    IVZINGOLD:
+      name: IVZINGOLD
+      token: '18292'
+      tier: 1
+    VPRPL:
+      name: VPRPL
+      token: '18341'
+      tier: 1
+    KCP:
+      name: KCP
+      token: '1841'
+      tier: 1
+    NDGL:
+      name: NDGL
+      token: '18371'
+      tier: 1
+    GNA:
+      name: GNA
+      token: '18571'
+      tier: 1
+    CARYSIL:
+      name: CARYSIL
+      token: '1879'
+      tier: 1
+    SIGNATURE:
+      name: SIGNATURE
+      token: '18743'
+      tier: 1
+    MANAPPURAM:
+      name: MANAPPURAM
+      token: '19061'
+      tier: 1
+    NBIFIN:
+      name: NBIFIN
+      token: '19111'
+      tier: 1
+    LIBERTSHOE:
+      name: LIBERTSHOE
+      token: '1994'
+      tier: 1
+    DEEPAKNTR:
+      name: DEEPAKNTR
+      token: '19943'
+      tier: 1
+    FLAIR:
+      name: FLAIR
+      token: '20372'
+      tier: 1
+    GRAVITA:
+      name: GRAVITA
+      token: '20534'
+      tier: 1
+    CHENNPETRO:
+      name: CHENNPETRO
+      token: '2049'
+      tier: 1
+    BHAGYANGR:
+      name: BHAGYANGR
+      token: '20776'
+      tier: 1
+    AZAD:
+      name: AZAD
+      token: '20905'
+      tier: 1
+    MANGLMCEM:
+      name: MANGLMCEM
+      token: '2106'
+      tier: 1
+    FMNL:
+      name: FMNL
+      token: '21017'
+      tier: 1
+    STARCEMENT:
+      name: STARCEMENT
+      token: '21091'
+      tier: 1
+    ASHOKLEY:
+      name: ASHOKLEY
+      token: '212'
+      tier: 1
+    DIGIDRIVE:
+      name: DIGIDRIVE
+      token: '21247'
+      tier: 1
+    DGCONTENT:
+      name: DGCONTENT
+      token: '10346'
+      tier: 1
+    DYCL:
+      name: DYCL
+      token: '10417'
+      tier: 1
+    AXISBNKETF:
+      name: AXISBNKETF
+      token: '1044'
+      tier: 1
+    RAMRAT:
+      name: RAMRAT
+      token: '10485'
+      tier: 1
+    SADBHIN:
+      name: SADBHIN
+      token: '10618'
+      tier: 1
+    MOMENTUM:
+      name: MOMENTUM
+      token: '10693'
+      tier: 1
+    OAL:
+      name: OAL
+      token: '10768'
+      tier: 1
+    DREAMFOLKS:
+      name: DREAMFOLKS
+      token: '10859'
+      tier: 1
+    GRMOVER:
+      name: GRMOVER
+      token: '10871'
+      tier: 1
+    HDFCSILVER:
+      name: HDFCSILVER
+      token: '10876'
+      tier: 1
+    GODREJIND:
+      name: GODREJIND
+      token: '10925'
+      tier: 1
+    JSL:
+      name: JSL
+      token: '11236'
+      tier: 1
+    UPL:
+      name: UPL
+      token: '11287'
+      tier: 1
+    GTECJAINX:
+      name: GTECJAINX
+      token: '1129'
+      tier: 1
+    PTC:
+      name: PTC
+      token: '11355'
+      tier: 1
+    PVTBANIETF:
+      name: PVTBANIETF
+      token: '11386'
+      tier: 1
+    SALZERELEC:
+      name: SALZERELEC
+      token: '11399'
+      tier: 1
+    CENTEXT:
+      name: CENTEXT
+      token: '11511'
+      tier: 1
+    EMIL:
+      name: EMIL
+      token: '11530'
+      tier: 1
+    TCS:
+      name: TCS
+      token: '11536'
+      tier: 1
+    TEXINFRA:
+      name: TEXINFRA
+      token: '11549'
+      tier: 1
+    GULFPETRO:
+      name: GULFPETRO
+      token: '11581'
+      tier: 1
+    HPIL:
+      name: HPIL
+      token: '11796'
+      tier: 1
+    ALLDIGI:
+      name: ALLDIGI
+      token: '11798'
+      tier: 1
+    SSWL:
+      name: SSWL
+      token: '11829'
+      tier: 1
+    KENNAMET:
+      name: KENNAMET
+      token: '11841'
+      tier: 1
+    KANSAINER:
+      name: KANSAINER
+      token: '1196'
+      tier: 1
+    JSWHL:
+      name: JSWHL
+      token: '11880'
+      tier: 1
+    SUZLON:
+      name: SUZLON
+      token: '12018'
+      tier: 1
+    FIVESTAR:
+      name: FIVESTAR
+      token: '12032'
+      tier: 1
+    BASML:
+      name: BASML
+      token: '12034'
+      tier: 1
+    HDFCPVTBAN:
+      name: HDFCPVTBAN
+      token: '12108'
+      tier: 1
+    ROUTE:
+      name: ROUTE
+      token: '128'
+      tier: 1
+    SAFARI:
+      name: SAFARI
+      token: '13035'
+      tier: 1
+    IIFLCAPS:
+      name: IIFLCAPS
+      token: '13072'
+      tier: 1
+    EKC:
+      name: EKC
+      token: '13091'
+      tier: 1
+    M&MFIN:
+      name: M&MFIN
+      token: '13285'
+      tier: 1
+    NITCO:
+      name: NITCO
+      token: '13300'
+      tier: 2
+    KFINTECH:
+      name: KFINTECH
+      token: '13359'
+      tier: 2
+    KKCL:
+      name: KKCL
+      token: '13381'
+      tier: 2
+    HIMATSEIDE:
+      name: HIMATSEIDE
+      token: '1360'
+      tier: 2
+    VIDHIING:
+      name: VIDHIING
+      token: '13536'
+      tier: 2
+    VGL:
+      name: VGL
+      token: '13771'
+      tier: 2
+    BAIDFIN:
+      name: BAIDFIN
+      token: '13794'
+      tier: 2
+    NFL:
+      name: NFL
+      token: '13925'
+      tier: 2
+    HINDUNILVR:
+      name: HINDUNILVR
+      token: '1394'
+      tier: 2
+    LIQUID1:
+      name: LIQUID1
+      token: '13950'
+      tier: 2
+    HINDOILEXP:
+      name: HINDOILEXP
+      token: '1403'
+      tier: 2
+    HINDPETRO:
+      name: HINDPETRO
+      token: '1406'
+      tier: 2
+    PTL:
+      name: PTL
+      token: '14101'
+      tier: 2
+    REDINGTON:
+      name: REDINGTON
+      token: '14255'
+      tier: 2
+    DIVGIITTS:
+      name: DIVGIITTS
+      token: '14479'
+      tier: 2
+    PHOENIXLTD:
+      name: PHOENIXLTD
+      token: '14552'
+      tier: 2
+    TGBHOTELS:
+      name: TGBHOTELS
+      token: '14607'
+      tier: 2
+    CHEMBOND:
+      name: CHEMBOND
+      token: '14618'
+      tier: 2
+    NAGREEKEXP:
+      name: NAGREEKEXP
+      token: '14702'
+      tier: 2
+    TIMETECHNO:
+      name: TIMETECHNO
+      token: '14707'
+      tier: 2
+    021NSETEST:
+      name: 021NSETEST
+      token: '14751'
+      tier: 2
+    071NSETEST:
+      name: 071NSETEST
+      token: '14764'
+      tier: 2
+    091NSETEST:
+      name: 091NSETEST
+      token: '14769'
+      tier: 2
+    VIPCLOTHNG:
+      name: VIPCLOTHNG
+      token: '14843'
+      tier: 2
+    IFBIND:
+      name: IFBIND
+      token: '1485'
+      tier: 2
+    CENTRALBK:
+      name: CENTRALBK
+      token: '14894'
+      tier: 2
+    KPRMILL:
+      name: KPRMILL
+      token: '14912'
+      tier: 2
+    LAL:
+      name: LAL
+      token: '14924'
+      tier: 2
+    GSEC10YEAR:
+      name: GSEC10YEAR
+      token: '14938'
+      tier: 2
+    INDOWIND:
+      name: INDOWIND
+      token: '14952'
+      tier: 2
+    MAANALU:
+      name: MAANALU
+      token: '15017'
+      tier: 2
+    CERA:
+      name: CERA
+      token: '15039'
+      tier: 2
+    KALYANIFRG:
+      name: KALYANIFRG
+      token: '15156'
+      tier: 2
+    TARIL:
+      name: TARIL
+      token: '15174'
+      tier: 2
+    MANAKSIA:
+      name: MANAKSIA
+      token: '15199'
+      tier: 2
+    ARIES:
+      name: ARIES
+      token: '15204'
+      tier: 2
+    PATINTLOG:
+      name: PATINTLOG
+      token: '15219'
+      tier: 2
+    RPOWER:
+      name: RPOWER
+      token: '15259'
+      tier: 2
+    BANG:
+      name: BANG
+      token: '15303'
+      tier: 2
+    QGOLDHALF:
+      name: QGOLDHALF
+      token: '15330'
+      tier: 2
+    NAHARCAP:
+      name: NAHARCAP
+      token: '15360'
+      tier: 2
+    PIGL:
+      name: PIGL
+      token: '15716'
+      tier: 2
+    LATTEYS:
+      name: LATTEYS
+      token: '15840'
+      tier: 2
+    HINDWAREAP:
+      name: HINDWAREAP
+      token: '15883'
+      tier: 2
+    BAJAJ-AUTO:
+      name: BAJAJ-AUTO
+      token: '16669'
+      tier: 2
+    GOKUL:
+      name: GOKUL
+      token: '16705'
+      tier: 2
+    RPGLIFE:
+      name: RPGLIFE
+      token: '16725'
+      tier: 2
+    QNIFTY:
+      name: QNIFTY
+      token: '16819'
+      tier: 2
+    IKIO:
+      name: IKIO
+      token: '16822'
+      tier: 2
+    ALBERTDAVD:
+      name: ALBERTDAVD
+      token: '17256'
+      tier: 2
+    UTKARSHBNK:
+      name: UTKARSHBNK
+      token: '17358'
+      tier: 2
+    ADANIPOWER:
+      name: ADANIPOWER
+      token: '17388'
+      tier: 2
+    JINDALPOLY:
+      name: JINDALPOLY
+      token: '1756'
+      tier: 2
+    EXPLEOSOL:
+      name: EXPLEOSOL
+      token: '17486'
+      tier: 2
+    SENSEXADD:
+      name: SENSEXADD
+      token: '17613'
+      tier: 2
+    LTM:
+      name: LTM
+      token: '17818'
+      tier: 2
+    RISHABH:
+      name: RISHABH
+      token: '18417'
+      tier: 2
+    BIGBLOC:
+      name: BIGBLOC
+      token: '18431'
+      tier: 2
+    POWERINDIA:
+      name: POWERINDIA
+      token: '18457'
+      tier: 2
+    MASKINVEST:
+      name: MASKINVEST
+      token: '18727'
+      tier: 2
+    MAZDA:
+      name: MAZDA
+      token: '18866'
+      tier: 2
+    JSWINFRA:
+      name: JSWINFRA
+      token: '19020'
+      tier: 2
+    LAURUSLABS:
+      name: LAURUSLABS
+      token: '19234'
+      tier: 2
+    IMFA:
+      name: IMFA
+      token: '19235'
+      tier: 2
+    TERASOFT:
+      name: TERASOFT
+      token: '19292'
+      tier: 2
+    AHLEAST:
+      name: AHLEAST
+      token: '19438'
+      tier: 2
+    IITL:
+      name: IITL
+      token: '19525'
+      tier: 2
+    UGARSUGAR:
+      name: UGARSUGAR
+      token: '19578'
+      tier: 2
+    BLUEJET:
+      name: BLUEJET
+      token: '19686'
+      tier: 2
+    LMW:
+      name: LMW
+      token: '1979'
+      tier: 2
+    ESAFSFB:
+      name: ESAFSFB
+      token: '19878'
+      tier: 2
+    EGOLD:
+      name: EGOLD
+      token: '19933'
+      tier: 2
+    INTENTECH:
+      name: INTENTECH
+      token: '20071'
+      tier: 2
+    TASTYBITE:
+      name: TASTYBITE
+      token: '20092'
+      tier: 2
+    JWL:
+      name: JWL
+      token: '20224'
+      tier: 2
+    INDIGOPNTS:
+      name: INDIGOPNTS
+      token: '2048'
+      tier: 2
+    PRUDMOULI:
+      name: PRUDMOULI
+      token: '20527'
+      tier: 2
+    INOXINDIA:
+      name: INOXINDIA
+      token: '20607'
+      tier: 2
+    JINDWORLD:
+      name: JINDWORLD
+      token: '20642'
+      tier: 2
+    RPPINFRA:
+      name: RPPINFRA
+      token: '20760'
+      tier: 2
+    HAPPYFORGE:
+      name: HAPPYFORGE
+      token: '20854'
+      tier: 2
+    PALASHSECU:
+      name: PALASHSECU
+      token: '21383'
+      tier: 2
+    GANGESSECU:
+      name: GANGESSECU
+      token: '21399'
+      tier: 2
+    MOM100:
+      name: MOM100
+      token: '21423'
+      tier: 2
+    NEXT50BETA:
+      name: NEXT50BETA
+      token: '21478'
+      tier: 2
+    DAVANGERE:
+      name: DAVANGERE
+      token: '21794'
+      tier: 2
+    TEXRAIL:
+      name: TEXRAIL
+      token: '21828'
+      tier: 2
+    BANKBETF:
+      name: BANKBETF
+      token: '21986'
+      tier: 2
+    DHUNINV:
+      name: DHUNINV
+      token: '22233'
+      tier: 2
+    MAXHEALTH:
+      name: MAXHEALTH
+      token: '22377'
+      tier: 2
+    RPTECH:
+      name: RPTECH
+      token: '22670'
+      tier: 2
+    BESTAGRO:
+      name: BESTAGRO
+      token: '2306'
+      tier: 2
+    MUKKA:
+      name: MUKKA
+      token: '22980'
+      tier: 2
+    GOPAL:
+      name: GOPAL
+      token: '23066'
+      tier: 2
+    SMCGLOBAL:
+      name: SMCGLOBAL
+      token: '2320'
+      tier: 2
+    NURECA:
+      name: NURECA
+      token: '2350'
+      tier: 2
+    JNKINDIA:
+      name: JNKINDIA
+      token: '23621'
+      tier: 2
+    LIQUIDBETF:
+      name: LIQUIDBETF
+      token: '23915'
+      tier: 2
+    BOROSCI:
+      name: BOROSCI
+      token: '24014'
+      tier: 2
+    NIRLON:
+      name: NIRLON
+      token: '2433'
+      tier: 2
+    EMCURE:
+      name: EMCURE
+      token: '24398'
+      tier: 2
+    OILIETF:
+      name: OILIETF
+      token: '24533'
+      tier: 2
+    MAITHANALL:
+      name: MAITHANALL
+      token: '24538'
+      tier: 2
+    RUSHIL:
+      name: RUSHIL
+      token: '24595'
+      tier: 2
+    METALIETF:
+      name: METALIETF
+      token: '24861'
+      tier: 2
+    MFML:
+      name: MFML
+      token: '24937'
+      tier: 2
+    MULTICAP:
+      name: MULTICAP
+      token: '25080'
+      tier: 2
+    RVTH:
+      name: RVTH
+      token: '25157'
+      tier: 2
+    KROSS:
+      name: KROSS
+      token: '25252'
+      tier: 2
+    PNGJL:
+      name: PNGJL
+      token: '25312'
+      tier: 2
+    NIRAJ:
+      name: NIRAJ
+      token: '255'
+      tier: 2
+    SHAKTIPUMP:
+      name: SHAKTIPUMP
+      token: '25574'
+      tier: 2
+    GROWWDEFNC:
+      name: GROWWDEFNC
+      token: '25758'
+      tier: 2
+    LLOYDSENT:
+      name: LLOYDSENT
+      token: '25807'
+      tier: 2
+    LEMONTREE:
+      name: LEMONTREE
+      token: '2606'
+      tier: 2
+    HERANBA:
+      name: HERANBA
+      token: '2614'
+      tier: 2
+    EMULTIMQ:
+      name: EMULTIMQ
+      token: '25996'
+      tier: 2
+    VSSL:
+      name: VSSL
+      token: '27067'
+      tier: 2
+    PRAKASH:
+      name: PRAKASH
+      token: '2708'
+      tier: 2
+    PRECWIRE:
+      name: PRECWIRE
+      token: '2717'
+      tier: 2
+    CINELINE:
+      name: CINELINE
+      token: '27161'
+      tier: 2
+    RACLGEAR:
+      name: RACLGEAR
+      token: '27171'
+      tier: 2
+    HALEOSLABS:
+      name: HALEOSLABS
+      token: '21551'
+      tier: 2
+    APEX:
+      name: APEX
+      token: '21623'
+      tier: 2
+    LIQUIDCASE:
+      name: LIQUIDCASE
+      token: '21750'
+      tier: 2
+    GENCON:
+      name: GENCON
+      token: '2188'
+      tier: 2
+    NIFTYBETF:
+      name: NIFTYBETF
+      token: '21959'
+      tier: 2
+    MIRCELECTR:
+      name: MIRCELECTR
+      token: '2202'
+      tier: 2
+    MACPOWER:
+      name: MACPOWER
+      token: '22347'
+      tier: 2
+    HDFCNIFBAN:
+      name: HDFCNIFBAN
+      token: '22433'
+      tier: 2
+    HDFCPSUBK:
+      name: HDFCPSUBK
+      token: '22595'
+      tier: 2
+    MOTOGENFIN:
+      name: MOTOGENFIN
+      token: '2268'
+      tier: 2
+    MOSMALL250:
+      name: MOSMALL250
+      token: '23181'
+      tier: 2
+    NCC:
+      name: NCC
+      token: '2319'
+      tier: 2
+    JAYNECOIND:
+      name: JAYNECOIND
+      token: '2331'
+      tier: 2
+    UEL:
+      name: UEL
+      token: '23507'
+      tier: 2
+    MUTHOOTFIN:
+      name: MUTHOOTFIN
+      token: '23650'
+      tier: 2
+    MIDSMALL:
+      name: MIDSMALL
+      token: '23855'
+      tier: 2
+    RETAIL:
+      name: RETAIL
+      token: '24145'
+      tier: 2
+    DEEDEV:
+      name: DEEDEV
+      token: '24154'
+      tier: 2
+    NKIND:
+      name: NKIND
+      token: '2439'
+      tier: 2
+    ADL:
+      name: ADL
+      token: '245'
+      tier: 2
+    SUYOG:
+      name: SUYOG
+      token: '24851'
+      tier: 2
+    WINDMACHIN:
+      name: WINDMACHIN
+      token: '24969'
+      tier: 2
+    BCLIND:
+      name: BCLIND
+      token: '2513'
+      tier: 2
+    BALAJEE:
+      name: BALAJEE
+      token: '25203'
+      tier: 2
+    DSSL:
+      name: DSSL
+      token: '25690'
+      tier: 2
+    AMJLAND:
+      name: AMJLAND
+      token: '2598'
+      tier: 2
+    SEAMECLTD:
+      name: SEAMECLTD
+      token: '2616'
+      tier: 2
+    POLYPLEX:
+      name: POLYPLEX
+      token: '2687'
+      tier: 2
+    SAGILITY:
+      name: SAGILITY
+      token: '27052'
+      tier: 2
+    SWANCORP:
+      name: SWANCORP
+      token: '27095'
+      tier: 2
+    EIEL:
+      name: EIEL
+      token: '27213'
+      tier: 2
+    SAMPANN:
+      name: SAMPANN
+      token: '27303'
+      tier: 2
+    JUBLINGREA:
+      name: JUBLINGREA
+      token: '2783'
+      tier: 2
+    INNOVANA:
+      name: INNOVANA
+      token: '27754'
+      tier: 2
+    VMM:
+      name: VMM
+      token: '27969'
+      tier: 2
+    RAJSREESUG:
+      name: RAJSREESUG
+      token: '2809'
+      tier: 2
+    RANASUG:
+      name: RANASUG
+      token: '2837'
+      tier: 2
+    IGIL:
+      name: IGIL
+      token: '28378'
+      tier: 2
+    CRAFTSMAN:
+      name: CRAFTSMAN
+      token: '2854'
+      tier: 2
+    CEWATER:
+      name: CEWATER
+      token: '28764'
+      tier: 2
+    RELIANCE:
+      name: RELIANCE
+      token: '2885'
+      tier: 2
+    RIIL:
+      name: RIIL
+      token: '2912'
+      tier: 2
+    MOHITIND:
+      name: MOHITIND
+      token: '29423'
+      tier: 2
+    NEXT30ADD:
+      name: NEXT30ADD
+      token: '29464'
+      tier: 2
+    HEXT:
+      name: HEXT
+      token: '29666'
+      tier: 2
+    SAKHTISUG:
+      name: SAKHTISUG
+      token: '2969'
+      tier: 2
+    UNIONGOLD:
+      name: UNIONGOLD
+      token: '29687'
+      tier: 2
+    NIFTY100EW:
+      name: NIFTY100EW
+      token: '29944'
+      tier: 2
+    WONDERLA:
+      name: WONDERLA
+      token: '3002'
+      tier: 2
+    ORIENTCEM:
+      name: ORIENTCEM
+      token: '30089'
+      tier: 2
+    PRABHA:
+      name: PRABHA
+      token: '30134'
+      tier: 2
+    ISHANCH:
+      name: ISHANCH
+      token: '30249'
+      tier: 2
+    VEDL:
+      name: VEDL
+      token: '3063'
+      tier: 2
+    UFBL:
+      name: UFBL
+      token: '3127'
+      tier: 2
+    SKFINDIA:
+      name: SKFINDIA
+      token: '3186'
+      tier: 2
+    SPIC:
+      name: SPIC
+      token: '3252'
+      tier: 2
+    SUDARSCHEM:
+      name: SUDARSCHEM
+      token: '3327'
+      tier: 2
+    BALKRISIND:
+      name: BALKRISIND
+      token: '335'
+      tier: 2
+    TAINWALCHM:
+      name: TAINWALCHM
+      token: '3396'
+      tier: 2
+    BANARISUG:
+      name: BANARISUG
+      token: '350'
+      tier: 2
+    TIRUMALCHM:
+      name: TIRUMALCHM
+      token: '3496'
+      tier: 2
+    TITAN:
+      name: TITAN
+      token: '3506'
+      tier: 2
+    VLSFINANCE:
+      name: VLSFINANCE
+      token: '3715'
+      tier: 2
+    MAHLOG:
+      name: MAHLOG
+      token: '385'
+      tier: 2
+    WIMPLAST:
+      name: WIMPLAST
+      token: '3781'
+      tier: 2
+    GOCLCORP:
+      name: GOCLCORP
+      token: '3963'
+      tier: 2
+    PVP:
+      name: PVP
+      token: '4010'
+      tier: 2
+    NAVA:
+      name: NAVA
+      token: '4014'
+      tier: 2
+    SANGAMIND:
+      name: SANGAMIND
+      token: '4184'
+      tier: 2
+    KHADIM:
+      name: KHADIM
+      token: '425'
+      tier: 2
+    SOMATEX:
+      name: SOMATEX
+      token: '4201'
+      tier: 2
+    VISAKAIND:
+      name: VISAKAIND
+      token: '4221'
+      tier: 2
+    WENDT:
+      name: WENDT
+      token: '4235'
+      tier: 2
+    JAGSNPHARM:
+      name: JAGSNPHARM
+      token: '4410'
+      tier: 2
+    OSWALGREEN:
+      name: OSWALGREEN
+      token: '471'
+      tier: 2
+    SBCL:
+      name: SBCL
+      token: '4656'
+      tier: 2
+    INDNIPPON:
+      name: INDNIPPON
+      token: '4747'
+      tier: 2
+    PHARMABEES:
+      name: PHARMABEES
+      token: '4973'
+      tier: 2
+    EXXARO:
+      name: EXXARO
+      token: '5352'
+      tier: 2
+    EPIGRAL:
+      name: EPIGRAL
+      token: '5382'
+      tier: 2
+    VIJAYA:
+      name: VIJAYA
+      token: '5585'
+      tier: 2
+    CEMPRO:
+      name: CEMPRO
+      token: '5622'
+      tier: 2
+    SHANTI:
+      name: SHANTI
+      token: '5650'
+      tier: 2
+    AXISBANK:
+      name: AXISBANK
+      token: '5900'
+      tier: 2
+    CYBERTECH:
+      name: CYBERTECH
+      token: '6051'
+      tier: 2
+    LICNETFGSC:
+      name: LICNETFGSC
+      token: '6062'
+      tier: 2
+    ABREL:
+      name: ABREL
+      token: '625'
+      tier: 2
+    IRIS:
+      name: IRIS
+      token: '6489'
+      tier: 2
+    JINDALSTEL:
+      name: JINDALSTEL
+      token: '6733'
+      tier: 2
+    NIPPOBATRY:
+      name: NIPPOBATRY
+      token: '6782'
+      tier: 2
+    LATENTVIEW:
+      name: LATENTVIEW
+      token: '6818'
+      tier: 2
+    CHOLAFIN:
+      name: CHOLAFIN
+      token: '685'
+      tier: 2
+    RPPL:
+      name: RPPL
+      token: '6913'
+      tier: 2
+    AARTIIND:
+      name: AARTIIND
+      token: '7'
+      tier: 2
+    ANANDRATHI:
+      name: ANANDRATHI
+      token: '7145'
+      tier: 2
+    ABSLNN50ET:
+      name: ABSLNN50ET
+      token: '7339'
+      tier: 2
+    SUPRIYA:
+      name: SUPRIYA
+      token: '7390'
+      tier: 2
+    MANAKALUCO:
+      name: MANAKALUCO
+      token: '7420'
+      tier: 2
+    HECPROJECT:
+      name: HECPROJECT
+      token: '7425'
+      tier: 2
+    EVIETF:
+      name: EVIETF
+      token: '755881'
+      tier: 2
+    SILVER360:
+      name: SILVER360
+      token: '756150'
+      tier: 2
+    RAJOOENG:
+      name: RAJOOENG
+      token: '757049'
+      tier: 2
+    AONENIFTY:
+      name: AONENIFTY
+      token: '757096'
+      tier: 2
+    MOMGF:
+      name: MOMGF
+      token: '757099'
+      tier: 2
+    DIGITIDE:
+      name: DIGITIDE
+      token: '757515'
+      tier: 2
+    ATHERENERG:
+      name: ATHERENERG
+      token: '757645'
+      tier: 2
+    RMDRIP:
+      name: RMDRIP
+      token: '757834'
+      tier: 2
+    LOTUSDEV:
+      name: LOTUSDEV
+      token: '758145'
+      tier: 2
+    GROWWPOWER:
+      name: GROWWPOWER
+      token: '758165'
+      tier: 2
+    ALLTIME:
+      name: ALLTIME
+      token: '758448'
+      tier: 2
+    KALPATARU:
+      name: KALPATARU
+      token: '758558'
+      tier: 2
+    LAXMIINDIA:
+      name: LAXMIINDIA
+      token: '758863'
+      tier: 2
+    VMSTMT:
+      name: VMSTMT
+      token: '759152'
+      tier: 2
+    BLUESTONE:
+      name: BLUESTONE
+      token: '759291'
+      tier: 2
+    RUBICON:
+      name: RUBICON
+      token: '759316'
+      tier: 2
+    EASEMYTRIP:
+      name: EASEMYTRIP
+      token: '2792'
+      tier: 2
+    RALLIS:
+      name: RALLIS
+      token: '2816'
+      tier: 2
+    RAYMOND:
+      name: RAYMOND
+      token: '2859'
+      tier: 2
+    DAMCAPITAL:
+      name: DAMCAPITAL
+      token: '28662'
+      tier: 2
+    SANATHAN:
+      name: SANATHAN
+      token: '28805'
+      tier: 2
+    INDOFARM:
+      name: INDOFARM
+      token: '29025'
+      tier: 2
+    SETL:
+      name: SETL
+      token: '29075'
+      tier: 2
+    STALLION:
+      name: STALLION
+      token: '29204'
+      tier: 2
+    PROTEAN:
+      name: PROTEAN
+      token: '29472'
+      tier: 2
+    SAIL:
+      name: SAIL
+      token: '2963'
+      tier: 2
+    JUBLCPL:
+      name: JUBLCPL
+      token: '29590'
+      tier: 2
+    GUJTHEM:
+      name: GUJTHEM
+      token: '29731'
+      tier: 2
+    VIVIDHA:
+      name: VIVIDHA
+      token: '29877'
+      tier: 2
+    AONETOTAL:
+      name: AONETOTAL
+      token: '29975'
+      tier: 2
+    ATULAUTO:
+      name: ATULAUTO
+      token: '30023'
+      tier: 2
+    GOLD360:
+      name: GOLD360
+      token: '30105'
+      tier: 2
+    ABFRL:
+      name: ABFRL
+      token: '30108'
+      tier: 2
+    SAMMAANCAP:
+      name: SAMMAANCAP
+      token: '30125'
+      tier: 2
+    SPECTRUM:
+      name: SPECTRUM
+      token: '30455'
+      tier: 2
+    AONELIQUID:
+      name: AONELIQUID
+      token: '30472'
+      tier: 2
+    TIINDIA:
+      name: TIINDIA
+      token: '312'
+      tier: 2
+    SIEMENS:
+      name: SIEMENS
+      token: '3150'
+      tier: 2
+    JPOLYINVST:
+      name: JPOLYINVST
+      token: '31507'
+      tier: 2
+    SPMLINFRA:
+      name: SPMLINFRA
+      token: '3321'
+      tier: 2
+    SUNFLAG:
+      name: SUNFLAG
+      token: '3348'
+      tier: 2
+    TATACHEM:
+      name: TATACHEM
+      token: '3405'
+      tier: 2
+    TFCILTD:
+      name: TFCILTD
+      token: '3466'
+      tier: 2
+    TATASTEEL:
+      name: TATASTEEL
+      token: '3499'
+      tier: 2
+    TNPETRO:
+      name: TNPETRO
+      token: '3509'
+      tier: 2
+    TECILCHEM:
+      name: TECILCHEM
+      token: '3453'
+      tier: 2
+    MOKSH:
+      name: MOKSH
+      token: '3586'
+      tier: 2
+    UNITECH:
+      name: UNITECH
+      token: '3594'
+      tier: 2
+    AXISHCETF:
+      name: AXISHCETF
+      token: '3608'
+      tier: 2
+    VINDHYATEL:
+      name: VINDHYATEL
+      token: '3694'
+      tier: 2
+    FINEORG:
+      name: FINEORG
+      token: '3744'
+      tier: 2
+    WEIZMANIND:
+      name: WEIZMANIND
+      token: '3748'
+      tier: 2
+    VINEETLAB:
+      name: VINEETLAB
+      token: '3807'
+      tier: 2
+    BEML:
+      name: BEML
+      token: '395'
+      tier: 2
+    SOMANYCERA:
+      name: SOMANYCERA
+      token: '3880'
+      tier: 2
+    CAPLIPOINT:
+      name: CAPLIPOINT
+      token: '3906'
+      tier: 2
+    BEPL:
+      name: BEPL
+      token: '419'
+      tier: 2
+    SILINV:
+      name: SILINV
+      token: '4105'
+      tier: 2
+    SENSEXIETF:
+      name: SENSEXIETF
+      token: '4378'
+      tier: 2
+    RUCHINFRA:
+      name: RUCHINFRA
+      token: '4566'
+      tier: 2
+    SHYAMMETL:
+      name: SHYAMMETL
+      token: '4693'
+      tier: 2
+    ETERNAL:
+      name: ETERNAL
+      token: '5097'
+      tier: 2
+    CIGNITITEC:
+      name: CIGNITITEC
+      token: '5142'
+      tier: 2
+    STYLAMIND:
+      name: STYLAMIND
+      token: '5186'
+      tier: 2
+    KOVAI:
+      name: KOVAI
+      token: '5192'
+      tier: 2
+    CARTRADE:
+      name: CARTRADE
+      token: '5407'
+      tier: 2
+    APTUS:
+      name: APTUS
+      token: '5435'
+      tier: 2
+    PAR:
+      name: PAR
+      token: '5631'
+      tier: 2
+    INTELLECT:
+      name: INTELLECT
+      token: '5926'
+      tier: 2
+    CARBORUNIV:
+      name: CARBORUNIV
+      token: '595'
+      tier: 2
+    ABSLAMC:
+      name: ABSLAMC
+      token: '6018'
+      tier: 2
+    LAMBODHARA:
+      name: LAMBODHARA
+      token: '6407'
+      tier: 2
+    NIFTYETF:
+      name: NIFTYETF
+      token: '6353'
+      tier: 2
+    TECH:
+      name: TECH
+      token: '6462'
+      tier: 2
+    FOODSIN:
+      name: FOODSIN
+      token: '6673'
+      tier: 2
+    VISHNU:
+      name: VISHNU
+      token: '6908'
+      tier: 2
+    GANECOS:
+      name: GANECOS
+      token: '6944'
+      tier: 2
+    MENONBE:
+      name: MENONBE
+      token: '6961'
+      tier: 2
+    HESTERBIO:
+      name: HESTERBIO
+      token: '7048'
+      tier: 2
+    MAPMYINDIA:
+      name: MAPMYINDIA
+      token: '7227'
+      tier: 2
+    HCLTECH:
+      name: HCLTECH
+      token: '7229'
+      tier: 2
+    JTLIND:
+      name: JTLIND
+      token: '7287'
+      tier: 2
+    SETFNN50:
+      name: SETFNN50
+      token: '7353'
+      tier: 2
+    MOTOUR:
+      name: MOTOUR
+      token: '757443'
+      tier: 2
+    EBGNG:
+      name: EBGNG
+      token: '757862'
+      tier: 2
+    JSLL:
+      name: JSLL
+      token: '758115'
+      tier: 2
+    PROSTARM:
+      name: PROSTARM
+      token: '758173'
+      tier: 2
+    MOSILVER:
+      name: MOSILVER
+      token: '758457'
+      tier: 2
+    SGFIN:
+      name: SGFIN
+      token: '758853'
+      tier: 2
+    SML100CASE:
+      name: SML100CASE
+      token: '758955'
+      tier: 2
+    GKENERGY:
+      name: GKENERGY
+      token: '759048'
+      tier: 2
+    TRUALT:
+      name: TRUALT
+      token: '759210'
+      tier: 2
+    BMWVENTLTD:
+      name: BMWVENTLTD
+      token: '759256'
+      tier: 2
+    TATACAP:
+      name: TATACAP
+      token: '759265'
+      tier: 2
+    MOENERGY:
+      name: MOENERGY
+      token: '759374'
+      tier: 2
+    SOLEX:
+      name: SOLEX
+      token: '759397'
+      tier: 2
+    SKFINDUS:
+      name: SKFINDUS
+      token: '760101'
+      tier: 2
+    MIDCAPADD:
+      name: MIDCAPADD
+      token: '760356'
+      tier: 2
+    DIVIDEND:
+      name: DIVIDEND
+      token: '760412'
+      tier: 2
+    BHARATCOAL:
+      name: BHARATCOAL
+      token: '760726'
+      tier: 2
+    KOTYARK:
+      name: KOTYARK
+      token: '761335'
+      tier: 2
+    SBINMID150:
+      name: SBINMID150
+      token: '761741'
+      tier: 2
+    AARNAV:
+      name: AARNAV
+      token: '761821'
+      tier: 2
+    BNALTD:
+      name: BNALTD
+      token: '762613'
+      tier: 2
+    PRAVEG:
+      name: PRAVEG
+      token: '762844'
+      tier: 2
+    SHARDUL:
+      name: SHARDUL
+      token: '762894'
+      tier: 2
+    WELSPLSOL:
+      name: WELSPLSOL
+      token: '762971'
+      tier: 2
+    DALMIASUG:
+      name: DALMIASUG
+      token: '781'
+      tier: 2
+    AUTOBEES:
+      name: AUTOBEES
+      token: '7880'
+      tier: 2
+    DCM:
+      name: DCM
+      token: '805'
+      tier: 2
+    GRWRHITECH:
+      name: GRWRHITECH
+      token: '7982'
+      tier: 2
+    DCW:
+      name: DCW
+      token: '817'
+      tier: 2
+    SILVERBEES:
+      name: SILVERBEES
+      token: '8080'
+      tier: 2
+    AJANTPHARM:
+      name: AJANTPHARM
+      token: '8124'
+      tier: 2
+    DEEPAKFERT:
+      name: DEEPAKFERT
+      token: '827'
+      tier: 2
+    XELPMOC:
+      name: XELPMOC
+      token: '8477'
+      tier: 2
+    DRREDDY:
+      name: DRREDDY
+      token: '881'
+      tier: 2
+    PIXTRANS:
+      name: PIXTRANS
+      token: '9087'
+      tier: 2
+    TPLPLASTEH:
+      name: TPLPLASTEH
+      token: '9219'
+      tier: 2
+    KRITIKA:
+      name: KRITIKA
+      token: '9288'
+      tier: 2
+    DPABHUSHAN:
+      name: DPABHUSHAN
+      token: '936'
+      tier: 2
+    CAMPUS:
+      name: CAMPUS
+      token: '9362'
+      tier: 2
+    TRU:
+      name: TRU
+      token: '9378'
+      tier: 2
+    TAJGVK:
+      name: TAJGVK
+      token: '9354'
+      tier: 2
+    RAINBOW:
+      name: RAINBOW
+      token: '9408'
+      tier: 2
+    POLYCAB:
+      name: POLYCAB
+      token: '9590'
+      tier: 2
+    NEOGEN:
+      name: NEOGEN
+      token: '9917'
+      tier: 2
+    ELIQUID:
+      name: ELIQUID
+      token: '759466'
+      tier: 2
+    MOMENTUM30:
+      name: MOMENTUM30
+      token: '759488'
+      tier: 2
+    SMALL250:
+      name: SMALL250
+      token: '759814'
+      tier: 3
+    GROWWCAPM:
+      name: GROWWCAPM
+      token: '760051'
+      tier: 3
+    SRTL:
+      name: SRTL
+      token: '760188'
+      tier: 3
+    LGEINDIA:
+      name: LGEINDIA
+      token: '760213'
+      tier: 3
+    ICICIAMC:
+      name: ICICIAMC
+      token: '760407'
+      tier: 3
+    KNAGRI:
+      name: KNAGRI
+      token: '760923'
+      tier: 3
+    DSFCL:
+      name: DSFCL
+      token: '760891'
+      tier: 3
+    HEALTHCARE:
+      name: HEALTHCARE
+      token: '760986'
+      tier: 3
+    GICL:
+      name: GICL
+      token: '761025'
+      tier: 3
+    DEFENCE:
+      name: DEFENCE
+      token: '761046'
+      tier: 3
+    ABSLMSCIN:
+      name: ABSLMSCIN
+      token: '761066'
+      tier: 3
+    ALGOQUANT:
+      name: ALGOQUANT
+      token: '761270'
+      tier: 3
+    HSBCGOLD:
+      name: HSBCGOLD
+      token: '761506'
+      tier: 3
+    VALUE:
+      name: VALUE
+      token: '761511'
+      tier: 3
+    AMIRCHAND:
+      name: AMIRCHAND
+      token: '761670'
+      tier: 3
+    3BBLACKBIO:
+      name: 3BBLACKBIO
+      token: '762518'
+      tier: 3
+    BTTL:
+      name: BTTL
+      token: '762618'
+      tier: 3
+    DECNGOLD:
+      name: DECNGOLD
+      token: '762638'
+      tier: 3
+    EMPOWER:
+      name: EMPOWER
+      token: '762670'
+      tier: 3
+    GNRL:
+      name: GNRL
+      token: '762690'
+      tier: 3
+    INVPRECQ:
+      name: INVPRECQ
+      token: '762722'
+      tier: 3
+    MENNPIS:
+      name: MENNPIS
+      token: '762787'
+      tier: 3
+    SCANSTL:
+      name: SCANSTL
+      token: '762884'
+      tier: 3
+    SHBAJRG:
+      name: SHBAJRG
+      token: '762899'
+      tier: 3
+    THAKDEV:
+      name: THAKDEV
+      token: '762949'
+      tier: 3
+    ALEMBICLTD:
+      name: ALEMBICLTD
+      token: '79'
+      tier: 3
+    MAHLIFE:
+      name: MAHLIFE
+      token: '8050'
+      tier: 3
+    DEVIT:
+      name: DEVIT
+      token: '8146'
+      tier: 3
+    CHOICEIN:
+      name: CHOICEIN
+      token: '8866'
+      tier: 3
+    NOVARTIND:
+      name: NOVARTIND
+      token: '9007'
+      tier: 3
+    ROTO:
+      name: ROTO
+      token: '9049'
+      tier: 3
+    EIHOTEL:
+      name: EIHOTEL
+      token: '919'
+      tier: 3
+    SKIPPER:
+      name: SKIPPER
+      token: '9428'
+      tier: 3
+    SPLPETRO:
+      name: SPLPETRO
+      token: '9617'
+      tier: 3
+    HIKAL:
+      name: HIKAL
+      token: '9668'
+      tier: 3
+    PARADEEP:
+      name: PARADEEP
+      token: '9741'
+      tier: 3
+    ETHOSLTD:
+      name: ETHOSLTD
+      token: '9750'
+      tier: 3
+    ALANKIT:
+      name: ALANKIT
+      token: '9921'
+      tier: 3
+    EMAMIPAP:
+      name: EMAMIPAP
+      token: '10074'
+      tier: 3
+    CSLFINANCE:
+      name: CSLFINANCE
+      token: '10350'
+      tier: 3
+    LUPIN:
+      name: LUPIN
+      token: '10440'
+      tier: 3
+    POWERMECH:
+      name: POWERMECH
+      token: '10473'
+      tier: 3
+    MOHEALTH:
+      name: MOHEALTH
+      token: '10508'
+      tier: 3
+    BHARTIARTL:
+      name: BHARTIARTL
+      token: '10604'
+      tier: 3
+    HDFCNEXT50:
+      name: HDFCNEXT50
+      token: '10619'
+      tier: 3
+    NIFTYQLITY:
+      name: NIFTYQLITY
+      token: '10690'
+      tier: 3
+    GVPTECH:
+      name: GVPTECH
+      token: '10865'
+      tier: 3
+    RADAAN:
+      name: RADAAN
+      token: '10932'
+      tier: 3
+    KSOLVES:
+      name: KSOLVES
+      token: '11060'
+      tier: 3
+    HDFCQUAL:
+      name: HDFCQUAL
+      token: '11255'
+      tier: 3
+    SUVEN:
+      name: SUVEN
+      token: '11233'
+      tier: 3
+    UNIENTER:
+      name: UNIENTER
+      token: '11293'
+      tier: 3
+    BIOCON:
+      name: BIOCON
+      token: '11373'
+      tier: 3
+    NDTV:
+      name: NDTV
+      token: '11427'
+      tier: 3
+    GLAXO:
+      name: GLAXO
+      token: '1153'
+      tier: 3
+    LT:
+      name: LT
+      token: '11483'
+      tier: 3
+    GNFC:
+      name: GNFC
+      token: '1174'
+      tier: 3
+    SUPRAJIT:
+      name: SUPRAJIT
+      token: '11689'
+      tier: 3
+    JPPOWER:
+      name: JPPOWER
+      token: '11763'
+      tier: 3
+    GEOJITFSL:
+      name: GEOJITFSL
+      token: '11896'
+      tier: 3
+    MEDANTA:
+      name: MEDANTA
+      token: '11956'
+      tier: 3
+    GOLDIAM:
+      name: GOLDIAM
+      token: '11971'
+      tier: 3
+    GOODYEAR:
+      name: GOODYEAR
+      token: '1205'
+      tier: 3
+    IMPAL:
+      name: IMPAL
+      token: '12009'
+      tier: 3
+    TRIVENI:
+      name: TRIVENI
+      token: '13081'
+      tier: 3
+    VIMTALABS:
+      name: VIMTALABS
+      token: '13101'
+      tier: 3
+    REPRO:
+      name: REPRO
+      token: '13126'
+      tier: 3
+    NITINSPIN:
+      name: NITINSPIN
+      token: '13175'
+      tier: 3
+    FACT:
+      name: FACT
+      token: '1008'
+      tier: 3
+    SCHAEFFLER:
+      name: SCHAEFFLER
+      token: '1011'
+      tier: 3
+    MANORAMA:
+      name: MANORAMA
+      token: '10227'
+      tier: 3
+    PPL:
+      name: PPL
+      token: '10297'
+      tier: 3
+    JISLJALEQS:
+      name: JISLJALEQS
+      token: '10397'
+      tier: 3
+    STEELCITY:
+      name: STEELCITY
+      token: '10406'
+      tier: 3
+    INFRAIETF:
+      name: INFRAIETF
+      token: '10723'
+      tier: 3
+    CANBK:
+      name: CANBK
+      token: '10794'
+      tier: 3
+    GABRIEL:
+      name: GABRIEL
+      token: '1085'
+      tier: 3
+    LIQUIDBEES:
+      name: LIQUIDBEES
+      token: '11006'
+      tier: 3
+    SATIA:
+      name: SATIA
+      token: '11045'
+      tier: 3
+    STCINDIA:
+      name: STCINDIA
+      token: '10948'
+      tier: 3
+    CNL:
+      name: CNL
+      token: '11155'
+      tier: 3
+    GHCL:
+      name: GHCL
+      token: '1127'
+      tier: 3
+    NSIL:
+      name: NSIL
+      token: '11239'
+      tier: 3
+    IGL:
+      name: IGL
+      token: '11262'
+      tier: 3
+    DREDGECORP:
+      name: DREDGECORP
+      token: '11271'
+      tier: 3
+    MAHABANK:
+      name: MAHABANK
+      token: '11377'
+      tier: 3
+    RKFORGE:
+      name: RKFORGE
+      token: '11411'
+      tier: 3
+    NIITLTD:
+      name: NIITLTD
+      token: '11522'
+      tier: 3
+    COFORGE:
+      name: COFORGE
+      token: '11543'
+      tier: 3
+    WESTLIFE:
+      name: WESTLIFE
+      token: '11580'
+      tier: 3
+    JBMA:
+      name: JBMA
+      token: '11655'
+      tier: 3
+    PATELENG:
+      name: PATELENG
+      token: '11699'
+      tier: 3
+    XCHANGING:
+      name: XCHANGING
+      token: '11705'
+      tier: 3
+    ACEINTEG:
+      name: ACEINTEG
+      token: '11779'
+      tier: 3
+    GOYALALUM:
+      name: GOYALALUM
+      token: '11787'
+      tier: 3
+    GLAND:
+      name: GLAND
+      token: '1186'
+      tier: 3
+    SHOPERSTOP:
+      name: SHOPERSTOP
+      token: '11813'
+      tier: 3
+    WELCORP:
+      name: WELCORP
+      token: '11821'
+      tier: 3
+    SEMAC:
+      name: SEMAC
+      token: '11961'
+      tier: 3
+    YESBANK:
+      name: YESBANK
+      token: '11915'
+      tier: 3
+    RML:
+      name: RML
+      token: '11975'
+      tier: 3
+    HTMEDIA:
+      name: HTMEDIA
+      token: '11979'
+      tier: 3
+    BBTCL:
+      name: BBTCL
+      token: '12153'
+      tier: 3
+    ZIMLAB:
+      name: ZIMLAB
+      token: '12384'
+      tier: 3
+    ENIL:
+      name: ENIL
+      token: '13192'
+      tier: 3
+    SULA:
+      name: SULA
+      token: '13218'
+      tier: 3
+    HCL-INSYS:
+      name: HCL-INSYS
+      token: '1327'
+      tier: 3
+    BLKASHYAP:
+      name: BLKASHYAP
+      token: '13290'
+      tier: 3
+    HDFCBANK:
+      name: HDFCBANK
+      token: '1333'
+      tier: 3
+    GALLANTT:
+      name: GALLANTT
+      token: '13337'
+      tier: 3
+    UTTAMSUGAR:
+      name: UTTAMSUGAR
+      token: '13376'
+      tier: 3
+    BALPHARMA:
+      name: BALPHARMA
+      token: '13441'
+      tier: 3
+    ACE:
+      name: ACE
+      token: '13587'
+      tier: 3
+    HGM:
+      name: HGM
+      token: '13592'
+      tier: 3
+    SKYGOLD:
+      name: SKYGOLD
+      token: '13631'
+      tier: 3
+    AERONEU:
+      name: AERONEU
+      token: '13689'
+      tier: 3
+    HCC:
+      name: HCC
+      token: '1375'
+      tier: 3
+    SUTLEJTEX:
+      name: SUTLEJTEX
+      token: '13801'
+      tier: 3
+    LTFOODS:
+      name: LTFOODS
+      token: '13816'
+      tier: 3
+    DONEAR:
+      name: DONEAR
+      token: '13839'
+      tier: 3
+    JINDRILL:
+      name: JINDRILL
+      token: '13875'
+      tier: 3
+    PLASTIBLEN:
+      name: PLASTIBLEN
+      token: '13920'
+      tier: 3
+    PRAENG:
+      name: PRAENG
+      token: '13941'
+      tier: 3
+    ABSLBANETF:
+      name: ABSLBANETF
+      token: '13987'
+      tier: 3
+    LUMAXTECH:
+      name: LUMAXTECH
+      token: '14014'
+      tier: 3
+    AGI:
+      name: AGI
+      token: '1412'
+      tier: 3
+    HINDZINC:
+      name: HINDZINC
+      token: '1424'
+      tier: 3
+    HDFCBSE500:
+      name: HDFCBSE500
+      token: '14230'
+      tier: 3
+    APOLLOPIPE:
+      name: APOLLOPIPE
+      token: '14361'
+      tier: 3
+    LAOPALA:
+      name: LAOPALA
+      token: '14423'
+      tier: 3
+    HLVLTD:
+      name: HLVLTD
+      token: '1448'
+      tier: 3
+    GOKULAGRO:
+      name: GOKULAGRO
+      token: '14480'
+      tier: 3
+    FORTIS:
+      name: FORTIS
+      token: '14592'
+      tier: 3
+    WEBELSOLAR:
+      name: WEBELSOLAR
+      token: '14602'
+      tier: 3
+    141NSETEST:
+      name: 141NSETEST
+      token: '14781'
+      tier: 3
+    AXSENSEX:
+      name: AXSENSEX
+      token: '14742'
+      tier: 3
+    011NSETEST:
+      name: 011NSETEST
+      token: '14747'
+      tier: 3
+    131NSETEST:
+      name: 131NSETEST
+      token: '14778'
+      tier: 3
+    161NSETEST:
+      name: 161NSETEST
+      token: '14784'
+      tier: 3
+    ASIANTILES:
+      name: ASIANTILES
+      token: '14889'
+      tier: 3
+    PSUBNKBEES:
+      name: PSUBNKBEES
+      token: '15032'
+      tier: 3
+    AVALON:
+      name: AVALON
+      token: '15058'
+      tier: 3
+    PSUBANK:
+      name: PSUBANK
+      token: '15061'
+      tier: 3
+    SILVERBETA:
+      name: SILVERBETA
+      token: '15085'
+      tier: 3
+    COLPAL:
+      name: COLPAL
+      token: '15141'
+      tier: 3
+    JYOTHYLAB:
+      name: JYOTHYLAB
+      token: '15146'
+      tier: 3
+    PPAP:
+      name: PPAP
+      token: '15209'
+      tier: 3
+    ACL:
+      name: ACL
+      token: '15420'
+      tier: 3
+    KIRIINDUS:
+      name: KIRIINDUS
+      token: '16639'
+      tier: 3
+    KOKUYOCMLN:
+      name: KOKUYOCMLN
+      token: '16827'
+      tier: 3
+    ARTEMISMED:
+      name: ARTEMISMED
+      token: '16913'
+      tier: 3
+    JOCIL:
+      name: JOCIL
+      token: '16927'
+      tier: 3
+    ASHOKAMET:
+      name: ASHOKAMET
+      token: '16943'
+      tier: 3
+    TPHQ:
+      name: TPHQ
+      token: '16996'
+      tier: 3
+    PATANJALI:
+      name: PATANJALI
+      token: '17029'
+      tier: 3
+    CYIENTDLM:
+      name: CYIENTDLM
+      token: '17187'
+      tier: 3
+    GLOBUSSPR:
+      name: GLOBUSSPR
+      token: '17424'
+      tier: 3
+    NV20IETF:
+      name: NV20IETF
+      token: '17475'
+      tier: 3
+    MGL:
+      name: MGL
+      token: '17534'
+      tier: 3
+    DAMODARIND:
+      name: DAMODARIND
+      token: '17541'
+      tier: 3
+    PVTBANKADD:
+      name: PVTBANKADD
+      token: '17576'
+      tier: 3
+    QUESS:
+      name: QUESS
+      token: '17704'
+      tier: 3
+    SARDAEN:
+      name: SARDAEN
+      token: '17758'
+      tier: 3
+    TREL:
+      name: TREL
+      token: '17795'
+      tier: 3
+    LLOYDSENGG:
+      name: LLOYDSENGG
+      token: '17801'
+      tier: 3
+    HINDCOPPER:
+      name: HINDCOPPER
+      token: '17939'
+      tier: 3
+    MMTC:
+      name: MMTC
+      token: '17957'
+      tier: 3
+    SBICARD:
+      name: SBICARD
+      token: '17971'
+      tier: 3
+    CONCORDBIO:
+      name: CONCORDBIO
+      token: '18060'
+      tier: 3
+    JUBLFOOD:
+      name: JUBLFOOD
+      token: '18096'
+      tier: 3
+    HATHWAY:
+      name: HATHWAY
+      token: '18154'
+      tier: 3
+    ORIENTLTD:
+      name: ORIENTLTD
+      token: '18208'
+      tier: 3
+    SAMHI:
+      name: SAMHI
+      token: '18614'
+      tier: 3
+    ENDURANCE:
+      name: ENDURANCE
+      token: '18822'
+      tier: 3
+    KSL:
+      name: KSL
+      token: '18889'
+      tier: 3
+    RAJRATAN:
+      name: RAJRATAN
+      token: '18962'
+      tier: 3
+    KIRLOSIND:
+      name: KIRLOSIND
+      token: '19025'
+      tier: 3
+    SENSEXETF:
+      name: SENSEXETF
+      token: '19224'
+      tier: 3
+    AARTISURF:
+      name: AARTISURF
+      token: '19233'
+      tier: 3
+    MONIFTY500:
+      name: MONIFTY500
+      token: '19237'
+      tier: 3
+    EMAMIREAL:
+      name: EMAMIREAL
+      token: '19277'
+      tier: 3
+    KSB:
+      name: KSB
+      token: '1949'
+      tier: 3
+    ESILVER:
+      name: ESILVER
+      token: '20257'
+      tier: 3
+    SHAH:
+      name: SHAH
+      token: '20296'
+      tier: 3
+    PRESTIGE:
+      name: PRESTIGE
+      token: '20302'
+      tier: 3
+    INDIASHLTR:
+      name: INDIASHLTR
+      token: '20556'
+      tier: 3
+    SCHAND:
+      name: SCHAND
+      token: '20698'
+      tier: 3
+    PSPPROJECT:
+      name: PSPPROJECT
+      token: '20877'
+      tier: 3
+    PSB:
+      name: PSB
+      token: '21001'
+      tier: 3
+    SUMMITSEC:
+      name: SUMMITSEC
+      token: '21275'
+      tier: 3
+    DYNPRO:
+      name: DYNPRO
+      token: '21314'
+      tier: 3
+    OSIAHYPER:
+      name: OSIAHYPER
+      token: '12635'
+      tier: 3
+    11NSETEST:
+      name: 11NSETEST
+      token: '12841'
+      tier: 3
+    ABB:
+      name: ABB
+      token: '13'
+      tier: 3
+    UNIPARTS:
+      name: UNIPARTS
+      token: '13057'
+      tier: 3
+    NAHARINDUS:
+      name: NAHARINDUS
+      token: '13106'
+      tier: 3
+    QUICKHEAL:
+      name: QUICKHEAL
+      token: '13116'
+      tier: 3
+    GSPL:
+      name: GSPL
+      token: '13197'
+      tier: 3
+    CENTURYPLY:
+      name: CENTURYPLY
+      token: '13305'
+      tier: 3
+    RAMANEWS:
+      name: RAMANEWS
+      token: '13565'
+      tier: 3
+    MANOMAY:
+      name: MANOMAY
+      token: '13753'
+      tier: 3
+    GESHIP:
+      name: GESHIP
+      token: '13776'
+      tier: 3
+    MMFL:
+      name: MMFL
+      token: '13844'
+      tier: 3
+    IGPL:
+      name: IGPL
+      token: '14086'
+      tier: 3
+    NSLNISP:
+      name: NSLNISP
+      token: '14180'
+      tier: 3
+    FSL:
+      name: FSL
+      token: '14304'
+      tier: 3
+    RAJTV:
+      name: RAJTV
+      token: '14403'
+      tier: 3
+    PAGEIND:
+      name: PAGEIND
+      token: '14413'
+      tier: 3
+    NAHARPOLY:
+      name: NAHARPOLY
+      token: '14445'
+      tier: 3
+    HILTON:
+      name: HILTON
+      token: '14627'
+      tier: 3
+    GOACARBON:
+      name: GOACARBON
+      token: '14687'
+      tier: 3
+    DLF:
+      name: DLF
+      token: '14732'
+      tier: 3
+    121NSETEST:
+      name: 121NSETEST
+      token: '14777'
+      tier: 3
+    151NSETEST:
+      name: 151NSETEST
+      token: '14782'
+      tier: 3
+    IFBAGRO:
+      name: IFBAGRO
+      token: '1482'
+      tier: 3
+    SAHYADRI:
+      name: SAHYADRI
+      token: '14900'
+      tier: 3
+    RBA:
+      name: RBA
+      token: '1494'
+      tier: 3
+    KSCL:
+      name: KSCL
+      token: '14972'
+      tier: 3
+    BAJAJELEC:
+      name: BAJAJELEC
+      token: '15034'
+      tier: 3
+    ADANIPORTS:
+      name: ADANIPORTS
+      token: '15083'
+      tier: 3
+    BRIGADE:
+      name: BRIGADE
+      token: '15184'
+      tier: 3
+    UJJIVANSFB:
+      name: UJJIVANSFB
+      token: '15228'
+      tier: 3
+    INDIANHUME:
+      name: INDIANHUME
+      token: '1530'
+      tier: 3
+    RKEC:
+      name: RKEC
+      token: '1547'
+      tier: 3
+    TARC:
+      name: TARC
+      token: '1581'
+      tier: 3
+    MGEL:
+      name: MGEL
+      token: '1593'
+      tier: 3
+    TATAINVEST:
+      name: TATAINVEST
+      token: '1621'
+      tier: 3
+    LINDEINDIA:
+      name: LINDEINDIA
+      token: '1627'
+      tier: 3
+    GHCLTEXTIL:
+      name: GHCLTEXTIL
+      token: '16696'
+      tier: 3
+    MKPL:
+      name: MKPL
+      token: '16736'
+      tier: 3
+    SINDHUTRAD:
+      name: SINDHUTRAD
+      token: '16859'
+      tier: 3
+    GATECHDVR:
+      name: GATECHDVR
+      token: '17'
+      tier: 3
+    SHARIABEES:
+      name: SHARIABEES
+      token: '17044'
+      tier: 3
+    ARMANFIN:
+      name: ARMANFIN
+      token: '17263'
+      tier: 3
+    BLS:
+      name: BLS
+      token: '17279'
+      tier: 3
+    GKWLIMITED:
+      name: GKWLIMITED
+      token: '17357'
+      tier: 3
+    LANDSMILL:
+      name: LANDSMILL
+      token: '17376'
+      tier: 3
+    RTNPOWER:
+      name: RTNPOWER
+      token: '17520'
+      tier: 3
+    POKARNA:
+      name: POKARNA
+      token: '17651'
+      tier: 3
+    ASTEC:
+      name: ASTEC
+      token: '17728'
+      tier: 3
+    YATHARTH:
+      name: YATHARTH
+      token: '17738'
+      tier: 3
+    GROBTEA:
+      name: GROBTEA
+      token: '17770'
+      tier: 3
+    GILLANDERS:
+      name: GILLANDERS
+      token: '17839'
+      tier: 3
+    BAYERCROP:
+      name: BAYERCROP
+      token: '17927'
+      tier: 3
+    ADVENZYMES:
+      name: ADVENZYMES
+      token: '18039'
+      tier: 3
+    KPIL:
+      name: KPIL
+      token: '1814'
+      tier: 3
+    DOLPHIN:
+      name: DOLPHIN
+      token: '18139'
+      tier: 3
+    KANORICHEM:
+      name: KANORICHEM
+      token: '1835'
+      tier: 3
+    KARURVYSYA:
+      name: KARURVYSYA
+      token: '1838'
+      tier: 3
+    TCPLPACK:
+      name: TCPLPACK
+      token: '184'
+      tier: 3
+    RATNAVEER:
+      name: RATNAVEER
+      token: '18423'
+      tier: 3
+    ARE&M:
+      name: ARE&M
+      token: '100'
+      tier: 3
+    LTTS:
+      name: LTTS
+      token: '18564'
+      tier: 3
+    HPL:
+      name: HPL
+      token: '18679'
+      tier: 3
+    GODREJCP:
+      name: GODREJCP
+      token: '10099'
+      tier: 3
+    ORICONENT:
+      name: ORICONENT
+      token: '10159'
+      tier: 3
+    KALAMANDIR:
+      name: KALAMANDIR
+      token: '18755'
+      tier: 3
+    IDFNIFTYET:
+      name: IDFNIFTYET
+      token: '18783'
+      tier: 3
+    BALKRISHNA:
+      name: BALKRISHNA
+      token: '10181'
+      tier: 3
+    SUNDARAM:
+      name: SUNDARAM
+      token: '18931'
+      tier: 3
+    RADHIKAJWE:
+      name: RADHIKAJWE
+      token: '10343'
+      tier: 3
+    ARVSMART:
+      name: ARVSMART
+      token: '10457'
+      tier: 3
+    CUMMINSIND:
+      name: CUMMINSIND
+      token: '1901'
+      tier: 3
+    RAMAPHO:
+      name: RAMAPHO
+      token: '10568'
+      tier: 3
+    KIOCL:
+      name: KIOCL
+      token: '19126'
+      tier: 3
+    KOPRAN:
+      name: KOPRAN
+      token: '1919'
+      tier: 3
+    TI:
+      name: TI
+      token: '19196'
+      tier: 3
+    HEADSUP:
+      name: HEADSUP
+      token: '19205'
+      tier: 3
+    MNC:
+      name: MNC
+      token: '10676'
+      tier: 3
+    BLISSGVS:
+      name: BLISSGVS
+      token: '19265'
+      tier: 3
+    BOROLTD:
+      name: BOROLTD
+      token: '19401'
+      tier: 3
+    ROSSARI:
+      name: ROSSARI
+      token: '19410'
+      tier: 3
+    JUNIORBEES:
+      name: JUNIORBEES
+      token: '10939'
+      tier: 3
+    MARUTI:
+      name: MARUTI
+      token: '10999'
+      tier: 3
+    INFOBEAN:
+      name: INFOBEAN
+      token: '11027'
+      tier: 3
+    ALPHAETF:
+      name: ALPHAETF
+      token: '19640'
+      tier: 3
+    GPPL:
+      name: GPPL
+      token: '19731'
+      tier: 3
+    NATHBIOGEN:
+      name: NATHBIOGEN
+      token: '11065'
+      tier: 3
+    LIBAS:
+      name: LIBAS
+      token: '11082'
+      tier: 3
+    ADFFOODS:
+      name: ADFFOODS
+      token: '19761'
+      tier: 3
+    DANGEE:
+      name: DANGEE
+      token: '1110'
+      tier: 3
+    LICHSGFIN:
+      name: LICHSGFIN
+      token: '1997'
+      tier: 3
+    HARSHA:
+      name: HARSHA
+      token: '11162'
+      tier: 3
+    COFFEEDAY:
+      name: COFFEEDAY
+      token: '11165'
+      tier: 3
+    UNIDT:
+      name: UNIDT
+      token: '201'
+      tier: 3
+    APOLLO:
+      name: APOLLO
+      token: '1134'
+      tier: 3
+    LICNETFN50:
+      name: LICNETFN50
+      token: '11319'
+      tier: 3
+    PETRONET:
+      name: PETRONET
+      token: '11351'
+      tier: 3
+    ARIHANTSUP:
+      name: ARIHANTSUP
+      token: '20159'
+      tier: 3
+    AKSHARCHEM:
+      name: AKSHARCHEM
+      token: '20178'
+      tier: 3
+    GICHSGFIN:
+      name: GICHSGFIN
+      token: '1139'
+      tier: 3
+    LUMAXIND:
+      name: LUMAXIND
+      token: '2018'
+      tier: 3
+    TTKHLTCARE:
+      name: TTKHLTCARE
+      token: '11369'
+      tier: 3
+    TIPSFILMS:
+      name: TIPSFILMS
+      token: '11374'
+      tier: 3
+    XPROINDIA:
+      name: XPROINDIA
+      token: '11407'
+      tier: 3
+    BANKBEES:
+      name: BANKBEES
+      token: '11439'
+      tier: 3
+    CCL:
+      name: CCL
+      token: '11452'
+      tier: 3
+    NV20:
+      name: NV20
+      token: '11457'
+      tier: 3
+    HDFCLOWVOL:
+      name: HDFCLOWVOL
+      token: '11547'
+      tier: 3
+    HDFCNIFTY:
+      name: HDFCNIFTY
+      token: '11591'
+      tier: 3
+    LALPATHLAB:
+      name: LALPATHLAB
+      token: '11654'
+      tier: 3
+    ALKEM:
+      name: ALKEM
+      token: '11703'
+      tier: 3
+    IIFL:
+      name: IIFL
+      token: '11809'
+      tier: 3
+    NH:
+      name: NH
+      token: '11840'
+      tier: 3
+    JKPAPER:
+      name: JKPAPER
+      token: '11860'
+      tier: 3
+    VHL:
+      name: VHL
+      token: '11892'
+      tier: 3
+    NECLIFE:
+      name: NECLIFE
+      token: '11927'
+      tier: 3
+    ACI:
+      name: ACI
+      token: '12024'
+      tier: 3
+    HDFCNIFIT:
+      name: HDFCNIFIT
+      token: '12101'
+      tier: 3
+    GSFC:
+      name: GSFC
+      token: '1247'
+      tier: 3
+    AMBUJACEM:
+      name: AMBUJACEM
+      token: '1270'
+      tier: 3
+    M&M:
+      name: M&M
+      token: '2031'
+      tier: 3
+    V1NSETEST:
+      name: V1NSETEST
+      token: '12863'
+      tier: 3
+    RAMCOCEM:
+      name: RAMCOCEM
+      token: '2043'
+      tier: 3
+    BAJEL:
+      name: BAJEL
+      token: '20531'
+      tier: 3
+    ROHLTD:
+      name: ROHLTD
+      token: '13182'
+      tier: 3
+    JKCEMENT:
+      name: JKCEMENT
+      token: '13270'
+      tier: 3
+    AFSL:
+      name: AFSL
+      token: '13288'
+      tier: 3
+    KEI:
+      name: KEI
+      token: '13310'
+      tier: 3
+    MUTHOOTMF:
+      name: MUTHOOTMF
+      token: '20831'
+      tier: 3
+    HEG:
+      name: HEG
+      token: '1336'
+      tier: 3
+    SUNTV:
+      name: SUNTV
+      token: '13404'
+      tier: 3
+    RSYSTEMS:
+      name: RSYSTEMS
+      token: '13414'
+      tier: 3
+    ELIN:
+      name: ELIN
+      token: '13423'
+      tier: 3
+    RATNAMANI:
+      name: RATNAMANI
+      token: '13451'
+      tier: 3
+    AKASH:
+      name: AKASH
+      token: '13510'
+      tier: 3
+    MUNJALAU:
+      name: MUNJALAU
+      token: '13511'
+      tier: 3
+    JMFINANCIL:
+      name: JMFINANCIL
+      token: '13637'
+      tier: 3
+    ELECON:
+      name: ELECON
+      token: '13643'
+      tier: 3
+    INNOVACAP:
+      name: INNOVACAP
+      token: '21062'
+      tier: 3
+    CDSL:
+      name: CDSL
+      token: '21174'
+      tier: 3
+    GLOBALVECT:
+      name: GLOBALVECT
+      token: '13735'
+      tier: 3
+    NAUKRI:
+      name: NAUKRI
+      token: '13751'
+      tier: 3
+    JYOTICNC:
+      name: JYOTICNC
+      token: '21334'
+      tier: 3
+    STEELXIND:
+      name: STEELXIND
+      token: '21339'
+      tier: 3
+    BBL:
+      name: BBL
+      token: '13761'
+      tier: 3
+    MANALIPETC:
+      name: MANALIPETC
+      token: '13796'
+      tier: 3
+    STEL:
+      name: STEL
+      token: '21484'
+      tier: 3
+    HBLENGINE:
+      name: HBLENGINE
+      token: '13966'
+      tier: 3
+    BRNL:
+      name: BRNL
+      token: '21683'
+      tier: 3
+    MATRIMONY:
+      name: MATRIMONY
+      token: '21726'
+      tier: 3
+    VEEDOL:
+      name: VEEDOL
+      token: '14019'
+      tier: 3
+    BTML:
+      name: BTML
+      token: '14150'
+      tier: 3
+    ACC:
+      name: ACC
+      token: '22'
+      tier: 3
+    NCLIND:
+      name: NCLIND
+      token: '14490'
+      tier: 3
+    JKTYRE:
+      name: JKTYRE
+      token: '14435'
+      tier: 3
+    BIRLANU:
+      name: BIRLANU
+      token: '1455'
+      tier: 3
+    ICRA:
+      name: ICRA
+      token: '14523'
+      tier: 3
+    GSLSU:
+      name: GSLSU
+      token: '14599'
+      tier: 3
+    ADVANIHOTR:
+      name: ADVANIHOTR
+      token: '14745'
+      tier: 3
+    101NSETEST:
+      name: 101NSETEST
+      token: '14772'
+      tier: 3
+    LOWVOL:
+      name: LOWVOL
+      token: '14786'
+      tier: 3
+    WSI:
+      name: WSI
+      token: '14828'
+      tier: 3
+    KAUSHALYA:
+      name: KAUSHALYA
+      token: '15136'
+      tier: 3
+    MODTHREAD:
+      name: MODTHREAD
+      token: '2241'
+      tier: 3
+    CEATLTD:
+      name: CEATLTD
+      token: '15254'
+      tier: 3
+    TOTAL:
+      name: TOTAL
+      token: '22423'
+      tier: 3
+    KNRCON:
+      name: KNRCON
+      token: '15283'
+      tier: 3
+    IRB:
+      name: IRB
+      token: '15313'
+      tier: 3
+    ITBETA:
+      name: ITBETA
+      token: '22488'
+      tier: 3
+    SHALPAINTS:
+      name: SHALPAINTS
+      token: '15342'
+      tier: 3
+    HEALTHADD:
+      name: HEALTHADD
+      token: '22592'
+      tier: 3
+    EIHAHOTELS:
+      name: EIHAHOTELS
+      token: '15399'
+      tier: 3
+    ATAM:
+      name: ATAM
+      token: '15404'
+      tier: 3
+    NESCO:
+      name: NESCO
+      token: '15409'
+      tier: 3
+    DPSCLTD:
+      name: DPSCLTD
+      token: '15419'
+      tier: 3
+    APOLLOHOSP:
+      name: APOLLOHOSP
+      token: '157'
+      tier: 3
+    JSFB:
+      name: JSFB
+      token: '22663'
+      tier: 3
+    GPTHEALTH:
+      name: GPTHEALTH
+      token: '22846'
+      tier: 3
+    EXICOM:
+      name: EXICOM
+      token: '22947'
+      tier: 3
+    FAIRCHEMOR:
+      name: FAIRCHEMOR
+      token: '1614'
+      tier: 3
+    IOC:
+      name: IOC
+      token: '1624'
+      tier: 3
+    BECTORFOOD:
+      name: BECTORFOOD
+      token: '1628'
+      tier: 3
+    MMP:
+      name: MMP
+      token: '16395'
+      tier: 3
+    ANDHRAPAP:
+      name: ANDHRAPAP
+      token: '166'
+      tier: 3
+    MOREALTY:
+      name: MOREALTY
+      token: '23184'
+      tier: 3
+    CPSEETF:
+      name: CPSEETF
+      token: '2328'
+      tier: 3
+    ALMONDZ:
+      name: ALMONDZ
+      token: '16719'
+      tier: 3
+    LOTUSEYE:
+      name: LOTUSEYE
+      token: '16807'
+      tier: 3
+    VINYLINDIA:
+      name: VINYLINDIA
+      token: '16821'
+      tier: 3
+    SICAGEN:
+      name: SICAGEN
+      token: '16875'
+      tier: 3
+    ZFCVINDIA:
+      name: ZFCVINDIA
+      token: '16915'
+      tier: 3
+    PALREDTEC:
+      name: PALREDTEC
+      token: '17062'
+      tier: 3
+    SUMICHEM:
+      name: SUMICHEM
+      token: '17105'
+      tier: 3
+    PARAGMILK:
+      name: PARAGMILK
+      token: '17130'
+      tier: 3
+    NAVNETEDUL:
+      name: NAVNETEDUL
+      token: '2385'
+      tier: 3
+    ASPINWALL:
+      name: ASPINWALL
+      token: '17270'
+      tier: 3
+    VINATIORGA:
+      name: VINATIORGA
+      token: '17364'
+      tier: 3
+    CONTROLPR:
+      name: CONTROLPR
+      token: '17477'
+      tier: 3
+    BBNPNBETF:
+      name: BBNPNBETF
+      token: '24117'
+      tier: 3
+    IVZINNIFTY:
+      name: IVZINNIFTY
+      token: '24217'
+      tier: 3
+    LTGILTBEES:
+      name: LTGILTBEES
+      token: '17700'
+      tier: 3
+    REFEX:
+      name: REFEX
+      token: '17764'
+      tier: 3
+    CONSUMBEES:
+      name: CONSUMBEES
+      token: '2435'
+      tier: 3
+    LIQUIDSHRI:
+      name: LIQUIDSHRI
+      token: '24374'
+      tier: 3
+    DELPHIFX:
+      name: DELPHIFX
+      token: '24391'
+      tier: 3
+    GEEKAYWIRE:
+      name: GEEKAYWIRE
+      token: '17922'
+      tier: 3
+    RELTD:
+      name: RELTD
+      token: '24596'
+      tier: 3
+    RUBFILA:
+      name: RUBFILA
+      token: '24730'
+      tier: 3
+    BEARDSELL:
+      name: BEARDSELL
+      token: '17933'
+      tier: 3
+    COHANCE:
+      name: COHANCE
+      token: '17945'
+      tier: 3
+    AWHCL:
+      name: AWHCL
+      token: '1797'
+      tier: 3
+    TRF:
+      name: TRF
+      token: '17987'
+      tier: 3
+    UNITEDTEA:
+      name: UNITEDTEA
+      token: '17999'
+      tier: 3
+    ONWARDTEC:
+      name: ONWARDTEC
+      token: '2481'
+      tier: 3
+    ADANIENT:
+      name: ADANIENT
+      token: '25'
+      tier: 3
+    KAMATHOTEL:
+      name: KAMATHOTEL
+      token: '1826'
+      tier: 3
+    TEXMOPIPES:
+      name: TEXMOPIPES
+      token: '18214'
+      tier: 3
+    LORDSCHLO:
+      name: LORDSCHLO
+      token: '18232'
+      tier: 3
+    LGBBROSLTD:
+      name: LGBBROSLTD
+      token: '18321'
+      tier: 3
+    SANDUMA:
+      name: SANDUMA
+      token: '18359'
+      tier: 3
+    SANOFICONR:
+      name: SANOFICONR
+      token: '25222'
+      tier: 3
+    BAJAJHFL:
+      name: BAJAJHFL
+      token: '25270'
+      tier: 3
+    RBLBANK:
+      name: RBLBANK
+      token: '18391'
+      tier: 3
+    ISFT:
+      name: ISFT
+      token: '18479'
+      tier: 3
+    NORTHARC:
+      name: NORTHARC
+      token: '25426'
+      tier: 3
+    KESORAMIND:
+      name: KESORAMIND
+      token: '1859'
+      tier: 3
+    RRKABEL:
+      name: RRKABEL
+      token: '18566'
+      tier: 3
+    DIAMINESQ:
+      name: DIAMINESQ
+      token: '18644'
+      tier: 3
+    TRITURBINE:
+      name: TRITURBINE
+      token: '25584'
+      tier: 3
+    NUVAMA:
+      name: NUVAMA
+      token: '18721'
+      tier: 3
+    PNBHOUSING:
+      name: PNBHOUSING
+      token: '18908'
+      tier: 3
+    JISLDVREQS:
+      name: JISLDVREQS
+      token: '25684'
+      tier: 3
+    APLAPOLLO:
+      name: APLAPOLLO
+      token: '25780'
+      tier: 3
+    SFL:
+      name: SFL
+      token: '19184'
+      tier: 3
+    TCIEXP:
+      name: TCIEXP
+      token: '19223'
+      tier: 3
+    THEJO:
+      name: THEJO
+      token: '19279'
+      tier: 3
+    PRAJIND:
+      name: PRAJIND
+      token: '2705'
+      tier: 3
+    BHANDARI:
+      name: BHANDARI
+      token: '19556'
+      tier: 3
+    MTARTECH:
+      name: MTARTECH
+      token: '2709'
+      tier: 3
+    PRICOLLTD:
+      name: PRICOLLTD
+      token: '19631'
+      tier: 3
+    TRENT:
+      name: TRENT
+      token: '1964'
+      tier: 3
+    ORISSAMINE:
+      name: ORISSAMINE
+      token: '19931'
+      tier: 3
+    THEINVEST:
+      name: THEINVEST
+      token: '21427'
+      tier: 3
+    SASTASUNDR:
+      name: SASTASUNDR
+      token: '20063'
+      tier: 3
+    SIS:
+      name: SIS
+      token: '21501'
+      tier: 3
+    URJA:
+      name: URJA
+      token: '20203'
+      tier: 3
+    ASHAPURMIN:
+      name: ASHAPURMIN
+      token: '203'
+      tier: 3
+    RESPONIND:
+      name: RESPONIND
+      token: '20323'
+      tier: 3
+    IOLCP:
+      name: IOLCP
+      token: '20413'
+      tier: 3
+    HOMEFIRST:
+      name: HOMEFIRST
+      token: '2056'
+      tier: 3
+    AXISGOLD:
+      name: AXISGOLD
+      token: '20532'
+      tier: 3
+    PENIND:
+      name: PENIND
+      token: '20621'
+      tier: 3
+    VTL:
+      name: VTL
+      token: '2073'
+      tier: 3
+    SURAJEST:
+      name: SURAJEST
+      token: '20822'
+      tier: 3
+    SUNCLAY:
+      name: SUNCLAY
+      token: '20956'
+      tier: 3
+    MODIRUBBER:
+      name: MODIRUBBER
+      token: '2229'
+      tier: 3
+    KICL:
+      name: KICL
+      token: '21119'
+      tier: 3
+    TEJASNET:
+      name: TEJASNET
+      token: '21131'
+      tier: 3
+    BANKBETA:
+      name: BANKBETA
+      token: '22440'
+      tier: 3
+    AUBANK:
+      name: AUBANK
+      token: '21238'
+      tier: 3
+    AXISNIFTY:
+      name: AXISNIFTY
+      token: '21252'
+      tier: 3
+    MURUDCERA:
+      name: MURUDCERA
+      token: '2313'
+      tier: 3
+    KRYSTAL:
+      name: KRYSTAL
+      token: '23175'
+      tier: 3
+    BSLGOLDETF:
+      name: BSLGOLDETF
+      token: '23804'
+      tier: 3
+    NEULANDLAB:
+      name: NEULANDLAB
+      token: '2406'
+      tier: 3
+    NILKAMAL:
+      name: NILKAMAL
+      token: '2421'
+      tier: 3
+    PIIND:
+      name: PIIND
+      token: '24184'
+      tier: 3
+    VADILALIND:
+      name: VADILALIND
+      token: '24196'
+      tier: 3
+    ESTER:
+      name: ESTER
+      token: '24265'
+      tier: 3
+    AGIIL:
+      name: AGIIL
+      token: '24445'
+      tier: 3
+    BSLNIFTY:
+      name: BSLNIFTY
+      token: '24781'
+      tier: 3
+    FIRSTCRY:
+      name: FIRSTCRY
+      token: '24814'
+      tier: 3
+    SSDL:
+      name: SSDL
+      token: '24856'
+      tier: 3
+    INVENTURE:
+      name: INVENTURE
+      token: '24870'
+      tier: 3
+    INTERARCH:
+      name: INTERARCH
+      token: '24909'
+      tier: 3
+    MODEFENCE:
+      name: MODEFENCE
+      token: '24944'
+      tier: 3
+    EUREKAFORB:
+      name: EUREKAFORB
+      token: '25162'
+      tier: 3
+    TOP10ADD:
+      name: TOP10ADD
+      token: '25171'
+      tier: 3
+    SYNGENE:
+      name: SYNGENE
+      token: '10243'
+      tier: 3
+    KAYA:
+      name: KAYA
+      token: '10276'
+      tier: 3
+    PGHH:
+      name: PGHH
+      token: '2535'
+      tier: 3
+    NIFTYBETA:
+      name: NIFTYBETA
+      token: '10511'
+      tier: 3
+    PGEL:
+      name: PGEL
+      token: '25358'
+      tier: 3
+    UFLEX:
+      name: UFLEX
+      token: '1053'
+      tier: 3
+    SENSEXBETA:
+      name: SENSEXBETA
+      token: '10515'
+      tier: 3
+    SHARDAMOTR:
+      name: SHARDAMOTR
+      token: '10530'
+      tier: 3
+    INDOUS:
+      name: INDOUS
+      token: '25503'
+      tier: 3
+    HDFCNIF100:
+      name: HDFCNIF100
+      token: '10633'
+      tier: 3
+    INDOTHAI:
+      name: INDOTHAI
+      token: '25608'
+      tier: 3
+    GENESYS:
+      name: GENESYS
+      token: '10905'
+      tier: 3
+    OMAXAUTO:
+      name: OMAXAUTO
+      token: '10922'
+      tier: 3
+    RADICO:
+      name: RADICO
+      token: '10990'
+      tier: 3
+    RUPA:
+      name: RUPA
+      token: '25724'
+      tier: 3
+    SRD:
+      name: SRD
+      token: '25737'
+      tier: 3
+    UCOBANK:
+      name: UCOBANK
+      token: '11223'
+      tier: 3
+    KANANIIND:
+      name: KANANIIND
+      token: '25786'
+      tier: 3
+    VINCOFE:
+      name: VINCOFE
+      token: '25835'
+      tier: 3
+    VAL30IETF:
+      name: VAL30IETF
+      token: '25851'
+      tier: 3
+    SIL:
+      name: SIL
+      token: '11297'
+      tier: 3
+    MUKANDLTD:
+      name: MUKANDLTD
+      token: '11325'
+      tier: 3
+    3PLAND:
+      name: 3PLAND
+      token: '2595'
+      tier: 3
+    GODAVARIB:
+      name: GODAVARIB
+      token: '25941'
+      tier: 3
+    DATAMATICS:
+      name: DATAMATICS
+      token: '11423'
+      tier: 3
+    AMBICAAGAR:
+      name: AMBICAAGAR
+      token: '11496'
+      tier: 3
+    ULTRACEMCO:
+      name: ULTRACEMCO
+      token: '11532'
+      tier: 3
+    FORCEMOT:
+      name: FORCEMOT
+      token: '11573'
+      tier: 3
+    GUFICBIO:
+      name: GUFICBIO
+      token: '11606'
+      tier: 3
+    WELENT:
+      name: WELENT
+      token: '11626'
+      tier: 3
+    NARMADA:
+      name: NARMADA
+      token: '11627'
+      tier: 3

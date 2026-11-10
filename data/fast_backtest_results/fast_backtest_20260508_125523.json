@@ -1,0 +1,17 @@
+{
+    "summary": {
+        "Total Trades": 75,
+        "WR": "46.7%",
+        "Net PnL": "INR 79,938",
+        "PF": 1.23,
+        "Max DD": "6.27%"
+    },
+    "strategies": [
+        {
+            "Strategy": "CANDLESTICK",
+            "Trades": 75,
+            "WR": "46.7%",
+            "Net PnL": "INR 79,938"
+        }
+    ]
+}

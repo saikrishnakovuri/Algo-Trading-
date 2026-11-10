@@ -1,0 +1,163 @@
+{
+  "run_id": "B",
+  "period_start": "2025-11-01",
+  "period_end": "2026-04-30",
+  "engine_md5_hashes": {
+    "live_options_trader.py": "83a9c9223310c38a112858e66f3b53e0",
+    "modules/strategy_mapper.py": "bc55edde82e874a63920fefad8a46db3",
+    "modules/v3_utils.py": "922c0b7eafcbf9c707bd6051d64839d9",
+    "modules/strategy_selector.py": "f6fea60b0289e2742b2444cd1d607645",
+    "modules/candlestick_engine.py": "662dfc66ef337a31fd57d5948f8920e3"
+  },
+  "config": {
+    "TRENDING_DOWN_strategies_count": 0,
+    "SIGNAL_GATE": "10:00",
+    "tp_atr": 1.5,
+    "sl_atr": 0.6,
+    "capital": 500000.0,
+    "lot_size": 65
+  },
+  "headline": {
+    "total_trades": 12,
+    "wins": 2,
+    "losses": 10,
+    "win_rate_pct": 16.666666666666664,
+    "ce_trades": 12,
+    "pe_trades": 0,
+    "trades_before_10am": 0,
+    "trades_after_12pm": 0,
+    "gross_pnl_inr": -10658.049999999366,
+    "brokerage_total_inr": 840.0,
+    "slippage_total_inr": 33380.45522499688,
+    "net_pnl_inr": -44878.50522499624,
+    "gross_profit_inr": 5321.788150000939,
+    "gross_loss_inr": 50200.29337499718,
+    "profit_factor": 0.10601109659354134,
+    "avg_win_inr": 2660.8940750004695,
+    "avg_loss_inr": -5020.029337499718,
+    "median_realized_rr": 1.1617073445200345,
+    "max_dd_inr": -42272.060074997,
+    "max_dd_pct": -8.4544120149994,
+    "max_consecutive_losses": 2,
+    "max_consecutive_wins": 0,
+    "min_single_trade_pnl": -6515.827049999607,
+    "max_single_trade_pnl": 2970.430900000574,
+    "trading_days": 9,
+    "profitable_days": 2,
+    "red_days": 7,
+    "days_losing_over_12500": 0,
+    "days_losing_over_15000": 0,
+    "fakeout_pct_of_losses": 90.0,
+    "trend_reversal_pct_of_losses": 0.0,
+    "choppy_noise_pct_of_losses": 10.0,
+    "top_5_days_pnl_share_pct": 0.0,
+    "top_5_days_trade_count": 5,
+    "pnl_excluding_top_5_days": -35982.85154999819,
+    "sharpe_annualised": 0.0,
+    "sortino_annualised": 0.0,
+    "calmar_ratio": 0.0,
+    "riskguard_trips_total": 3
+  },
+  "by_hour": [
+    {
+      "hour": 10,
+      "trades": 12,
+      "wins": 2,
+      "wr_pct": 16.666666666666664,
+      "net_pnl": -44878.50522499624
+    }
+  ],
+  "by_month": [
+    {
+      "month": "2025-12",
+      "trades": 2,
+      "wins": 0,
+      "wr_pct": 0.0,
+      "net_pnl": -10838.354549998949,
+      "max_dd_pct": 0.0
+    },
+    {
+      "month": "2026-01",
+      "trades": 1,
+      "wins": 1,
+      "wr_pct": 100.0,
+      "net_pnl": 2351.3572500003647,
+      "max_dd_pct": 0.0
+    },
+    {
+      "month": "2026-02",
+      "trades": 2,
+      "wins": 0,
+      "wr_pct": 0.0,
+      "net_pnl": -10503.068299999395,
+      "max_dd_pct": 0.0
+    },
+    {
+      "month": "2026-04",
+      "trades": 7,
+      "wins": 1,
+      "wr_pct": 14.285714285714285,
+      "net_pnl": -25888.439624998264,
+      "max_dd_pct": 0.0
+    }
+  ],
+  "by_dayofweek": [
+    {
+      "day": "Friday",
+      "trades": 1,
+      "wr_pct": 0.0,
+      "net_pnl": -3379.087275000038
+    },
+    {
+      "day": "Monday",
+      "trades": 2,
+      "wr_pct": 0.0,
+      "net_pnl": -9557.166525000084
+    },
+    {
+      "day": "Sunday",
+      "trades": 2,
+      "wr_pct": 0.0,
+      "net_pnl": -10503.068299999395
+    },
+    {
+      "day": "Thursday",
+      "trades": 2,
+      "wr_pct": 0.0,
+      "net_pnl": -10838.354549998949
+    },
+    {
+      "day": "Tuesday",
+      "trades": 4,
+      "wr_pct": 25.0,
+      "net_pnl": -12952.185824998141
+    },
+    {
+      "day": "Wednesday",
+      "trades": 1,
+      "wr_pct": 100.0,
+      "net_pnl": 2351.3572500003647
+    }
+  ],
+  "by_regime": [
+    {
+      "regime": "TRENDING_UP",
+      "trades": 12,
+      "wr_pct": 16.666666666666664,
+      "net_pnl": -44878.50522499624
+    }
+  ],
+  "loss_reason_breakdown": {
+    "FAKEOUT": 9,
+    "TREND_REVERSAL": 0,
+    "CHOPPY_NOISE": 1,
+    "RISKGUARD_TRIP": 0,
+    "EOD": 0
+  },
+  "exit_strategy_breakdown_wins": {
+    "TP": 2
+  },
+  "exit_strategy_breakdown_losses": {
+    "SL": 10
+  }
+}

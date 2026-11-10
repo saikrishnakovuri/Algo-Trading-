@@ -1,0 +1,1535 @@
+SOURCE PYTHON VALIDATION LOG
+============================
+
+[COMPILE] analyze_after_945.py — OK
+[IMPORT]  analyze_after_945.py — OK (Structure)
+[COMPILE] analyze_journal.py — OK
+[IMPORT]  analyze_journal.py — OK (Structure)
+[COMPILE] analyze_remove_9am.py — OK
+[IMPORT]  analyze_remove_9am.py — OK (Structure)
+[COMPILE] analyze_trades.py — OK
+[IMPORT]  analyze_trades.py — OK (Structure)
+[COMPILE] append_summary.py — OK
+[IMPORT]  append_summary.py — OK (Structure)
+[COMPILE] audit_checklist.py — OK
+[IMPORT]  audit_checklist.py — SKIPPED (Script/Audit)
+[COMPILE] audit_connections.py — OK
+[IMPORT]  audit_connections.py — SKIPPED (Script/Audit)
+[COMPILE] audit_dashboard.py — OK
+[IMPORT]  audit_dashboard.py — SKIPPED (Script/Audit)
+[COMPILE] audit_data.py — OK
+[IMPORT]  audit_data.py — SKIPPED (Script/Audit)
+[COMPILE] audit_detailed.py — OK
+[IMPORT]  audit_detailed.py — SKIPPED (Script/Audit)
+[COMPILE] audit_dry_run.py — OK
+[IMPORT]  audit_dry_run.py — SKIPPED (Script/Audit)
+[COMPILE] audit_lookahead.py — OK
+[IMPORT]  audit_lookahead.py — SKIPPED (Script/Audit)
+[COMPILE] audit_risk.py — OK
+[IMPORT]  audit_risk.py — SKIPPED (Script/Audit)
+[COMPILE] audit_routing.py — OK
+[IMPORT]  audit_routing.py — SKIPPED (Script/Audit)
+[COMPILE] audit_session.py — OK
+[IMPORT]  audit_session.py — SKIPPED (Script/Audit)
+[COMPILE] audit_settings.py — OK
+[IMPORT]  audit_settings.py — SKIPPED (Script/Audit)
+[COMPILE] audit_strategies.py — OK
+[IMPORT]  audit_strategies.py — SKIPPED (Script/Audit)
+[COMPILE] backtest_engine.py — OK
+[IMPORT]  backtest_engine.py — OK (Structure)
+[COMPILE] baseline_setup.py — OK
+[IMPORT]  baseline_setup.py — OK (Structure)
+[COMPILE] check_pnl.py — OK
+[IMPORT]  check_pnl.py — OK (Structure)
+[COMPILE] check_recent_report.py — OK
+[IMPORT]  check_recent_report.py — OK (Structure)
+[COMPILE] check_today_trades.py — OK
+[IMPORT]  check_today_trades.py — OK (Structure)
+[COMPILE] clean_emojis.py — OK
+[IMPORT]  clean_emojis.py — OK (Structure)
+[COMPILE] comparison_backtest.py — OK
+[IMPORT]  comparison_backtest.py — OK (Structure)
+[COMPILE] convert_report.py — OK
+[IMPORT]  convert_report.py — OK (Structure)
+[COMPILE] create_summary.py — OK
+[IMPORT]  create_summary.py — OK (Structure)
+[COMPILE] debug_entry_times.py — OK
+[IMPORT]  debug_entry_times.py — OK (Structure)
+[COMPILE] debug_gemini_api.py — OK
+[IMPORT]  debug_gemini_api.py — OK (Structure)
+[COMPILE] debug_p17_5.py — OK
+[IMPORT]  debug_p17_5.py — OK (Structure)
+[COMPILE] demo_runner.py — OK
+[IMPORT]  demo_runner.py — OK (Structure)
+[COMPILE] diagnostic.py — OK
+[IMPORT]  diagnostic.py — OK (Structure)
+[COMPILE] emergency_reset.py — OK
+[IMPORT]  emergency_reset.py — OK (Structure)
+[COMPILE] fetch_10d_universe.py — OK
+[IMPORT]  fetch_10d_universe.py — OK (Structure)
+[COMPILE] fetch_1k_data.py — OK
+[IMPORT]  fetch_1k_data.py — OK (Structure)
+[COMPILE] fetch_60_days.py — OK
+[IMPORT]  fetch_60_days.py — OK (Structure)
+[COMPILE] fetch_broker_tokens.py — OK
+[IMPORT]  fetch_broker_tokens.py — OK (Structure)
+[COMPILE] fetch_historical_angel.py — OK
+[IMPORT]  fetch_historical_angel.py — OK (Structure)
+[COMPILE] fetch_nifty200.py — OK
+[IMPORT]  fetch_nifty200.py — OK (Structure)
+[COMPILE] fetch_nifty_intraday.py — OK
+[IMPORT]  fetch_nifty_intraday.py — OK (Structure)
+[COMPILE] fetch_nifty_jan2026.py — OK
+[IMPORT]  fetch_nifty_jan2026.py — OK (Structure)
+[COMPILE] final_report.py — OK
+[IMPORT]  final_report.py — OK (Structure)
+[COMPILE] find_indices.py — OK
+[IMPORT]  find_indices.py — OK (Structure)
+[COMPILE] forensic_analysis.py — OK
+[IMPORT]  forensic_analysis.py — OK (Structure)
+[COMPILE] list_available_models.py — OK
+[IMPORT]  list_available_models.py — OK (Structure)
+[COMPILE] live_dry_run.py — OK
+[IMPORT]  live_dry_run.py — OK (Structure)
+[COMPILE] live_options_trader.py — OK
+[IMPORT]  live_options_trader.py — OK (Structure)
+[COMPILE] live_trader_crypto.py — OK
+[IMPORT]  live_trader_crypto.py — OK (Structure)
+[COMPILE] live_trader_v1.py — OK
+[IMPORT]  live_trader_v1.py — OK (Structure)
+[COMPILE] live_trader_v2.py — OK
+[IMPORT]  live_trader_v2.py — OK (Structure)
+[COMPILE] live_trader_v3.py — OK
+[IMPORT]  live_trader_v3.py — OK (Structure)
+[COMPILE] main.py — OK
+[IMPORT]  main.py — OK (Structure)
+[COMPILE] main_backtest.py — OK
+[IMPORT]  main_backtest.py — OK (Structure)
+[COMPILE] manual_exit_all.py — OK
+[IMPORT]  manual_exit_all.py — OK (Structure)
+[COMPILE] master_optimizer.py — OK
+[IMPORT]  master_optimizer.py — OK (Structure)
+[COMPILE] optimized_gemini_client.py — OK
+[IMPORT]  optimized_gemini_client.py — OK (Structure)
+[COMPILE] orchestrator.py — OK
+[IMPORT]  orchestrator.py — OK (Structure)
+[COMPILE] overnight_scheduler.py — OK
+[IMPORT]  overnight_scheduler.py — OK (Structure)
+[COMPILE] part1_fetch_data.py — OK
+[IMPORT]  part1_fetch_data.py — OK (Structure)
+[COMPILE] pa_analysis_runner.py — OK
+[IMPORT]  pa_analysis_runner.py — OK (Structure)
+[COMPILE] quick_analyze.py — OK
+[IMPORT]  quick_analyze.py — OK (Structure)
+[COMPILE] read_xlsx.py — OK
+[IMPORT]  read_xlsx.py — OK (Structure)
+[COMPILE] recovery_part1_api_limits.py — OK
+[IMPORT]  recovery_part1_api_limits.py — OK (Structure)
+[COMPILE] recovery_part1_fetch_max.py — OK
+[IMPORT]  recovery_part1_fetch_max.py — OK (Structure)
+[COMPILE] recovery_part3_baseline.py — OK
+[IMPORT]  recovery_part3_baseline.py — OK (Structure)
+[COMPILE] recovery_part4_hdfc.py — OK
+[IMPORT]  recovery_part4_hdfc.py — OK (Structure)
+[COMPILE] reset_all_cmds.py — OK
+[IMPORT]  reset_all_cmds.py — OK (Structure)
+[COMPILE] reset_cmds.py — OK
+[IMPORT]  reset_cmds.py — OK (Structure)
+[COMPILE] run_angel_historical_backtest.py — OK
+[IMPORT]  run_angel_historical_backtest.py — OK (Structure)
+[COMPILE] run_atm_options_backtest.py — OK
+[IMPORT]  run_atm_options_backtest.py — OK (Structure)
+[COMPILE] run_audit.py — OK
+[IMPORT]  run_audit.py — OK (Structure)
+[COMPILE] run_auto_evolution.py — OK
+[IMPORT]  run_auto_evolution.py — OK (Structure)
+[COMPILE] run_backtest.py — OK
+[IMPORT]  run_backtest.py — OK (Structure)
+[COMPILE] run_backtest_simulation.py — OK
+[IMPORT]  run_backtest_simulation.py — OK (Structure)
+[COMPILE] run_baseline_backtest.py — OK
+[IMPORT]  run_baseline_backtest.py — OK (Structure)
+[COMPILE] run_calibrated_backtest.py — OK
+[IMPORT]  run_calibrated_backtest.py — OK (Structure)
+[COMPILE] run_combined_backtest.py — OK
+[IMPORT]  run_combined_backtest.py — OK (Structure)
+[COMPILE] run_complete_backtest_system.py — OK
+[IMPORT]  run_complete_backtest_system.py — OK (Structure)
+[COMPILE] run_constrained_backtest.py — OK
+[IMPORT]  run_constrained_backtest.py — OK (Structure)
+[COMPILE] run_custom_backtest.py — OK
+[IMPORT]  run_custom_backtest.py — OK (Structure)
+[COMPILE] run_diagnostics.py — OK
+[IMPORT]  run_diagnostics.py — OK (Structure)
+[COMPILE] run_final_filtered_backtest.py — OK
+[IMPORT]  run_final_filtered_backtest.py — OK (Structure)
+[COMPILE] run_forensic_backtest.py — OK
+[IMPORT]  run_forensic_backtest.py — OK (Structure)
+[COMPILE] run_live.py — OK
+[IMPORT]  run_live.py — OK (Structure)
+[COMPILE] run_live_v2.py — OK
+[IMPORT]  run_live_v2.py — OK (Structure)
+[COMPILE] run_massive_nifty_backtest.py — OK
+[IMPORT]  run_massive_nifty_backtest.py — OK (Structure)
+[COMPILE] run_meta_analysis.py — OK
+[IMPORT]  run_meta_analysis.py — OK (Structure)
+[COMPILE] run_micro_backtest.py — OK
+[IMPORT]  run_micro_backtest.py — OK (Structure)
+[COMPILE] run_momentum_backtest.py — OK
+[IMPORT]  run_momentum_backtest.py — OK (Structure)
+[COMPILE] run_multi_strategy_backtest.py — OK
+[IMPORT]  run_multi_strategy_backtest.py — OK (Structure)
+[COMPILE] run_nifty200_backtest.py — OK
+[IMPORT]  run_nifty200_backtest.py — OK (Structure)
+[COMPILE] run_nifty50_v3_test.py — OK
+[IMPORT]  run_nifty50_v3_test.py — OK (Structure)
+[COMPILE] run_oos_validation.py — OK
+[IMPORT]  run_oos_validation.py — OK (Structure)
+[COMPILE] run_part2.py — OK
+[IMPORT]  run_part2.py — OK (Structure)
+[COMPILE] run_small_backtest.py — OK
+[IMPORT]  run_small_backtest.py — OK (Structure)
+[COMPILE] run_strategy_isolation_backtest.py — OK
+[IMPORT]  run_strategy_isolation_backtest.py — OK (Structure)
+[COMPILE] run_top10_2days.py — OK
+[IMPORT]  run_top10_2days.py — OK (Structure)
+[COMPILE] run_top10_all_modules.py — OK
+[IMPORT]  run_top10_all_modules.py — OK (Structure)
+[COMPILE] run_top10_backtest.py — OK
+[IMPORT]  run_top10_backtest.py — OK (Structure)
+[COMPILE] run_top50_backtest_17042026.py — OK
+[IMPORT]  run_top50_backtest_17042026.py — OK (Structure)
+[COMPILE] run_turbo_backtest.py — OK
+[IMPORT]  run_turbo_backtest.py — OK (Structure)
+[COMPILE] run_verification_batch.py — OK
+[IMPORT]  run_verification_batch.py — OK (Structure)
+[COMPILE] run_weekend_backtests.py — OK
+[IMPORT]  run_weekend_backtests.py — OK (Structure)
+[COMPILE] run_windows_test.py — OK
+[IMPORT]  run_windows_test.py — OK (Structure)
+[COMPILE] setup_data_cache.py — OK
+[IMPORT]  setup_data_cache.py — OK (Structure)
+[COMPILE] summarize_backtest.py — OK
+[IMPORT]  summarize_backtest.py — OK (Structure)
+[COMPILE] test1_oos.py — OK
+[IMPORT]  test1_oos.py — OK (Structure)
+[COMPILE] test2_sensitivity.py — OK
+[IMPORT]  test2_sensitivity.py — OK (Structure)
+[COMPILE] test3_monte_carlo.py — OK
+[IMPORT]  test3_monte_carlo.py — OK (Structure)
+[COMPILE] test_bot.py — OK
+[IMPORT]  test_bot.py — OK (Structure)
+[COMPILE] test_bt_err.py — OK
+[IMPORT]  test_bt_err.py — OK (Structure)
+[COMPILE] tuning_test.py — OK
+[IMPORT]  tuning_test.py — OK (Structure)
+[COMPILE] verify_rollback.py — OK
+[IMPORT]  verify_rollback.py — OK (Structure)
+[COMPILE] visualize_patterns.py — OK
+[IMPORT]  visualize_patterns.py — OK (Structure)
+[COMPILE] walk_forward_optimizer.py — OK
+[IMPORT]  walk_forward_optimizer.py — OK (Structure)
+[COMPILE] AlgoTradingTelegramBotAndFrontend\backend\backtest_engine.py — OK
+[IMPORT]  AlgoTradingTelegramBotAndFrontend\backend\backtest_engine.py — OK (Structure)
+[COMPILE] AlgoTradingTelegramBotAndFrontend\backend\live_state.py — OK
+[IMPORT]  AlgoTradingTelegramBotAndFrontend\backend\live_state.py — OK (Structure)
+[COMPILE] AlgoTradingTelegramBotAndFrontend\backend\notification_service.py — OK
+[IMPORT]  AlgoTradingTelegramBotAndFrontend\backend\notification_service.py — OK (Structure)
+[COMPILE] AlgoTradingTelegramBotAndFrontend\backend\risk_calculator.py — OK
+[IMPORT]  AlgoTradingTelegramBotAndFrontend\backend\risk_calculator.py — OK (Structure)
+[COMPILE] AlgoTradingTelegramBotAndFrontend\backend\server.py — OK
+[IMPORT]  AlgoTradingTelegramBotAndFrontend\backend\server.py — OK (Structure)
+[COMPILE] AlgoTradingTelegramBotAndFrontend\backend\test_login.py — OK
+[IMPORT]  AlgoTradingTelegramBotAndFrontend\backend\test_login.py — OK (Structure)
+[COMPILE] AlgoTradingTelegramBotAndFrontend\backend\tests\test_risk_integration.py — OK
+[IMPORT]  AlgoTradingTelegramBotAndFrontend\backend\tests\test_risk_integration.py — OK (Structure)
+[COMPILE] AlgoTradingTelegramBotAndFrontend\backend\tests\test_tradealert.py — OK
+[IMPORT]  AlgoTradingTelegramBotAndFrontend\backend\tests\test_tradealert.py — OK (Structure)
+[COMPILE] AlgoTradingTelegramBotAndFrontend\frontend\node_modules\flatted\python\flatted.py — OK
+[IMPORT]  AlgoTradingTelegramBotAndFrontend\frontend\node_modules\flatted\python\flatted.py — OK (Structure)
+[COMPILE] AlgoTradingTelegramBotAndFrontend\frontend\node_modules\shell-quote\print.py — OK
+[IMPORT]  AlgoTradingTelegramBotAndFrontend\frontend\node_modules\shell-quote\print.py — OK (Structure)
+[COMPILE] AlgoTradingTelegramBotAndFrontend\tests\__init__.py — OK
+[IMPORT]  AlgoTradingTelegramBotAndFrontend\tests\__init__.py — OK (Structure)
+[COMPILE] dashboard\app.py — OK
+[IMPORT]  dashboard\app.py — OK (Structure)
+[COMPILE] dashboard\charts.py — OK
+[IMPORT]  dashboard\charts.py — OK (Structure)
+[COMPILE] dashboard\loader.py — OK
+[IMPORT]  dashboard\loader.py — OK (Structure)
+[COMPILE] meta_learning\analyzer.py — OK
+[IMPORT]  meta_learning\analyzer.py — OK (Structure)
+[COMPILE] meta_learning\config_updater.py — OK
+[IMPORT]  meta_learning\config_updater.py — OK (Structure)
+[COMPILE] meta_learning\filter_engine.py — OK
+[IMPORT]  meta_learning\filter_engine.py — OK (Structure)
+[COMPILE] meta_learning\tracker.py — OK
+[IMPORT]  meta_learning\tracker.py — OK (Structure)
+[COMPILE] modules\ai_analysis.py — OK
+[IMPORT]  modules\ai_analysis.py — OK (Structure)
+[COMPILE] modules\alert.py — OK
+[IMPORT]  modules\alert.py — OK (Structure)
+[COMPILE] modules\broker_layer.py — OK
+[IMPORT]  modules\broker_layer.py — OK (Structure)
+[COMPILE] modules\cached_data_loader.py — OK
+[IMPORT]  modules\cached_data_loader.py — OK (Structure)
+[COMPILE] modules\candlestick_engine.py — OK
+[IMPORT]  modules\candlestick_engine.py — OK (Structure)
+[COMPILE] modules\confidence_scorer.py — OK
+[IMPORT]  modules\confidence_scorer.py — OK (Structure)
+[COMPILE] modules\context_detector.py — OK
+[IMPORT]  modules\context_detector.py — OK (Structure)
+[COMPILE] modules\dashboard_bridge.py — OK
+[IMPORT]  modules\dashboard_bridge.py — OK (Structure)
+[COMPILE] modules\data_layer.py — OK
+[IMPORT]  modules\data_layer.py — OK (Structure)
+[COMPILE] modules\decision_engine.py — OK
+[IMPORT]  modules\decision_engine.py — OK (Structure)
+[COMPILE] modules\dry_run_stubs.py — OK
+[IMPORT]  modules\dry_run_stubs.py — OK (Structure)
+[COMPILE] modules\event_calendar.py — OK
+[IMPORT]  modules\event_calendar.py — OK (Structure)
+[COMPILE] modules\indicator_cache.py — OK
+[IMPORT]  modules\indicator_cache.py — OK (Structure)
+[COMPILE] modules\indicator_engine.py — OK
+[IMPORT]  modules\indicator_engine.py — OK (Structure)
+[COMPILE] modules\learning.py — OK
+[IMPORT]  modules\learning.py — OK (Structure)
+[COMPILE] modules\massive_data_layer.py — OK
+[IMPORT]  modules\massive_data_layer.py — OK (Structure)
+[COMPILE] modules\mean_reversion_engine.py — OK
+[IMPORT]  modules\mean_reversion_engine.py — OK (Structure)
+[COMPILE] modules\momentum_engine.py — OK
+[IMPORT]  modules\momentum_engine.py — OK (Structure)
+[COMPILE] modules\option_chain.py — OK
+[IMPORT]  modules\option_chain.py — OK (Structure)
+[COMPILE] modules\portfolio_manager.py — OK
+[IMPORT]  modules\portfolio_manager.py — OK (Structure)
+[COMPILE] modules\price_action_engine.py — OK
+[IMPORT]  modules\price_action_engine.py — OK (Structure)
+[COMPILE] modules\regime_gate.py — OK
+[IMPORT]  modules\regime_gate.py — OK (Structure)
+[COMPILE] modules\risk_guard.py — OK
+[IMPORT]  modules\risk_guard.py — OK (Structure)
+[COMPILE] modules\strategy_adapters.py — OK
+[IMPORT]  modules\strategy_adapters.py — OK (Structure)
+[COMPILE] modules\strategy_definitions.py — OK
+[IMPORT]  modules\strategy_definitions.py — OK (Structure)
+[COMPILE] modules\strategy_learner.py — OK
+[IMPORT]  modules\strategy_learner.py — OK (Structure)
+[COMPILE] modules\strategy_mapper.py — OK
+[IMPORT]  modules\strategy_mapper.py — OK (Structure)
+[COMPILE] modules\strategy_router.py — OK
+[IMPORT]  modules\strategy_router.py — OK (Structure)
+[COMPILE] modules\strategy_selector.py — OK
+[IMPORT]  modules\strategy_selector.py — OK (Structure)
+[COMPILE] modules\structure_strategy_engine.py — OK
+[IMPORT]  modules\structure_strategy_engine.py — OK (Structure)
+[COMPILE] modules\sweep_retest_engine.py — OK
+[IMPORT]  modules\sweep_retest_engine.py — OK (Structure)
+[COMPILE] modules\trailing_sl_manager.py — OK
+[IMPORT]  modules\trailing_sl_manager.py — OK (Structure)
+[COMPILE] modules\v3_utils.py — OK
+[IMPORT]  modules\v3_utils.py — OK (Structure)
+[COMPILE] modules\vix_filter.py — OK
+[IMPORT]  modules\vix_filter.py — OK (Structure)
+[COMPILE] modules\websocket_manager.py — OK
+[IMPORT]  modules\websocket_manager.py — OK (Structure)
+[COMPILE] modules\broker\binance_broker.py — OK
+[IMPORT]  modules\broker\binance_broker.py — OK (Structure)
+[COMPILE] modules\charting\aggregator.py — OK
+[IMPORT]  modules\charting\aggregator.py — OK (Structure)
+[COMPILE] modules\charting\chart_renderer.py — OK
+[IMPORT]  modules\charting\chart_renderer.py — OK (Structure)
+[COMPILE] modules\charting\structure_detector.py — OK
+[IMPORT]  modules\charting\structure_detector.py — OK (Structure)
+[COMPILE] modules\charting\__init__.py — OK
+[IMPORT]  modules\charting\__init__.py — OK (Structure)
+[COMPILE] modules\context_filters\calendar.py — OK
+[IMPORT]  modules\context_filters\calendar.py — OK (Structure)
+[COMPILE] modules\context_filters\chop_filter.py — OK
+[IMPORT]  modules\context_filters\chop_filter.py — OK (Structure)
+[COMPILE] modules\context_filters\gap_filter.py — OK
+[IMPORT]  modules\context_filters\gap_filter.py — OK (Structure)
+[COMPILE] modules\context_filters\integration.py — OK
+[IMPORT]  modules\context_filters\integration.py — OK (Structure)
+[COMPILE] modules\context_filters\schemas.py — OK
+[IMPORT]  modules\context_filters\schemas.py — OK (Structure)
+[COMPILE] modules\context_filters\stack.py — OK
+[IMPORT]  modules\context_filters\stack.py — OK (Structure)
+[COMPILE] modules\context_filters\time_of_day_filter.py — OK
+[IMPORT]  modules\context_filters\time_of_day_filter.py — OK (Structure)
+[COMPILE] modules\context_filters\__init__.py — OK
+[IMPORT]  modules\context_filters\__init__.py — OK (Structure)
+[COMPILE] modules\data\binance_feed.py — OK
+[IMPORT]  modules\data\binance_feed.py — OK (Structure)
+[COMPILE] modules\data\candle_builder.py — OK
+[IMPORT]  modules\data\candle_builder.py — OK (Structure)
+[COMPILE] modules\data\memory_data_reader.py — OK
+[IMPORT]  modules\data\memory_data_reader.py — OK (Structure)
+[COMPILE] modules\data\redis_data_reader.py — OK
+[IMPORT]  modules\data\redis_data_reader.py — OK (Structure)
+[COMPILE] modules\data\websocket_feed.py — OK
+[IMPORT]  modules\data\websocket_feed.py — OK (Structure)
+[COMPILE] modules\intermarket\aggregator.py — OK
+[IMPORT]  modules\intermarket\aggregator.py — OK (Structure)
+[COMPILE] modules\intermarket\breadth.py — OK
+[IMPORT]  modules\intermarket\breadth.py — OK (Structure)
+[COMPILE] modules\intermarket\cross_asset.py — OK
+[IMPORT]  modules\intermarket\cross_asset.py — OK (Structure)
+[COMPILE] modules\intermarket\engine.py — OK
+[IMPORT]  modules\intermarket\engine.py — OK (Structure)
+[COMPILE] modules\intermarket\global_risk.py — OK
+[IMPORT]  modules\intermarket\global_risk.py — OK (Structure)
+[COMPILE] modules\intermarket\index_alignment.py — OK
+[IMPORT]  modules\intermarket\index_alignment.py — OK (Structure)
+[COMPILE] modules\intermarket\integration.py — OK
+[IMPORT]  modules\intermarket\integration.py — OK (Structure)
+[COMPILE] modules\intermarket\relative_strength.py — OK
+[IMPORT]  modules\intermarket\relative_strength.py — OK (Structure)
+[COMPILE] modules\intermarket\schemas.py — OK
+[IMPORT]  modules\intermarket\schemas.py — OK (Structure)
+[COMPILE] modules\intermarket\sector_strength.py — OK
+[IMPORT]  modules\intermarket\sector_strength.py — OK (Structure)
+[COMPILE] modules\intermarket\universe_mapper.py — OK
+[IMPORT]  modules\intermarket\universe_mapper.py — OK (Structure)
+[COMPILE] modules\intermarket\__init__.py — OK
+[IMPORT]  modules\intermarket\__init__.py — OK (Structure)
+[COMPILE] modules\intermarket\feeds\base.py — OK
+[IMPORT]  modules\intermarket\feeds\base.py — OK (Structure)
+[COMPILE] modules\intermarket\feeds\kite_feed.py — OK
+[IMPORT]  modules\intermarket\feeds\kite_feed.py — OK (Structure)
+[COMPILE] modules\intermarket\feeds\manager.py — OK
+[IMPORT]  modules\intermarket\feeds\manager.py — OK (Structure)
+[COMPILE] modules\intermarket\feeds\nsepython_feed.py — OK
+[IMPORT]  modules\intermarket\feeds\nsepython_feed.py — OK (Structure)
+[COMPILE] modules\intermarket\feeds\yfinance_feed.py — OK
+[IMPORT]  modules\intermarket\feeds\yfinance_feed.py — OK (Structure)
+[COMPILE] modules\intermarket\feeds\__init__.py — OK
+[IMPORT]  modules\intermarket\feeds\__init__.py — OK (Structure)
+[COMPILE] modules\options\broker_adapter.py — OK
+[IMPORT]  modules\options\broker_adapter.py — OK (Structure)
+[COMPILE] modules\options\risk_manager.py — OK
+[IMPORT]  modules\options\risk_manager.py — OK (Structure)
+[COMPILE] modules\options\scrip_master.py — OK
+[IMPORT]  modules\options\scrip_master.py — OK (Structure)
+[COMPILE] modules\options\signal_adapter.py — OK
+[IMPORT]  modules\options\signal_adapter.py — OK (Structure)
+[COMPILE] modules\options\strike_selector.py — OK
+[IMPORT]  modules\options\strike_selector.py — OK (Structure)
+[COMPILE] modules\options\trade_executor.py — OK
+[IMPORT]  modules\options\trade_executor.py — OK (Structure)
+[COMPILE] modules\regime\classifier.py — OK
+[IMPORT]  modules\regime\classifier.py — OK (Structure)
+[COMPILE] modules\regime\features.py — OK
+[IMPORT]  modules\regime\features.py — OK (Structure)
+[COMPILE] modules\regime\hmm_layer.py — OK
+[IMPORT]  modules\regime\hmm_layer.py — OK (Structure)
+[COMPILE] modules\regime\integration.py — OK
+[IMPORT]  modules\regime\integration.py — OK (Structure)
+[COMPILE] modules\regime\rule_layer.py — OK
+[IMPORT]  modules\regime\rule_layer.py — OK (Structure)
+[COMPILE] modules\regime\schemas.py — OK
+[IMPORT]  modules\regime\schemas.py — OK (Structure)
+[COMPILE] modules\regime\__init__.py — OK
+[IMPORT]  modules\regime\__init__.py — OK (Structure)
+[COMPILE] modules\reporting\daily_report.py — OK
+[IMPORT]  modules\reporting\daily_report.py — OK (Structure)
+[COMPILE] modules\reporting\equity_tracker.py — OK
+[IMPORT]  modules\reporting\equity_tracker.py — OK (Structure)
+[COMPILE] modules\risk_exec\breaker.py — OK
+[IMPORT]  modules\risk_exec\breaker.py — OK (Structure)
+[COMPILE] modules\risk_exec\engine.py — OK
+[IMPORT]  modules\risk_exec\engine.py — OK (Structure)
+[COMPILE] modules\risk_exec\execution_quality.py — OK
+[IMPORT]  modules\risk_exec\execution_quality.py — OK (Structure)
+[COMPILE] modules\risk_exec\executor.py — OK
+[IMPORT]  modules\risk_exec\executor.py — OK (Structure)
+[COMPILE] modules\risk_exec\exits.py — OK
+[IMPORT]  modules\risk_exec\exits.py — OK (Structure)
+[COMPILE] modules\risk_exec\heat_manager.py — OK
+[IMPORT]  modules\risk_exec\heat_manager.py — OK (Structure)
+[COMPILE] modules\risk_exec\integration.py — OK
+[IMPORT]  modules\risk_exec\integration.py — OK (Structure)
+[COMPILE] modules\risk_exec\schemas.py — OK
+[IMPORT]  modules\risk_exec\schemas.py — OK (Structure)
+[COMPILE] modules\risk_exec\sizer.py — OK
+[IMPORT]  modules\risk_exec\sizer.py — OK (Structure)
+[COMPILE] modules\risk_exec\stop_loss.py — OK
+[IMPORT]  modules\risk_exec\stop_loss.py — OK (Structure)
+[COMPILE] modules\risk_exec\time_stop.py — OK
+[IMPORT]  modules\risk_exec\time_stop.py — OK (Structure)
+[COMPILE] modules\risk_exec\trailing.py — OK
+[IMPORT]  modules\risk_exec\trailing.py — OK (Structure)
+[COMPILE] modules\risk_exec\__init__.py — OK
+[IMPORT]  modules\risk_exec\__init__.py — OK (Structure)
+[COMPILE] modules\risk_exec\broker\backtest.py — OK
+[IMPORT]  modules\risk_exec\broker\backtest.py — OK (Structure)
+[COMPILE] modules\risk_exec\broker\base.py — OK
+[IMPORT]  modules\risk_exec\broker\base.py — OK (Structure)
+[COMPILE] modules\risk_exec\broker\zerodha.py — OK
+[IMPORT]  modules\risk_exec\broker\zerodha.py — OK (Structure)
+[COMPILE] modules\risk_exec\broker\__init__.py — OK
+[IMPORT]  modules\risk_exec\broker\__init__.py — OK (Structure)
+[COMPILE] modules\smc\engine.py — OK
+[IMPORT]  modules\smc\engine.py — OK (Structure)
+[COMPILE] modules\smc\fair_value_gap.py — OK
+[IMPORT]  modules\smc\fair_value_gap.py — OK (Structure)
+[COMPILE] modules\smc\integration.py — OK
+[IMPORT]  modules\smc\integration.py — OK (Structure)
+[COMPILE] modules\smc\liquidity_sweep.py — OK
+[IMPORT]  modules\smc\liquidity_sweep.py — OK (Structure)
+[COMPILE] modules\smc\order_block.py — OK
+[IMPORT]  modules\smc\order_block.py — OK (Structure)
+[COMPILE] modules\smc\premium_discount.py — OK
+[IMPORT]  modules\smc\premium_discount.py — OK (Structure)
+[COMPILE] modules\smc\schemas.py — OK
+[IMPORT]  modules\smc\schemas.py — OK (Structure)
+[COMPILE] modules\smc\scorer.py — OK
+[IMPORT]  modules\smc\scorer.py — OK (Structure)
+[COMPILE] modules\smc\structure.py — OK
+[IMPORT]  modules\smc\structure.py — OK (Structure)
+[COMPILE] modules\smc\__init__.py — OK
+[IMPORT]  modules\smc\__init__.py — OK (Structure)
+[COMPILE] modules\vp_avwap\anchored_vwap.py — OK
+[IMPORT]  modules\vp_avwap\anchored_vwap.py — OK (Structure)
+[COMPILE] modules\vp_avwap\composite_profile.py — OK
+[IMPORT]  modules\vp_avwap\composite_profile.py — OK (Structure)
+[COMPILE] modules\vp_avwap\initial_balance.py — OK
+[IMPORT]  modules\vp_avwap\initial_balance.py — OK (Structure)
+[COMPILE] modules\vp_avwap\integration.py — OK
+[IMPORT]  modules\vp_avwap\integration.py — OK (Structure)
+[COMPILE] modules\vp_avwap\level_merger.py — OK
+[IMPORT]  modules\vp_avwap\level_merger.py — OK (Structure)
+[COMPILE] modules\vp_avwap\schemas.py — OK
+[IMPORT]  modules\vp_avwap\schemas.py — OK (Structure)
+[COMPILE] modules\vp_avwap\scorer.py — OK
+[IMPORT]  modules\vp_avwap\scorer.py — OK (Structure)
+[COMPILE] modules\vp_avwap\session_profile.py — OK
+[IMPORT]  modules\vp_avwap\session_profile.py — OK (Structure)
+[COMPILE] modules\vp_avwap\suite.py — OK
+[IMPORT]  modules\vp_avwap\suite.py — OK (Structure)
+[COMPILE] modules\vp_avwap\__init__.py — OK
+[IMPORT]  modules\vp_avwap\__init__.py — OK (Structure)
+[COMPILE] notification\config.py — OK
+[IMPORT]  notification\config.py — OK (Structure)
+[COMPILE] notification\formatter.py — OK
+[IMPORT]  notification\formatter.py — OK (Structure)
+[COMPILE] notification\telegram_notifier.py — OK
+[IMPORT]  notification\telegram_notifier.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\main.py — OK
+[IMPORT]  Priceactionmdfiles\main.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\main_v1_backup.py — OK
+[IMPORT]  Priceactionmdfiles\main_v1_backup.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\massive_backtest.py — OK
+[IMPORT]  Priceactionmdfiles\massive_backtest.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\optimized_backtest.py — OK
+[IMPORT]  Priceactionmdfiles\optimized_backtest.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\backup_engine_v1\engine\base_strategy.py — OK
+[IMPORT]  Priceactionmdfiles\backup_engine_v1\engine\base_strategy.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\backup_engine_v1\engine\signal.py — OK
+[IMPORT]  Priceactionmdfiles\backup_engine_v1\engine\signal.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\backup_engine_v1\engine\strategy_engine.py — OK
+[IMPORT]  Priceactionmdfiles\backup_engine_v1\engine\strategy_engine.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\backup_engine_v1\engine\__init__.py — OK
+[IMPORT]  Priceactionmdfiles\backup_engine_v1\engine\__init__.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\backup_engine_v1\engine\advanced_concepts\break_of_structure_bos.py — OK
+[IMPORT]  Priceactionmdfiles\backup_engine_v1\engine\advanced_concepts\break_of_structure_bos.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\backup_engine_v1\engine\advanced_concepts\change_of_character_choch.py — OK
+[IMPORT]  Priceactionmdfiles\backup_engine_v1\engine\advanced_concepts\change_of_character_choch.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\backup_engine_v1\engine\advanced_concepts\fair_value_gaps_fvg.py — OK
+[IMPORT]  Priceactionmdfiles\backup_engine_v1\engine\advanced_concepts\fair_value_gaps_fvg.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\backup_engine_v1\engine\advanced_concepts\higher_high_higher_low.py — OK
+[IMPORT]  Priceactionmdfiles\backup_engine_v1\engine\advanced_concepts\higher_high_higher_low.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\backup_engine_v1\engine\advanced_concepts\liquidity_zones.py — OK
+[IMPORT]  Priceactionmdfiles\backup_engine_v1\engine\advanced_concepts\liquidity_zones.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\backup_engine_v1\engine\advanced_concepts\lower_high_lower_low.py — OK
+[IMPORT]  Priceactionmdfiles\backup_engine_v1\engine\advanced_concepts\lower_high_lower_low.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\backup_engine_v1\engine\advanced_concepts\market_structure.py — OK
+[IMPORT]  Priceactionmdfiles\backup_engine_v1\engine\advanced_concepts\market_structure.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\backup_engine_v1\engine\advanced_concepts\order_blocks.py — OK
+[IMPORT]  Priceactionmdfiles\backup_engine_v1\engine\advanced_concepts\order_blocks.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\backup_engine_v1\engine\advanced_concepts\supply_demand.py — OK
+[IMPORT]  Priceactionmdfiles\backup_engine_v1\engine\advanced_concepts\supply_demand.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\backup_engine_v1\engine\candlestick_patterns\bearish_engulfing.py — OK
+[IMPORT]  Priceactionmdfiles\backup_engine_v1\engine\candlestick_patterns\bearish_engulfing.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\backup_engine_v1\engine\candlestick_patterns\bullish_engulfing.py — OK
+[IMPORT]  Priceactionmdfiles\backup_engine_v1\engine\candlestick_patterns\bullish_engulfing.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\backup_engine_v1\engine\candlestick_patterns\dark_cloud_cover.py — OK
+[IMPORT]  Priceactionmdfiles\backup_engine_v1\engine\candlestick_patterns\dark_cloud_cover.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\backup_engine_v1\engine\candlestick_patterns\doji.py — OK
+[IMPORT]  Priceactionmdfiles\backup_engine_v1\engine\candlestick_patterns\doji.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\backup_engine_v1\engine\candlestick_patterns\evening_star.py — OK
+[IMPORT]  Priceactionmdfiles\backup_engine_v1\engine\candlestick_patterns\evening_star.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\backup_engine_v1\engine\candlestick_patterns\hammer.py — OK
+[IMPORT]  Priceactionmdfiles\backup_engine_v1\engine\candlestick_patterns\hammer.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\backup_engine_v1\engine\candlestick_patterns\morning_star.py — OK
+[IMPORT]  Priceactionmdfiles\backup_engine_v1\engine\candlestick_patterns\morning_star.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\backup_engine_v1\engine\candlestick_patterns\neutral_patterns.py — OK
+[IMPORT]  Priceactionmdfiles\backup_engine_v1\engine\candlestick_patterns\neutral_patterns.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\backup_engine_v1\engine\candlestick_patterns\piercing_pattern.py — OK
+[IMPORT]  Priceactionmdfiles\backup_engine_v1\engine\candlestick_patterns\piercing_pattern.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\backup_engine_v1\engine\candlestick_patterns\shooting_star.py — OK
+[IMPORT]  Priceactionmdfiles\backup_engine_v1\engine\candlestick_patterns\shooting_star.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\backup_engine_v1\engine\candlestick_patterns\spinning_top.py — OK
+[IMPORT]  Priceactionmdfiles\backup_engine_v1\engine\candlestick_patterns\spinning_top.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\backup_engine_v1\engine\price_action_patterns\ascending_channel.py — OK
+[IMPORT]  Priceactionmdfiles\backup_engine_v1\engine\price_action_patterns\ascending_channel.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\backup_engine_v1\engine\price_action_patterns\ascending_triangle.py — OK
+[IMPORT]  Priceactionmdfiles\backup_engine_v1\engine\price_action_patterns\ascending_triangle.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\backup_engine_v1\engine\price_action_patterns\bear_flag.py — OK
+[IMPORT]  Priceactionmdfiles\backup_engine_v1\engine\price_action_patterns\bear_flag.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\backup_engine_v1\engine\price_action_patterns\bull_flag.py — OK
+[IMPORT]  Priceactionmdfiles\backup_engine_v1\engine\price_action_patterns\bull_flag.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\backup_engine_v1\engine\price_action_patterns\cup_and_handle.py — OK
+[IMPORT]  Priceactionmdfiles\backup_engine_v1\engine\price_action_patterns\cup_and_handle.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\backup_engine_v1\engine\price_action_patterns\descending_channel.py — OK
+[IMPORT]  Priceactionmdfiles\backup_engine_v1\engine\price_action_patterns\descending_channel.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\backup_engine_v1\engine\price_action_patterns\descending_triangle.py — OK
+[IMPORT]  Priceactionmdfiles\backup_engine_v1\engine\price_action_patterns\descending_triangle.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\backup_engine_v1\engine\price_action_patterns\double_bottom.py — OK
+[IMPORT]  Priceactionmdfiles\backup_engine_v1\engine\price_action_patterns\double_bottom.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\backup_engine_v1\engine\price_action_patterns\double_top.py — OK
+[IMPORT]  Priceactionmdfiles\backup_engine_v1\engine\price_action_patterns\double_top.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\backup_engine_v1\engine\price_action_patterns\falling_wedge.py — OK
+[IMPORT]  Priceactionmdfiles\backup_engine_v1\engine\price_action_patterns\falling_wedge.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\backup_engine_v1\engine\price_action_patterns\head_and_shoulders.py — OK
+[IMPORT]  Priceactionmdfiles\backup_engine_v1\engine\price_action_patterns\head_and_shoulders.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\backup_engine_v1\engine\price_action_patterns\horizontal_channel.py — OK
+[IMPORT]  Priceactionmdfiles\backup_engine_v1\engine\price_action_patterns\horizontal_channel.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\backup_engine_v1\engine\price_action_patterns\inverse_head_and_shoulders.py — OK
+[IMPORT]  Priceactionmdfiles\backup_engine_v1\engine\price_action_patterns\inverse_head_and_shoulders.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\backup_engine_v1\engine\price_action_patterns\rectangle_range.py — OK
+[IMPORT]  Priceactionmdfiles\backup_engine_v1\engine\price_action_patterns\rectangle_range.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\backup_engine_v1\engine\price_action_patterns\rising_wedge.py — OK
+[IMPORT]  Priceactionmdfiles\backup_engine_v1\engine\price_action_patterns\rising_wedge.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\backup_engine_v1\engine\price_action_patterns\standard_head_and_shoulders.py — OK
+[IMPORT]  Priceactionmdfiles\backup_engine_v1\engine\price_action_patterns\standard_head_and_shoulders.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\backup_engine_v1\engine\price_action_patterns\symmetrical_triangle.py — OK
+[IMPORT]  Priceactionmdfiles\backup_engine_v1\engine\price_action_patterns\symmetrical_triangle.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\backup_engine_v1\engine\price_action_patterns\triple_bottom.py — OK
+[IMPORT]  Priceactionmdfiles\backup_engine_v1\engine\price_action_patterns\triple_bottom.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\backup_engine_v1\engine\price_action_patterns\triple_top.py — OK
+[IMPORT]  Priceactionmdfiles\backup_engine_v1\engine\price_action_patterns\triple_top.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\backup_engine_v1\engine\support_resistance\breakout.py — OK
+[IMPORT]  Priceactionmdfiles\backup_engine_v1\engine\support_resistance\breakout.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\backup_engine_v1\engine\support_resistance\breakout_retest_continuation.py — OK
+[IMPORT]  Priceactionmdfiles\backup_engine_v1\engine\support_resistance\breakout_retest_continuation.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\backup_engine_v1\engine\support_resistance\breakout_trap.py — OK
+[IMPORT]  Priceactionmdfiles\backup_engine_v1\engine\support_resistance\breakout_trap.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\backup_engine_v1\engine\support_resistance\liquidity_grab.py — OK
+[IMPORT]  Priceactionmdfiles\backup_engine_v1\engine\support_resistance\liquidity_grab.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\backup_engine_v1\engine\support_resistance\resistance.py — OK
+[IMPORT]  Priceactionmdfiles\backup_engine_v1\engine\support_resistance\resistance.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\backup_engine_v1\engine\support_resistance\resistance_breakout.py — OK
+[IMPORT]  Priceactionmdfiles\backup_engine_v1\engine\support_resistance\resistance_breakout.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\backup_engine_v1\engine\support_resistance\retest_entry.py — OK
+[IMPORT]  Priceactionmdfiles\backup_engine_v1\engine\support_resistance\retest_entry.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\backup_engine_v1\engine\support_resistance\support.py — OK
+[IMPORT]  Priceactionmdfiles\backup_engine_v1\engine\support_resistance\support.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\backup_engine_v1\engine\support_resistance\support_breakdown.py — OK
+[IMPORT]  Priceactionmdfiles\backup_engine_v1\engine\support_resistance\support_breakdown.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\backup_engine_v1\engine\tests\__init__.py — OK
+[IMPORT]  Priceactionmdfiles\backup_engine_v1\engine\tests\__init__.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\backup_engine_v1\engine\tests\test_advanced_concepts\test_break_of_structure_bos.py — OK
+[IMPORT]  Priceactionmdfiles\backup_engine_v1\engine\tests\test_advanced_concepts\test_break_of_structure_bos.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\backup_engine_v1\engine\tests\test_advanced_concepts\test_change_of_character_choch.py — OK
+[IMPORT]  Priceactionmdfiles\backup_engine_v1\engine\tests\test_advanced_concepts\test_change_of_character_choch.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\backup_engine_v1\engine\tests\test_advanced_concepts\test_fair_value_gaps_fvg.py — OK
+[IMPORT]  Priceactionmdfiles\backup_engine_v1\engine\tests\test_advanced_concepts\test_fair_value_gaps_fvg.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\backup_engine_v1\engine\tests\test_advanced_concepts\test_higher_high_higher_low.py — OK
+[IMPORT]  Priceactionmdfiles\backup_engine_v1\engine\tests\test_advanced_concepts\test_higher_high_higher_low.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\backup_engine_v1\engine\tests\test_advanced_concepts\test_liquidity_zones.py — OK
+[IMPORT]  Priceactionmdfiles\backup_engine_v1\engine\tests\test_advanced_concepts\test_liquidity_zones.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\backup_engine_v1\engine\tests\test_advanced_concepts\test_lower_high_lower_low.py — OK
+[IMPORT]  Priceactionmdfiles\backup_engine_v1\engine\tests\test_advanced_concepts\test_lower_high_lower_low.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\backup_engine_v1\engine\tests\test_advanced_concepts\test_market_structure.py — OK
+[IMPORT]  Priceactionmdfiles\backup_engine_v1\engine\tests\test_advanced_concepts\test_market_structure.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\backup_engine_v1\engine\tests\test_advanced_concepts\test_order_blocks.py — OK
+[IMPORT]  Priceactionmdfiles\backup_engine_v1\engine\tests\test_advanced_concepts\test_order_blocks.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\backup_engine_v1\engine\tests\test_advanced_concepts\test_supply_demand.py — OK
+[IMPORT]  Priceactionmdfiles\backup_engine_v1\engine\tests\test_advanced_concepts\test_supply_demand.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\backup_engine_v1\engine\tests\test_advanced_concepts\__init__.py — OK
+[IMPORT]  Priceactionmdfiles\backup_engine_v1\engine\tests\test_advanced_concepts\__init__.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\backup_engine_v1\engine\tests\test_candlestick_patterns\test_bearish_engulfing.py — OK
+[IMPORT]  Priceactionmdfiles\backup_engine_v1\engine\tests\test_candlestick_patterns\test_bearish_engulfing.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\backup_engine_v1\engine\tests\test_candlestick_patterns\test_bullish_engulfing.py — OK
+[IMPORT]  Priceactionmdfiles\backup_engine_v1\engine\tests\test_candlestick_patterns\test_bullish_engulfing.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\backup_engine_v1\engine\tests\test_candlestick_patterns\test_dark_cloud_cover.py — OK
+[IMPORT]  Priceactionmdfiles\backup_engine_v1\engine\tests\test_candlestick_patterns\test_dark_cloud_cover.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\backup_engine_v1\engine\tests\test_candlestick_patterns\test_doji.py — OK
+[IMPORT]  Priceactionmdfiles\backup_engine_v1\engine\tests\test_candlestick_patterns\test_doji.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\backup_engine_v1\engine\tests\test_candlestick_patterns\test_evening_star.py — OK
+[IMPORT]  Priceactionmdfiles\backup_engine_v1\engine\tests\test_candlestick_patterns\test_evening_star.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\backup_engine_v1\engine\tests\test_candlestick_patterns\test_hammer.py — OK
+[IMPORT]  Priceactionmdfiles\backup_engine_v1\engine\tests\test_candlestick_patterns\test_hammer.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\backup_engine_v1\engine\tests\test_candlestick_patterns\test_morning_star.py — OK
+[IMPORT]  Priceactionmdfiles\backup_engine_v1\engine\tests\test_candlestick_patterns\test_morning_star.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\backup_engine_v1\engine\tests\test_candlestick_patterns\test_neutral_patterns.py — OK
+[IMPORT]  Priceactionmdfiles\backup_engine_v1\engine\tests\test_candlestick_patterns\test_neutral_patterns.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\backup_engine_v1\engine\tests\test_candlestick_patterns\test_piercing_pattern.py — OK
+[IMPORT]  Priceactionmdfiles\backup_engine_v1\engine\tests\test_candlestick_patterns\test_piercing_pattern.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\backup_engine_v1\engine\tests\test_candlestick_patterns\test_shooting_star.py — OK
+[IMPORT]  Priceactionmdfiles\backup_engine_v1\engine\tests\test_candlestick_patterns\test_shooting_star.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\backup_engine_v1\engine\tests\test_candlestick_patterns\test_spinning_top.py — OK
+[IMPORT]  Priceactionmdfiles\backup_engine_v1\engine\tests\test_candlestick_patterns\test_spinning_top.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\backup_engine_v1\engine\tests\test_candlestick_patterns\__init__.py — OK
+[IMPORT]  Priceactionmdfiles\backup_engine_v1\engine\tests\test_candlestick_patterns\__init__.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\backup_engine_v1\engine\tests\test_price_action_patterns\test_ascending_channel.py — OK
+[IMPORT]  Priceactionmdfiles\backup_engine_v1\engine\tests\test_price_action_patterns\test_ascending_channel.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\backup_engine_v1\engine\tests\test_price_action_patterns\test_ascending_triangle.py — OK
+[IMPORT]  Priceactionmdfiles\backup_engine_v1\engine\tests\test_price_action_patterns\test_ascending_triangle.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\backup_engine_v1\engine\tests\test_price_action_patterns\test_bear_flag.py — OK
+[IMPORT]  Priceactionmdfiles\backup_engine_v1\engine\tests\test_price_action_patterns\test_bear_flag.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\backup_engine_v1\engine\tests\test_price_action_patterns\test_bull_flag.py — OK
+[IMPORT]  Priceactionmdfiles\backup_engine_v1\engine\tests\test_price_action_patterns\test_bull_flag.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\backup_engine_v1\engine\tests\test_price_action_patterns\test_cup_and_handle.py — OK
+[IMPORT]  Priceactionmdfiles\backup_engine_v1\engine\tests\test_price_action_patterns\test_cup_and_handle.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\backup_engine_v1\engine\tests\test_price_action_patterns\test_descending_channel.py — OK
+[IMPORT]  Priceactionmdfiles\backup_engine_v1\engine\tests\test_price_action_patterns\test_descending_channel.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\backup_engine_v1\engine\tests\test_price_action_patterns\test_descending_triangle.py — OK
+[IMPORT]  Priceactionmdfiles\backup_engine_v1\engine\tests\test_price_action_patterns\test_descending_triangle.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\backup_engine_v1\engine\tests\test_price_action_patterns\test_double_bottom.py — OK
+[IMPORT]  Priceactionmdfiles\backup_engine_v1\engine\tests\test_price_action_patterns\test_double_bottom.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\backup_engine_v1\engine\tests\test_price_action_patterns\test_double_top.py — OK
+[IMPORT]  Priceactionmdfiles\backup_engine_v1\engine\tests\test_price_action_patterns\test_double_top.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\backup_engine_v1\engine\tests\test_price_action_patterns\test_falling_wedge.py — OK
+[IMPORT]  Priceactionmdfiles\backup_engine_v1\engine\tests\test_price_action_patterns\test_falling_wedge.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\backup_engine_v1\engine\tests\test_price_action_patterns\test_head_and_shoulders.py — OK
+[IMPORT]  Priceactionmdfiles\backup_engine_v1\engine\tests\test_price_action_patterns\test_head_and_shoulders.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\backup_engine_v1\engine\tests\test_price_action_patterns\test_horizontal_channel.py — OK
+[IMPORT]  Priceactionmdfiles\backup_engine_v1\engine\tests\test_price_action_patterns\test_horizontal_channel.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\backup_engine_v1\engine\tests\test_price_action_patterns\test_inverse_head_and_shoulders.py — OK
+[IMPORT]  Priceactionmdfiles\backup_engine_v1\engine\tests\test_price_action_patterns\test_inverse_head_and_shoulders.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\backup_engine_v1\engine\tests\test_price_action_patterns\test_rectangle_range.py — OK
+[IMPORT]  Priceactionmdfiles\backup_engine_v1\engine\tests\test_price_action_patterns\test_rectangle_range.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\backup_engine_v1\engine\tests\test_price_action_patterns\test_rising_wedge.py — OK
+[IMPORT]  Priceactionmdfiles\backup_engine_v1\engine\tests\test_price_action_patterns\test_rising_wedge.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\backup_engine_v1\engine\tests\test_price_action_patterns\test_standard_head_and_shoulders.py — OK
+[IMPORT]  Priceactionmdfiles\backup_engine_v1\engine\tests\test_price_action_patterns\test_standard_head_and_shoulders.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\backup_engine_v1\engine\tests\test_price_action_patterns\test_symmetrical_triangle.py — OK
+[IMPORT]  Priceactionmdfiles\backup_engine_v1\engine\tests\test_price_action_patterns\test_symmetrical_triangle.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\backup_engine_v1\engine\tests\test_price_action_patterns\test_triple_bottom.py — OK
+[IMPORT]  Priceactionmdfiles\backup_engine_v1\engine\tests\test_price_action_patterns\test_triple_bottom.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\backup_engine_v1\engine\tests\test_price_action_patterns\test_triple_top.py — OK
+[IMPORT]  Priceactionmdfiles\backup_engine_v1\engine\tests\test_price_action_patterns\test_triple_top.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\backup_engine_v1\engine\tests\test_price_action_patterns\__init__.py — OK
+[IMPORT]  Priceactionmdfiles\backup_engine_v1\engine\tests\test_price_action_patterns\__init__.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\backup_engine_v1\engine\tests\test_support_resistance\test_breakout.py — OK
+[IMPORT]  Priceactionmdfiles\backup_engine_v1\engine\tests\test_support_resistance\test_breakout.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\backup_engine_v1\engine\tests\test_support_resistance\test_breakout_retest_continuation.py — OK
+[IMPORT]  Priceactionmdfiles\backup_engine_v1\engine\tests\test_support_resistance\test_breakout_retest_continuation.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\backup_engine_v1\engine\tests\test_support_resistance\test_breakout_trap.py — OK
+[IMPORT]  Priceactionmdfiles\backup_engine_v1\engine\tests\test_support_resistance\test_breakout_trap.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\backup_engine_v1\engine\tests\test_support_resistance\test_liquidity_grab.py — OK
+[IMPORT]  Priceactionmdfiles\backup_engine_v1\engine\tests\test_support_resistance\test_liquidity_grab.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\backup_engine_v1\engine\tests\test_support_resistance\test_resistance.py — OK
+[IMPORT]  Priceactionmdfiles\backup_engine_v1\engine\tests\test_support_resistance\test_resistance.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\backup_engine_v1\engine\tests\test_support_resistance\test_resistance_breakout.py — OK
+[IMPORT]  Priceactionmdfiles\backup_engine_v1\engine\tests\test_support_resistance\test_resistance_breakout.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\backup_engine_v1\engine\tests\test_support_resistance\test_retest_entry.py — OK
+[IMPORT]  Priceactionmdfiles\backup_engine_v1\engine\tests\test_support_resistance\test_retest_entry.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\backup_engine_v1\engine\tests\test_support_resistance\test_support.py — OK
+[IMPORT]  Priceactionmdfiles\backup_engine_v1\engine\tests\test_support_resistance\test_support.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\backup_engine_v1\engine\tests\test_support_resistance\test_support_breakdown.py — OK
+[IMPORT]  Priceactionmdfiles\backup_engine_v1\engine\tests\test_support_resistance\test_support_breakdown.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\backup_engine_v1\engine\tests\test_support_resistance\__init__.py — OK
+[IMPORT]  Priceactionmdfiles\backup_engine_v1\engine\tests\test_support_resistance\__init__.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\engine\base_strategy.py — OK
+[IMPORT]  Priceactionmdfiles\engine\base_strategy.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\engine\signal.py — OK
+[IMPORT]  Priceactionmdfiles\engine\signal.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\engine\strategy_engine.py — OK
+[IMPORT]  Priceactionmdfiles\engine\strategy_engine.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\engine\unified_strategy_engine.py — OK
+[IMPORT]  Priceactionmdfiles\engine\unified_strategy_engine.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\engine\__init__.py — OK
+[IMPORT]  Priceactionmdfiles\engine\__init__.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\engine\advanced_concepts\break_of_structure_bos.py — OK
+[IMPORT]  Priceactionmdfiles\engine\advanced_concepts\break_of_structure_bos.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\engine\advanced_concepts\change_of_character_choch.py — OK
+[IMPORT]  Priceactionmdfiles\engine\advanced_concepts\change_of_character_choch.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\engine\advanced_concepts\fair_value_gaps_fvg.py — OK
+[IMPORT]  Priceactionmdfiles\engine\advanced_concepts\fair_value_gaps_fvg.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\engine\advanced_concepts\higher_high_higher_low.py — OK
+[IMPORT]  Priceactionmdfiles\engine\advanced_concepts\higher_high_higher_low.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\engine\advanced_concepts\liquidity_zones.py — OK
+[IMPORT]  Priceactionmdfiles\engine\advanced_concepts\liquidity_zones.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\engine\advanced_concepts\lower_high_lower_low.py — OK
+[IMPORT]  Priceactionmdfiles\engine\advanced_concepts\lower_high_lower_low.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\engine\advanced_concepts\market_structure.py — OK
+[IMPORT]  Priceactionmdfiles\engine\advanced_concepts\market_structure.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\engine\advanced_concepts\order_blocks.py — OK
+[IMPORT]  Priceactionmdfiles\engine\advanced_concepts\order_blocks.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\engine\advanced_concepts\supply_demand.py — OK
+[IMPORT]  Priceactionmdfiles\engine\advanced_concepts\supply_demand.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\engine\candlestick_patterns\bearish_engulfing.py — OK
+[IMPORT]  Priceactionmdfiles\engine\candlestick_patterns\bearish_engulfing.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\engine\candlestick_patterns\bullish_engulfing.py — OK
+[IMPORT]  Priceactionmdfiles\engine\candlestick_patterns\bullish_engulfing.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\engine\candlestick_patterns\dark_cloud_cover.py — OK
+[IMPORT]  Priceactionmdfiles\engine\candlestick_patterns\dark_cloud_cover.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\engine\candlestick_patterns\doji.py — OK
+[IMPORT]  Priceactionmdfiles\engine\candlestick_patterns\doji.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\engine\candlestick_patterns\evening_star.py — OK
+[IMPORT]  Priceactionmdfiles\engine\candlestick_patterns\evening_star.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\engine\candlestick_patterns\hammer.py — OK
+[IMPORT]  Priceactionmdfiles\engine\candlestick_patterns\hammer.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\engine\candlestick_patterns\morning_star.py — OK
+[IMPORT]  Priceactionmdfiles\engine\candlestick_patterns\morning_star.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\engine\candlestick_patterns\neutral_patterns.py — OK
+[IMPORT]  Priceactionmdfiles\engine\candlestick_patterns\neutral_patterns.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\engine\candlestick_patterns\piercing_pattern.py — OK
+[IMPORT]  Priceactionmdfiles\engine\candlestick_patterns\piercing_pattern.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\engine\candlestick_patterns\shooting_star.py — OK
+[IMPORT]  Priceactionmdfiles\engine\candlestick_patterns\shooting_star.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\engine\candlestick_patterns\spinning_top.py — OK
+[IMPORT]  Priceactionmdfiles\engine\candlestick_patterns\spinning_top.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\engine\price_action_patterns\ascending_channel.py — OK
+[IMPORT]  Priceactionmdfiles\engine\price_action_patterns\ascending_channel.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\engine\price_action_patterns\ascending_triangle.py — OK
+[IMPORT]  Priceactionmdfiles\engine\price_action_patterns\ascending_triangle.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\engine\price_action_patterns\bear_flag.py — OK
+[IMPORT]  Priceactionmdfiles\engine\price_action_patterns\bear_flag.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\engine\price_action_patterns\bull_flag.py — OK
+[IMPORT]  Priceactionmdfiles\engine\price_action_patterns\bull_flag.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\engine\price_action_patterns\cup_and_handle.py — OK
+[IMPORT]  Priceactionmdfiles\engine\price_action_patterns\cup_and_handle.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\engine\price_action_patterns\descending_channel.py — OK
+[IMPORT]  Priceactionmdfiles\engine\price_action_patterns\descending_channel.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\engine\price_action_patterns\descending_triangle.py — OK
+[IMPORT]  Priceactionmdfiles\engine\price_action_patterns\descending_triangle.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\engine\price_action_patterns\double_bottom.py — OK
+[IMPORT]  Priceactionmdfiles\engine\price_action_patterns\double_bottom.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\engine\price_action_patterns\double_top.py — OK
+[IMPORT]  Priceactionmdfiles\engine\price_action_patterns\double_top.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\engine\price_action_patterns\falling_wedge.py — OK
+[IMPORT]  Priceactionmdfiles\engine\price_action_patterns\falling_wedge.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\engine\price_action_patterns\head_and_shoulders.py — OK
+[IMPORT]  Priceactionmdfiles\engine\price_action_patterns\head_and_shoulders.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\engine\price_action_patterns\horizontal_channel.py — OK
+[IMPORT]  Priceactionmdfiles\engine\price_action_patterns\horizontal_channel.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\engine\price_action_patterns\inverse_head_and_shoulders.py — OK
+[IMPORT]  Priceactionmdfiles\engine\price_action_patterns\inverse_head_and_shoulders.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\engine\price_action_patterns\rectangle_range.py — OK
+[IMPORT]  Priceactionmdfiles\engine\price_action_patterns\rectangle_range.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\engine\price_action_patterns\rising_wedge.py — OK
+[IMPORT]  Priceactionmdfiles\engine\price_action_patterns\rising_wedge.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\engine\price_action_patterns\standard_head_and_shoulders.py — OK
+[IMPORT]  Priceactionmdfiles\engine\price_action_patterns\standard_head_and_shoulders.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\engine\price_action_patterns\symmetrical_triangle.py — OK
+[IMPORT]  Priceactionmdfiles\engine\price_action_patterns\symmetrical_triangle.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\engine\price_action_patterns\triple_bottom.py — OK
+[IMPORT]  Priceactionmdfiles\engine\price_action_patterns\triple_bottom.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\engine\price_action_patterns\triple_top.py — OK
+[IMPORT]  Priceactionmdfiles\engine\price_action_patterns\triple_top.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\engine\support_resistance\breakout.py — OK
+[IMPORT]  Priceactionmdfiles\engine\support_resistance\breakout.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\engine\support_resistance\breakout_retest_continuation.py — OK
+[IMPORT]  Priceactionmdfiles\engine\support_resistance\breakout_retest_continuation.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\engine\support_resistance\breakout_trap.py — OK
+[IMPORT]  Priceactionmdfiles\engine\support_resistance\breakout_trap.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\engine\support_resistance\liquidity_grab.py — OK
+[IMPORT]  Priceactionmdfiles\engine\support_resistance\liquidity_grab.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\engine\support_resistance\resistance.py — OK
+[IMPORT]  Priceactionmdfiles\engine\support_resistance\resistance.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\engine\support_resistance\resistance_breakout.py — OK
+[IMPORT]  Priceactionmdfiles\engine\support_resistance\resistance_breakout.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\engine\support_resistance\retest_entry.py — OK
+[IMPORT]  Priceactionmdfiles\engine\support_resistance\retest_entry.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\engine\support_resistance\support.py — OK
+[IMPORT]  Priceactionmdfiles\engine\support_resistance\support.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\engine\support_resistance\support_breakdown.py — OK
+[IMPORT]  Priceactionmdfiles\engine\support_resistance\support_breakdown.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\engine\tests\__init__.py — OK
+[IMPORT]  Priceactionmdfiles\engine\tests\__init__.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\engine\tests\test_advanced_concepts\test_break_of_structure_bos.py — OK
+[IMPORT]  Priceactionmdfiles\engine\tests\test_advanced_concepts\test_break_of_structure_bos.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\engine\tests\test_advanced_concepts\test_change_of_character_choch.py — OK
+[IMPORT]  Priceactionmdfiles\engine\tests\test_advanced_concepts\test_change_of_character_choch.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\engine\tests\test_advanced_concepts\test_fair_value_gaps_fvg.py — OK
+[IMPORT]  Priceactionmdfiles\engine\tests\test_advanced_concepts\test_fair_value_gaps_fvg.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\engine\tests\test_advanced_concepts\test_higher_high_higher_low.py — OK
+[IMPORT]  Priceactionmdfiles\engine\tests\test_advanced_concepts\test_higher_high_higher_low.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\engine\tests\test_advanced_concepts\test_liquidity_zones.py — OK
+[IMPORT]  Priceactionmdfiles\engine\tests\test_advanced_concepts\test_liquidity_zones.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\engine\tests\test_advanced_concepts\test_lower_high_lower_low.py — OK
+[IMPORT]  Priceactionmdfiles\engine\tests\test_advanced_concepts\test_lower_high_lower_low.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\engine\tests\test_advanced_concepts\test_market_structure.py — OK
+[IMPORT]  Priceactionmdfiles\engine\tests\test_advanced_concepts\test_market_structure.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\engine\tests\test_advanced_concepts\test_order_blocks.py — OK
+[IMPORT]  Priceactionmdfiles\engine\tests\test_advanced_concepts\test_order_blocks.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\engine\tests\test_advanced_concepts\test_supply_demand.py — OK
+[IMPORT]  Priceactionmdfiles\engine\tests\test_advanced_concepts\test_supply_demand.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\engine\tests\test_advanced_concepts\__init__.py — OK
+[IMPORT]  Priceactionmdfiles\engine\tests\test_advanced_concepts\__init__.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\engine\tests\test_candlestick_patterns\test_bearish_engulfing.py — OK
+[IMPORT]  Priceactionmdfiles\engine\tests\test_candlestick_patterns\test_bearish_engulfing.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\engine\tests\test_candlestick_patterns\test_bullish_engulfing.py — OK
+[IMPORT]  Priceactionmdfiles\engine\tests\test_candlestick_patterns\test_bullish_engulfing.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\engine\tests\test_candlestick_patterns\test_dark_cloud_cover.py — OK
+[IMPORT]  Priceactionmdfiles\engine\tests\test_candlestick_patterns\test_dark_cloud_cover.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\engine\tests\test_candlestick_patterns\test_doji.py — OK
+[IMPORT]  Priceactionmdfiles\engine\tests\test_candlestick_patterns\test_doji.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\engine\tests\test_candlestick_patterns\test_evening_star.py — OK
+[IMPORT]  Priceactionmdfiles\engine\tests\test_candlestick_patterns\test_evening_star.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\engine\tests\test_candlestick_patterns\test_hammer.py — OK
+[IMPORT]  Priceactionmdfiles\engine\tests\test_candlestick_patterns\test_hammer.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\engine\tests\test_candlestick_patterns\test_morning_star.py — OK
+[IMPORT]  Priceactionmdfiles\engine\tests\test_candlestick_patterns\test_morning_star.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\engine\tests\test_candlestick_patterns\test_neutral_patterns.py — OK
+[IMPORT]  Priceactionmdfiles\engine\tests\test_candlestick_patterns\test_neutral_patterns.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\engine\tests\test_candlestick_patterns\test_piercing_pattern.py — OK
+[IMPORT]  Priceactionmdfiles\engine\tests\test_candlestick_patterns\test_piercing_pattern.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\engine\tests\test_candlestick_patterns\test_shooting_star.py — OK
+[IMPORT]  Priceactionmdfiles\engine\tests\test_candlestick_patterns\test_shooting_star.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\engine\tests\test_candlestick_patterns\test_spinning_top.py — OK
+[IMPORT]  Priceactionmdfiles\engine\tests\test_candlestick_patterns\test_spinning_top.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\engine\tests\test_candlestick_patterns\__init__.py — OK
+[IMPORT]  Priceactionmdfiles\engine\tests\test_candlestick_patterns\__init__.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\engine\tests\test_price_action_patterns\test_ascending_channel.py — OK
+[IMPORT]  Priceactionmdfiles\engine\tests\test_price_action_patterns\test_ascending_channel.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\engine\tests\test_price_action_patterns\test_ascending_triangle.py — OK
+[IMPORT]  Priceactionmdfiles\engine\tests\test_price_action_patterns\test_ascending_triangle.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\engine\tests\test_price_action_patterns\test_bear_flag.py — OK
+[IMPORT]  Priceactionmdfiles\engine\tests\test_price_action_patterns\test_bear_flag.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\engine\tests\test_price_action_patterns\test_bull_flag.py — OK
+[IMPORT]  Priceactionmdfiles\engine\tests\test_price_action_patterns\test_bull_flag.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\engine\tests\test_price_action_patterns\test_cup_and_handle.py — OK
+[IMPORT]  Priceactionmdfiles\engine\tests\test_price_action_patterns\test_cup_and_handle.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\engine\tests\test_price_action_patterns\test_descending_channel.py — OK
+[IMPORT]  Priceactionmdfiles\engine\tests\test_price_action_patterns\test_descending_channel.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\engine\tests\test_price_action_patterns\test_descending_triangle.py — OK
+[IMPORT]  Priceactionmdfiles\engine\tests\test_price_action_patterns\test_descending_triangle.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\engine\tests\test_price_action_patterns\test_double_bottom.py — OK
+[IMPORT]  Priceactionmdfiles\engine\tests\test_price_action_patterns\test_double_bottom.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\engine\tests\test_price_action_patterns\test_double_top.py — OK
+[IMPORT]  Priceactionmdfiles\engine\tests\test_price_action_patterns\test_double_top.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\engine\tests\test_price_action_patterns\test_falling_wedge.py — OK
+[IMPORT]  Priceactionmdfiles\engine\tests\test_price_action_patterns\test_falling_wedge.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\engine\tests\test_price_action_patterns\test_head_and_shoulders.py — OK
+[IMPORT]  Priceactionmdfiles\engine\tests\test_price_action_patterns\test_head_and_shoulders.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\engine\tests\test_price_action_patterns\test_horizontal_channel.py — OK
+[IMPORT]  Priceactionmdfiles\engine\tests\test_price_action_patterns\test_horizontal_channel.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\engine\tests\test_price_action_patterns\test_inverse_head_and_shoulders.py — OK
+[IMPORT]  Priceactionmdfiles\engine\tests\test_price_action_patterns\test_inverse_head_and_shoulders.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\engine\tests\test_price_action_patterns\test_rectangle_range.py — OK
+[IMPORT]  Priceactionmdfiles\engine\tests\test_price_action_patterns\test_rectangle_range.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\engine\tests\test_price_action_patterns\test_rising_wedge.py — OK
+[IMPORT]  Priceactionmdfiles\engine\tests\test_price_action_patterns\test_rising_wedge.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\engine\tests\test_price_action_patterns\test_standard_head_and_shoulders.py — OK
+[IMPORT]  Priceactionmdfiles\engine\tests\test_price_action_patterns\test_standard_head_and_shoulders.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\engine\tests\test_price_action_patterns\test_symmetrical_triangle.py — OK
+[IMPORT]  Priceactionmdfiles\engine\tests\test_price_action_patterns\test_symmetrical_triangle.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\engine\tests\test_price_action_patterns\test_triple_bottom.py — OK
+[IMPORT]  Priceactionmdfiles\engine\tests\test_price_action_patterns\test_triple_bottom.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\engine\tests\test_price_action_patterns\test_triple_top.py — OK
+[IMPORT]  Priceactionmdfiles\engine\tests\test_price_action_patterns\test_triple_top.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\engine\tests\test_price_action_patterns\__init__.py — OK
+[IMPORT]  Priceactionmdfiles\engine\tests\test_price_action_patterns\__init__.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\engine\tests\test_support_resistance\test_breakout.py — OK
+[IMPORT]  Priceactionmdfiles\engine\tests\test_support_resistance\test_breakout.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\engine\tests\test_support_resistance\test_breakout_retest_continuation.py — OK
+[IMPORT]  Priceactionmdfiles\engine\tests\test_support_resistance\test_breakout_retest_continuation.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\engine\tests\test_support_resistance\test_breakout_trap.py — OK
+[IMPORT]  Priceactionmdfiles\engine\tests\test_support_resistance\test_breakout_trap.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\engine\tests\test_support_resistance\test_liquidity_grab.py — OK
+[IMPORT]  Priceactionmdfiles\engine\tests\test_support_resistance\test_liquidity_grab.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\engine\tests\test_support_resistance\test_resistance.py — OK
+[IMPORT]  Priceactionmdfiles\engine\tests\test_support_resistance\test_resistance.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\engine\tests\test_support_resistance\test_resistance_breakout.py — OK
+[IMPORT]  Priceactionmdfiles\engine\tests\test_support_resistance\test_resistance_breakout.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\engine\tests\test_support_resistance\test_retest_entry.py — OK
+[IMPORT]  Priceactionmdfiles\engine\tests\test_support_resistance\test_retest_entry.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\engine\tests\test_support_resistance\test_support.py — OK
+[IMPORT]  Priceactionmdfiles\engine\tests\test_support_resistance\test_support.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\engine\tests\test_support_resistance\test_support_breakdown.py — OK
+[IMPORT]  Priceactionmdfiles\engine\tests\test_support_resistance\test_support_breakdown.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\engine\tests\test_support_resistance\__init__.py — OK
+[IMPORT]  Priceactionmdfiles\engine\tests\test_support_resistance\__init__.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\modules\ai_analysis.py — OK
+[IMPORT]  Priceactionmdfiles\modules\ai_analysis.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\modules\alert.py — OK
+[IMPORT]  Priceactionmdfiles\modules\alert.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\modules\broker_layer.py — OK
+[IMPORT]  Priceactionmdfiles\modules\broker_layer.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\modules\cached_data_loader.py — OK
+[IMPORT]  Priceactionmdfiles\modules\cached_data_loader.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\modules\candlestick_engine.py — OK
+[IMPORT]  Priceactionmdfiles\modules\candlestick_engine.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\modules\confidence_scorer.py — OK
+[IMPORT]  Priceactionmdfiles\modules\confidence_scorer.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\modules\context_detector.py — OK
+[IMPORT]  Priceactionmdfiles\modules\context_detector.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\modules\dashboard_bridge.py — OK
+[IMPORT]  Priceactionmdfiles\modules\dashboard_bridge.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\modules\data_layer.py — OK
+[IMPORT]  Priceactionmdfiles\modules\data_layer.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\modules\decision_engine.py — OK
+[IMPORT]  Priceactionmdfiles\modules\decision_engine.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\modules\dry_run_stubs.py — OK
+[IMPORT]  Priceactionmdfiles\modules\dry_run_stubs.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\modules\event_calendar.py — OK
+[IMPORT]  Priceactionmdfiles\modules\event_calendar.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\modules\indicator_cache.py — OK
+[IMPORT]  Priceactionmdfiles\modules\indicator_cache.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\modules\indicator_engine.py — OK
+[IMPORT]  Priceactionmdfiles\modules\indicator_engine.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\modules\learning.py — OK
+[IMPORT]  Priceactionmdfiles\modules\learning.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\modules\massive_data_layer.py — OK
+[IMPORT]  Priceactionmdfiles\modules\massive_data_layer.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\modules\mean_reversion_engine.py — OK
+[IMPORT]  Priceactionmdfiles\modules\mean_reversion_engine.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\modules\momentum_engine.py — OK
+[IMPORT]  Priceactionmdfiles\modules\momentum_engine.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\modules\option_chain.py — OK
+[IMPORT]  Priceactionmdfiles\modules\option_chain.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\modules\portfolio_manager.py — OK
+[IMPORT]  Priceactionmdfiles\modules\portfolio_manager.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\modules\price_action_engine.py — OK
+[IMPORT]  Priceactionmdfiles\modules\price_action_engine.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\modules\regime_gate.py — OK
+[IMPORT]  Priceactionmdfiles\modules\regime_gate.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\modules\risk_guard.py — OK
+[IMPORT]  Priceactionmdfiles\modules\risk_guard.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\modules\strategy_adapters.py — OK
+[IMPORT]  Priceactionmdfiles\modules\strategy_adapters.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\modules\strategy_definitions.py — OK
+[IMPORT]  Priceactionmdfiles\modules\strategy_definitions.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\modules\strategy_learner.py — OK
+[IMPORT]  Priceactionmdfiles\modules\strategy_learner.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\modules\strategy_mapper.py — OK
+[IMPORT]  Priceactionmdfiles\modules\strategy_mapper.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\modules\strategy_router.py — OK
+[IMPORT]  Priceactionmdfiles\modules\strategy_router.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\modules\strategy_selector.py — OK
+[IMPORT]  Priceactionmdfiles\modules\strategy_selector.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\modules\structure_strategy_engine.py — OK
+[IMPORT]  Priceactionmdfiles\modules\structure_strategy_engine.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\modules\sweep_retest_engine.py — OK
+[IMPORT]  Priceactionmdfiles\modules\sweep_retest_engine.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\modules\trailing_sl_manager.py — OK
+[IMPORT]  Priceactionmdfiles\modules\trailing_sl_manager.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\modules\v3_utils.py — OK
+[IMPORT]  Priceactionmdfiles\modules\v3_utils.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\modules\vix_filter.py — OK
+[IMPORT]  Priceactionmdfiles\modules\vix_filter.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\modules\websocket_manager.py — OK
+[IMPORT]  Priceactionmdfiles\modules\websocket_manager.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\modules\broker\binance_broker.py — OK
+[IMPORT]  Priceactionmdfiles\modules\broker\binance_broker.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\modules\charting\aggregator.py — OK
+[IMPORT]  Priceactionmdfiles\modules\charting\aggregator.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\modules\charting\chart_renderer.py — OK
+[IMPORT]  Priceactionmdfiles\modules\charting\chart_renderer.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\modules\charting\structure_detector.py — OK
+[IMPORT]  Priceactionmdfiles\modules\charting\structure_detector.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\modules\charting\__init__.py — OK
+[IMPORT]  Priceactionmdfiles\modules\charting\__init__.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\modules\context_filters\calendar.py — OK
+[IMPORT]  Priceactionmdfiles\modules\context_filters\calendar.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\modules\context_filters\chop_filter.py — OK
+[IMPORT]  Priceactionmdfiles\modules\context_filters\chop_filter.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\modules\context_filters\gap_filter.py — OK
+[IMPORT]  Priceactionmdfiles\modules\context_filters\gap_filter.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\modules\context_filters\integration.py — OK
+[IMPORT]  Priceactionmdfiles\modules\context_filters\integration.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\modules\context_filters\schemas.py — OK
+[IMPORT]  Priceactionmdfiles\modules\context_filters\schemas.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\modules\context_filters\stack.py — OK
+[IMPORT]  Priceactionmdfiles\modules\context_filters\stack.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\modules\context_filters\time_of_day_filter.py — OK
+[IMPORT]  Priceactionmdfiles\modules\context_filters\time_of_day_filter.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\modules\context_filters\__init__.py — OK
+[IMPORT]  Priceactionmdfiles\modules\context_filters\__init__.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\modules\data\binance_feed.py — OK
+[IMPORT]  Priceactionmdfiles\modules\data\binance_feed.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\modules\data\candle_builder.py — OK
+[IMPORT]  Priceactionmdfiles\modules\data\candle_builder.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\modules\data\memory_data_reader.py — OK
+[IMPORT]  Priceactionmdfiles\modules\data\memory_data_reader.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\modules\data\redis_data_reader.py — OK
+[IMPORT]  Priceactionmdfiles\modules\data\redis_data_reader.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\modules\data\websocket_feed.py — OK
+[IMPORT]  Priceactionmdfiles\modules\data\websocket_feed.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\modules\intermarket\aggregator.py — OK
+[IMPORT]  Priceactionmdfiles\modules\intermarket\aggregator.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\modules\intermarket\breadth.py — OK
+[IMPORT]  Priceactionmdfiles\modules\intermarket\breadth.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\modules\intermarket\cross_asset.py — OK
+[IMPORT]  Priceactionmdfiles\modules\intermarket\cross_asset.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\modules\intermarket\engine.py — OK
+[IMPORT]  Priceactionmdfiles\modules\intermarket\engine.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\modules\intermarket\global_risk.py — OK
+[IMPORT]  Priceactionmdfiles\modules\intermarket\global_risk.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\modules\intermarket\index_alignment.py — OK
+[IMPORT]  Priceactionmdfiles\modules\intermarket\index_alignment.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\modules\intermarket\integration.py — OK
+[IMPORT]  Priceactionmdfiles\modules\intermarket\integration.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\modules\intermarket\relative_strength.py — OK
+[IMPORT]  Priceactionmdfiles\modules\intermarket\relative_strength.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\modules\intermarket\schemas.py — OK
+[IMPORT]  Priceactionmdfiles\modules\intermarket\schemas.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\modules\intermarket\sector_strength.py — OK
+[IMPORT]  Priceactionmdfiles\modules\intermarket\sector_strength.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\modules\intermarket\universe_mapper.py — OK
+[IMPORT]  Priceactionmdfiles\modules\intermarket\universe_mapper.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\modules\intermarket\__init__.py — OK
+[IMPORT]  Priceactionmdfiles\modules\intermarket\__init__.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\modules\intermarket\feeds\base.py — OK
+[IMPORT]  Priceactionmdfiles\modules\intermarket\feeds\base.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\modules\intermarket\feeds\kite_feed.py — OK
+[IMPORT]  Priceactionmdfiles\modules\intermarket\feeds\kite_feed.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\modules\intermarket\feeds\manager.py — OK
+[IMPORT]  Priceactionmdfiles\modules\intermarket\feeds\manager.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\modules\intermarket\feeds\nsepython_feed.py — OK
+[IMPORT]  Priceactionmdfiles\modules\intermarket\feeds\nsepython_feed.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\modules\intermarket\feeds\yfinance_feed.py — OK
+[IMPORT]  Priceactionmdfiles\modules\intermarket\feeds\yfinance_feed.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\modules\intermarket\feeds\__init__.py — OK
+[IMPORT]  Priceactionmdfiles\modules\intermarket\feeds\__init__.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\modules\options\broker_adapter.py — OK
+[IMPORT]  Priceactionmdfiles\modules\options\broker_adapter.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\modules\options\risk_manager.py — OK
+[IMPORT]  Priceactionmdfiles\modules\options\risk_manager.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\modules\options\scrip_master.py — OK
+[IMPORT]  Priceactionmdfiles\modules\options\scrip_master.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\modules\options\signal_adapter.py — OK
+[IMPORT]  Priceactionmdfiles\modules\options\signal_adapter.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\modules\options\strike_selector.py — OK
+[IMPORT]  Priceactionmdfiles\modules\options\strike_selector.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\modules\options\trade_executor.py — OK
+[IMPORT]  Priceactionmdfiles\modules\options\trade_executor.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\modules\regime\classifier.py — OK
+[IMPORT]  Priceactionmdfiles\modules\regime\classifier.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\modules\regime\features.py — OK
+[IMPORT]  Priceactionmdfiles\modules\regime\features.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\modules\regime\hmm_layer.py — OK
+[IMPORT]  Priceactionmdfiles\modules\regime\hmm_layer.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\modules\regime\integration.py — OK
+[IMPORT]  Priceactionmdfiles\modules\regime\integration.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\modules\regime\rule_layer.py — OK
+[IMPORT]  Priceactionmdfiles\modules\regime\rule_layer.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\modules\regime\schemas.py — OK
+[IMPORT]  Priceactionmdfiles\modules\regime\schemas.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\modules\regime\__init__.py — OK
+[IMPORT]  Priceactionmdfiles\modules\regime\__init__.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\modules\reporting\daily_report.py — OK
+[IMPORT]  Priceactionmdfiles\modules\reporting\daily_report.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\modules\reporting\equity_tracker.py — OK
+[IMPORT]  Priceactionmdfiles\modules\reporting\equity_tracker.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\modules\risk_exec\breaker.py — OK
+[IMPORT]  Priceactionmdfiles\modules\risk_exec\breaker.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\modules\risk_exec\engine.py — OK
+[IMPORT]  Priceactionmdfiles\modules\risk_exec\engine.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\modules\risk_exec\execution_quality.py — OK
+[IMPORT]  Priceactionmdfiles\modules\risk_exec\execution_quality.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\modules\risk_exec\executor.py — OK
+[IMPORT]  Priceactionmdfiles\modules\risk_exec\executor.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\modules\risk_exec\exits.py — OK
+[IMPORT]  Priceactionmdfiles\modules\risk_exec\exits.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\modules\risk_exec\heat_manager.py — OK
+[IMPORT]  Priceactionmdfiles\modules\risk_exec\heat_manager.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\modules\risk_exec\integration.py — OK
+[IMPORT]  Priceactionmdfiles\modules\risk_exec\integration.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\modules\risk_exec\schemas.py — OK
+[IMPORT]  Priceactionmdfiles\modules\risk_exec\schemas.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\modules\risk_exec\sizer.py — OK
+[IMPORT]  Priceactionmdfiles\modules\risk_exec\sizer.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\modules\risk_exec\stop_loss.py — OK
+[IMPORT]  Priceactionmdfiles\modules\risk_exec\stop_loss.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\modules\risk_exec\time_stop.py — OK
+[IMPORT]  Priceactionmdfiles\modules\risk_exec\time_stop.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\modules\risk_exec\trailing.py — OK
+[IMPORT]  Priceactionmdfiles\modules\risk_exec\trailing.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\modules\risk_exec\__init__.py — OK
+[IMPORT]  Priceactionmdfiles\modules\risk_exec\__init__.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\modules\risk_exec\broker\backtest.py — OK
+[IMPORT]  Priceactionmdfiles\modules\risk_exec\broker\backtest.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\modules\risk_exec\broker\base.py — OK
+[IMPORT]  Priceactionmdfiles\modules\risk_exec\broker\base.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\modules\risk_exec\broker\zerodha.py — OK
+[IMPORT]  Priceactionmdfiles\modules\risk_exec\broker\zerodha.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\modules\risk_exec\broker\__init__.py — OK
+[IMPORT]  Priceactionmdfiles\modules\risk_exec\broker\__init__.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\modules\smc\engine.py — OK
+[IMPORT]  Priceactionmdfiles\modules\smc\engine.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\modules\smc\fair_value_gap.py — OK
+[IMPORT]  Priceactionmdfiles\modules\smc\fair_value_gap.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\modules\smc\integration.py — OK
+[IMPORT]  Priceactionmdfiles\modules\smc\integration.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\modules\smc\liquidity_sweep.py — OK
+[IMPORT]  Priceactionmdfiles\modules\smc\liquidity_sweep.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\modules\smc\order_block.py — OK
+[IMPORT]  Priceactionmdfiles\modules\smc\order_block.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\modules\smc\premium_discount.py — OK
+[IMPORT]  Priceactionmdfiles\modules\smc\premium_discount.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\modules\smc\schemas.py — OK
+[IMPORT]  Priceactionmdfiles\modules\smc\schemas.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\modules\smc\scorer.py — OK
+[IMPORT]  Priceactionmdfiles\modules\smc\scorer.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\modules\smc\structure.py — OK
+[IMPORT]  Priceactionmdfiles\modules\smc\structure.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\modules\smc\__init__.py — OK
+[IMPORT]  Priceactionmdfiles\modules\smc\__init__.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\modules\vp_avwap\anchored_vwap.py — OK
+[IMPORT]  Priceactionmdfiles\modules\vp_avwap\anchored_vwap.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\modules\vp_avwap\composite_profile.py — OK
+[IMPORT]  Priceactionmdfiles\modules\vp_avwap\composite_profile.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\modules\vp_avwap\initial_balance.py — OK
+[IMPORT]  Priceactionmdfiles\modules\vp_avwap\initial_balance.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\modules\vp_avwap\integration.py — OK
+[IMPORT]  Priceactionmdfiles\modules\vp_avwap\integration.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\modules\vp_avwap\level_merger.py — OK
+[IMPORT]  Priceactionmdfiles\modules\vp_avwap\level_merger.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\modules\vp_avwap\schemas.py — OK
+[IMPORT]  Priceactionmdfiles\modules\vp_avwap\schemas.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\modules\vp_avwap\scorer.py — OK
+[IMPORT]  Priceactionmdfiles\modules\vp_avwap\scorer.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\modules\vp_avwap\session_profile.py — OK
+[IMPORT]  Priceactionmdfiles\modules\vp_avwap\session_profile.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\modules\vp_avwap\suite.py — OK
+[IMPORT]  Priceactionmdfiles\modules\vp_avwap\suite.py — OK (Structure)
+[COMPILE] Priceactionmdfiles\modules\vp_avwap\__init__.py — OK
+[IMPORT]  Priceactionmdfiles\modules\vp_avwap\__init__.py — OK (Structure)
+[COMPILE] scripts\aggregate_ls_cp.py — OK
+[IMPORT]  scripts\aggregate_ls_cp.py — SKIPPED (Script/Audit)
+[COMPILE] scripts\aggregate_mr_cp.py — OK
+[IMPORT]  scripts\aggregate_mr_cp.py — SKIPPED (Script/Audit)
+[COMPILE] scripts\aggregate_sr_cp.py — OK
+[IMPORT]  scripts\aggregate_sr_cp.py — SKIPPED (Script/Audit)
+[COMPILE] scripts\analyze_backtest.py — OK
+[IMPORT]  scripts\analyze_backtest.py — SKIPPED (Script/Audit)
+[COMPILE] scripts\analyze_sr_diag.py — OK
+[IMPORT]  scripts\analyze_sr_diag.py — SKIPPED (Script/Audit)
+[COMPILE] scripts\analyze_telemetry.py — OK
+[IMPORT]  scripts\analyze_telemetry.py — SKIPPED (Script/Audit)
+[COMPILE] scripts\audit_discovery.py — OK
+[IMPORT]  scripts\audit_discovery.py — SKIPPED (Script/Audit)
+[COMPILE] scripts\authoritative_monthly.py — OK
+[IMPORT]  scripts\authoritative_monthly.py — SKIPPED (Script/Audit)
+[COMPILE] scripts\backfill_1m.py — OK
+[IMPORT]  scripts\backfill_1m.py — SKIPPED (Script/Audit)
+[COMPILE] scripts\backfill_at_open.py — OK
+[IMPORT]  scripts\backfill_at_open.py — SKIPPED (Script/Audit)
+[COMPILE] scripts\backtest_sweep_retest.py — OK
+[IMPORT]  scripts\backtest_sweep_retest.py — SKIPPED (Script/Audit)
+[COMPILE] scripts\bug_hunt_bisection.py — OK
+[IMPORT]  scripts\bug_hunt_bisection.py — SKIPPED (Script/Audit)
+[COMPILE] scripts\checkpoint_b_smoke.py — OK
+[IMPORT]  scripts\checkpoint_b_smoke.py — SKIPPED (Script/Audit)
+[COMPILE] scripts\check_20b_metrics.py — OK
+[IMPORT]  scripts\check_20b_metrics.py — SKIPPED (Script/Audit)
+[COMPILE] scripts\check_live_pnl_instant.py — OK
+[IMPORT]  scripts\check_live_pnl_instant.py — SKIPPED (Script/Audit)
+[COMPILE] scripts\check_qty.py — OK
+[IMPORT]  scripts\check_qty.py — SKIPPED (Script/Audit)
+[COMPILE] scripts\compare_exit_strategies.py — OK
+[IMPORT]  scripts\compare_exit_strategies.py — SKIPPED (Script/Audit)
+[COMPILE] scripts\compare_fade_vs_follow.py — OK
+[IMPORT]  scripts\compare_fade_vs_follow.py — SKIPPED (Script/Audit)
+[COMPILE] scripts\comprehensive_backtest.py — OK
+[IMPORT]  scripts\comprehensive_backtest.py — SKIPPED (Script/Audit)
+[COMPILE] scripts\compute_gap_stats.py — OK
+[IMPORT]  scripts\compute_gap_stats.py — SKIPPED (Script/Audit)
+[COMPILE] scripts\confidence_sweep.py — OK
+[IMPORT]  scripts\confidence_sweep.py — SKIPPED (Script/Audit)
+[COMPILE] scripts\confidence_sweep_portfolio.py — OK
+[IMPORT]  scripts\confidence_sweep_portfolio.py — SKIPPED (Script/Audit)
+[COMPILE] scripts\context_adaptive_backtest.py — OK
+[IMPORT]  scripts\context_adaptive_backtest.py — SKIPPED (Script/Audit)
+[COMPILE] scripts\control_run.py — OK
+[IMPORT]  scripts\control_run.py — SKIPPED (Script/Audit)
+[COMPILE] scripts\december_backtest.py — OK
+[IMPORT]  scripts\december_backtest.py — SKIPPED (Script/Audit)
+[COMPILE] scripts\diag_mr_signals.py — OK
+[IMPORT]  scripts\diag_mr_signals.py — SKIPPED (Script/Audit)
+[COMPILE] scripts\diag_selector_bias.py — OK
+[IMPORT]  scripts\diag_selector_bias.py — SKIPPED (Script/Audit)
+[COMPILE] scripts\diag_target_hit_rates.py — OK
+[IMPORT]  scripts\diag_target_hit_rates.py — SKIPPED (Script/Audit)
+[COMPILE] scripts\diag_v3_breakdown.py — OK
+[IMPORT]  scripts\diag_v3_breakdown.py — SKIPPED (Script/Audit)
+[COMPILE] scripts\dist_verify.py — OK
+[IMPORT]  scripts\dist_verify.py — SKIPPED (Script/Audit)
+[COMPILE] scripts\fast_backtest.py — OK
+[IMPORT]  scripts\fast_backtest.py — SKIPPED (Script/Audit)
+[COMPILE] scripts\fetch_data.py — OK
+[IMPORT]  scripts\fetch_data.py — SKIPPED (Script/Audit)
+[COMPILE] scripts\fetch_december_2025.py — OK
+[IMPORT]  scripts\fetch_december_2025.py — SKIPPED (Script/Audit)
+[COMPILE] scripts\fetch_global_data.py — OK
+[IMPORT]  scripts\fetch_global_data.py — SKIPPED (Script/Audit)
+[COMPILE] scripts\fetch_index_data.py — OK
+[IMPORT]  scripts\fetch_index_data.py — SKIPPED (Script/Audit)
+[COMPILE] scripts\fetch_nifty_18m.py — OK
+[IMPORT]  scripts\fetch_nifty_18m.py — SKIPPED (Script/Audit)
+[COMPILE] scripts\filter_audit.py — OK
+[IMPORT]  scripts\filter_audit.py — SKIPPED (Script/Audit)
+[COMPILE] scripts\final_nifty_options_validation.py — OK
+[IMPORT]  scripts\final_nifty_options_validation.py — SKIPPED (Script/Audit)
+[COMPILE] scripts\find_tradeable_midcaps.py — OK
+[IMPORT]  scripts\find_tradeable_midcaps.py — SKIPPED (Script/Audit)
+[COMPILE] scripts\firmness_validation.py — OK
+[IMPORT]  scripts\firmness_validation.py — SKIPPED (Script/Audit)
+[COMPILE] scripts\generate_chart.py — OK
+[IMPORT]  scripts\generate_chart.py — SKIPPED (Script/Audit)
+[COMPILE] scripts\generate_excel_report.py — OK
+[IMPORT]  scripts\generate_excel_report.py — SKIPPED (Script/Audit)
+[COMPILE] scripts\generate_full_universe.py — OK
+[IMPORT]  scripts\generate_full_universe.py — SKIPPED (Script/Audit)
+[COMPILE] scripts\generate_universe.py — OK
+[IMPORT]  scripts\generate_universe.py — SKIPPED (Script/Audit)
+[COMPILE] scripts\grid_search_30d.py — OK
+[IMPORT]  scripts\grid_search_30d.py — SKIPPED (Script/Audit)
+[COMPILE] scripts\grid_search_exits.py — OK
+[IMPORT]  scripts\grid_search_exits.py — SKIPPED (Script/Audit)
+[COMPILE] scripts\main_backtest.py — OK
+[IMPORT]  scripts\main_backtest.py — SKIPPED (Script/Audit)
+[COMPILE] scripts\massive_backtest.py — OK
+[IMPORT]  scripts\massive_backtest.py — SKIPPED (Script/Audit)
+[COMPILE] scripts\multi_month_backtest.py — OK
+[IMPORT]  scripts\multi_month_backtest.py — SKIPPED (Script/Audit)
+[COMPILE] scripts\options_backtest.py — OK
+[IMPORT]  scripts\options_backtest.py — SKIPPED (Script/Audit)
+[COMPILE] scripts\options_backtest_v2.py — OK
+[IMPORT]  scripts\options_backtest_v2.py — SKIPPED (Script/Audit)
+[COMPILE] scripts\options_ultimate_validation.py — OK
+[IMPORT]  scripts\options_ultimate_validation.py — SKIPPED (Script/Audit)
+[COMPILE] scripts\paper_trade_aggregate.py — OK
+[IMPORT]  scripts\paper_trade_aggregate.py — SKIPPED (Script/Audit)
+[COMPILE] scripts\parse_dec_log.py — OK
+[IMPORT]  scripts\parse_dec_log.py — SKIPPED (Script/Audit)
+[COMPILE] scripts\parse_grand_results.py — OK
+[IMPORT]  scripts\parse_grand_results.py — SKIPPED (Script/Audit)
+[COMPILE] scripts\parse_grand_results_v2.py — OK
+[IMPORT]  scripts\parse_grand_results_v2.py — SKIPPED (Script/Audit)
+[COMPILE] scripts\phase1_verify.py — OK
+[IMPORT]  scripts\phase1_verify.py — SKIPPED (Script/Audit)
+[COMPILE] scripts\phase25_audit_backtest.py — OK
+[IMPORT]  scripts\phase25_audit_backtest.py — SKIPPED (Script/Audit)
+[COMPILE] scripts\phase2_run.py — OK
+[IMPORT]  scripts\phase2_run.py — SKIPPED (Script/Audit)
+[COMPILE] scripts\profile_backtest.py — OK
+[IMPORT]  scripts\profile_backtest.py — SKIPPED (Script/Audit)
+[COMPILE] scripts\quick_today_backtest.py — OK
+[IMPORT]  scripts\quick_today_backtest.py — SKIPPED (Script/Audit)
+[COMPILE] scripts\random_months_backtest.py — OK
+[IMPORT]  scripts\random_months_backtest.py — SKIPPED (Script/Audit)
+[COMPILE] scripts\rapid_test_regime.py — OK
+[IMPORT]  scripts\rapid_test_regime.py — SKIPPED (Script/Audit)
+[COMPILE] scripts\refresh_beta_matrix.py — OK
+[IMPORT]  scripts\refresh_beta_matrix.py — SKIPPED (Script/Audit)
+[COMPILE] scripts\refresh_composite.py — OK
+[IMPORT]  scripts\refresh_composite.py — SKIPPED (Script/Audit)
+[COMPILE] scripts\refresh_correlation.py — OK
+[IMPORT]  scripts\refresh_correlation.py — SKIPPED (Script/Audit)
+[COMPILE] scripts\refresh_liquidity_tiers.py — OK
+[IMPORT]  scripts\refresh_liquidity_tiers.py — SKIPPED (Script/Audit)
+[COMPILE] scripts\regime_attribution.py — OK
+[IMPORT]  scripts\regime_attribution.py — SKIPPED (Script/Audit)
+[COMPILE] scripts\run_6mo_audit.py — OK
+[IMPORT]  scripts\run_6mo_audit.py — SKIPPED (Script/Audit)
+[COMPILE] scripts\run_december_fast.py — OK
+[IMPORT]  scripts\run_december_fast.py — SKIPPED (Script/Audit)
+[COMPILE] scripts\run_grand_parallel.py — OK
+[IMPORT]  scripts\run_grand_parallel.py — SKIPPED (Script/Audit)
+[COMPILE] scripts\run_unified_backtest.py — OK
+[IMPORT]  scripts\run_unified_backtest.py — SKIPPED (Script/Audit)
+[COMPILE] scripts\signal_audit_midcaps.py — OK
+[IMPORT]  scripts\signal_audit_midcaps.py — SKIPPED (Script/Audit)
+[COMPILE] scripts\signal_audit_smc.py — OK
+[IMPORT]  scripts\signal_audit_smc.py — SKIPPED (Script/Audit)
+[COMPILE] scripts\signal_quality_test.py — OK
+[IMPORT]  scripts\signal_quality_test.py — SKIPPED (Script/Audit)
+[COMPILE] scripts\sim_1l_growth.py — OK
+[IMPORT]  scripts\sim_1l_growth.py — SKIPPED (Script/Audit)
+[COMPILE] scripts\sim_volatility_test.py — OK
+[IMPORT]  scripts\sim_volatility_test.py — SKIPPED (Script/Audit)
+[COMPILE] scripts\smoking_gun.py — OK
+[IMPORT]  scripts\smoking_gun.py — SKIPPED (Script/Audit)
+[COMPILE] scripts\telegram_test.py — OK
+[IMPORT]  scripts\telegram_test.py — SKIPPED (Script/Audit)
+[COMPILE] scripts\test_25_stocks_potential.py — OK
+[IMPORT]  scripts\test_25_stocks_potential.py — SKIPPED (Script/Audit)
+[COMPILE] scripts\test_50_stocks_3_months.py — OK
+[IMPORT]  scripts\test_50_stocks_3_months.py — SKIPPED (Script/Audit)
+[COMPILE] scripts\test_adaptive_integration.py — OK
+[IMPORT]  scripts\test_adaptive_integration.py — SKIPPED (Script/Audit)
+[COMPILE] scripts\test_sector_risk.py — OK
+[IMPORT]  scripts\test_sector_risk.py — SKIPPED (Script/Audit)
+[COMPILE] scripts\test_struct_speed.py — OK
+[IMPORT]  scripts\test_struct_speed.py — SKIPPED (Script/Audit)
+[COMPILE] scripts\three_month_backtest.py — OK
+[IMPORT]  scripts\three_month_backtest.py — SKIPPED (Script/Audit)
+[COMPILE] scripts\train_hmm.py — OK
+[IMPORT]  scripts\train_hmm.py — SKIPPED (Script/Audit)
+[COMPILE] scripts\ultimate_6m_stress_test.py — OK
+[IMPORT]  scripts\ultimate_6m_stress_test.py — SKIPPED (Script/Audit)
+[COMPILE] scripts\urgent_force_close_all.py — OK
+[IMPORT]  scripts\urgent_force_close_all.py — SKIPPED (Script/Audit)
+[COMPILE] scripts\v3_momentum_run.py — OK
+[IMPORT]  scripts\v3_momentum_run.py — SKIPPED (Script/Audit)
+[COMPILE] scripts\validate_context_filters.py — OK
+[IMPORT]  scripts\validate_context_filters.py — SKIPPED (Script/Audit)
+[COMPILE] scripts\validate_intermarket.py — OK
+[IMPORT]  scripts\validate_intermarket.py — SKIPPED (Script/Audit)
+[COMPILE] scripts\validate_regime.py — OK
+[IMPORT]  scripts\validate_regime.py — SKIPPED (Script/Audit)
+[COMPILE] scripts\validate_risk_exec.py — OK
+[IMPORT]  scripts\validate_risk_exec.py — SKIPPED (Script/Audit)
+[COMPILE] scripts\validate_smc.py — OK
+[IMPORT]  scripts\validate_smc.py — SKIPPED (Script/Audit)
+[COMPILE] scripts\validate_vp_avwap.py — OK
+[IMPORT]  scripts\validate_vp_avwap.py — SKIPPED (Script/Audit)
+[COMPILE] scripts\validation_chronological.py — OK
+[IMPORT]  scripts\validation_chronological.py — SKIPPED (Script/Audit)
+[COMPILE] scripts\validation_final_deploy.py — OK
+[IMPORT]  scripts\validation_final_deploy.py — SKIPPED (Script/Audit)
+[COMPILE] scripts\validation_midcap_execution.py — OK
+[IMPORT]  scripts\validation_midcap_execution.py — SKIPPED (Script/Audit)
+[COMPILE] scripts\validation_top10_random.py — OK
+[IMPORT]  scripts\validation_top10_random.py — SKIPPED (Script/Audit)
+[COMPILE] scripts\validation_v3_25days.py — OK
+[IMPORT]  scripts\validation_v3_25days.py — SKIPPED (Script/Audit)
+[COMPILE] scripts\validation_v4_conditional.py — OK
+[IMPORT]  scripts\validation_v4_conditional.py — SKIPPED (Script/Audit)
+[COMPILE] scripts\validation_v5_institutional.py — OK
+[IMPORT]  scripts\validation_v5_institutional.py — SKIPPED (Script/Audit)
+[COMPILE] scripts\validation_v6_hourly_atr.py — OK
+[IMPORT]  scripts\validation_v6_hourly_atr.py — SKIPPED (Script/Audit)
+[COMPILE] scripts\validation_v7_simplified.py — OK
+[IMPORT]  scripts\validation_v7_simplified.py — SKIPPED (Script/Audit)
+[COMPILE] scripts\validation_v8_final.py — OK
+[IMPORT]  scripts\validation_v8_final.py — SKIPPED (Script/Audit)
+[COMPILE] scripts\validation_v8_final_optimized.py — OK
+[IMPORT]  scripts\validation_v8_final_optimized.py — SKIPPED (Script/Audit)
+[COMPILE] scripts\verify_candles.py — OK
+[IMPORT]  scripts\verify_candles.py — SKIPPED (Script/Audit)
+[COMPILE] scripts\verify_vix.py — OK
+[IMPORT]  scripts\verify_vix.py — SKIPPED (Script/Audit)
+[COMPILE] scripts\visualize_session_profile.py — OK
+[IMPORT]  scripts\visualize_session_profile.py — SKIPPED (Script/Audit)
+[COMPILE] scripts\walk_forward.py — OK
+[IMPORT]  scripts\walk_forward.py — SKIPPED (Script/Audit)
+[COMPILE] scripts\wire_intermarket_feeds.py — OK
+[IMPORT]  scripts\wire_intermarket_feeds.py — SKIPPED (Script/Audit)
+[COMPILE] tests\test_phases_1_to_10.py — OK
+[IMPORT]  tests\test_phases_1_to_10.py — OK (Structure)
+[COMPILE] tests\test_phase_13_diagnostics.py — OK
+[IMPORT]  tests\test_phase_13_diagnostics.py — OK (Structure)
+[COMPILE] tests\test_phase_24d.py — OK
+[IMPORT]  tests\test_phase_24d.py — OK (Structure)
+[COMPILE] tests\test_risk_guard.py — OK
+[IMPORT]  tests\test_risk_guard.py — OK (Structure)
+[COMPILE] tests\test_volume_trap.py — OK
+[IMPORT]  tests\test_volume_trap.py — OK (Structure)
+[COMPILE] tests\__init__.py — OK
+[IMPORT]  tests\__init__.py — OK (Structure)
+[COMPILE] tests\test_context_filters\test_calendar.py — OK
+[IMPORT]  tests\test_context_filters\test_calendar.py — OK (Structure)
+[COMPILE] tests\test_context_filters\test_chop_filter.py — OK
+[IMPORT]  tests\test_context_filters\test_chop_filter.py — OK (Structure)
+[COMPILE] tests\test_context_filters\test_gap_filter.py — OK
+[IMPORT]  tests\test_context_filters\test_gap_filter.py — OK (Structure)
+[COMPILE] tests\test_context_filters\test_stack.py — OK
+[IMPORT]  tests\test_context_filters\test_stack.py — OK (Structure)
+[COMPILE] tests\test_context_filters\test_time_of_day_filter.py — OK
+[IMPORT]  tests\test_context_filters\test_time_of_day_filter.py — OK (Structure)
+[COMPILE] tests\test_context_filters\__init__.py — OK
+[IMPORT]  tests\test_context_filters\__init__.py — OK (Structure)
+[COMPILE] tests\test_intermarket\test_aggregator.py — OK
+[IMPORT]  tests\test_intermarket\test_aggregator.py — OK (Structure)
+[COMPILE] tests\test_intermarket\test_breadth_exclusion.py — OK
+[IMPORT]  tests\test_intermarket\test_breadth_exclusion.py — OK (Structure)
+[COMPILE] tests\test_intermarket\test_cross_global.py — OK
+[IMPORT]  tests\test_intermarket\test_cross_global.py — OK (Structure)
+[COMPILE] tests\test_intermarket\test_index_alignment.py — OK
+[IMPORT]  tests\test_intermarket\test_index_alignment.py — OK (Structure)
+[COMPILE] tests\test_intermarket\test_pae_integration.py — OK
+[IMPORT]  tests\test_intermarket\test_pae_integration.py — OK (Structure)
+[COMPILE] tests\test_intermarket\test_rs_breadth.py — OK
+[IMPORT]  tests\test_intermarket\test_rs_breadth.py — OK (Structure)
+[COMPILE] tests\test_intermarket\test_sector_strength.py — OK
+[IMPORT]  tests\test_intermarket\test_sector_strength.py — OK (Structure)
+[COMPILE] tests\test_intermarket\test_universe_mapper.py — OK
+[IMPORT]  tests\test_intermarket\test_universe_mapper.py — OK (Structure)
+[COMPILE] tests\test_intermarket\__init__.py — OK
+[IMPORT]  tests\test_intermarket\__init__.py — OK (Structure)
+[COMPILE] tests\test_regime\test_classifier.py — OK
+[IMPORT]  tests\test_regime\test_classifier.py — OK (Structure)
+[COMPILE] tests\test_regime\test_features.py — OK
+[IMPORT]  tests\test_regime\test_features.py — OK (Structure)
+[COMPILE] tests\test_regime\test_hmm_layer.py — OK
+[IMPORT]  tests\test_regime\test_hmm_layer.py — OK (Structure)
+[COMPILE] tests\test_regime\test_rule_layer.py — OK
+[IMPORT]  tests\test_regime\test_rule_layer.py — OK (Structure)
+[COMPILE] tests\test_regime\__init__.py — OK
+[IMPORT]  tests\test_regime\__init__.py — OK (Structure)
+[COMPILE] tests\test_risk_exec\test_breaker.py — OK
+[IMPORT]  tests\test_risk_exec\test_breaker.py — OK (Structure)
+[COMPILE] tests\test_risk_exec\test_execution_quality.py — OK
+[IMPORT]  tests\test_risk_exec\test_execution_quality.py — OK (Structure)
+[COMPILE] tests\test_risk_exec\test_executor.py — OK
+[IMPORT]  tests\test_risk_exec\test_executor.py — OK (Structure)
+[COMPILE] tests\test_risk_exec\test_exits.py — OK
+[IMPORT]  tests\test_risk_exec\test_exits.py — OK (Structure)
+[COMPILE] tests\test_risk_exec\test_heat_manager.py — OK
+[IMPORT]  tests\test_risk_exec\test_heat_manager.py — OK (Structure)
+[COMPILE] tests\test_risk_exec\test_kelly_filter.py — OK
+[IMPORT]  tests\test_risk_exec\test_kelly_filter.py — OK (Structure)
+[COMPILE] tests\test_risk_exec\test_sizer.py — OK
+[IMPORT]  tests\test_risk_exec\test_sizer.py — OK (Structure)
+[COMPILE] tests\test_risk_exec\test_stop_loss.py — OK
+[IMPORT]  tests\test_risk_exec\test_stop_loss.py — OK (Structure)
+[COMPILE] tests\test_risk_exec\test_time_stop.py — OK
+[IMPORT]  tests\test_risk_exec\test_time_stop.py — OK (Structure)
+[COMPILE] tests\test_risk_exec\test_trailing.py — OK
+[IMPORT]  tests\test_risk_exec\test_trailing.py — OK (Structure)
+[COMPILE] tests\test_risk_exec\__init__.py — OK
+[IMPORT]  tests\test_risk_exec\__init__.py — OK (Structure)
+[COMPILE] tests\test_smc\test_fair_value_gap.py — OK
+[IMPORT]  tests\test_smc\test_fair_value_gap.py — OK (Structure)
+[COMPILE] tests\test_smc\test_liquidity_sweep.py — OK
+[IMPORT]  tests\test_smc\test_liquidity_sweep.py — OK (Structure)
+[COMPILE] tests\test_smc\test_order_block.py — OK
+[IMPORT]  tests\test_smc\test_order_block.py — OK (Structure)
+[COMPILE] tests\test_smc\test_premium_discount.py — OK
+[IMPORT]  tests\test_smc\test_premium_discount.py — OK (Structure)
+[COMPILE] tests\test_smc\test_scorer.py — OK
+[IMPORT]  tests\test_smc\test_scorer.py — OK (Structure)
+[COMPILE] tests\test_smc\test_structure.py — OK
+[IMPORT]  tests\test_smc\test_structure.py — OK (Structure)
+[COMPILE] tests\test_smc\__init__.py — OK
+[IMPORT]  tests\test_smc\__init__.py — OK (Structure)
+[COMPILE] tests\test_vp_avwap\test_anchored_vwap.py — OK
+[IMPORT]  tests\test_vp_avwap\test_anchored_vwap.py — OK (Structure)
+[COMPILE] tests\test_vp_avwap\test_composite_profile.py — OK
+[IMPORT]  tests\test_vp_avwap\test_composite_profile.py — OK (Structure)
+[COMPILE] tests\test_vp_avwap\test_initial_balance.py — OK
+[IMPORT]  tests\test_vp_avwap\test_initial_balance.py — OK (Structure)
+[COMPILE] tests\test_vp_avwap\test_level_merger.py — OK
+[IMPORT]  tests\test_vp_avwap\test_level_merger.py — OK (Structure)
+[COMPILE] tests\test_vp_avwap\test_scorer.py — OK
+[IMPORT]  tests\test_vp_avwap\test_scorer.py — OK (Structure)
+[COMPILE] tests\test_vp_avwap\test_session_profile.py — OK
+[IMPORT]  tests\test_vp_avwap\test_session_profile.py — OK (Structure)
+[COMPILE] tests\test_vp_avwap\__init__.py — OK
+[IMPORT]  tests\test_vp_avwap\__init__.py — OK (Structure)
+[COMPILE] UI\AlgoTradingTelegramBotAndFrontend\backend\notification_service.py — OK
+[IMPORT]  UI\AlgoTradingTelegramBotAndFrontend\backend\notification_service.py — OK (Structure)
+[COMPILE] UI\AlgoTradingTelegramBotAndFrontend\backend\risk_calculator.py — OK
+[IMPORT]  UI\AlgoTradingTelegramBotAndFrontend\backend\risk_calculator.py — OK (Structure)
+[COMPILE] UI\AlgoTradingTelegramBotAndFrontend\backend\server.py — OK
+[IMPORT]  UI\AlgoTradingTelegramBotAndFrontend\backend\server.py — OK (Structure)
+[COMPILE] UI\AlgoTradingTelegramBotAndFrontend\backend\tests\test_risk_integration.py — OK
+[IMPORT]  UI\AlgoTradingTelegramBotAndFrontend\backend\tests\test_risk_integration.py — OK (Structure)
+[COMPILE] UI\AlgoTradingTelegramBotAndFrontend\backend\tests\test_tradealert.py — OK
+[IMPORT]  UI\AlgoTradingTelegramBotAndFrontend\backend\tests\test_tradealert.py — OK (Structure)
+[COMPILE] UI\AlgoTradingTelegramBotAndFrontend\tests\__init__.py — OK
+[IMPORT]  UI\AlgoTradingTelegramBotAndFrontend\tests\__init__.py — OK (Structure)
+[COMPILE] utils\logger.py — OK
+[IMPORT]  utils\logger.py — OK (Structure)
+[COMPILE] utils\pid_lock.py — OK
+[IMPORT]  utils\pid_lock.py — OK (Structure)

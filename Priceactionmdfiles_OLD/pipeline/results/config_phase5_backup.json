@@ -1,0 +1,482 @@
+{
+  "phase": 5,
+  "generated_from": "phase1_insights",
+  "selection_criteria": {
+    "min_profit_factor": 1.3,
+    "min_trades": 10,
+    "min_win_rate": 35.0
+  },
+  "strategies": [
+    "Symmetrical Triangle"
+  ],
+  "allowed_hours": [
+    14,
+    11,
+    12,
+    10,
+    13,
+    9
+  ],
+  "allowed_days": [
+    "Friday",
+    "Thursday",
+    "Monday"
+  ],
+  "sl_method": "FIXED_5R",
+  "top_combinations": [
+    {
+      "strategy": "Cup and Handle",
+      "sl_method": "FIXED_3R",
+      "hour": 12,
+      "day": "Thursday",
+      "trades": 12,
+      "win_rate": 100.0,
+      "pnl": 180000.0,
+      "profit_factor": 18000000.0,
+      "avg_rr": 3.0
+    },
+    {
+      "strategy": "Bear Flag",
+      "sl_method": "FIXED_5R",
+      "hour": 12,
+      "day": "Friday",
+      "trades": 6,
+      "win_rate": 100.0,
+      "pnl": 150000.0,
+      "profit_factor": 15000000.0,
+      "avg_rr": 5.0
+    },
+    {
+      "strategy": "Bull Flag",
+      "sl_method": "FIXED_5R",
+      "hour": 11,
+      "day": "Tuesday",
+      "trades": 6,
+      "win_rate": 100.0,
+      "pnl": 150000.0,
+      "profit_factor": 15000000.0,
+      "avg_rr": 5.0
+    },
+    {
+      "strategy": "Higher High & Higher Low",
+      "sl_method": "TRAIL_2.5ATR_NOTP",
+      "hour": 12,
+      "day": "Thursday",
+      "trades": 17,
+      "win_rate": 100.0,
+      "pnl": 143301.05,
+      "profit_factor": 14330105.0,
+      "avg_rr": 1.69
+    },
+    {
+      "strategy": "Higher High & Higher Low",
+      "sl_method": "TRAIL_2ATR_NOTP",
+      "hour": 12,
+      "day": "Thursday",
+      "trades": 17,
+      "win_rate": 100.0,
+      "pnl": 128658.08,
+      "profit_factor": 12865808.0,
+      "avg_rr": 1.51
+    },
+    {
+      "strategy": "Cup and Handle",
+      "sl_method": "FIXED_2R",
+      "hour": 12,
+      "day": "Thursday",
+      "trades": 12,
+      "win_rate": 100.0,
+      "pnl": 120000.0,
+      "profit_factor": 12000000.0,
+      "avg_rr": 2.0
+    },
+    {
+      "strategy": "Cup and Handle",
+      "sl_method": "TRAIL_2ATR_NOTP",
+      "hour": 12,
+      "day": "Thursday",
+      "trades": 12,
+      "win_rate": 100.0,
+      "pnl": 99717.66,
+      "profit_factor": 9971766.0,
+      "avg_rr": 1.66
+    },
+    {
+      "strategy": "Bear Flag",
+      "sl_method": "FIXED_3R",
+      "hour": 12,
+      "day": "Friday",
+      "trades": 6,
+      "win_rate": 100.0,
+      "pnl": 90000.0,
+      "profit_factor": 9000000.0,
+      "avg_rr": 3.0
+    },
+    {
+      "strategy": "Bull Flag",
+      "sl_method": "FIXED_3R",
+      "hour": 11,
+      "day": "Tuesday",
+      "trades": 6,
+      "win_rate": 100.0,
+      "pnl": 90000.0,
+      "profit_factor": 9000000.0,
+      "avg_rr": 3.0
+    },
+    {
+      "strategy": "Cup and Handle",
+      "sl_method": "TRAIL_2.5ATR_NOTP",
+      "hour": 12,
+      "day": "Thursday",
+      "trades": 12,
+      "win_rate": 100.0,
+      "pnl": 88284.01,
+      "profit_factor": 8828401.0,
+      "avg_rr": 1.47
+    }
+  ],
+  "strategy_configs": {
+    "Ascending Channel": {
+      "optimal_confidence": 0.75,
+      "profit_factor_at_threshold": 1.31,
+      "preferred_direction": "PE",
+      "allowed_regimes": [
+        "RANGING",
+        "TRENDING_DOWN"
+      ]
+    },
+    "Ascending Triangle": {
+      "optimal_confidence": 0.5,
+      "profit_factor_at_threshold": 0.46
+    },
+    "Bear Flag": {
+      "optimal_confidence": 0.5,
+      "profit_factor_at_threshold": 1.28,
+      "preferred_direction": "PE",
+      "allowed_regimes": [
+        "TRENDING_DOWN",
+        "RANGING"
+      ]
+    },
+    "Bearish Engulfing": {
+      "optimal_confidence": 0.7,
+      "profit_factor_at_threshold": 1.41,
+      "preferred_direction": "PE",
+      "allowed_regimes": [
+        "RANGING",
+        "TRENDING_DOWN"
+      ]
+    },
+    "Break of Structure (BOS)": {
+      "optimal_confidence": 0.5,
+      "profit_factor_at_threshold": 1.1,
+      "preferred_direction": "PE",
+      "allowed_regimes": [
+        "TRENDING_DOWN",
+        "RANGING"
+      ]
+    },
+    "Breakout": {
+      "optimal_confidence": 0.5,
+      "profit_factor_at_threshold": 0.93,
+      "preferred_direction": "PE",
+      "allowed_regimes": [
+        "TRENDING_DOWN"
+      ]
+    },
+    "Breakout Trap": {
+      "optimal_confidence": 0.5,
+      "profit_factor_at_threshold": 0.98,
+      "preferred_direction": "PE",
+      "allowed_regimes": [
+        "TRENDING_DOWN",
+        "RANGING"
+      ]
+    },
+    "Breakout-Retest-Continuation": {
+      "optimal_confidence": 0.5,
+      "profit_factor_at_threshold": 1.02,
+      "preferred_direction": "PE",
+      "allowed_regimes": [
+        "TRENDING_DOWN",
+        "RANGING"
+      ]
+    },
+    "Bull Flag": {
+      "optimal_confidence": 0.5,
+      "profit_factor_at_threshold": 0.63
+    },
+    "Bullish Engulfing": {
+      "optimal_confidence": 0.7,
+      "profit_factor_at_threshold": 0.91,
+      "allowed_regimes": [
+        "TRENDING_DOWN",
+        "TRENDING_UP"
+      ]
+    },
+    "Change of Character (CHOCH)": {
+      "optimal_confidence": 0.5,
+      "profit_factor_at_threshold": 1.19,
+      "preferred_direction": "CE",
+      "allowed_regimes": [
+        "RANGING",
+        "TRENDING_DOWN"
+      ]
+    },
+    "Cup and Handle": {
+      "optimal_confidence": 0.5,
+      "profit_factor_at_threshold": 0.67
+    },
+    "Dark Cloud Cover": {
+      "optimal_confidence": 0.0,
+      "profit_factor_at_threshold": 0.0
+    },
+    "Descending Channel": {
+      "optimal_confidence": 0.75,
+      "profit_factor_at_threshold": 1.43,
+      "preferred_direction": "PE",
+      "allowed_regimes": [
+        "RANGING",
+        "TRENDING_UP"
+      ]
+    },
+    "Descending Triangle": {
+      "optimal_confidence": 0.5,
+      "profit_factor_at_threshold": 1.51,
+      "preferred_direction": "PE",
+      "allowed_regimes": [
+        "RANGING",
+        "TRENDING_DOWN"
+      ]
+    },
+    "Double Bottom": {
+      "optimal_confidence": 0.5,
+      "profit_factor_at_threshold": 0.98,
+      "allowed_regimes": [
+        "TRENDING_DOWN",
+        "RANGING"
+      ]
+    },
+    "Double Top": {
+      "optimal_confidence": 0.5,
+      "profit_factor_at_threshold": 1.7,
+      "preferred_direction": "PE",
+      "allowed_regimes": [
+        "RANGING",
+        "TRENDING_DOWN"
+      ]
+    },
+    "Evening Star": {
+      "optimal_confidence": 0.5,
+      "profit_factor_at_threshold": 0.95,
+      "allowed_regimes": [
+        "RANGING",
+        "TRENDING_DOWN"
+      ]
+    },
+    "Fair Value Gaps (FVG)": {
+      "optimal_confidence": 0.5,
+      "profit_factor_at_threshold": 1.14,
+      "preferred_direction": "PE",
+      "allowed_regimes": [
+        "TRENDING_DOWN",
+        "RANGING"
+      ]
+    },
+    "Falling Wedge": {
+      "optimal_confidence": 0.5,
+      "profit_factor_at_threshold": 0.91,
+      "allowed_regimes": [
+        "TRENDING_UP"
+      ]
+    },
+    "Hammer": {
+      "optimal_confidence": 0.7,
+      "profit_factor_at_threshold": 3.29,
+      "preferred_direction": "CE",
+      "allowed_regimes": [
+        "RANGING",
+        "TRENDING_DOWN"
+      ]
+    },
+    "Head and Shoulders": {
+      "optimal_confidence": 0.5,
+      "profit_factor_at_threshold": 1.37,
+      "preferred_direction": "PE",
+      "allowed_regimes": [
+        "RANGING",
+        "TRENDING_DOWN"
+      ]
+    },
+    "Higher High & Higher Low": {
+      "optimal_confidence": 0.5,
+      "profit_factor_at_threshold": 1.04,
+      "preferred_direction": "CE",
+      "allowed_regimes": [
+        "RANGING",
+        "TRENDING_DOWN"
+      ]
+    },
+    "Inverse Head and Shoulders": {
+      "optimal_confidence": 0.5,
+      "profit_factor_at_threshold": 1.03,
+      "preferred_direction": "CE",
+      "allowed_regimes": [
+        "RANGING",
+        "TRENDING_DOWN"
+      ]
+    },
+    "Liquidity Grab": {
+      "optimal_confidence": 0.5,
+      "profit_factor_at_threshold": 1.47,
+      "preferred_direction": "PE",
+      "allowed_regimes": [
+        "RANGING"
+      ]
+    },
+    "Liquidity Zones": {
+      "optimal_confidence": 0.5,
+      "profit_factor_at_threshold": 0.88,
+      "allowed_regimes": [
+        "RANGING"
+      ]
+    },
+    "Lower High & Lower Low": {
+      "optimal_confidence": 0.5,
+      "profit_factor_at_threshold": 1.4,
+      "preferred_direction": "PE",
+      "allowed_regimes": [
+        "TRENDING_DOWN",
+        "RANGING"
+      ]
+    },
+    "Market Structure": {
+      "optimal_confidence": 0.5,
+      "profit_factor_at_threshold": 1.27,
+      "preferred_direction": "PE",
+      "allowed_regimes": [
+        "RANGING",
+        "TRENDING_DOWN"
+      ]
+    },
+    "Morning Star": {
+      "optimal_confidence": 0.5,
+      "profit_factor_at_threshold": 0.82,
+      "allowed_regimes": [
+        "RANGING"
+      ]
+    },
+    "Order Blocks": {
+      "optimal_confidence": 0.5,
+      "profit_factor_at_threshold": 1.49,
+      "preferred_direction": "CE",
+      "allowed_regimes": [
+        "TRENDING_DOWN",
+        "RANGING",
+        "TRENDING_UP"
+      ]
+    },
+    "Piercing Pattern": {
+      "optimal_confidence": 0.5,
+      "profit_factor_at_threshold": 0.46
+    },
+    "Resistance": {
+      "optimal_confidence": 0.5,
+      "profit_factor_at_threshold": 1.34,
+      "preferred_direction": "PE",
+      "allowed_regimes": [
+        "RANGING",
+        "TRENDING_DOWN"
+      ]
+    },
+    "Resistance Breakout": {
+      "optimal_confidence": 0.7,
+      "profit_factor_at_threshold": 0.48
+    },
+    "Retest Entry": {
+      "optimal_confidence": 0.5,
+      "profit_factor_at_threshold": 1.12,
+      "preferred_direction": "PE",
+      "allowed_regimes": [
+        "RANGING",
+        "TRENDING_DOWN"
+      ]
+    },
+    "Rising Wedge": {
+      "optimal_confidence": 0.5,
+      "profit_factor_at_threshold": 1.3,
+      "preferred_direction": "PE",
+      "allowed_regimes": [
+        "RANGING"
+      ]
+    },
+    "Shooting Star": {
+      "optimal_confidence": 0.5,
+      "profit_factor_at_threshold": 0.87,
+      "allowed_regimes": [
+        "TRENDING_DOWN"
+      ]
+    },
+    "Standard Head and Shoulders": {
+      "optimal_confidence": 0.5,
+      "profit_factor_at_threshold": 1.37,
+      "preferred_direction": "PE",
+      "allowed_regimes": [
+        "RANGING",
+        "TRENDING_DOWN"
+      ]
+    },
+    "Supply & Demand": {
+      "optimal_confidence": 0.5,
+      "profit_factor_at_threshold": 1.24,
+      "preferred_direction": "CE",
+      "allowed_regimes": [
+        "RANGING",
+        "TRENDING_DOWN"
+      ]
+    },
+    "Support": {
+      "optimal_confidence": 0.5,
+      "profit_factor_at_threshold": 1.04,
+      "preferred_direction": "CE",
+      "allowed_regimes": [
+        "TRENDING_UP",
+        "TRENDING_DOWN"
+      ]
+    },
+    "Support Breakdown": {
+      "optimal_confidence": 0.5,
+      "profit_factor_at_threshold": 1.16,
+      "preferred_direction": "PE",
+      "allowed_regimes": [
+        "RANGING"
+      ]
+    },
+    "Symmetrical Triangle": {
+      "optimal_confidence": 0.5,
+      "profit_factor_at_threshold": 1.4,
+      "preferred_direction": "PE",
+      "allowed_regimes": [
+        "RANGING",
+        "TRENDING_UP",
+        "TRENDING_DOWN"
+      ]
+    },
+    "Triple Bottom": {
+      "optimal_confidence": 0.5,
+      "profit_factor_at_threshold": 0.75,
+      "allowed_regimes": [
+        "TRENDING_DOWN"
+      ]
+    },
+    "Triple Top": {
+      "optimal_confidence": 0.5,
+      "profit_factor_at_threshold": 1.39,
+      "preferred_direction": "PE",
+      "allowed_regimes": [
+        "RANGING",
+        "TRENDING_DOWN"
+      ]
+    }
+  }
+}

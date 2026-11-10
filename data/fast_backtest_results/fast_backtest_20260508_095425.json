@@ -1,0 +1,23 @@
+{
+    "summary": {
+        "Total Trades": 207,
+        "WR": "23.2%",
+        "Net PnL": "INR -47,033",
+        "PF": 0.84,
+        "Max DD": "8.55%"
+    },
+    "strategies": [
+        {
+            "Strategy": "MEAN_REVERSION",
+            "Trades": 114,
+            "WR": "14.0%",
+            "Net PnL": "INR -47,778"
+        },
+        {
+            "Strategy": "VWAP_BOUNCE",
+            "Trades": 93,
+            "WR": "34.4%",
+            "Net PnL": "INR 745"
+        }
+    ]
+}

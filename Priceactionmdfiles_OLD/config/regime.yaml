@@ -1,0 +1,40 @@
+regime:
+  adx:
+    trending_strong: 25
+    trending_weak: 20
+  choppiness:
+    trend_threshold: 38.2
+    chop_threshold: 61.8
+  hurst:
+    window: 100
+    trend_threshold: 0.55
+    revert_threshold: 0.48
+  rv_ratio:
+    high_vol: 1.3
+  vix:
+    spike_pct: 15.0
+  hmm:
+    n_components: 4
+    train_window_days: 504
+    retrain_frequency_days: 30
+  overrides:
+    TRENDING_HIGH_VOL: 
+      min_score_delta: 1.0
+      sl_mult: 1.3
+      tp: [1.5, 2.5, 4.0]
+      trend_align: true
+      max_trades: 2
+    TRENDING_LOW_VOL:  
+      min_score_delta: 0.0
+      sl_mult: 1.0
+      tp: [1.0, 2.0, 3.0]
+      trend_align: true
+      max_trades: 3
+    MEAN_REVERTING:    
+      min_score_delta: -0.5
+      sl_mult: 1.0
+      tp: [1.0, 1.8, 0.0]
+      trend_align: false
+      max_trades: 4
+    CHOPPY_UNTRADEABLE:
+      allow_trades: false

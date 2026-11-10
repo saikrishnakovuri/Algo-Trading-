@@ -1,0 +1,121 @@
+
+# ============================================================
+# TRADE JOURNAL ROUTES
+# ============================================================
+from datetime import datetime, timezone
+import csv
+import io
+from fastapi.responses import StreamingResponse
+
+# --- MODELS ---
+class JournalTrade(BaseModel):
+    trade_id: Optional[str] = None
+    symbol: str
+    direction: str
+    quantity: int
+    entry_price: float
+    exit_price: Optional[float] = None
+    pnl: Optional[float] = None
+    pnl_pct: Optional[float] = None
+    result: str # WIN / LOSS / OPEN
+    entry_time: str
+    exit_time: Optional[str] = None
+    strategy_name: str
+    market_regime: Optional[str] = None
+    source: str = "backtest" # live / backtest
+
+@api_router.get("/journal/trades")
+async def get_journal_trades(
+    page: int = 1,
+    limit: int = 50,
+    strategy: str = None,
+    result: str = None,
+    source: str = None
+):
+    query = {}
+    if strategy: query["strategy_name"] = strategy
+    if result: query["result"] = result
+    if source: query["source"] = source
+
+    total = await db.trade_journal.count_documents(query)
+    cursor = db.trade_journal.find(query, {"_id": 0}).sort("entry_time", -1).skip((page - 1) * limit).limit(limit)
+    trades = await cursor.to_list(limit)
+
+    return {
+        "trades": trades,
+        "total": total,
+        "page": page,
+        "pages": (total + limit - 1) // limit
+    }
+
+@api_router.get("/journal/summary")
+async def get_journal_summary():
+    pipeline = [
+        {"$group": {
+            "_id": None,
+            "total_trades": {"$sum": 1},
+            "total_pnl": {"$sum": "$pnl"},
+            "wins": {"$sum": {"$cond": [{"$eq": ["$result", "WIN"]}, 1, 0]}},
+        }}
+    ]
+    res = await db.trade_journal.aggregate(pipeline).to_list(1)
+    if not res: return {"total_trades": 0, "total_pnl": 0, "win_rate": 0}
+    
+    stats = res[0]
+    stats["win_rate"] = round(stats["wins"] / stats["total_trades"] * 100, 1)
+    return stats
+
+@api_router.post("/journal/import-backtest")
+async def import_backtest_journal():
+    csv_path = os.path.join(PA_ENGINE_DIR, "backtest_detailed_results.csv")
+    if not os.path.exists(csv_path):
+        return {"error": f"File not found: {csv_path}"}
+    
+    import pandas as pd
+    df = pd.read_csv(csv_path)
+    
+    # Map columns to schema
+    # CSV cols: entry_time,exit_time,result,pnl,pnl_pct,strategy,month,confidence
+    trades = []
+    for _, row in df.iterrows():
+        trades.append({
+            "trade_id": f"BT-{uuid.uuid4().hex[:8].upper()}",
+            "symbol": "NIFTY",
+            "direction": "CE" if row.get('pnl', 0) > 0 else "PE", # Approximation
+            "quantity": 50,
+            "entry_price": 0, # Not in current CSV
+            "exit_price": 0,
+            "pnl": row['pnl'],
+            "pnl_pct": row['pnl_pct'],
+            "result": row['result'],
+            "entry_time": row['entry_time'],
+            "exit_time": row['exit_time'],
+            "strategy_name": row['strategy'],
+            "source": "backtest",
+            "timestamp": datetime.now(timezone.utc).isoformat()
+        })
+    
+    if trades:
+        # Clear existing backtest trades first to avoid duplicates
+        await db.trade_journal.delete_many({"source": "backtest"})
+        await db.trade_journal.insert_many(trades)
+        
+    return {"status": "success", "imported": len(trades)}
+
+@api_router.get("/journal/export")
+async def export_journal_csv():
+    cursor = db.trade_journal.find({}, {"_id": 0}).sort("entry_time", -1)
+    trades = await cursor.to_list(10000)
+    if not trades: return {"error": "No trades"}
+    
+    output = io.StringIO()
+    writer = csv.DictWriter(output, fieldnames=trades[0].keys())
+    writer.writeheader()
+    writer.writerows(trades)
+    
+    output.seek(0)
+    return StreamingResponse(
+        iter([output.getvalue()]),
+        media_type="text/csv",
+        headers={"Content-Disposition": f"attachment; filename=trade_journal_{datetime.now().strftime('%Y%m%d')}.csv"}
+    )

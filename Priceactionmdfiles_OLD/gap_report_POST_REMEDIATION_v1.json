@@ -1,0 +1,11 @@
+{
+  "phase": 6,
+  "generated_at": "2026-05-10T22:09:12.379448",
+  "summary": {
+    "total_backend_elements": 3720,
+    "ui_covered": 3720,
+    "gaps": 0,
+    "coverage_pct": 100.0
+  },
+  "gaps": []
+}

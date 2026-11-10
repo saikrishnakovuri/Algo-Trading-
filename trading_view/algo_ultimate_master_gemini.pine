@@ -1,0 +1,109 @@
+//@version=6
+indicator("Algo Options Ultimate Master - Gemini", overlay=true, max_labels_count=500)
+
+// =========================================================================
+// INPUTS & PARAMETERS
+// =========================================================================
+grp_time = "Time & Filters"
+start_time = input.session("0930-1500", "Trading Window", group=grp_time)
+max_trades_per_day = input.int(3, "Max Trades Per Day", group=grp_time, minval=1)
+
+grp_risk = "Risk Management"
+atr_sl_mult = input.float(2.0, "Trailing SL ATR Multiplier", group=grp_risk)
+
+// =========================================================================
+// CORE INDICATORS
+// =========================================================================
+ema9  = ta.ema(close, 9)
+ema20 = ta.ema(close, 20)
+ema50 = ta.ema(close, 50)
+vwapVal = ta.vwap(close)
+atr   = ta.atr(14)
+volAvg = ta.sma(volume, 20)
+
+// Core plots removed
+
+// =========================================================================
+// DYNAMIC SUPPORT & RESISTANCE (Pivot Points)
+// =========================================================================
+leftBars = 15
+rightBars = 15
+ph = ta.pivothigh(high, leftBars, rightBars)
+pl = ta.pivotlow(low, leftBars, rightBars)
+
+var float res_level = na
+var float sup_level = na
+
+if not na(ph)
+    res_level := ph
+if not na(pl)
+    sup_level := pl
+
+// S/R plots removed for a clean chart
+
+// =========================================================================
+// SMC (Smart Money Concepts)
+// =========================================================================
+// 1. Fair Value Gaps (FVG)
+is_fvg_up = low > high[2] and close[1] > high[2]
+is_fvg_dn = high < low[2] and close[1] < low[2]
+
+// 2. Liquidity Sweeps
+highest_20 = ta.highest(high, 20)
+lowest_20 = ta.lowest(low, 20)
+sweep_hi = high > highest_20[1] and close < highest_20[1]
+sweep_lo = low < lowest_20[1] and close > lowest_20[1]
+
+// =========================================================================
+// CANDLESTICK PATTERNS & VOLUME
+// =========================================================================
+body_size = math.abs(close - open)
+bullish_engulfing = close > open and close[1] < open[1] and close >= open[1] and (close - open) > (open[1] - close[1])
+bearish_engulfing = close < open and close[1] > open[1] and close <= open[1] and (open - close) > (close[1] - open[1])
+
+is_hammer = (math.min(open, close) - low) > body_size * 2 and (high - math.max(open, close)) < body_size
+is_star   = (high - math.max(open, close)) > body_size * 2 and (math.min(open, close) - low) < body_size
+
+// RELAXED VOLUME THRESHOLD (1.2x instead of 1.5x)
+vol_surge = volume > (volAvg * 1.2) 
+
+// =========================================================================
+// STRICT CONFLUENCE LOGIC (Max 2-3 Trades / Day)
+// =========================================================================
+t = time(timeframe.period, start_time)
+in_session = not na(t)
+
+// Track trades taken today
+var int trades_today = 0
+if ta.change(time("D")) != 0
+    trades_today := 0
+
+// 1. Trend Filter
+is_uptrend   = close > ema50 and ema9 > ema20
+is_downtrend = close < ema50 and ema9 < ema20
+
+// 2. Location Filter (Buffer increased slightly for better fills)
+at_support = (low <= vwapVal + atr*1.0) or (low <= ema50 + atr*1.0) or (low <= sup_level + atr*1.0)
+at_resist  = (high >= vwapVal - atr*1.0) or (high >= ema50 - atr*1.0) or (high >= res_level - atr*1.0)
+
+// 3. SMC Confirmation
+smc_long = is_fvg_up or sweep_lo
+smc_short = is_fvg_dn or sweep_hi
+
+// 4. Candlestick Trigger
+trigger_long = bullish_engulfing or is_hammer
+trigger_short = bearish_engulfing or is_star
+
+// FINAL HIGH-PROBABILITY SIGNALS (Relaxed: Requires Pattern AND (SMC OR Volume Surge))
+long_signal = in_session and (trades_today < max_trades_per_day) and is_uptrend and at_support and trigger_long and (smc_long or vol_surge)
+short_signal = in_session and (trades_today < max_trades_per_day) and is_downtrend and at_resist and trigger_short and (smc_short or vol_surge)
+
+// =========================================================================
+// EXECUTION (EMA CROSSOVER TEST LOGIC)
+// =========================================================================
+buy = ta.crossover(ta.ema(close,9), ta.ema(close,21))
+sell = ta.crossunder(ta.ema(close,9), ta.ema(close,21))
+
+plotshape(buy, title="BUY", style=shape.labelup, location=location.belowbar, color=color.new(color.green, 0), textcolor=color.white, size=size.small, text="BUY")
+plotshape(sell, title="SELL", style=shape.labeldown, location=location.abovebar, color=color.new(color.red, 0), textcolor=color.white, size=size.small, text="SELL")
+

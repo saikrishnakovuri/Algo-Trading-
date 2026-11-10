@@ -1,0 +1,10 @@
+STRATEGY_MAP:
+  TRENDING_UP: ['CANDLESTICK']
+  TRENDING_DOWN: ['VWAP_BOUNCE', 'CANDLESTICK', 'MOMENTUM_BREAKOUT']
+SIGNAL_GATE: 09:45
+MD5 HASHES:
+  live_options_trader.py: 83a9c9223310c38a112858e66f3b53e0
+  modules/strategy_mapper.py: bc55edde82e874a63920fefad8a46db3
+  modules/v3_utils.py: 922c0b7eafcbf9c707bd6051d64839d9
+  modules/strategy_selector.py: f6fea60b0289e2742b2444cd1d607645
+  modules/candlestick_engine.py: 662dfc66ef337a31fd57d5948f8920e3

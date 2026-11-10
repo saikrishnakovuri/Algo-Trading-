@@ -1,0 +1,58 @@
+[
+  {
+    "symbol": "BAJFINANCE",
+    "date": "2026-03-20 13:05",
+    "time": "13:05",
+    "type": "CE",
+    "setup": "ZONE_REJECTION",
+    "qty": 387,
+    "entry": 833.2432884375,
+    "sl": 820.35,
+    "target": 841.0785714285714,
+    "outcome": "TIME STOP (WEAK)",
+    "score": 5.0,
+    "pnl": -1570.48
+  },
+  {
+    "symbol": "BAJFINANCE",
+    "date": "2026-03-20 13:20",
+    "time": "13:20",
+    "type": "CE",
+    "setup": "ZONE_REJECTION",
+    "qty": 404,
+    "entry": 833.49403875,
+    "sl": 821.15,
+    "target": 835.0921428571429,
+    "outcome": "TIME STOP (WEAK)",
+    "score": 5.6,
+    "pnl": -1740.77
+  },
+  {
+    "symbol": "BAJFINANCE",
+    "date": "2026-03-24 09:55",
+    "time": "09:55",
+    "type": "CE",
+    "setup": "PULLBACK",
+    "qty": 352,
+    "entry": 825.9715293749999,
+    "sl": 811.85,
+    "target": 822.0714285714287,
+    "outcome": "TARGET HIT",
+    "score": 4.762499999999999,
+    "pnl": -1517.52
+  },
+  {
+    "symbol": "BHARTIARTL",
+    "date": "2026-03-24 09:40",
+    "time": "09:40",
+    "type": "CE",
+    "setup": "ZONE_REJECTION",
+    "qty": 178,
+    "entry": 1813.42626,
+    "sl": 1785.6,
+    "target": 1827.4514285714288,
+    "outcome": "OPEN",
+    "score": 2.625,
+    "pnl": -1215.74
+  }
+]

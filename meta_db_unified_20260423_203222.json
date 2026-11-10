@@ -1,0 +1,16 @@
+[
+  {
+    "symbol": "RELIANCE",
+    "date": "2026-04-07 09:55",
+    "time": "09:55",
+    "type": "CE",
+    "setup": "PULLBACK",
+    "qty": 329,
+    "entry": 1297.997024175,
+    "sl": 1282.8,
+    "target": 1300.3142857142857,
+    "outcome": "TARGET HIT",
+    "score": 5.4375,
+    "pnl": 762.38
+  }
+]

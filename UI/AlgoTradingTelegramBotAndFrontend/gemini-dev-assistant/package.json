@@ -1,0 +1,31 @@
+{
+  "name": "gemini-dev-assistant",
+  "version": "1.0.0",
+  "description": "A local developer assistant integrated with Google Gemini API for code analysis and improvements",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "node index.js",
+    "setup": "npm install && cd vscode-extension && npm install",
+    "setup:extension": "cd vscode-extension && npm install",
+    "smoke": "node smoke.js"
+  },
+  "keywords": [
+    "gemini",
+    "ai",
+    "code-assistant",
+    "developer-tools",
+    "cli"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "dependencies": {
+    "@google/generative-ai": "^0.21.0",
+    "dotenv": "^16.3.1",
+    "prompts": "^2.4.2"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

@@ -1,0 +1,92 @@
+{
+    "summary": {
+        "Total Trades": 546,
+        "WR": "55.5%",
+        "Net PnL": "\u20b9871,011",
+        "Max DD": "3.81%",
+        "Sharpe": 2.68,
+        "PF": 1.71,
+        "Trades/Day": 4.37
+    },
+    "monthly": [
+        {
+            "Month": "2025-10",
+            "Trades": 19,
+            "WR": "63.2%",
+            "Net PnL": "\u20b928,423",
+            "PF": 2.13,
+            "Regimes": "TRENDING_UP, TRENDING_DOWN, LOW_VOL, BREAKOUT_SETUP"
+        },
+        {
+            "Month": "2025-11",
+            "Trades": 80,
+            "WR": "53.8%",
+            "Net PnL": "\u20b99,978",
+            "PF": 1.06,
+            "Regimes": "TRENDING_UP, BREAKOUT_SETUP, LOW_VOL, TRENDING_DOWN"
+        },
+        {
+            "Month": "2025-12",
+            "Trades": 88,
+            "WR": "52.3%",
+            "Net PnL": "\u20b9107,592",
+            "PF": 1.76,
+            "Regimes": "BREAKOUT_SETUP, TRENDING_UP, TRENDING_DOWN, LOW_VOL"
+        },
+        {
+            "Month": "2026-01",
+            "Trades": 73,
+            "WR": "54.8%",
+            "Net PnL": "\u20b932,579",
+            "PF": 1.19,
+            "Regimes": "LOW_VOL, BREAKOUT_SETUP, TRENDING_DOWN, TRENDING_UP"
+        },
+        {
+            "Month": "2026-02",
+            "Trades": 92,
+            "WR": "59.8%",
+            "Net PnL": "\u20b989,257",
+            "PF": 1.51,
+            "Regimes": "LOW_VOL, TRENDING_UP, TRENDING_DOWN, BREAKOUT_SETUP"
+        },
+        {
+            "Month": "2026-03",
+            "Trades": 106,
+            "WR": "56.6%",
+            "Net PnL": "\u20b9203,077",
+            "PF": 1.64,
+            "Regimes": "TRENDING_DOWN, TRENDING_UP, LOW_VOL, BREAKOUT_SETUP"
+        },
+        {
+            "Month": "2026-04",
+            "Trades": 88,
+            "WR": "53.4%",
+            "Net PnL": "\u20b9400,104",
+            "PF": 2.74,
+            "Regimes": "TRENDING_UP, TRENDING_DOWN, BREAKOUT_SETUP, LOW_VOL"
+        }
+    ],
+    "strategies": [
+        {
+            "Strategy": "MOMENTUM_BREAKOUT",
+            "Trades": 290,
+            "WR": "42.8%",
+            "Net PnL": "\u20b9-121,629",
+            "Avg R": -0.02
+        },
+        {
+            "Strategy": "STRUCTURE_BOUNCE",
+            "Trades": 4,
+            "WR": "75.0%",
+            "Net PnL": "\u20b928,872",
+            "Avg R": 1.25
+        },
+        {
+            "Strategy": "VWAP_BOUNCE",
+            "Trades": 252,
+            "WR": "69.8%",
+            "Net PnL": "\u20b9963,767",
+            "Avg R": 0.61
+        }
+    ]
+}

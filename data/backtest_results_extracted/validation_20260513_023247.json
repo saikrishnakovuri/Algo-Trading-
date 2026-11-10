@@ -1,0 +1,78 @@
+{
+    "summary": {
+        "Total Trades": 170,
+        "WR": "31.8%",
+        "Net PnL": "INR 6,408",
+        "Max DD": "7.34%",
+        "PF": 1.05,
+        "Trades/Day": 1.36
+    },
+    "monthly": [
+        {
+            "Month": "2025-10",
+            "Trades": 12,
+            "WR": "58.3%",
+            "Net PnL": "INR 5,232",
+            "PF": 2.62,
+            "Regimes": "TRENDING_UP, TRENDING_DOWN, BREAKOUT_SETUP"
+        },
+        {
+            "Month": "2025-11",
+            "Trades": 32,
+            "WR": "28.1%",
+            "Net PnL": "INR -6,788",
+            "PF": 0.65,
+            "Regimes": "TRENDING_UP, TRENDING_DOWN, BREAKOUT_SETUP"
+        },
+        {
+            "Month": "2025-12",
+            "Trades": 56,
+            "WR": "41.1%",
+            "Net PnL": "INR -6,671",
+            "PF": 0.72,
+            "Regimes": "TRENDING_DOWN, BREAKOUT_SETUP, TRENDING_UP"
+        },
+        {
+            "Month": "2026-01",
+            "Trades": 35,
+            "WR": "22.9%",
+            "Net PnL": "INR -2,139",
+            "PF": 0.94,
+            "Regimes": "BREAKOUT_SETUP, TRENDING_DOWN, RANGING"
+        },
+        {
+            "Month": "2026-02",
+            "Trades": 35,
+            "WR": "20.0%",
+            "Net PnL": "INR 16,775",
+            "PF": 1.35,
+            "Regimes": "TRENDING_DOWN, TRENDING_UP, CHOPPY, BREAKOUT_SETUP"
+        }
+    ],
+    "strategies": [
+        {
+            "Strategy": "CANDLESTICK",
+            "Trades": 60,
+            "WR": "51.7%",
+            "Net PnL": "INR -7,064"
+        },
+        {
+            "Strategy": "MEAN_REVERSION",
+            "Trades": 5,
+            "WR": "0.0%",
+            "Net PnL": "INR -5,770"
+        },
+        {
+            "Strategy": "MOMENTUM_BREAKOUT",
+            "Trades": 78,
+            "WR": "20.5%",
+            "Net PnL": "INR 12,568"
+        },
+        {
+            "Strategy": "VWAP_BOUNCE",
+            "Trades": 27,
+            "WR": "25.9%",
+            "Net PnL": "INR 6,674"
+        }
+    ]
+}

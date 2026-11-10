@@ -1,0 +1,83 @@
+{
+  "name": "gemini-code-assistant",
+  "displayName": "Gemini Code Assistant",
+  "publisher": "your-name",
+  "version": "0.1.0",
+  "engines": {
+    "vscode": "^1.60.0"
+  },
+  "categories": ["Other"],
+  "activationEvents": [
+    "onCommand:gemini.explain",
+    "onCommand:gemini.fix",
+    "onCommand:gemini.optimize",
+    "onCommand:gemini.refactor"
+  ],
+  "main": "./extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "gemini.explain",
+        "title": "Gemini: Explain Code",
+        "category": "Gemini"
+      },
+      {
+        "command": "gemini.fix",
+        "title": "Gemini: Fix Bugs",
+        "category": "Gemini"
+      },
+      {
+        "command": "gemini.optimize",
+        "title": "Gemini: Optimize Code",
+        "category": "Gemini"
+      },
+      {
+        "command": "gemini.refactor",
+        "title": "Gemini: Refactor Code",
+        "category": "Gemini"
+      }
+    ],
+    "menus": {
+      "editor/context": [
+        {
+          "command": "gemini.explain",
+          "when": "editorHasSelection",
+          "group": "navigation"
+        },
+        {
+          "command": "gemini.fix",
+          "when": "editorHasSelection",
+          "group": "navigation"
+        },
+        {
+          "command": "gemini.optimize",
+          "when": "editorHasSelection",
+          "group": "navigation"
+        },
+        {
+          "command": "gemini.refactor",
+          "when": "editorHasSelection",
+          "group": "navigation"
+        }
+      ]
+    },
+    "configuration": {
+      "type": "object",
+      "title": "Gemini Code Assistant",
+      "properties": {
+        "gemini.apiKey": {
+          "type": "string",
+          "description": "Google Gemini API Key (or set GEMINI_API_KEY environment variable)"
+        },
+        "gemini.model": {
+          "type": "string",
+          "default": "gemini-1.5-pro-latest",
+          "description": "Gemini model to use (e.g., gemini-1.5-pro-latest)"
+        }
+      }
+    }
+  },
+  "dependencies": {
+    "@google/generative-ai": "^0.21.0"
+  }
+}

@@ -1,0 +1,691 @@
+// =====================================================================================
+//  NIFTY INSTITUTIONAL HUNTER  —  1 MINUTE SCALPING EDITION
+//  Pine Script v6  |  Strategy + Indicator (toggleable)
+//  Author: Emergent Labs (E1)
+//  Version: 1.0.0
+//
+//  Tuned defaults for 1m scalping on NIFTY / BANKNIFTY:
+//   - Faster pivots, tighter SLs, lower R:R targets
+//   - HTF bias on 5m, HTF trend on 15m
+//   - Smaller opening range window (5 min)
+//
+//  Philosophy: "Trade less. Trade smarter. Trade where institutions leave footprints."
+// =====================================================================================
+//@version=6
+strategy("NIFTY Institutional Hunter [1m]",
+     shorttitle           = "NIH-1m",
+     overlay              = true,
+     initial_capital      = 100000,
+     default_qty_type     = strategy.percent_of_equity,
+     default_qty_value    = 20,
+     pyramiding           = 0,
+     commission_type      = strategy.commission.percent,
+     commission_value     = 0.03,
+     slippage             = 1,
+     calc_on_every_tick   = false,
+     process_orders_on_close = true,
+     max_lines_count      = 500,
+     max_labels_count     = 500,
+     max_boxes_count      = 500,
+     max_bars_back        = 1000)
+
+// =====================================================================================
+// SECTION 1 — GLOBAL INPUTS
+// =====================================================================================
+GRP_GEN  = "═══ General ═══"
+GRP_MOD  = "═══ Module Toggles ═══"
+GRP_STR  = "═══ Phase 1 · Market Structure ═══"
+GRP_BOS  = "═══ Phase 2 · BOS / CHOCH ═══"
+GRP_LIQ  = "═══ Phase 3 · Liquidity Engine ═══"
+GRP_SR   = "═══ Phase 4 · S/R Zones ═══"
+GRP_SMC  = "═══ Phase 5 · Order Blocks ═══"
+GRP_FVG  = "═══ Phase 6 · Fair Value Gaps ═══"
+GRP_CDL  = "═══ Phase 7 · Candle Psychology ═══"
+GRP_TRD  = "═══ Phase 8 · EMA Trend ═══"
+GRP_MOM  = "═══ Phase 9 · Momentum ═══"
+GRP_VOL  = "═══ Phase 10 · Volatility ═══"
+GRP_ORB  = "═══ Phase 11 · Opening Range ═══"
+GRP_BNF  = "═══ Phase 12 · BANKNIFTY Correlation ═══"
+GRP_VWP  = "═══ Phase 13 · VWAP ═══"
+GRP_MTF  = "═══ Phase 14 · Multi-Timeframe ═══"
+GRP_SCO  = "═══ Phase 15 · Trade Scoring ═══"
+GRP_RSK  = "═══ Risk Management ═══"
+GRP_VIS  = "═══ Visualization ═══"
+
+mode            = input.string("Strategy", "Operating Mode", options=["Strategy","Indicator"], group=GRP_GEN)
+sessionFilter   = input.session("0920-1455", "Trading Session (IST)", group=GRP_GEN, tooltip="Avoid first 5m and last 5m for scalping.")
+useSessionGuard = input.bool(true,  "Restrict trades to session", group=GRP_GEN)
+allowLong       = input.bool(true,  "Allow Long entries",  group=GRP_GEN)
+allowShort      = input.bool(true,  "Allow Short entries", group=GRP_GEN)
+oneTradePerBar  = input.bool(true,  "One trade per bar",   group=GRP_GEN)
+
+useStructure    = input.bool(true,  "Market Structure",        group=GRP_MOD)
+useBOS          = input.bool(true,  "BOS / CHOCH",             group=GRP_MOD)
+useLiquidity    = input.bool(true,  "Liquidity Sweeps",        group=GRP_MOD)
+useSR           = input.bool(true,  "S/R Zones",               group=GRP_MOD)
+useOB           = input.bool(true,  "Order Blocks",            group=GRP_MOD)
+useFVG          = input.bool(true,  "Fair Value Gaps",         group=GRP_MOD)
+useCandle       = input.bool(true,  "Candle Psychology",       group=GRP_MOD)
+useTrend        = input.bool(true,  "EMA Trend",               group=GRP_MOD)
+useMomentum     = input.bool(true,  "Momentum Filter",         group=GRP_MOD)
+useVolatility   = input.bool(true,  "ATR / Volatility",        group=GRP_MOD)
+useORB          = input.bool(true,  "Opening Range Breakout",  group=GRP_MOD)
+useBNF          = input.bool(true,  "BANKNIFTY Correlation",   group=GRP_MOD)
+useVWAP         = input.bool(true,  "VWAP Engine",             group=GRP_MOD)
+useMTF          = input.bool(true,  "Multi-Timeframe Bias",    group=GRP_MOD)
+useFakeout      = input.bool(true,  "Fakeout Filter",          group=GRP_MOD)
+
+// Phase 1 — Structure (faster for 1m)
+pivotLen        = input.int(5,    "Pivot Length",                minval=2, maxval=50, group=GRP_STR)
+showStructure   = input.bool(true,"Plot structure labels",       group=GRP_STR)
+
+// Phase 2 — BOS/CHOCH (smaller displacement)
+bosMinDispATR   = input.float(0.4,"Min Displacement (× ATR)",    step=0.1, group=GRP_BOS)
+requireVolBOS   = input.bool(true,"Require Volume Spike on BOS", group=GRP_BOS)
+
+// Phase 3 — Liquidity
+liqLookback     = input.int(60,   "Liquidity Lookback Bars",     group=GRP_LIQ)
+liqEqTolATR     = input.float(0.20,"Equal H/L Tolerance (× ATR)",step=0.05,group=GRP_LIQ)
+liqMinTouches   = input.int(2,    "Min Touches to mark pool",    group=GRP_LIQ)
+
+// Phase 4 — S/R
+showPDHL        = input.bool(true,"Plot PDH / PDL",              group=GRP_SR)
+showPWHL        = input.bool(false,"Plot PWH / PWL",             group=GRP_SR)
+showRoundLvls   = input.bool(true,"Plot psychological levels",   group=GRP_SR)
+roundStep       = input.int(25,   "Psych Level Step (pts)",      group=GRP_SR)
+
+// Phase 5 — Order Blocks
+obLookback      = input.int(30,   "OB Lookback",                 group=GRP_SMC)
+obMaxAge        = input.int(40,   "OB Max Age (bars)",           group=GRP_SMC)
+obShow          = input.bool(true,"Plot Order Blocks",           group=GRP_SMC)
+
+// Phase 6 — FVG
+fvgMinSizeATR   = input.float(0.15,"Min FVG Size (× ATR)",       step=0.05, group=GRP_FVG)
+fvgMaxAge       = input.int(30,    "FVG Max Age (bars)",         group=GRP_FVG)
+fvgShow         = input.bool(true, "Plot Fair Value Gaps",       group=GRP_FVG)
+
+// Phase 7 — Candles
+dispBodyATR     = input.float(1.0,"Displacement Body (× ATR)",   step=0.1, group=GRP_CDL)
+absorbWickPct   = input.float(0.60,"Absorption Wick %",          step=0.05,group=GRP_CDL)
+
+// Phase 8 — EMA
+ema1Len         = input.int(9,    "EMA Fast",     group=GRP_TRD)
+ema2Len         = input.int(21,   "EMA Mid",      group=GRP_TRD)
+ema3Len         = input.int(50,   "EMA Slow",     group=GRP_TRD)
+ema4Len         = input.int(200,  "EMA Anchor",   group=GRP_TRD)
+
+// Phase 9 — Momentum (looser for 1m)
+rsiLen          = input.int(9,    "RSI Length",          group=GRP_MOM)
+rsiBull         = input.int(53,   "RSI Bull Threshold",  group=GRP_MOM)
+rsiBear         = input.int(47,   "RSI Bear Threshold",  group=GRP_MOM)
+adxLen          = input.int(14,   "ADX Length",          group=GRP_MOM)
+adxMin          = input.float(15, "ADX Minimum", step=1, group=GRP_MOM)
+
+// Phase 10 — Volatility
+atrLen          = input.int(10,   "ATR Length",                 group=GRP_VOL)
+atrSqueezeLen   = input.int(50,   "Squeeze Lookback",           group=GRP_VOL)
+atrSqueezePct   = input.float(0.7,"Squeeze ATR < X * Avg", step=0.05, group=GRP_VOL)
+
+// Phase 11 — ORB (5-min opening range)
+orbStart        = input.session("0915-0920","Opening Range Window (IST)", group=GRP_ORB)
+orbBuffer       = input.float(0.05,"ORB Break Buffer (× ATR)",  step=0.05, group=GRP_ORB)
+
+// Phase 12 — BANKNIFTY
+bnfSymbol       = input.symbol("NSE:BANKNIFTY","BANKNIFTY Symbol", group=GRP_BNF)
+bnfRequireAlign = input.bool(true,"Require BNF alignment",         group=GRP_BNF)
+
+// Phase 13 — VWAP
+vwapDevMult     = input.float(1.5,"VWAP Band Deviation", step=0.1, group=GRP_VWP)
+
+// Phase 14 — MTF (closer HTFs for 1m)
+htfBias         = input.timeframe("5",  "HTF Bias TF",  group=GRP_MTF)
+htfTrend        = input.timeframe("15", "HTF Trend TF", group=GRP_MTF)
+
+// Phase 15 — Scoring
+minScore        = input.int(6, "Minimum Score (0-10)", minval=1, maxval=10, group=GRP_SCO)
+showDashboard   = input.bool(true, "Show Live Dashboard", group=GRP_SCO)
+
+// Risk (scalping defaults)
+riskMode        = input.string("ATR", "SL Method", options=["ATR","Swing","Liquidity"], group=GRP_RSK)
+atrSLmult       = input.float(1.2, "SL = X × ATR",     step=0.1, group=GRP_RSK)
+tp1RR           = input.float(1.0, "TP1 R:R",          step=0.1, group=GRP_RSK)
+tp2RR           = input.float(2.0, "TP2 R:R",          step=0.1, group=GRP_RSK)
+tp3RR           = input.float(3.0, "Runner R:R",       step=0.1, group=GRP_RSK)
+tp1Pct          = input.int(50,    "TP1 % closed", minval=10, maxval=80, group=GRP_RSK)
+tp2Pct          = input.int(35,    "TP2 % closed", minval=10, maxval=80, group=GRP_RSK)
+minRR           = input.float(1.5, "Min Acceptable R:R", step=0.1, group=GRP_RSK)
+useBE           = input.bool(true, "Move SL to BE after TP1", group=GRP_RSK)
+useTrail        = input.bool(true, "Trail SL after TP2",      group=GRP_RSK)
+trailAtrMult    = input.float(0.8, "Trail ATR mult", step=0.1, group=GRP_RSK)
+
+// Vis
+showLines       = input.bool(true, "Show SL / TP lines",     group=GRP_VIS)
+showSignalText  = input.bool(true, "Show Signal Tooltips",   group=GRP_VIS)
+colBull         = input.color(color.new(#00d4aa, 0), "Bullish",  group=GRP_VIS)
+colBear         = input.color(color.new(#ff3b69, 0), "Bearish",  group=GRP_VIS)
+colNeutral      = input.color(color.new(#8892b0, 0), "Neutral",  group=GRP_VIS)
+colOB_B         = input.color(color.new(#00d4aa, 78),"OB Bull",  group=GRP_VIS)
+colOB_S         = input.color(color.new(#ff3b69, 78),"OB Bear",  group=GRP_VIS)
+colFVG_B        = input.color(color.new(#3aafff, 82),"FVG Bull", group=GRP_VIS)
+colFVG_S        = input.color(color.new(#ff8b3a, 82),"FVG Bear", group=GRP_VIS)
+colLiq          = input.color(color.new(#f5d76e, 70),"Liquidity",group=GRP_VIS)
+
+// =====================================================================================
+// SECTION 2 — UTILITIES
+// =====================================================================================
+isStrategy = mode == "Strategy"
+f_inSession(_s) => not useSessionGuard or not na(time(timeframe.period, _s))
+inSession   = f_inSession(sessionFilter)
+
+atr         = ta.atr(atrLen)
+avgVol      = ta.sma(volume, 20)
+volSpike    = volume > avgVol * 1.4
+bodySize    = math.abs(close - open)
+upperWick   = high - math.max(close, open)
+lowerWick   = math.min(close, open) - low
+rangeBar    = high - low
+
+// =====================================================================================
+// SECTION 3 — PHASE 1 : STRUCTURE
+// =====================================================================================
+ph = ta.pivothigh(high, pivotLen, pivotLen)
+pl = ta.pivotlow (low,  pivotLen, pivotLen)
+
+var float lastSwingHigh   = na
+var float prevSwingHigh   = na
+var float lastSwingLow    = na
+var float prevSwingLow    = na
+
+if not na(ph)
+    prevSwingHigh := lastSwingHigh
+    lastSwingHigh := ph
+if not na(pl)
+    prevSwingLow  := lastSwingLow
+    lastSwingLow  := pl
+
+isHH = not na(ph) and not na(prevSwingHigh) and ph > prevSwingHigh
+isLH = not na(ph) and not na(prevSwingHigh) and ph < prevSwingHigh
+isHL = not na(pl) and not na(prevSwingLow)  and pl > prevSwingLow
+isLL = not na(pl) and not na(prevSwingLow)  and pl < prevSwingLow
+
+var int structureBias = 0
+if isHH or isHL
+    structureBias := 1
+if isLH or isLL
+    structureBias := -1
+
+if showStructure and useStructure
+    if isHH
+        label.new(bar_index - pivotLen, ph, "HH", style=label.style_label_down, color=color.new(colBull, 70), textcolor=color.white, size=size.tiny)
+    if isLH
+        label.new(bar_index - pivotLen, ph, "LH", style=label.style_label_down, color=color.new(colBear, 70), textcolor=color.white, size=size.tiny)
+    if isHL
+        label.new(bar_index - pivotLen, pl, "HL", style=label.style_label_up,   color=color.new(colBull, 70), textcolor=color.white, size=size.tiny)
+    if isLL
+        label.new(bar_index - pivotLen, pl, "LL", style=label.style_label_up,   color=color.new(colBear, 70), textcolor=color.white, size=size.tiny)
+
+// =====================================================================================
+// SECTION 4 — PHASE 2 : BOS / CHOCH
+// =====================================================================================
+displacementOK = bodySize > atr * bosMinDispATR
+volOK          = not requireVolBOS or volSpike
+
+bosBull = useBOS and not na(lastSwingHigh) and close > lastSwingHigh and close[1] <= lastSwingHigh and displacementOK and volOK
+bosBear = useBOS and not na(lastSwingLow)  and close < lastSwingLow  and close[1] >= lastSwingLow  and displacementOK and volOK
+
+var int internalTrend = 0
+chochBull = bosBull and internalTrend == -1
+chochBear = bosBear and internalTrend ==  1
+if bosBull
+    internalTrend := 1
+if bosBear
+    internalTrend := -1
+
+if useBOS and showStructure
+    if bosBull
+        label.new(bar_index, high + atr*0.4, chochBull ? "CHoCH↑" : "BOS↑", color=color.new(colBull, 30), textcolor=color.white, size=size.small, style=label.style_label_down)
+    if bosBear
+        label.new(bar_index, low  - atr*0.4, chochBear ? "CHoCH↓" : "BOS↓", color=color.new(colBear, 30), textcolor=color.white, size=size.small, style=label.style_label_up)
+
+// =====================================================================================
+// SECTION 5 — PHASE 3 : LIQUIDITY
+// =====================================================================================
+hh40 = ta.highest(high, liqLookback)
+ll40 = ta.lowest(low,  liqLookback)
+
+var int touchHigh = 0
+var int touchLow  = 0
+touchHigh := 0
+touchLow  := 0
+for i = 0 to liqLookback - 1
+    if math.abs(high[i] - hh40) <= atr * liqEqTolATR
+        touchHigh += 1
+    if math.abs(low[i]  - ll40) <= atr * liqEqTolATR
+        touchLow  += 1
+
+liqHighActive = useLiquidity and touchHigh >= liqMinTouches
+liqLowActive  = useLiquidity and touchLow  >= liqMinTouches
+
+sweepHigh = liqHighActive and high > hh40 and close < hh40 and (close - low) > rangeBar * 0.45
+sweepLow  = liqLowActive  and low  < ll40 and close > ll40 and (high - close) > rangeBar * 0.45
+
+if useLiquidity and showLines
+    if liqHighActive
+        line.new(bar_index - liqLookback, hh40, bar_index, hh40, color=colLiq, style=line.style_dotted, width=1)
+    if liqLowActive
+        line.new(bar_index - liqLookback, ll40, bar_index, ll40, color=colLiq, style=line.style_dotted, width=1)
+    if sweepHigh
+        label.new(bar_index, high, "SWEEP↑", style=label.style_label_down, color=color.new(color.yellow, 25), textcolor=color.black, size=size.tiny)
+    if sweepLow
+        label.new(bar_index, low,  "SWEEP↓", style=label.style_label_up,   color=color.new(color.yellow, 25), textcolor=color.black, size=size.tiny)
+
+// =====================================================================================
+// SECTION 6 — PHASE 4 : S/R
+// =====================================================================================
+pdh = request.security(syminfo.tickerid, "D", high[1], lookahead=barmerge.lookahead_off)
+pdl = request.security(syminfo.tickerid, "D", low[1],  lookahead=barmerge.lookahead_off)
+pwh = request.security(syminfo.tickerid, "W", high[1], lookahead=barmerge.lookahead_off)
+pwl = request.security(syminfo.tickerid, "W", low[1],  lookahead=barmerge.lookahead_off)
+dop = request.security(syminfo.tickerid, "D", open,    lookahead=barmerge.lookahead_off)
+
+plot(useSR and showPDHL ? pdh : na, "PDH", color=color.new(#9b8cff, 0), style=plot.style_linebr)
+plot(useSR and showPDHL ? pdl : na, "PDL", color=color.new(#9b8cff, 0), style=plot.style_linebr)
+plot(useSR and showPWHL ? pwh : na, "PWH", color=color.new(#ff8bc4, 0), style=plot.style_linebr)
+plot(useSR and showPWHL ? pwl : na, "PWL", color=color.new(#ff8bc4, 0), style=plot.style_linebr)
+plot(useSR ? dop : na,             "DayOpen", color=color.new(#5db4ff, 0), style=plot.style_linebr)
+
+roundAbove = math.ceil (close / roundStep) * roundStep
+roundBelow = math.floor(close / roundStep) * roundStep
+plot(useSR and showRoundLvls ? roundAbove : na, "Round↑", color=color.new(color.gray, 60), style=plot.style_circles)
+plot(useSR and showRoundLvls ? roundBelow : na, "Round↓", color=color.new(color.gray, 60), style=plot.style_circles)
+
+// =====================================================================================
+// SECTION 7 — PHASE 5 : ORDER BLOCKS
+// =====================================================================================
+type OB
+    float top
+    float bot
+    int   bornBar
+    bool  bull
+    bool  mitigated
+    box   bx
+
+var array<OB> bullOBs = array.new<OB>()
+var array<OB> bearOBs = array.new<OB>()
+
+displacementUp   = close > open and bodySize > atr * dispBodyATR
+displacementDown = close < open and bodySize > atr * dispBodyATR
+newBullOB = useOB and displacementUp and close[1] < open[1] and bosBull
+newBearOB = useOB and displacementDown and close[1] > open[1] and bosBear
+
+if newBullOB
+    bx = obShow ? box.new(bar_index[1], high[1], bar_index + 25, low[1], border_color=color.new(colBull, 50), bgcolor=colOB_B) : na
+    array.push(bullOBs, OB.new(high[1], low[1], bar_index[1], true, false, bx))
+if newBearOB
+    bx = obShow ? box.new(bar_index[1], high[1], bar_index + 25, low[1], border_color=color.new(colBear, 50), bgcolor=colOB_S) : na
+    array.push(bearOBs, OB.new(high[1], low[1], bar_index[1], false, false, bx))
+
+f_maintainOBs(arr) =>
+    if array.size(arr) > 0
+        for i = array.size(arr) - 1 to 0
+            ob = array.get(arr, i)
+            if not na(ob)
+                expired = (bar_index - ob.bornBar) > obMaxAge
+                mitig   = ob.bull ? close < ob.bot : close > ob.top
+                if expired or mitig
+                    if not na(ob.bx)
+                        box.delete(ob.bx)
+                    array.remove(arr, i)
+                else
+                    if not na(ob.bx)
+                        box.set_right(ob.bx, bar_index + 5)
+f_maintainOBs(bullOBs)
+f_maintainOBs(bearOBs)
+
+f_priceInOB(arr) =>
+    found = false
+    if array.size(arr) > 0
+        for i = 0 to array.size(arr) - 1
+            ob = array.get(arr, i)
+            if not na(ob) and not ob.mitigated
+                if low <= ob.top and high >= ob.bot
+                    found := true
+    found
+
+inBullOB = f_priceInOB(bullOBs)
+inBearOB = f_priceInOB(bearOBs)
+
+// =====================================================================================
+// SECTION 8 — PHASE 6 : FVG
+// =====================================================================================
+type FVG
+    float top
+    float bot
+    int   bornBar
+    bool  bull
+    box   bx
+
+var array<FVG> bullFVGs = array.new<FVG>()
+var array<FVG> bearFVGs = array.new<FVG>()
+
+bullFVGcond = useFVG and low > high[2] and (low - high[2]) > atr * fvgMinSizeATR
+bearFVGcond = useFVG and high < low[2] and (low[2] - high) > atr * fvgMinSizeATR
+
+if bullFVGcond
+    bx = fvgShow ? box.new(bar_index[2], low, bar_index + 25, high[2], border_color=na, bgcolor=colFVG_B) : na
+    array.push(bullFVGs, FVG.new(low, high[2], bar_index, true, bx))
+if bearFVGcond
+    bx = fvgShow ? box.new(bar_index[2], low[2], bar_index + 25, high, border_color=na, bgcolor=colFVG_S) : na
+    array.push(bearFVGs, FVG.new(low[2], high, bar_index, false, bx))
+
+f_maintainFVGs(arr) =>
+    if array.size(arr) > 0
+        for i = array.size(arr) - 1 to 0
+            g = array.get(arr, i)
+            if not na(g)
+                expired = (bar_index - g.bornBar) > fvgMaxAge
+                filled  = g.bull ? close < g.bot : close > g.top
+                if expired or filled
+                    if not na(g.bx)
+                        box.delete(g.bx)
+                    array.remove(arr, i)
+                else
+                    if not na(g.bx)
+                        box.set_right(g.bx, bar_index + 5)
+f_maintainFVGs(bullFVGs)
+f_maintainFVGs(bearFVGs)
+
+f_priceInFVG(arr) =>
+    found = false
+    if array.size(arr) > 0
+        for i = 0 to array.size(arr) - 1
+            g = array.get(arr, i)
+            if not na(g)
+                if low <= g.top and high >= g.bot
+                    found := true
+    found
+
+inBullFVG = f_priceInFVG(bullFVGs)
+inBearFVG = f_priceInFVG(bearFVGs)
+
+// =====================================================================================
+// SECTION 9 — PHASE 7 : CANDLE PSYCHOLOGY
+// =====================================================================================
+displacementBull = close > open and bodySize > atr * dispBodyATR
+displacementBear = close < open and bodySize > atr * dispBodyATR
+absorptionBull   = close > open and lowerWick / math.max(rangeBar, syminfo.mintick) > absorbWickPct
+absorptionBear   = close < open and upperWick / math.max(rangeBar, syminfo.mintick) > absorbWickPct
+bullEngulf = close > open and close[1] < open[1] and close >= open[1] and open <= close[1]
+bearEngulf = close < open and close[1] > open[1] and close <= open[1] and open >= close[1]
+hammer     = lowerWick > bodySize * 2 and upperWick < bodySize * 0.4 and close > open
+shooter    = upperWick > bodySize * 2 and lowerWick < bodySize * 0.4 and close < open
+
+candleBullScore = (displacementBull ? 1 : 0) + (absorptionBull ? 1 : 0) + (bullEngulf ? 1 : 0) + (hammer ? 1 : 0)
+candleBearScore = (displacementBear ? 1 : 0) + (absorptionBear ? 1 : 0) + (bearEngulf ? 1 : 0) + (shooter ? 1 : 0)
+
+// =====================================================================================
+// SECTION 10 — PHASE 8 : EMA TREND
+// =====================================================================================
+ema1 = ta.ema(close, ema1Len)
+ema2 = ta.ema(close, ema2Len)
+ema3 = ta.ema(close, ema3Len)
+ema4 = ta.ema(close, ema4Len)
+trendBullAlign = ema1 > ema2 and ema2 > ema3 and close > ema4
+trendBearAlign = ema1 < ema2 and ema2 < ema3 and close < ema4
+trendBias = trendBullAlign ? 1 : trendBearAlign ? -1 : 0
+plot(useTrend ? ema1 : na, "EMA9",  color=color.new(#5db4ff, 0))
+plot(useTrend ? ema2 : na, "EMA21", color=color.new(#9b8cff, 0))
+plot(useTrend ? ema3 : na, "EMA50", color=color.new(#ff8bc4, 0))
+plot(useTrend ? ema4 : na, "EMA200",color=color.new(#f5d76e, 0), linewidth=2)
+
+// =====================================================================================
+// SECTION 11 — PHASE 9 : MOMENTUM
+// =====================================================================================
+rsi  = ta.rsi(close, rsiLen)
+[macdLine, macdSig, _h] = ta.macd(close, 12, 26, 9)
+[diPlus, diMinus, adxVal] = ta.dmi(adxLen, adxLen)
+momBull = rsi > rsiBull and macdLine > macdSig and adxVal > adxMin and diPlus > diMinus
+momBear = rsi < rsiBear and macdLine < macdSig and adxVal > adxMin and diMinus > diPlus
+
+// =====================================================================================
+// SECTION 12 — PHASE 10 : VOLATILITY REGIME
+// =====================================================================================
+avgAtr   = ta.sma(atr, atrSqueezeLen)
+squeeze  = atr < avgAtr * atrSqueezePct
+expansion= atr > avgAtr * 1.3
+regime   = adxVal > 25 and trendBias != 0 ? "TREND" : squeeze ? "SQUEEZE" : expansion ? "EXPANSION" : "RANGE"
+
+// =====================================================================================
+// SECTION 13 — PHASE 11 : ORB
+// =====================================================================================
+var float orbHigh = na
+var float orbLow  = na
+var bool  orbDone = false
+if not na(time(timeframe.period, orbStart))
+    orbHigh := na(orbHigh) ? high : math.max(orbHigh, high)
+    orbLow  := na(orbLow)  ? low  : math.min(orbLow,  low)
+else if hour == 9 and minute == 15
+    orbHigh := na
+    orbLow  := na
+    orbDone := false
+isAfterORB = hour >= 9 and (hour > 9 or minute >= 20)
+if isAfterORB
+    orbDone := true
+
+orbBreakUp = useORB and orbDone and not na(orbHigh) and close > (orbHigh + atr*orbBuffer) and close[1] <= orbHigh
+orbBreakDn = useORB and orbDone and not na(orbLow)  and close < (orbLow  - atr*orbBuffer) and close[1] >= orbLow
+
+// =====================================================================================
+// SECTION 14 — PHASE 12 : BANKNIFTY
+// =====================================================================================
+bnfClose = request.security(bnfSymbol, timeframe.period, close,  lookahead=barmerge.lookahead_off)
+bnfEmaF  = request.security(bnfSymbol, timeframe.period, ta.ema(close, ema1Len), lookahead=barmerge.lookahead_off)
+bnfEmaS  = request.security(bnfSymbol, timeframe.period, ta.ema(close, ema3Len), lookahead=barmerge.lookahead_off)
+bnfBull  = bnfClose > bnfEmaS and bnfEmaF > bnfEmaS
+bnfBear  = bnfClose < bnfEmaS and bnfEmaF < bnfEmaS
+bnfAlignBull = not useBNF or not bnfRequireAlign or bnfBull
+bnfAlignBear = not useBNF or not bnfRequireAlign or bnfBear
+
+// =====================================================================================
+// SECTION 15 — PHASE 13 : VWAP
+// =====================================================================================
+vwap   = ta.vwap(hlc3)
+vwapDev= ta.stdev(close - vwap, 20)
+vwapUp = vwap + vwapDev * vwapDevMult
+vwapDn = vwap - vwapDev * vwapDevMult
+plot(useVWAP ? vwap   : na, "VWAP",  color=color.new(#ffd97a, 0), linewidth=2)
+plot(useVWAP ? vwapUp : na, "VWAP+", color=color.new(#ffd97a, 60))
+plot(useVWAP ? vwapDn : na, "VWAP-", color=color.new(#ffd97a, 60))
+vwapBull = close > vwap
+vwapBear = close < vwap
+
+// =====================================================================================
+// SECTION 16 — PHASE 14 : MTF
+// =====================================================================================
+htfClose1 = request.security(syminfo.tickerid, htfBias,  close, lookahead=barmerge.lookahead_off)
+htfEma1   = request.security(syminfo.tickerid, htfBias,  ta.ema(close, ema2Len), lookahead=barmerge.lookahead_off)
+htfClose2 = request.security(syminfo.tickerid, htfTrend, close, lookahead=barmerge.lookahead_off)
+htfEma2   = request.security(syminfo.tickerid, htfTrend, ta.ema(close, ema3Len), lookahead=barmerge.lookahead_off)
+htfBullBias = (htfClose1 > htfEma1) and (htfClose2 > htfEma2)
+htfBearBias = (htfClose1 < htfEma1) and (htfClose2 < htfEma2)
+mtfBullOK = not useMTF or htfBullBias
+mtfBearOK = not useMTF or htfBearBias
+
+// =====================================================================================
+// SECTION 17 — SCORING
+// =====================================================================================
+sStructBull = useStructure and structureBias == 1 ? 1 : 0
+sStructBear = useStructure and structureBias == -1 ? 1 : 0
+sBOSBull    = useBOS and bosBull ? 1 : 0
+sBOSBear    = useBOS and bosBear ? 1 : 0
+sLiqBull    = useLiquidity and sweepLow ? 1 : 0
+sLiqBear    = useLiquidity and sweepHigh ? 1 : 0
+sOBBull     = useOB and inBullOB ? 1 : 0
+sOBBear     = useOB and inBearOB ? 1 : 0
+sFVGBull    = useFVG and inBullFVG ? 1 : 0
+sFVGBear    = useFVG and inBearFVG ? 1 : 0
+sCdlBull    = useCandle and candleBullScore >= 2 ? 1 : 0
+sCdlBear    = useCandle and candleBearScore >= 2 ? 1 : 0
+sTrdBull    = useTrend and trendBias == 1 ? 1 : 0
+sTrdBear    = useTrend and trendBias == -1 ? 1 : 0
+sMomBull    = useMomentum and momBull ? 1 : 0
+sMomBear    = useMomentum and momBear ? 1 : 0
+sVolOK      = useVolatility and (regime == "TREND" or regime == "EXPANSION") ? 1 : 0
+sBNFBull    = useBNF and bnfBull ? 1 : 0
+sBNFBear    = useBNF and bnfBear ? 1 : 0
+sVwapBull   = useVWAP and vwapBull ? 1 : 0
+sVwapBear   = useVWAP and vwapBear ? 1 : 0
+sMTFBull    = useMTF and htfBullBias ? 1 : 0
+sMTFBear    = useMTF and htfBearBias ? 1 : 0
+
+bullScore = sStructBull+sBOSBull+sLiqBull+sOBBull+sFVGBull+sCdlBull+sTrdBull+sMomBull+sVolOK+sBNFBull+sVwapBull+sMTFBull
+bearScore = sStructBear+sBOSBear+sLiqBear+sOBBear+sFVGBear+sCdlBear+sTrdBear+sMomBear+sVolOK+sBNFBear+sVwapBear+sMTFBear
+maxScore  = (useStructure?1:0)+(useBOS?1:0)+(useLiquidity?1:0)+(useOB?1:0)+(useFVG?1:0)+(useCandle?1:0)+(useTrend?1:0)+(useMomentum?1:0)+(useVolatility?1:0)+(useBNF?1:0)+(useVWAP?1:0)+(useMTF?1:0)
+normBull = maxScore == 0 ? 0 : math.round(bullScore * 10 / maxScore)
+normBear = maxScore == 0 ? 0 : math.round(bearScore * 10 / maxScore)
+
+// =====================================================================================
+// SECTION 18 — FAKEOUT FILTER
+// =====================================================================================
+weakBreakout = useFakeout and volume < avgVol * 0.8
+exhaustedRun = useFakeout and (rsi > 80 or rsi < 20)
+fakeoutBlock = weakBreakout or exhaustedRun
+
+// =====================================================================================
+// SECTION 19 — ENTRY LOGIC
+// =====================================================================================
+contBull = bosBull and (inBullOB or inBullFVG) and trendBias == 1 and momBull and bnfAlignBull and mtfBullOK and not fakeoutBlock
+contBear = bosBear and (inBearOB or inBearFVG) and trendBias == -1 and momBear and bnfAlignBear and mtfBearOK and not fakeoutBlock
+revBull  = sweepLow  and (chochBull or (close > open and candleBullScore >= 2)) and bnfAlignBull and mtfBullOK and not fakeoutBlock
+revBear  = sweepHigh and (chochBear or (close < open and candleBearScore >= 2)) and bnfAlignBear and mtfBearOK and not fakeoutBlock
+brBull   = orbBreakUp and trendBias != -1 and bnfAlignBull and mtfBullOK and not fakeoutBlock
+brBear   = orbBreakDn and trendBias !=  1 and bnfAlignBear and mtfBearOK and not fakeoutBlock
+
+bullSignal = allowLong  and inSession and normBull >= minScore and (contBull or revBull or brBull)
+bearSignal = allowShort and inSession and normBear >= minScore and (contBear or revBear or brBear)
+
+var int lastTradeBar = na
+canTradeBar = not oneTradePerBar or (na(lastTradeBar) or bar_index > lastTradeBar)
+setupTxt   = bullSignal ? (contBull?"Continuation":revBull?"LiquidityRev":"BreakRetest") : bearSignal ? (contBear?"Continuation":revBear?"LiquidityRev":"BreakRetest") : ""
+
+// =====================================================================================
+// SECTION 20 — RISK
+// =====================================================================================
+swingSL_long  = na(lastSwingLow)  ? close - atr * atrSLmult : math.min(lastSwingLow,  low) - atr * 0.2
+swingSL_short = na(lastSwingHigh) ? close + atr * atrSLmult : math.max(lastSwingHigh, high) + atr * 0.2
+atrSL_long    = close - atr * atrSLmult
+atrSL_short   = close + atr * atrSLmult
+liqSL_long    = na(ll40) ? atrSL_long  : math.min(ll40, low)  - atr * 0.15
+liqSL_short   = na(hh40) ? atrSL_short : math.max(hh40, high) + atr * 0.15
+slLong  = riskMode == "Swing" ? swingSL_long  : riskMode == "Liquidity" ? liqSL_long  : atrSL_long
+slShort = riskMode == "Swing" ? swingSL_short : riskMode == "Liquidity" ? liqSL_short : atrSL_short
+
+rPerLong  = close - slLong
+rPerShort = slShort - close
+tp1L = close + rPerLong * tp1RR
+tp2L = close + rPerLong * tp2RR
+tp3L = close + rPerLong * tp3RR
+tp1S = close - rPerShort * tp1RR
+tp2S = close - rPerShort * tp2RR
+tp3S = close - rPerShort * tp3RR
+
+rrLongOK  = (rPerLong  > 0) and ((tp1L - close) / rPerLong  >= minRR)
+rrShortOK = (rPerShort > 0) and ((close - tp1S) / rPerShort >= minRR)
+
+finalBuy  = bullSignal and rrLongOK  and canTradeBar
+finalSell = bearSignal and rrShortOK and canTradeBar
+
+// =====================================================================================
+// SECTION 21 — STRATEGY EXECUTION
+// =====================================================================================
+qtyTP1 = tp1Pct
+qtyTP2 = tp2Pct
+
+if isStrategy
+    if finalBuy
+        strategy.entry("L", strategy.long, comment=setupTxt)
+        strategy.exit("L-TP1", "L", stop=slLong, limit=tp1L, qty_percent=qtyTP1)
+        strategy.exit("L-TP2", "L", stop=slLong, limit=tp2L, qty_percent=qtyTP2)
+        strategy.exit("L-TP3", "L", stop=slLong, limit=tp3L)
+        lastTradeBar := bar_index
+    if finalSell
+        strategy.entry("S", strategy.short, comment=setupTxt)
+        strategy.exit("S-TP1", "S", stop=slShort, limit=tp1S, qty_percent=qtyTP1)
+        strategy.exit("S-TP2", "S", stop=slShort, limit=tp2S, qty_percent=qtyTP2)
+        strategy.exit("S-TP3", "S", stop=slShort, limit=tp3S)
+        lastTradeBar := bar_index
+
+    if useBE and strategy.position_size > 0 and high >= tp1L
+        strategy.exit("L-BE", "L", stop=strategy.position_avg_price)
+    if useBE and strategy.position_size < 0 and low <= tp1S
+        strategy.exit("S-BE", "S", stop=strategy.position_avg_price)
+    if useTrail and strategy.position_size > 0 and high >= tp2L
+        strategy.exit("L-TR", "L", trail_points=atr * trailAtrMult / syminfo.mintick, trail_offset=atr * trailAtrMult / syminfo.mintick)
+    if useTrail and strategy.position_size < 0 and low <= tp2S
+        strategy.exit("S-TR", "S", trail_points=atr * trailAtrMult / syminfo.mintick, trail_offset=atr * trailAtrMult / syminfo.mintick)
+
+// =====================================================================================
+// SECTION 22 — VISUALIZATION
+// =====================================================================================
+plotshape(finalBuy,  title="BUY",  style=shape.triangleup,   location=location.belowbar, color=colBull, size=size.small, text="BUY")
+plotshape(finalSell, title="SELL", style=shape.triangledown, location=location.abovebar, color=colBear, size=size.small, text="SELL")
+
+if showLines and finalBuy
+    line.new(bar_index, slLong, bar_index + 8, slLong, color=color.red,   style=line.style_dashed)
+    line.new(bar_index, tp1L,   bar_index + 8, tp1L,   color=color.green, style=line.style_dotted)
+    line.new(bar_index, tp2L,   bar_index + 8, tp2L,   color=color.green, style=line.style_dotted)
+    line.new(bar_index, tp3L,   bar_index + 8, tp3L,   color=color.green, style=line.style_dotted)
+if showLines and finalSell
+    line.new(bar_index, slShort,bar_index + 8, slShort,color=color.red,   style=line.style_dashed)
+    line.new(bar_index, tp1S,   bar_index + 8, tp1S,   color=color.green, style=line.style_dotted)
+    line.new(bar_index, tp2S,   bar_index + 8, tp2S,   color=color.green, style=line.style_dotted)
+    line.new(bar_index, tp3S,   bar_index + 8, tp3S,   color=color.green, style=line.style_dotted)
+
+if showSignalText and (finalBuy or finalSell)
+    txt = (finalBuy ? "BUY " : "SELL ") + setupTxt + "\nScore: " + str.tostring(finalBuy ? normBull : normBear) + "/10\nRegime: " + regime
+    label.new(bar_index, finalBuy ? low : high, txt,
+         style = finalBuy ? label.style_label_up : label.style_label_down,
+         color = finalBuy ? color.new(colBull, 15) : color.new(colBear, 15),
+         textcolor = color.white, size = size.small)
+
+// =====================================================================================
+// SECTION 23 — DASHBOARD
+// =====================================================================================
+f_dashRow(t, r, k, v, col) =>
+    table.cell(t, 0, r, k, text_color=color.new(#a8b3d4, 0), bgcolor=color.new(#0c1226, 50), text_size=size.small)
+    table.cell(t, 1, r, v, text_color=col,                   bgcolor=color.new(#0c1226, 50), text_size=size.small)
+
+var table dash = na
+if showDashboard and barstate.islast
+    if na(dash)
+        dash := table.new(position.top_right, 2, 14, bgcolor=color.new(#0c1226, 15), frame_color=color.new(#2a3457, 30), frame_width=1, border_width=1, border_color=color.new(#2a3457, 60))
+    f_dashRow(dash, 0,  "NIFTY HUNTER",  "1m · v1.0",                                           color.new(#f5d76e, 0))
+    f_dashRow(dash, 1,  "Regime",        regime,                                                regime=="TREND"?colBull:regime=="SQUEEZE"?colNeutral:regime=="EXPANSION"?color.new(#f5d76e,0):colNeutral)
+    f_dashRow(dash, 2,  "Structure",     structureBias==1?"Bullish":structureBias==-1?"Bearish":"Neutral", structureBias==1?colBull:structureBias==-1?colBear:colNeutral)
+    f_dashRow(dash, 3,  "Trend (EMA)",   trendBias==1?"UP":trendBias==-1?"DOWN":"FLAT",         trendBias==1?colBull:trendBias==-1?colBear:colNeutral)
+    f_dashRow(dash, 4,  "Momentum",      momBull?"BULL":momBear?"BEAR":"NEUTRAL",               momBull?colBull:momBear?colBear:colNeutral)
+    f_dashRow(dash, 5,  "RSI",           str.tostring(rsi,"#.0"),                               rsi>rsiBull?colBull:rsi<rsiBear?colBear:colNeutral)
+    f_dashRow(dash, 6,  "ADX",           str.tostring(adxVal,"#.0"),                            adxVal>adxMin?colBull:colNeutral)
+    f_dashRow(dash, 7,  "VWAP",          vwapBull?"Above":"Below",                              vwapBull?colBull:colBear)
+    f_dashRow(dash, 8,  "BANKNIFTY",     bnfBull?"BULL":bnfBear?"BEAR":"NEUTRAL",               bnfBull?colBull:bnfBear?colBear:colNeutral)
+    f_dashRow(dash, 9,  "HTF Bias",      htfBullBias?"BULL":htfBearBias?"BEAR":"MIXED",         htfBullBias?colBull:htfBearBias?colBear:colNeutral)
+    f_dashRow(dash, 10, "Bull Score",    str.tostring(normBull)+"/10",                          normBull>=minScore?colBull:colNeutral)
+    f_dashRow(dash, 11, "Bear Score",    str.tostring(normBear)+"/10",                          normBear>=minScore?colBear:colNeutral)
+    f_dashRow(dash, 12, "Pos",           strategy.position_size==0?"FLAT":strategy.position_size>0?"LONG":"SHORT", strategy.position_size==0?colNeutral:strategy.position_size>0?colBull:colBear)
+    f_dashRow(dash, 13, "Last Setup",    setupTxt==""?"—":setupTxt,                             colNeutral)
+
+// =====================================================================================
+// SECTION 24 — ALERTS
+// =====================================================================================
+alertcondition(finalBuy,  title="NIH BUY",     message='{"symbol":"{{ticker}}","side":"BUY","price":{{close}}}')
+alertcondition(finalSell, title="NIH SELL",    message='{"symbol":"{{ticker}}","side":"SELL","price":{{close}}}')
+alertcondition(bosBull,   title="NIH BOS↑",    message="Bullish BOS on {{ticker}} @ {{close}}")
+alertcondition(bosBear,   title="NIH BOS↓",    message="Bearish BOS on {{ticker}} @ {{close}}")
+alertcondition(chochBull, title="NIH CHoCH↑",  message="Bullish CHoCH on {{ticker}} @ {{close}}")
+alertcondition(chochBear, title="NIH CHoCH↓",  message="Bearish CHoCH on {{ticker}} @ {{close}}")
+alertcondition(sweepHigh, title="NIH Sweep↑",  message="Liquidity sweep ↑ on {{ticker}} @ {{close}}")
+alertcondition(sweepLow,  title="NIH Sweep↓",  message="Liquidity sweep ↓ on {{ticker}} @ {{close}}")
+
+// =====================================================================================
+// END  —  NIFTY INSTITUTIONAL HUNTER  [1m]
+// =====================================================================================

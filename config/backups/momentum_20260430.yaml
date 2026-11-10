@@ -1,0 +1,3 @@
+consolidation_bars: 5
+range_atr_threshold: 5.0
+volume_breakout_ratio: 1.3

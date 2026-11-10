@@ -1,0 +1,200 @@
+{
+  "run_id": "A",
+  "period_start": "2025-11-01",
+  "period_end": "2026-04-30",
+  "engine_md5_hashes": {
+    "live_options_trader.py": "83a9c9223310c38a112858e66f3b53e0",
+    "modules/strategy_mapper.py": "bc55edde82e874a63920fefad8a46db3",
+    "modules/v3_utils.py": "922c0b7eafcbf9c707bd6051d64839d9",
+    "modules/strategy_selector.py": "f6fea60b0289e2742b2444cd1d607645",
+    "modules/candlestick_engine.py": "662dfc66ef337a31fd57d5948f8920e3"
+  },
+  "config": {
+    "TRENDING_DOWN_strategies_count": 3,
+    "SIGNAL_GATE": "09:45",
+    "tp_atr": 1.5,
+    "sl_atr": 0.6,
+    "capital": 500000.0,
+    "lot_size": 65
+  },
+  "headline": {
+    "total_trades": 42,
+    "wins": 7,
+    "losses": 35,
+    "win_rate_pct": 16.666666666666664,
+    "ce_trades": 19,
+    "pe_trades": 23,
+    "trades_before_10am": 13,
+    "trades_after_12pm": 0,
+    "gross_pnl_inr": -30071.20688029087,
+    "brokerage_total_inr": 2940.0,
+    "slippage_total_inr": 133169.21204963175,
+    "net_pnl_inr": -166180.41892992263,
+    "gross_profit_inr": 25806.37076308747,
+    "gross_loss_inr": 191986.78969301013,
+    "profit_factor": 0.134417429471852,
+    "avg_win_inr": 3686.6243947267817,
+    "avg_loss_inr": -5485.336848371718,
+    "median_realized_rr": 1.1253393198916095,
+    "max_dd_inr": -163084.32057992383,
+    "max_dd_pct": -32.61686411598477,
+    "max_consecutive_losses": 2,
+    "max_consecutive_wins": 0,
+    "min_single_trade_pnl": -7892.008526847276,
+    "max_single_trade_pnl": 5635.568050000184,
+    "trading_days": 29,
+    "profitable_days": 5,
+    "red_days": 24,
+    "days_losing_over_12500": 0,
+    "days_losing_over_15000": 0,
+    "fakeout_pct_of_losses": 77.14285714285715,
+    "trend_reversal_pct_of_losses": 5.714285714285714,
+    "choppy_noise_pct_of_losses": 11.428571428571429,
+    "top_5_days_pnl_share_pct": 0.0,
+    "top_5_days_trade_count": 6,
+    "pnl_excluding_top_5_days": -181567.80664300942,
+    "sharpe_annualised": 0.0,
+    "sortino_annualised": 0.0,
+    "calmar_ratio": 0.0,
+    "riskguard_trips_total": 7
+  },
+  "by_hour": [
+    {
+      "hour": 9,
+      "trades": 13,
+      "wins": 5,
+      "wr_pct": 38.46153846153847,
+      "net_pnl": -19088.7329619111
+    },
+    {
+      "hour": 10,
+      "trades": 24,
+      "wins": 2,
+      "wr_pct": 8.333333333333332,
+      "net_pnl": -113856.93504301476
+    },
+    {
+      "hour": 11,
+      "trades": 5,
+      "wins": 0,
+      "wr_pct": 0.0,
+      "net_pnl": -33234.750924996755
+    }
+  ],
+  "by_month": [
+    {
+      "month": "2025-11",
+      "trades": 4,
+      "wins": 0,
+      "wr_pct": 0.0,
+      "net_pnl": -22062.442499998324,
+      "max_dd_pct": 0.0
+    },
+    {
+      "month": "2025-12",
+      "trades": 7,
+      "wins": 1,
+      "wr_pct": 14.285714285714285,
+      "net_pnl": -26555.63295308686,
+      "max_dd_pct": 0.0
+    },
+    {
+      "month": "2026-01",
+      "trades": 5,
+      "wins": 1,
+      "wr_pct": 20.0,
+      "net_pnl": -18731.852774998588,
+      "max_dd_pct": 0.0
+    },
+    {
+      "month": "2026-02",
+      "trades": 8,
+      "wins": 1,
+      "wr_pct": 12.5,
+      "net_pnl": -41349.12192684442,
+      "max_dd_pct": 0.0
+    },
+    {
+      "month": "2026-03",
+      "trades": 5,
+      "wins": 1,
+      "wr_pct": 20.0,
+      "net_pnl": -16053.00289999861,
+      "max_dd_pct": 0.0
+    },
+    {
+      "month": "2026-04",
+      "trades": 13,
+      "wins": 3,
+      "wr_pct": 23.076923076923077,
+      "net_pnl": -41428.36587499581,
+      "max_dd_pct": 0.0
+    }
+  ],
+  "by_dayofweek": [
+    {
+      "day": "Friday",
+      "trades": 8,
+      "wr_pct": 0.0,
+      "net_pnl": -42700.34467499741
+    },
+    {
+      "day": "Monday",
+      "trades": 8,
+      "wr_pct": 12.5,
+      "net_pnl": -29902.5820999982
+    },
+    {
+      "day": "Sunday",
+      "trades": 2,
+      "wr_pct": 0.0,
+      "net_pnl": -10503.068299999395
+    },
+    {
+      "day": "Thursday",
+      "trades": 8,
+      "wr_pct": 12.5,
+      "net_pnl": -42684.320726842925
+    },
+    {
+      "day": "Tuesday",
+      "trades": 13,
+      "wr_pct": 15.384615384615385,
+      "net_pnl": -51470.181941170435
+    },
+    {
+      "day": "Wednesday",
+      "trades": 3,
+      "wr_pct": 100.0,
+      "net_pnl": 11080.078813085747
+    }
+  ],
+  "by_regime": [
+    {
+      "regime": "TRENDING_DOWN",
+      "trades": 26,
+      "wr_pct": 15.384615384615385,
+      "net_pnl": -109383.35462992819
+    },
+    {
+      "regime": "TRENDING_UP",
+      "trades": 16,
+      "wr_pct": 18.75,
+      "net_pnl": -56797.06429999442
+    }
+  ],
+  "loss_reason_breakdown": {
+    "FAKEOUT": 27,
+    "TREND_REVERSAL": 2,
+    "CHOPPY_NOISE": 4,
+    "RISKGUARD_TRIP": 0,
+    "EOD": 0
+  },
+  "exit_strategy_breakdown_wins": {
+    "TP": 7
+  },
+  "exit_strategy_breakdown_losses": {
+    "SL": 33,
+    "REGIME_EXIT": 2
+  }
+}

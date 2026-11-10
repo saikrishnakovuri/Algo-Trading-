@@ -1,0 +1,44 @@
+[
+  {
+    "symbol": "BAJFINANCE",
+    "date": "2026-03-24 09:55",
+    "time": "09:55",
+    "type": "CE",
+    "setup": "PULLBACK",
+    "qty": 354,
+    "entry": 825.9715293749999,
+    "sl": 811.85,
+    "target": 822.0714285714287,
+    "outcome": "TARGET HIT",
+    "score": 4.3125,
+    "pnl": -1526.14
+  },
+  {
+    "symbol": "BAJFINANCE",
+    "date": "2026-03-24 11:30",
+    "time": "11:30",
+    "type": "CE",
+    "setup": "PULLBACK",
+    "qty": 380,
+    "entry": 827.0246806875,
+    "sl": 813.9,
+    "target": 823.1621428571428,
+    "outcome": "TARGET HIT",
+    "score": 2.8125,
+    "pnl": -1624.17
+  },
+  {
+    "symbol": "BAJFINANCE",
+    "date": "2026-03-24 12:20",
+    "time": "12:20",
+    "type": "CE",
+    "setup": "TRAP_REVERSAL",
+    "qty": 393,
+    "entry": 837.3555935625,
+    "sl": 824.7,
+    "target": 846.7821428571428,
+    "outcome": "BREAKEVEN",
+    "score": 6.375,
+    "pnl": -164.54
+  }
+]

@@ -1,0 +1,83 @@
+"""
+STEP-BY-STEP GUIDE: Fix Gemini API 429 Quota Error
+
+========================================================
+OPTION A: Get New API Key (Recommended if on Free Tier)
+========================================================
+
+1. Open: https://aistudio.google.com/app/apikeys
+   
+2. Click "Create API Key"
+   
+3. Select "Create API key in new Google Cloud project"
+   - This automatically enables billing capability
+   - Google gives you $300 free credit for new projects
+   
+4. Copy the new key shown in the dialog
+   
+5. Update your .env files:
+   
+   Backend (.env):
+   GEMINI_API_KEY=<NEW_KEY_HERE>
+   
+   Root (.env):
+   GEMINI_API_KEY=<NEW_KEY_HERE>
+
+6. Test with: python debug_gemini_api.py
+   - If success → Billing is enabled ✓
+   - If 429 again → Go to Option B
+
+========================================================
+OPTION B: Enable Billing on Existing Project (Advanced)
+========================================================
+
+1. Go to: https://console.cloud.google.com/
+   
+2. Select your project (dropdown top-left)
+   
+3. Go to "Billing" in left menu
+   
+4. Click "Link billing account"
+   
+5. Create NEW billing account if needed:
+   - Add valid credit/debit card
+   - Verify billing address
+   - Accept terms
+   
+6. Link the billing account to your project
+   
+7. Wait 5-10 minutes for quotas to update
+   
+8. Test with: python debug_gemini_api.py
+
+========================================================
+OPTION C: Verify Current Key is Actually Paid
+========================================================
+
+If you believe your key should already be paid:
+
+1. Go to: https://console.cloud.google.com/
+   
+2. Look at top-right → Your active project name
+   
+3. Click on it → Should see: "Billing: ENABLED"
+   - If it says "Billing: NOT ENABLED" → Do Option B
+   
+4. Go to: APIs & Services → Credentials
+   
+5. Find your API key → Click it
+   
+6. Check "API restrictions":
+   - Should include "Generative Language API"
+   - Should NOT have "Free trial only" label
+   
+7. Go to: APIs & Services → Quotas
+   
+8. Search for "Generative Language API"
+   
+9. Click it → Check "Requests per day":
+   - Free tier = 20 requests/day
+   - Paid = 1,000+ requests/day (depends on plan)
+
+========================================================
+"""

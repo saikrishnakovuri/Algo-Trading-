@@ -1,0 +1,969 @@
+{
+  "global_stats": {
+    "total_trades": 11265,
+    "total_pnl": 16421193.983653959,
+    "win_count": 4362,
+    "loss_count": 6900,
+    "win_rate_pct": 38.72170439414114,
+    "avg_win": 12759.770820398164,
+    "avg_loss": -5686.511063032275,
+    "gross_win": 55658120.31857679,
+    "gross_loss": -39236926.3349227,
+    "profit_factor": 1.418513770510063,
+    "max_drawdown_pct": 2.091353757818412,
+    "max_drawdown_money": 142.94
+  },
+  "mult_estimate": 1502.9999999999998,
+  "num_csv_files": 31,
+  "num_json_files": 27,
+  "strategy_stats": {
+    "VWAP_BOUNCE": {
+      "total_trades": 3459,
+      "total_pnl": 2697194.591679862,
+      "win_count": 1340,
+      "loss_count": 2119,
+      "win_rate_pct": 38.73952009251229,
+      "avg_win": 13233.234543702993,
+      "avg_loss": -7095.488294894816,
+      "gross_win": 17732534.28856201,
+      "gross_loss": -15035339.696882116,
+      "profit_factor": 1.1793903327797253,
+      "max_drawdown_pct": 0.7803596939187086,
+      "max_drawdown_money": 1052385.1789285773,
+      "median_win_points": null,
+      "median_loss_points": null,
+      "suggested": {
+        "suggested_qty": 150.0
+      }
+    },
+    "STRUCTURE_BOUNCE": {
+      "total_trades": 15,
+      "total_pnl": 2866.139999999997,
+      "win_count": 9,
+      "loss_count": 6,
+      "win_rate_pct": 60.0,
+      "avg_win": 7494.317777777778,
+      "avg_loss": -10763.786666666669,
+      "gross_win": 67448.86,
+      "gross_loss": -64582.72000000001,
+      "profit_factor": 1.0443793633962768,
+      "max_drawdown_pct": 0.955772761487333,
+      "max_drawdown_money": 61938.72,
+      "median_win_points": null,
+      "median_loss_points": null,
+      "suggested": {
+        "suggested_qty": 500.0
+      }
+    },
+    "MOMENTUM_BREAKOUT": {
+      "total_trades": 1960,
+      "total_pnl": 367964.54722314276,
+      "win_count": 670,
+      "loss_count": 1287,
+      "win_rate_pct": 34.183673469387756,
+      "avg_win": 6566.211914349493,
+      "avg_loss": -3132.3989396977618,
+      "gross_win": 4399361.9826141605,
+      "gross_loss": -4031397.435391019,
+      "profit_factor": 1.091274689017966,
+      "max_drawdown_pct": 6.212509236792709,
+      "max_drawdown_money": 104013.0751997984,
+      "median_win_points": 3.5,
+      "median_loss_points": 3.1,
+      "suggested": {
+        "suggested_sl_points": 3.255,
+        "suggested_target_points": 3.15,
+        "suggested_qty": 409.0
+      }
+    },
+    "CANDLESTICK": {
+      "total_trades": 2748,
+      "total_pnl": 11246127.056711508,
+      "win_count": 1380,
+      "loss_count": 1368,
+      "win_rate_pct": 50.21834061135371,
+      "avg_win": 14783.056489329474,
+      "avg_loss": -6691.879311815175,
+      "gross_win": 20400617.955274675,
+      "gross_loss": -9154490.89856316,
+      "profit_factor": 2.2284819747296543,
+      "max_drawdown_pct": 2.091353757818412,
+      "max_drawdown_money": 142.94,
+      "median_win_points": null,
+      "median_loss_points": null,
+      "suggested": {
+        "suggested_qty": 1.0
+      }
+    },
+    "MEAN_REVERSION": {
+      "total_trades": 1176,
+      "total_pnl": 1530473.717918872,
+      "win_count": 241,
+      "loss_count": 935,
+      "win_rate_pct": 20.493197278911566,
+      "avg_win": 30759.86949631035,
+      "avg_loss": -6291.609444590285,
+      "gross_win": 7413128.548610794,
+      "gross_loss": -5882654.830691917,
+      "profit_factor": 1.2601671799497478,
+      "max_drawdown_pct": 1.9497518000977152,
+      "max_drawdown_money": 1462.9337148809464,
+      "median_win_points": 2.84,
+      "median_loss_points": 1.14,
+      "suggested": {
+        "suggested_sl_points": 1.197,
+        "suggested_target_points": 2.556,
+        "suggested_qty": 150.0
+      }
+    },
+    "MARKET_MEMORY": {
+      "total_trades": 1907,
+      "total_pnl": 576567.9301205169,
+      "win_count": 722,
+      "loss_count": 1185,
+      "win_rate_pct": 37.860513896172,
+      "avg_win": 7818.59928464675,
+      "avg_loss": -4277.182070375042,
+      "gross_win": 5645028.683514954,
+      "gross_loss": -5068460.753394425,
+      "profit_factor": 1.113756021437947,
+      "max_drawdown_pct": 0.6677580808396942,
+      "max_drawdown_money": 798919.2299999809,
+      "median_win_points": null,
+      "median_loss_points": null,
+      "suggested": {
+        "suggested_qty": 150.0
+      }
+    }
+  },
+  "symbol_stats_sample": {
+    "NIFTY": {
+      "total_trades": 256,
+      "total_pnl": 1511710.2499999995,
+      "win_count": 120,
+      "loss_count": 136,
+      "win_rate_pct": 46.875,
+      "avg_win": 30748.202999999994,
+      "avg_loss": -16015.250808823535,
+      "gross_win": 3689784.3599999994,
+      "gross_loss": -2178074.110000001,
+      "profit_factor": 1.6940582246762934,
+      "max_drawdown_pct": 0.4762800501459656,
+      "max_drawdown_money": 180862.3099999999,
+      "suggested_qty": 500.0
+    },
+    "BANKNIFTY": {
+      "total_trades": 271,
+      "total_pnl": 2841587.3000000017,
+      "win_count": 142,
+      "loss_count": 129,
+      "win_rate_pct": 52.398523985239855,
+      "avg_win": 35356.38908450704,
+      "avg_loss": -16891.627519379843,
+      "gross_win": 5020607.25,
+      "gross_loss": -2179019.9499999997,
+      "profit_factor": 2.3040666745616534,
+      "max_drawdown_pct": 1.2550475857146015,
+      "max_drawdown_money": 155125.35,
+      "suggested_qty": 149.0
+    },
+    "RELIANCE": {
+      "total_trades": 751,
+      "total_pnl": -153747.21000000008,
+      "win_count": 245,
+      "loss_count": 506,
+      "win_rate_pct": 32.62316910785619,
+      "avg_win": 4558.334734693876,
+      "avg_loss": -2510.947075098813,
+      "gross_win": 1116792.0099999998,
+      "gross_loss": -1270539.2199999993,
+      "profit_factor": 0.8789905832265457,
+      "max_drawdown_pct": 3.00837280723349,
+      "max_drawdown_money": 120370.02,
+      "suggested_qty": 500.0
+    },
+    "HDFCBANK": {
+      "total_trades": 681,
+      "total_pnl": -15074.060000000176,
+      "win_count": 250,
+      "loss_count": 429,
+      "win_rate_pct": 36.71071953010279,
+      "avg_win": 3549.2934400000004,
+      "avg_loss": -2103.4904895104896,
+      "gross_win": 887323.3600000001,
+      "gross_loss": -902397.42,
+      "profit_factor": 0.9832955417802502,
+      "max_drawdown_pct": 76.44407835185922,
+      "max_drawdown_money": 168904.72,
+      "suggested_qty": 500.0
+    },
+    "SBIN": {
+      "total_trades": 510,
+      "total_pnl": 98442.42000000009,
+      "win_count": 189,
+      "loss_count": 321,
+      "win_rate_pct": 37.05882352941177,
+      "avg_win": 3865.602116402116,
+      "avg_loss": -1969.3345171339563,
+      "gross_win": 730598.7999999999,
+      "gross_loss": -632156.38,
+      "profit_factor": 1.1557247907550976,
+      "max_drawdown_pct": 2.1701937701478546,
+      "max_drawdown_money": 20418.42,
+      "suggested_qty": 500.0
+    },
+    "ICICIBANK": {
+      "total_trades": 543,
+      "total_pnl": -134304.17000000007,
+      "win_count": 181,
+      "loss_count": 361,
+      "win_rate_pct": 33.33333333333333,
+      "avg_win": 5128.571823204419,
+      "avg_loss": -2943.4229085872566,
+      "gross_win": 928271.4999999999,
+      "gross_loss": -1062575.6699999997,
+      "profit_factor": 0.8736050769918345,
+      "max_drawdown_pct": 0.0,
+      "max_drawdown_money": 0.0,
+      "suggested_qty": 500.0
+    },
+    "INFY": {
+      "total_trades": 437,
+      "total_pnl": 70536.96000000002,
+      "win_count": 169,
+      "loss_count": 268,
+      "win_rate_pct": 38.672768878718536,
+      "avg_win": 5699.470295857984,
+      "avg_loss": -3330.871343283581,
+      "gross_win": 963210.4799999993,
+      "gross_loss": -892673.5199999998,
+      "profit_factor": 1.079017645779388,
+      "max_drawdown_pct": 3.107916058233745,
+      "max_drawdown_money": 6363.8,
+      "suggested_qty": 500.0
+    },
+    "TCS": {
+      "total_trades": 446,
+      "total_pnl": 38360.05000000003,
+      "win_count": 162,
+      "loss_count": 284,
+      "win_rate_pct": 36.32286995515695,
+      "avg_win": 9581.936543209878,
+      "avg_loss": -5330.6819366197215,
+      "gross_win": 1552273.7200000004,
+      "gross_loss": -1513913.6700000009,
+      "profit_factor": 1.0253383338562492,
+      "max_drawdown_pct": 10.606639228743349,
+      "max_drawdown_money": 115223.20999999999,
+      "suggested_qty": 500.0
+    },
+    "ADANIENT": {
+      "total_trades": 702,
+      "total_pnl": 764556.9993319729,
+      "win_count": 261,
+      "loss_count": 441,
+      "win_rate_pct": 37.17948717948718,
+      "avg_win": 13130.853467197638,
+      "avg_loss": -6037.632098881185,
+      "gross_win": 3427152.7549385834,
+      "gross_loss": -2662595.7556066024,
+      "profit_factor": 1.2871472313144272,
+      "max_drawdown_pct": 0.7713287841947815,
+      "max_drawdown_money": 278254.1399999956,
+      "suggested_qty": 150.0
+    },
+    "ADANIPORTS": {
+      "total_trades": 645,
+      "total_pnl": 756716.0663251666,
+      "win_count": 238,
+      "loss_count": 407,
+      "win_rate_pct": 36.89922480620155,
+      "avg_win": 11049.456993505639,
+      "avg_loss": -4602.099995403367,
+      "gross_win": 2629770.764454342,
+      "gross_loss": -1873054.6981291703,
+      "profit_factor": 1.4040010508401002,
+      "max_drawdown_pct": 17.660993405795622,
+      "max_drawdown_money": 389.80189296998356,
+      "suggested_qty": 150.0
+    },
+    "APOLLOHOSP": {
+      "total_trades": 618,
+      "total_pnl": 1669599.532943059,
+      "win_count": 268,
+      "loss_count": 350,
+      "win_rate_pct": 43.36569579288026,
+      "avg_win": 13216.038967235849,
+      "avg_loss": -5349.425457931845,
+      "gross_win": 3541898.443219207,
+      "gross_loss": -1872298.9102761457,
+      "profit_factor": 1.891737704796726,
+      "max_drawdown_pct": 0.312281822089805,
+      "max_drawdown_money": 496790.2807142858,
+      "suggested_qty": 150.0
+    },
+    "ASIANPAINT": {
+      "total_trades": 658,
+      "total_pnl": 1745401.0027241108,
+      "win_count": 231,
+      "loss_count": 427,
+      "win_rate_pct": 35.1063829787234,
+      "avg_win": 15241.867285555223,
+      "avg_loss": -4158.010164494476,
+      "gross_win": 3520871.3429632564,
+      "gross_loss": -1775470.3402391411,
+      "profit_factor": 1.9830640158646775,
+      "max_drawdown_pct": 1.5981765731462823,
+      "max_drawdown_money": 542.9305006586698,
+      "suggested_qty": 150.0
+    },
+    "AXISBANK": {
+      "total_trades": 739,
+      "total_pnl": 182619.5790792689,
+      "win_count": 322,
+      "loss_count": 417,
+      "win_rate_pct": 43.5723951285521,
+      "avg_win": 9615.4777324733,
+      "avg_loss": -6986.964630160997,
+      "gross_win": 3096183.8298564027,
+      "gross_loss": -2913564.250777136,
+      "profit_factor": 1.0626790979572722,
+      "max_drawdown_pct": 3.265082210900776,
+      "max_drawdown_money": 73.10056115115546,
+      "suggested_qty": 1.0
+    },
+    "BAJFINANCE": {
+      "total_trades": 691,
+      "total_pnl": 1707360.2157219213,
+      "win_count": 249,
+      "loss_count": 442,
+      "win_rate_pct": 36.03473227206946,
+      "avg_win": 18392.16589832961,
+      "avg_loss": -6498.39161303653,
+      "gross_win": 4579649.308684073,
+      "gross_loss": -2872289.0929621463,
+      "profit_factor": 1.594424920494738,
+      "max_drawdown_pct": 2.0335828909095115,
+      "max_drawdown_money": 396604.01714284415,
+      "suggested_qty": 1.0
+    },
+    "BANKBARODA": {
+      "total_trades": 12,
+      "total_pnl": -8502.45,
+      "win_count": 7,
+      "loss_count": 5,
+      "win_rate_pct": 58.333333333333336,
+      "avg_win": 887.3700000000001,
+      "avg_loss": -2942.808,
+      "gross_win": 6211.590000000001,
+      "gross_loss": -14714.04,
+      "profit_factor": 0.4221539427648695,
+      "max_drawdown_pct": 2.4373624080028224,
+      "max_drawdown_money": 14714.04,
+      "suggested_qty": 1.0
+    },
+    "BHARTIARTL": {
+      "total_trades": 584,
+      "total_pnl": 345325.0667065908,
+      "win_count": 207,
+      "loss_count": 377,
+      "win_rate_pct": 35.44520547945205,
+      "avg_win": 11632.001535307227,
+      "avg_loss": -5470.820294700277,
+      "gross_win": 2407824.317808596,
+      "gross_loss": -2062499.2511020047,
+      "profit_factor": 1.1674303961672141,
+      "max_drawdown_pct": 1.826318038875455,
+      "max_drawdown_money": 383.7733855868487,
+      "suggested_qty": 150.0
+    },
+    "BPCL": {
+      "total_trades": 624,
+      "total_pnl": 67618.96293891815,
+      "win_count": 224,
+      "loss_count": 400,
+      "win_rate_pct": 35.8974358974359,
+      "avg_win": 10918.043438672734,
+      "avg_loss": -5945.056918309436,
+      "gross_win": 2445641.7302626926,
+      "gross_loss": -2378022.7673237743,
+      "profit_factor": 1.0284349518718092,
+      "max_drawdown_pct": 22.77301843765733,
+      "max_drawdown_money": 3470.451248865141,
+      "suggested_qty": 150.0
+    },
+    "CIPLA": {
+      "total_trades": 307,
+      "total_pnl": 1232460.382442051,
+      "win_count": 149,
+      "loss_count": 158,
+      "win_rate_pct": 48.534201954397396,
+      "avg_win": 22916.610793847205,
+      "avg_loss": -13810.852062285967,
+      "gross_win": 3414575.0082832337,
+      "gross_loss": -2182114.6258411827,
+      "profit_factor": 1.5648009356827213,
+      "max_drawdown_pct": 0.6229047113444852,
+      "max_drawdown_money": 59774.07999999982,
+      "suggested_qty": 1.0
+    },
+    "COALINDIA": {
+      "total_trades": 14,
+      "total_pnl": 1296.770000000001,
+      "win_count": 6,
+      "loss_count": 8,
+      "win_rate_pct": 42.857142857142854,
+      "avg_win": 4669.403333333334,
+      "avg_loss": -3339.9562499999997,
+      "gross_win": 28016.420000000002,
+      "gross_loss": -26719.649999999998,
+      "profit_factor": 1.04853244709418,
+      "max_drawdown_pct": 0.9205983184921169,
+      "max_drawdown_money": 15035.0,
+      "suggested_qty": 1.0
+    },
+    "DELHIVERY": {
+      "total_trades": 17,
+      "total_pnl": 1145.789999999999,
+      "win_count": 6,
+      "loss_count": 11,
+      "win_rate_pct": 35.294117647058826,
+      "avg_win": 10029.179999999998,
+      "avg_loss": -5366.29909090909,
+      "gross_win": 60175.079999999994,
+      "gross_loss": -59029.28999999999,
+      "profit_factor": 1.0194105333132077,
+      "max_drawdown_pct": 0.9749355390601466,
+      "max_drawdown_money": 44567.94,
+      "suggested_qty": 1.0
+    }
+  },
+  "top_wins": [
+    {
+      "symbol": "ASIANPAINT",
+      "strategy": "MEAN_REVERSION",
+      "pnl_inr": 689702.5700000023,
+      "timestamp": "2026-03-09 11:40:00"
+    },
+    {
+      "symbol": "BAJFINANCE",
+      "strategy": "MEAN_REVERSION",
+      "pnl_inr": 633050.3699999982,
+      "timestamp": "2026-03-18 13:40:00"
+    },
+    {
+      "symbol": "BRITANNIA",
+      "strategy": "MEAN_REVERSION",
+      "pnl_inr": 496489.5199999979,
+      "timestamp": "2026-03-12 12:10:00"
+    },
+    {
+      "symbol": "BAJFINANCE",
+      "strategy": "MEAN_REVERSION",
+      "pnl_inr": 471305.1800000023,
+      "timestamp": "2026-03-12 11:05:00"
+    },
+    {
+      "symbol": "BAJAJFINSV",
+      "strategy": "MEAN_REVERSION",
+      "pnl_inr": 355509.2000000013,
+      "timestamp": "2026-03-04 15:15:00"
+    },
+    {
+      "symbol": "BHARTIARTL",
+      "strategy": "MEAN_REVERSION",
+      "pnl_inr": 318552.97999999643,
+      "timestamp": "2025-11-06 12:15:00"
+    },
+    {
+      "symbol": "BANKNIFTY",
+      "strategy": "MEAN_REVERSION",
+      "pnl_inr": 313840.0,
+      "timestamp": "2026-03-09 10:30:00+05:30"
+    },
+    {
+      "symbol": "ADANIENT",
+      "strategy": "MEAN_REVERSION",
+      "pnl_inr": 297575.35999999824,
+      "timestamp": "2026-03-16 10:10:00"
+    },
+    {
+      "symbol": "BAJAJFINSV",
+      "strategy": "MEAN_REVERSION",
+      "pnl_inr": 268893.28000000276,
+      "timestamp": "2026-03-12 10:35:00"
+    },
+    {
+      "symbol": "BAJFINANCE",
+      "strategy": "CANDLESTICK",
+      "pnl_inr": 233198.30000000133,
+      "timestamp": "2026-03-25 11:10:00"
+    }
+  ],
+  "top_losses": [
+    {
+      "symbol": "BAJFINANCE",
+      "strategy": "VWAP_BOUNCE",
+      "pnl_inr": -149608.00000000044,
+      "timestamp": "2026-03-16 11:15:00"
+    },
+    {
+      "symbol": "BPCL",
+      "strategy": "VWAP_BOUNCE",
+      "pnl_inr": -130840.60000000142,
+      "timestamp": "2026-03-19 10:40:00"
+    },
+    {
+      "symbol": "ADANIENT",
+      "strategy": "VWAP_BOUNCE",
+      "pnl_inr": -126767.99999999921,
+      "timestamp": "2026-03-13 11:30:00"
+    },
+    {
+      "symbol": "CIPLA",
+      "strategy": "VWAP_BOUNCE",
+      "pnl_inr": -99154.58928571254,
+      "timestamp": "2026-03-27 14:50:00"
+    },
+    {
+      "symbol": "BRITANNIA",
+      "strategy": "VWAP_BOUNCE",
+      "pnl_inr": -99142.48214285553,
+      "timestamp": "2026-03-27 14:35:00"
+    },
+    {
+      "symbol": "BAJAJ-AUTO",
+      "strategy": "VWAP_BOUNCE",
+      "pnl_inr": -98780.28571428623,
+      "timestamp": "2026-03-19 10:25:00"
+    },
+    {
+      "symbol": "BRITANNIA",
+      "strategy": "MARKET_MEMORY",
+      "pnl_inr": -98603.73999999806,
+      "timestamp": "2026-03-23 11:55:00"
+    },
+    {
+      "symbol": "ADANIENT",
+      "strategy": "VWAP_BOUNCE",
+      "pnl_inr": -98603.71428571359,
+      "timestamp": "2026-03-23 11:30:00"
+    },
+    {
+      "symbol": "BAJAJFINSV",
+      "strategy": "VWAP_BOUNCE",
+      "pnl_inr": -98181.4857142856,
+      "timestamp": "2026-03-27 14:35:00"
+    },
+    {
+      "symbol": "BAJFINANCE",
+      "strategy": "VWAP_BOUNCE",
+      "pnl_inr": -98006.73571428501,
+      "timestamp": "2026-03-12 13:20:00"
+    }
+  ],
+  "mismatches_sample": [
+    {
+      "symbol": "ADANIENT",
+      "strategy": "MOMENTUM_BREAKOUT",
+      "pnl_points": -5.0,
+      "pnl_inr": -720.0,
+      "calc_with_mult": -7514.999999999999,
+      "source": "data\\backtest_results_extracted\\combined_backtest_results.csv"
+    },
+    {
+      "symbol": "ADANIENT",
+      "strategy": "MOMENTUM_BREAKOUT",
+      "pnl_points": 27.5,
+      "pnl_inr": 3052.5,
+      "calc_with_mult": 41332.49999999999,
+      "source": "data\\backtest_results_extracted\\combined_backtest_results.csv"
+    },
+    {
+      "symbol": "ADANIENT",
+      "strategy": "MEAN_REVERSION",
+      "pnl_points": -4.35,
+      "pnl_inr": -9996.3,
+      "calc_with_mult": -6538.049999999998,
+      "source": "data\\backtest_results_extracted\\combined_backtest_results.csv"
+    },
+    {
+      "symbol": "ADANIENT",
+      "strategy": "MEAN_REVERSION",
+      "pnl_points": 3.5,
+      "pnl_inr": 15624.0,
+      "calc_with_mult": 5260.499999999999,
+      "source": "data\\backtest_results_extracted\\combined_backtest_results.csv"
+    },
+    {
+      "symbol": "ADANIENT",
+      "strategy": "MOMENTUM_BREAKOUT",
+      "pnl_points": 10.5,
+      "pnl_inr": 2289.0,
+      "calc_with_mult": 15781.499999999998,
+      "source": "data\\backtest_results_extracted\\combined_backtest_results.csv"
+    },
+    {
+      "symbol": "ADANIENT",
+      "strategy": "MOMENTUM_BREAKOUT",
+      "pnl_points": 11.6,
+      "pnl_inr": 1786.4,
+      "calc_with_mult": 17434.799999999996,
+      "source": "data\\backtest_results_extracted\\combined_backtest_results.csv"
+    },
+    {
+      "symbol": "ADANIENT",
+      "strategy": "MOMENTUM_BREAKOUT",
+      "pnl_points": -7.8,
+      "pnl_inr": -1271.4,
+      "calc_with_mult": -11723.399999999998,
+      "source": "data\\backtest_results_extracted\\combined_backtest_results.csv"
+    },
+    {
+      "symbol": "ADANIENT",
+      "strategy": "MOMENTUM_BREAKOUT",
+      "pnl_points": -15.6,
+      "pnl_inr": -826.8,
+      "calc_with_mult": -23446.799999999996,
+      "source": "data\\backtest_results_extracted\\combined_backtest_results.csv"
+    },
+    {
+      "symbol": "ADANIENT",
+      "strategy": "MEAN_REVERSION",
+      "pnl_points": 6.68,
+      "pnl_inr": 15009.96,
+      "calc_with_mult": 10040.039999999997,
+      "source": "data\\backtest_results_extracted\\combined_backtest_results.csv"
+    },
+    {
+      "symbol": "ADANIENT",
+      "strategy": "MOMENTUM_BREAKOUT",
+      "pnl_points": -3.8,
+      "pnl_inr": -695.4,
+      "calc_with_mult": -5711.399999999999,
+      "source": "data\\backtest_results_extracted\\combined_backtest_results.csv"
+    },
+    {
+      "symbol": "ADANIENT",
+      "strategy": "MOMENTUM_BREAKOUT",
+      "pnl_points": 23.9,
+      "pnl_inr": 4756.1,
+      "calc_with_mult": 35921.69999999999,
+      "source": "data\\backtest_results_extracted\\combined_backtest_results.csv"
+    },
+    {
+      "symbol": "ADANIENT",
+      "strategy": "MOMENTUM_BREAKOUT",
+      "pnl_points": 3.1,
+      "pnl_inr": 864.9,
+      "calc_with_mult": 4659.299999999999,
+      "source": "data\\backtest_results_extracted\\combined_backtest_results.csv"
+    },
+    {
+      "symbol": "ADANIENT",
+      "strategy": "MOMENTUM_BREAKOUT",
+      "pnl_points": -17.4,
+      "pnl_inr": -3862.8,
+      "calc_with_mult": -26152.199999999993,
+      "source": "data\\backtest_results_extracted\\combined_backtest_results.csv"
+    },
+    {
+      "symbol": "ADANIENT",
+      "strategy": "MOMENTUM_BREAKOUT",
+      "pnl_points": -7.8,
+      "pnl_inr": -1458.6,
+      "calc_with_mult": -11723.399999999998,
+      "source": "data\\backtest_results_extracted\\combined_backtest_results.csv"
+    },
+    {
+      "symbol": "ADANIENT",
+      "strategy": "MOMENTUM_BREAKOUT",
+      "pnl_points": -11.5,
+      "pnl_inr": -2541.5,
+      "calc_with_mult": -17284.499999999996,
+      "source": "data\\backtest_results_extracted\\combined_backtest_results.csv"
+    },
+    {
+      "symbol": "ADANIENT",
+      "strategy": "MEAN_REVERSION",
+      "pnl_points": -0.1,
+      "pnl_inr": -240.9,
+      "calc_with_mult": -150.29999999999998,
+      "source": "data\\backtest_results_extracted\\combined_backtest_results.csv"
+    },
+    {
+      "symbol": "ADANIENT",
+      "strategy": "MEAN_REVERSION",
+      "pnl_points": -2.87,
+      "pnl_inr": -9999.08,
+      "calc_with_mult": -4313.61,
+      "source": "data\\backtest_results_extracted\\combined_backtest_results.csv"
+    },
+    {
+      "symbol": "ADANIPORTS",
+      "strategy": "MEAN_REVERSION",
+      "pnl_points": 4.4,
+      "pnl_inr": 21780.0,
+      "calc_with_mult": 6613.2,
+      "source": "data\\backtest_results_extracted\\combined_backtest_results.csv"
+    },
+    {
+      "symbol": "ADANIPORTS",
+      "strategy": "MOMENTUM_BREAKOUT",
+      "pnl_points": 17.0,
+      "pnl_inr": 2227.0,
+      "calc_with_mult": 25550.999999999996,
+      "source": "data\\backtest_results_extracted\\combined_backtest_results.csv"
+    },
+    {
+      "symbol": "ADANIPORTS",
+      "strategy": "MEAN_REVERSION",
+      "pnl_points": -2.98,
+      "pnl_inr": -9997.9,
+      "calc_with_mult": -4478.94,
+      "source": "data\\backtest_results_extracted\\combined_backtest_results.csv"
+    },
+    {
+      "symbol": "ADANIPORTS",
+      "strategy": "MEAN_REVERSION",
+      "pnl_points": -2.96,
+      "pnl_inr": -9998.88,
+      "calc_with_mult": -4448.879999999999,
+      "source": "data\\backtest_results_extracted\\combined_backtest_results.csv"
+    },
+    {
+      "symbol": "ADANIPORTS",
+      "strategy": "MOMENTUM_BREAKOUT",
+      "pnl_points": -1.6,
+      "pnl_inr": -289.6,
+      "calc_with_mult": -2404.7999999999997,
+      "source": "data\\backtest_results_extracted\\combined_backtest_results.csv"
+    },
+    {
+      "symbol": "ADANIPORTS",
+      "strategy": "MOMENTUM_BREAKOUT",
+      "pnl_points": 5.4,
+      "pnl_inr": 831.6,
+      "calc_with_mult": 8116.199999999999,
+      "source": "data\\backtest_results_extracted\\combined_backtest_results.csv"
+    },
+    {
+      "symbol": "ADANIPORTS",
+      "strategy": "MOMENTUM_BREAKOUT",
+      "pnl_points": 6.3,
+      "pnl_inr": 1921.5,
+      "calc_with_mult": 9468.899999999998,
+      "source": "data\\backtest_results_extracted\\combined_backtest_results.csv"
+    },
+    {
+      "symbol": "ADANIPORTS",
+      "strategy": "MOMENTUM_BREAKOUT",
+      "pnl_points": -1.7,
+      "pnl_inr": -336.6,
+      "calc_with_mult": -2555.0999999999995,
+      "source": "data\\backtest_results_extracted\\combined_backtest_results.csv"
+    },
+    {
+      "symbol": "ADANIPORTS",
+      "strategy": "MOMENTUM_BREAKOUT",
+      "pnl_points": -2.0,
+      "pnl_inr": -578.0,
+      "calc_with_mult": -3005.9999999999995,
+      "source": "data\\backtest_results_extracted\\combined_backtest_results.csv"
+    },
+    {
+      "symbol": "ADANIPORTS",
+      "strategy": "MOMENTUM_BREAKOUT",
+      "pnl_points": 10.9,
+      "pnl_inr": 2507.0,
+      "calc_with_mult": 16382.699999999999,
+      "source": "data\\backtest_results_extracted\\combined_backtest_results.csv"
+    },
+    {
+      "symbol": "ADANIPORTS",
+      "strategy": "MOMENTUM_BREAKOUT",
+      "pnl_points": -9.3,
+      "pnl_inr": -2576.1,
+      "calc_with_mult": -13977.9,
+      "source": "data\\backtest_results_extracted\\combined_backtest_results.csv"
+    },
+    {
+      "symbol": "ADANIPORTS",
+      "strategy": "MOMENTUM_BREAKOUT",
+      "pnl_points": -2.6,
+      "pnl_inr": -899.6,
+      "calc_with_mult": -3907.7999999999997,
+      "source": "data\\backtest_results_extracted\\combined_backtest_results.csv"
+    },
+    {
+      "symbol": "ADANIPORTS",
+      "strategy": "MOMENTUM_BREAKOUT",
+      "pnl_points": -3.8,
+      "pnl_inr": -1425.0,
+      "calc_with_mult": -5711.399999999999,
+      "source": "data\\backtest_results_extracted\\combined_backtest_results.csv"
+    },
+    {
+      "symbol": "ADANIPORTS",
+      "strategy": "MOMENTUM_BREAKOUT",
+      "pnl_points": 1.3,
+      "pnl_inr": 362.7,
+      "calc_with_mult": 1953.8999999999999,
+      "source": "data\\backtest_results_extracted\\combined_backtest_results.csv"
+    },
+    {
+      "symbol": "APOLLOHOSP",
+      "strategy": "MEAN_REVERSION",
+      "pnl_points": 9.0,
+      "pnl_inr": 18000.0,
+      "calc_with_mult": 13526.999999999998,
+      "source": "data\\backtest_results_extracted\\combined_backtest_results.csv"
+    },
+    {
+      "symbol": "APOLLOHOSP",
+      "strategy": "MOMENTUM_BREAKOUT",
+      "pnl_points": -1.5,
+      "pnl_inr": -102.0,
+      "calc_with_mult": -2254.4999999999995,
+      "source": "data\\backtest_results_extracted\\combined_backtest_results.csv"
+    },
+    {
+      "symbol": "APOLLOHOSP",
+      "strategy": "MEAN_REVERSION",
+      "pnl_points": -5.0,
+      "pnl_inr": -10000.0,
+      "calc_with_mult": -7514.999999999999,
+      "source": "data\\backtest_results_extracted\\combined_backtest_results.csv"
+    },
+    {
+      "symbol": "APOLLOHOSP",
+      "strategy": "MOMENTUM_BREAKOUT",
+      "pnl_points": 45.5,
+      "pnl_inr": 1683.5,
+      "calc_with_mult": 68386.49999999999,
+      "source": "data\\backtest_results_extracted\\combined_backtest_results.csv"
+    },
+    {
+      "symbol": "APOLLOHOSP",
+      "strategy": "MEAN_REVERSION",
+      "pnl_points": -5.0,
+      "pnl_inr": -10000.0,
+      "calc_with_mult": -7514.999999999999,
+      "source": "data\\backtest_results_extracted\\combined_backtest_results.csv"
+    },
+    {
+      "symbol": "APOLLOHOSP",
+      "strategy": "MEAN_REVERSION",
+      "pnl_points": 23.0,
+      "pnl_inr": 46000.0,
+      "calc_with_mult": 34568.99999999999,
+      "source": "data\\backtest_results_extracted\\combined_backtest_results.csv"
+    },
+    {
+      "symbol": "APOLLOHOSP",
+      "strategy": "MEAN_REVERSION",
+      "pnl_points": -5.0,
+      "pnl_inr": -10000.0,
+      "calc_with_mult": -7514.999999999999,
+      "source": "data\\backtest_results_extracted\\combined_backtest_results.csv"
+    },
+    {
+      "symbol": "APOLLOHOSP",
+      "strategy": "MEAN_REVERSION",
+      "pnl_points": -5.0,
+      "pnl_inr": -10000.0,
+      "calc_with_mult": -7514.999999999999,
+      "source": "data\\backtest_results_extracted\\combined_backtest_results.csv"
+    },
+    {
+      "symbol": "APOLLOHOSP",
+      "strategy": "MOMENTUM_BREAKOUT",
+      "pnl_points": 34.0,
+      "pnl_inr": 2754.0,
+      "calc_with_mult": 51101.99999999999,
+      "source": "data\\backtest_results_extracted\\combined_backtest_results.csv"
+    },
+    {
+      "symbol": "APOLLOHOSP",
+      "strategy": "MEAN_REVERSION",
+      "pnl_points": -5.0,
+      "pnl_inr": -10000.0,
+      "calc_with_mult": -7514.999999999999,
+      "source": "data\\backtest_results_extracted\\combined_backtest_results.csv"
+    },
+    {
+      "symbol": "APOLLOHOSP",
+      "strategy": "MEAN_REVERSION",
+      "pnl_points": -5.0,
+      "pnl_inr": -10000.0,
+      "calc_with_mult": -7514.999999999999,
+      "source": "data\\backtest_results_extracted\\combined_backtest_results.csv"
+    },
+    {
+      "symbol": "APOLLOHOSP",
+      "strategy": "MOMENTUM_BREAKOUT",
+      "pnl_points": 15.0,
+      "pnl_inr": 900.0,
+      "calc_with_mult": 22544.999999999996,
+      "source": "data\\backtest_results_extracted\\combined_backtest_results.csv"
+    },
+    {
+      "symbol": "APOLLOHOSP",
+      "strategy": "MOMENTUM_BREAKOUT",
+      "pnl_points": -97.5,
+      "pnl_inr": -9945.0,
+      "calc_with_mult": -146542.49999999997,
+      "source": "data\\backtest_results_extracted\\combined_backtest_results.csv"
+    },
+    {
+      "symbol": "APOLLOHOSP",
+      "strategy": "MEAN_REVERSION",
+      "pnl_points": -5.0,
+      "pnl_inr": -10000.0,
+      "calc_with_mult": -7514.999999999999,
+      "source": "data\\backtest_results_extracted\\combined_backtest_results.csv"
+    },
+    {
+      "symbol": "APOLLOHOSP",
+      "strategy": "MEAN_REVERSION",
+      "pnl_points": -5.0,
+      "pnl_inr": -10000.0,
+      "calc_with_mult": -7514.999999999999,
+      "source": "data\\backtest_results_extracted\\combined_backtest_results.csv"
+    },
+    {
+      "symbol": "APOLLOHOSP",
+      "strategy": "MEAN_REVERSION",
+      "pnl_points": -5.0,
+      "pnl_inr": -10000.0,
+      "calc_with_mult": -7514.999999999999,
+      "source": "data\\backtest_results_extracted\\combined_backtest_results.csv"
+    },
+    {
+      "symbol": "APOLLOHOSP",
+      "strategy": "MEAN_REVERSION",
+      "pnl_points": 41.85,
+      "pnl_inr": 83700.0,
+      "calc_with_mult": 62900.549999999996,
+      "source": "data\\backtest_results_extracted\\combined_backtest_results.csv"
+    },
+    {
+      "symbol": "ASIANPAINT",
+      "strategy": "MEAN_REVERSION",
+      "pnl_points": -2.14,
+      "pnl_inr": -9998.08,
+      "calc_with_mult": -3216.4199999999996,
+      "source": "data\\backtest_results_extracted\\combined_backtest_results.csv"
+    },
+    {
+      "symbol": "ASIANPAINT",
+      "strategy": "MOMENTUM_BREAKOUT",
+      "pnl_points": 11.0,
+      "pnl_inr": 1507.0,
+      "calc_with_mult": 16532.999999999996,
+      "source": "data\\backtest_results_extracted\\combined_backtest_results.csv"
+    }
+  ],
+  "oos_summary_files": {},
+  "total_trades_parsed": 11265
+}

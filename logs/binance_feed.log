@@ -1,0 +1,12 @@
+2026-04-30 08:52:19,545 | BINANCE_WS | Redis Connection Failed: Error 10061 connecting to localhost:6379. No connection could be made because the target machine actively refused it.
+2026-04-30 08:52:29,126 | BINANCE_WS | Redis Connection Failed: Error 10061 connecting to localhost:6379. No connection could be made because the target machine actively refused it.
+2026-04-30 09:01:05,369 | BINANCE_WS | DRY RUN: Using Redis Stub for Binance
+2026-04-30 09:01:05,665 | BINANCE_WS | Subscribing to streams: ['btcusdt@kline_1m', 'btcusdt@kline_5m', 'ethusdt@kline_1m', 'ethusdt@kline_5m', 'solusdt@kline_1m', 'solusdt@kline_5m', 'xrpusdt@kline_1m', 'xrpusdt@kline_5m']
+2026-04-30 09:03:48,468 | BINANCE_WS | DRY RUN: Using Redis Stub for Binance
+2026-04-30 09:03:48,734 | BINANCE_WS | Subscribing to streams: ['btcusdt@kline_1m', 'btcusdt@kline_5m', 'ethusdt@kline_1m', 'ethusdt@kline_5m', 'solusdt@kline_1m', 'solusdt@kline_5m', 'xrpusdt@kline_1m', 'xrpusdt@kline_5m']
+2026-04-30 09:12:37,945 | BINANCE_WS | DRY RUN: Using Redis Stub for Binance
+2026-04-30 09:12:38,207 | BINANCE_WS | Subscribing to streams: ['btcusdt@kline_1m', 'btcusdt@kline_5m', 'ethusdt@kline_1m', 'ethusdt@kline_5m', 'solusdt@kline_1m', 'solusdt@kline_5m', 'xrpusdt@kline_1m', 'xrpusdt@kline_5m']
+2026-04-30 09:22:49,809 | BINANCE_WS | DRY RUN: Using Redis Stub for Binance
+2026-04-30 09:22:50,079 | BINANCE_WS | Subscribing to streams: ['btcusdt@kline_1m', 'btcusdt@kline_5m', 'ethusdt@kline_1m', 'ethusdt@kline_5m', 'solusdt@kline_1m', 'solusdt@kline_5m', 'xrpusdt@kline_1m', 'xrpusdt@kline_5m']
+2026-04-30 09:28:28,477 | BINANCE_WS | DRY RUN: Using Redis Stub for Binance
+2026-04-30 09:28:28,754 | BINANCE_WS | Subscribing to streams: ['btcusdt@kline_1m', 'btcusdt@kline_5m', 'ethusdt@kline_1m', 'ethusdt@kline_5m', 'solusdt@kline_1m', 'solusdt@kline_5m', 'xrpusdt@kline_1m', 'xrpusdt@kline_5m']

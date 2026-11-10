@@ -1,0 +1,32 @@
+
+# ============================================================
+# YAML CONFIG EDITOR ROUTES
+# ============================================================
+import yaml
+
+@api_router.get("/config/files")
+def list_config_files():
+    config_dir = os.path.join(ROOT_DIR, "config")
+    if not os.path.exists(config_dir): return []
+    return [f for f in os.listdir(config_dir) if f.endswith(('.yaml', '.yml'))]
+
+@api_router.get("/config/content/{filename}")
+def get_config_content(filename: str):
+    path = os.path.join(ROOT_DIR, "config", filename)
+    if not os.path.exists(path): raise HTTPException(404)
+    with open(path, 'r') as f:
+        return {"content": f.read()}
+
+@api_router.put("/config/content/{filename}")
+async def save_config_content(filename: str, request: Request):
+    data = await request.json()
+    path = os.path.join(ROOT_DIR, "config", filename)
+    # Validation: try to parse as YAML
+    try:
+        yaml.safe_load(data['content'])
+    except Exception as e:
+        raise HTTPException(400, detail=f"Invalid YAML: {str(e)}")
+        
+    with open(path, 'w') as f:
+        f.write(data['content'])
+    return {"status": "saved"}

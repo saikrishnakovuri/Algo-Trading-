@@ -1,0 +1,10 @@
+Traceback (most recent call last):
+  File "scripts/run_circuit_breaker_test.py", line 70, in <module>
+    tester.run_custom(START, END)
+  File "scripts/run_circuit_breaker_test.py", line 21, in run_custom
+    self.load_all_2025(self.target_stocks)
+  File "scripts\..\scripts\run_annual_compounded.py", line 35, in load_all_2025
+    print(f"\U0001f4ca Loading 2025 Data for {len(symbols)} stocks...")
+  File "C:\Program Files\Python37\lib\encodings\cp1252.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+UnicodeEncodeError: 'charmap' codec can't encode character '\U0001f4ca' in position 0: character maps to <undefined>

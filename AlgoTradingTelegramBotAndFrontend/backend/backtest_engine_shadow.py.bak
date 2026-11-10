@@ -1,0 +1,224 @@
+# backend/backtest_engine.py
+import sys, os
+# Add parent directory to sys.path to import modules
+sys.path.insert(0, os.path.join(os.path.dirname(__file__), '../..'))
+
+import pandas as pd
+import numpy as np
+from datetime import datetime, timedelta
+import threading, uuid, logging
+from modules.options.signal_adapter import IndexLiquidityTrapAdapter
+from modules.v3_utils import (SL_TYPES, TP_TYPES, BROKERAGE_EQUITY,
+                               NIFTY_LOT_SIZE, BANKNIFTY_LOT_SIZE,
+                               NO_TRADE_ZONES)
+
+logger = logging.getLogger(__name__)
+DATA_PATH = os.path.join(os.path.dirname(__file__), "../../data/angel_historical")
+
+# ADAPTIVE EXIT DECISION TREE (from compressed_context.md — DO NOT CHANGE)
+def get_adaptive_exit(trend, volatility, bounce_type):
+    if trend in ["RANGING"] or volatility == "HIGH_VOL":
+        return None  # NO TRADE
+    if bounce_type in ["VWAP_PUSH", "EMA_BOUNCE"]:
+        return None  # NO TRADE
+    if trend == "TRENDING_DOWN":
+        return {"sl": "ATR_1", "tp": "TRAIL_ATR_1.5"}
+    if trend == "TRENDING_UP":
+        return {"sl": "EMA20", "tp": "FIX_2R"}
+    if volatility == "LOW_VOL":
+        return {"sl": "ATR_1", "tp": "TRAIL_ATR_1.5"}
+    if bounce_type == "SUPPORT_BOUNCE":
+        return {"sl": "ATR_2", "tp": "PARTIAL_1R_TRAIL"}
+    if bounce_type == "VWAP_PULL":
+        return {"sl": "ATR_1", "tp": "TRAIL_ATR_1.5"}
+    return {"sl": "ATR_2", "tp": "FIX_2R"}  # default
+
+def load_data(symbol: str) -> pd.DataFrame:
+    path = f"{DATA_PATH}/{symbol}_1m.csv"
+    if not os.path.exists(path):
+        raise FileNotFoundError(f"No data for {symbol}: {path}")
+    df = pd.read_csv(path)
+    if "datetime" in df.columns:
+        df["datetime"] = pd.to_datetime(df["datetime"])
+        df.set_index("datetime", inplace=True)
+    elif "Date" in df.columns:
+        df["Date"] = pd.to_datetime(df["Date"])
+        df.set_index("Date", inplace=True)
+    return df
+
+def resample_5m(df: pd.DataFrame) -> pd.DataFrame:
+    # Handle cases where column names might be capitalized
+    df.columns = [c.lower() for c in df.columns]
+    return df.resample("5min").agg({
+        "open": "first", "high": "max",
+        "low": "min", "close": "last", "volume": "sum"
+    }).dropna()
+
+def simulate_trade(entry_bar, df_5m, sl_type, tp_type, risk_amt, config):
+    """Simulate single trade from entry bar forward. Returns trade result dict."""
+    entry_price = entry_bar["close"]
+    atr = entry_bar.get("atr", entry_price * 0.005)
+    
+    # SL distance
+    sl_map = {
+        "ATR_1": atr, "ATR_2": 2*atr, "EMA20": abs(entry_price - entry_bar.get("ema20", entry_price - atr)),
+        "CANDLE": abs(entry_bar["high"] - entry_bar["low"]),
+        "FIXED_1PCT": entry_price * 0.01, "SWING": 1.5*atr
+    }
+    sl_dist = sl_map.get(sl_type, atr)
+    sl_dist = max(sl_dist, entry_price * 0.002)  # min 0.2%
+    
+    sl_price = entry_price - sl_dist  # long trade
+    tp_price = entry_price + (2.0 * sl_dist)  # default 2R
+    
+    if "1.5R" in tp_type: tp_price = entry_price + 1.5*sl_dist
+    if "FIB" in tp_type: tp_price = entry_price + 1.618*sl_dist
+    
+    qty = int(risk_amt / sl_dist) if sl_dist > 0 else 1
+    qty = max(1, min(qty, 500))
+    
+    exit_price, exit_reason = entry_price, "EOD"
+    
+    for i, (idx, bar) in enumerate(df_5m.iterrows()):
+        if i == 0: continue
+        if bar["low"] <= sl_price:
+            exit_price, exit_reason = sl_price, "SL"
+            break
+        if bar["high"] >= tp_price:
+            exit_price, exit_reason = tp_price, "TP"
+            break
+        if i > 78:  # 78 bars = ~6.5 hours
+            exit_price, exit_reason = bar["close"], "TIME"
+            break
+    
+    gross_pnl = (exit_price - entry_price) * qty
+    net_pnl = gross_pnl - BROKERAGE_EQUITY
+    r_multiple = (exit_price - entry_price) / sl_dist if sl_dist > 0 else 0
+    
+    return {
+        "entry_price": entry_price, "exit_price": exit_price,
+        "exit_reason": exit_reason, "qty": qty,
+        "gross_pnl": round(gross_pnl, 2), "net_pnl": round(net_pnl, 2),
+        "r_multiple": round(r_multiple, 2), "sl": round(sl_price, 2),
+        "tp": round(tp_price, 2)
+    }
+
+def compute_metrics(trades: list, initial_capital: float) -> dict:
+    if not trades: return {}
+    pnls = [t["net_pnl"] for t in trades]
+    wins = [p for p in pnls if p > 0]
+    losses = [p for p in pnls if p <= 0]
+    
+    capital = initial_capital
+    equity = []
+    max_cap = initial_capital
+    max_dd = 0
+    for p in pnls:
+        capital += p
+        equity.append(capital)
+        max_cap = max(max_cap, capital)
+        dd = (max_cap - capital) / max_cap if max_cap > 0 else 0
+        max_dd = max(max_dd, dd)
+    
+    total_return = (capital - initial_capital) / initial_capital if initial_capital > 0 else 0
+    daily_returns = pd.Series(pnls) / initial_capital if initial_capital > 0 else pd.Series([0])
+    sharpe = (daily_returns.mean() / daily_returns.std() * np.sqrt(252)
+              if daily_returns.std() > 0 else 0)
+    
+    return {
+        "total_trades": len(trades),
+        "wins": len(wins), "losses": len(losses),
+        "win_rate": round(len(wins)/len(trades)*100, 1) if trades else 0,
+        "total_pnl": round(sum(pnls), 2),
+        "avg_pnl": round(np.mean(pnls), 2) if pnls else 0,
+        "profit_factor": round(abs(sum(wins)/sum(losses)), 2) if losses and sum(losses) != 0 else (round(sum(wins), 2) if wins else 0),
+        "max_drawdown_pct": round(max_dd*100, 2),
+        "sharpe": round(sharpe, 2),
+        "total_return_pct": round(total_return*100, 2),
+        "final_capital": round(capital, 2),
+        "equity_curve": [round(e, 2) for e in equity]
+    }
+
+def run(config: dict) -> dict:
+    stocks = config.get("stocks", ["NIFTY", "BANKNIFTY"])
+    start = pd.Timestamp(config.get("start_date", "2025-11-01"))
+    end = pd.Timestamp(config.get("end_date", "2026-01-31"))
+    entry_strategy = config.get("entry_strategy", "VWAP_BOUNCE")
+    sl_type = config.get("sl_type", "ATR_2")
+    tp_type = config.get("tp_type", "FIX_2R")
+    capital = config.get("capital", 1000000.0)
+    risk_pct = config.get("risk_pct", 1.0) / 100
+    risk_amt = capital * risk_pct
+    all_trades = []
+    
+    adapter = IndexLiquidityTrapAdapter()
+    
+    for symbol in stocks:
+        try:
+            df_1m = load_data(symbol)
+            df_1m = df_1m[(df_1m.index >= start) & (df_1m.index <= end)]
+            if df_1m.empty: continue
+            df_5m = resample_5m(df_1m)
+            # Add indicators
+            df_5m["ema20"] = df_5m["close"].ewm(span=20).mean()
+            df_5m["vwap"] = (df_5m["close"] * df_5m["volume"]).cumsum() / df_5m["volume"].cumsum()
+            df_5m["atr"] = (df_5m["high"] - df_5m["low"]).rolling(14).mean()
+            
+            # evaluate_signal expects: df_5m, symbol, vix_value, pcr_value, oi_data, is_expiry_day
+            # Since backtest might not have VIX/PCR, use defaults
+            for i in range(50, len(df_5m)):
+                sub_df = df_5m.iloc[:i+1]
+                is_expiry = (sub_df.index[-1].weekday() == 3 and symbol == "NIFTY") or (sub_df.index[-1].weekday() == 2 and symbol == "BANKNIFTY")
+                sig = adapter.evaluate_signal(sub_df, symbol, 15.0, 1.0, {}, is_expiry)
+                
+                if sig and sig['strategy'] == entry_strategy:
+                    entry_bar = df_5m.iloc[i].to_dict()
+                    entry_bar["atr"] = df_5m["atr"].iloc[i]
+                    entry_bar["ema20"] = df_5m["ema20"].iloc[i]
+                    future_bars = df_5m.iloc[i:]
+                    result = simulate_trade(entry_bar, future_bars, sl_type, tp_type, risk_amt, config)
+                    result.update({
+                        "symbol": symbol,
+                        "entry_time": str(df_5m.index[i]),
+                        "strategy": entry_strategy,
+                        "context_tags": sig.get("adaptive_exits", {}).get('context', 'Unknown')
+                    })
+                    all_trades.append(result)
+                    # Skip some bars to avoid multiple entries for same signal if needed
+                    # i += 10 
+        except FileNotFoundError:
+            logger.warning(f"[Backtest] No data for {symbol}, skipping")
+        except Exception as e:
+            logger.error(f"[Backtest] Error on {symbol}: {e}")
+    
+    metrics = compute_metrics(all_trades, capital)
+    return {"trades": all_trades, "metrics": metrics, "config": config}
+
+def grid_search(config: dict) -> dict:
+    sl_types = config.get("sl_types", SL_TYPES)
+    tp_types = config.get("tp_types", TP_TYPES)
+    results = []
+    threads = []
+    lock = threading.Lock()
+    
+    def run_combo(sl, tp):
+        c = {**config, "sl_type": sl, "tp_type": tp}
+        r = run(c)
+        with lock:
+            results.append({
+                "sl_type": sl, "tp_type": tp,
+                **r.get("metrics", {}),
+                "combo": f"{sl}+{tp}"
+            })
+    
+    for sl in sl_types:
+        for tp in tp_types:
+            t = threading.Thread(target=run_combo, args=(sl, tp))
+            threads.append(t)
+            t.start()
+    
+    for t in threads:
+        t.join()
+    
+    results.sort(key=lambda x: x.get("total_pnl", 0), reverse=True)
+    return {"results": results, "total_combos": len(results)}

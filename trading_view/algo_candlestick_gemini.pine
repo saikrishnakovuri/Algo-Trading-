@@ -1,0 +1,117 @@
+//@version=6
+indicator("Algo Candlestick Master - Gemini Pro", overlay=true, max_labels_count=500)
+
+// =========================================================================
+// INPUTS & PARAMETERS
+// =========================================================================
+grp_trend = "Trend Settings"
+len_ema_fast = input.int(9, "EMA Fast (9)", group=grp_trend)
+len_ema_med  = input.int(20, "EMA Medium (20)", group=grp_trend)
+len_ema_slow = input.int(50, "EMA Slow (50)", group=grp_trend)
+
+grp_smc = "SMC Settings"
+lookback = input.int(20, "Structure Lookback", group=grp_smc)
+show_fvg = input.bool(true, "Show Fair Value Gaps", group=grp_smc)
+
+grp_risk = "Risk Settings"
+sl_buffer = input.float(10.0, "SL Buffer Points", group=grp_risk)
+
+// =========================================================================
+// CORE INDICATORS
+// =========================================================================
+ema_fast = ta.ema(close, len_ema_fast)
+ema_med  = ta.ema(close, len_ema_med)
+ema_slow = ta.ema(close, len_ema_slow)
+vwapVal  = ta.vwap(close)
+
+plot(ema_fast, color=color.new(color.blue, 70), title="EMA 9")
+plot(ema_med, color=color.new(color.orange, 50), title="EMA 20", linewidth=2)
+plot(ema_slow, color=color.new(color.red, 70), title="EMA 50")
+plot(vwapVal, color=color.new(color.fuchsia, 50), title="VWAP", linewidth=1, style=plot.style_linebr)
+
+// Trend Definition
+is_uptrend   = close > ema_slow and ema_fast > ema_med
+is_downtrend = close < ema_slow and ema_fast < ema_med
+
+// =========================================================================
+// SMC COMPONENTS (FVG, SWEEP, CHoCH)
+// =========================================================================
+// 1. Fair Value Gap (FVG)
+is_fvg_up = low > high[2] and close[1] > high[2]
+is_fvg_dn = high < low[2] and close[1] < low[2]
+
+if show_fvg and is_fvg_up
+    box.new(bar_index[2], high[2], bar_index, low, bgcolor=color.new(color.green, 90), border_color=na)
+if show_fvg and is_fvg_dn
+    box.new(bar_index[2], low[2], bar_index, high, bgcolor=color.new(color.red, 90), border_color=na)
+
+// 2. Liquidity Sweep
+hi_recent = ta.highest(high, lookback)[1]
+lo_recent = ta.lowest(low, lookback)[1]
+sweep_hi = high > hi_recent and close < hi_recent
+sweep_lo = low < lo_recent and close > lo_recent
+
+// 3. CHoCH (Change of Character - Proxy)
+hh = ta.highest(high, lookback)
+ll = ta.lowest(low, lookback)
+choch_up = ta.crossover(close, hi_recent)
+choch_dn = ta.crossunder(close, lo_recent)
+
+// =========================================================================
+// CANDLESTICK PATTERNS
+// =========================================================================
+body_size = math.abs(close - open)
+bullish_engulfing = close > open and close[1] < open[1] and close >= open[1] and (close - open) > (open[1] - close[1])
+bearish_engulfing = close < open and close[1] > open[1] and close <= open[1] and (open - close) > (close[1] - open[1])
+is_hammer = (math.min(open, close) - low) > body_size * 2 and (high - math.max(open, close)) < body_size
+is_star   = (high - math.max(open, close)) > body_size * 2 and (math.min(open, close) - low) < body_size
+
+// =========================================================================
+// CONFLUENCE ENTRY & EXIT
+// =========================================================================
+var int position = 0
+var float entry_price = 0.0
+var float trailing_sl = 0.0
+
+// LONG Logic: Uptrend + (Pullback to EMA/VWAP) + (Pattern) + (SMC Confluence: FVG or Sweep or CHoCH)
+long_pullback = low <= ema_med * 1.002 or low <= vwapVal * 1.001
+long_pattern  = bullish_engulfing or is_hammer
+long_smc      = is_fvg_up or sweep_lo or choch_up
+long_signal   = is_uptrend and long_pullback and long_pattern and long_smc
+
+// SHORT Logic: Downtrend + (Pullback to EMA/VWAP) + (Pattern) + (SMC Confluence: FVG or Sweep or CHoCH)
+short_pullback = high >= ema_med * 0.998 or high >= vwapVal * 0.999
+short_pattern  = bearish_engulfing or is_star
+short_smc      = is_fvg_dn or sweep_hi or choch_dn
+short_signal   = is_downtrend and short_pullback and short_pattern and short_smc
+
+if long_signal and position <= 0
+    position := 1
+    entry_price := close
+    trailing_sl := low - sl_buffer
+    label.new(bar_index, low, "LONG-SMC\n" + str.tostring(entry_price, "#.##"), style=label.style_label_up, color=color.green, textcolor=color.white, size=size.small)
+
+if short_signal and position >= 0
+    position := -1
+    entry_price := close
+    trailing_sl := high + sl_buffer
+    label.new(bar_index, high, "SHORT-SMC\n" + str.tostring(entry_price, "#.##"), style=label.style_label_down, color=color.red, textcolor=color.white, size=size.small)
+
+// Trailing SL
+if position == 1
+    trailing_sl := math.max(trailing_sl, low - sl_buffer)
+else if position == -1
+    trailing_sl := math.min(trailing_sl, high + sl_buffer)
+
+// Exits
+exit_long = position == 1 and close <= trailing_sl
+exit_short = position == -1 and close >= trailing_sl
+
+if exit_long
+    label.new(bar_index, high, "EXIT LONG\nP&L: " + str.tostring(close - entry_price, "#.##"), style=label.style_label_down, color=color.gray, textcolor=color.white, size=size.small)
+    position := 0
+
+if exit_short
+    label.new(bar_index, low, "EXIT SHORT\nP&L: " + str.tostring(entry_price - close, "#.##"), style=label.style_label_up, color=color.gray, textcolor=color.white, size=size.small)
+    position := 0
+

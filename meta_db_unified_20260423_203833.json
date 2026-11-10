@@ -1,0 +1,30 @@
+[
+  {
+    "symbol": "HDFCBANK",
+    "date": "2026-03-27 14:30",
+    "time": "14:30",
+    "type": "PE",
+    "setup": "TRAP_REVERSAL",
+    "qty": 551,
+    "entry": 758.24118975,
+    "sl": 767.3,
+    "target": 755.9457142857142,
+    "outcome": "TARGET HIT",
+    "score": 6.0,
+    "pnl": 1264.81
+  },
+  {
+    "symbol": "HDFCBANK",
+    "date": "2026-04-01 11:25",
+    "time": "11:25",
+    "type": "CE",
+    "setup": "TRAP_REVERSAL",
+    "qty": 524,
+    "entry": 747.6971367375,
+    "sl": 738.15,
+    "target": 752.6642857142858,
+    "outcome": "TIME_CUT_20M_LOSING",
+    "score": 6.24,
+    "pnl": -1570.5
+  }
+]

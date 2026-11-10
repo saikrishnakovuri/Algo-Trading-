@@ -1,0 +1,46 @@
+asset_classes:
+  NSE:
+    enabled: true
+    exchange_type: 1
+    data_source: "angel_one"
+    market_hours_key: "NSE"
+    position_sizing: "shares"
+    symbols_file: "config/universe_full.yaml"
+  
+  MCX:
+    enabled: true
+    exchange_type: 5
+    data_source: "angel_one"
+    market_hours_key: "MCX"
+    position_sizing: "lots"
+    symbols:
+      CRUDEOIL: {lot_size: 100, tick_size: 1}
+      GOLD: {lot_size: 100, tick_size: 10}
+      SILVER: {lot_size: 30, tick_size: 1}
+      NATURALGAS: {lot_size: 1250, tick_size: 0.10}
+      COPPER: {lot_size: 2500, tick_size: 0.05}
+  
+  CRYPTO:
+    enabled: true
+    data_source: "binance"
+    market_hours_key: "BINANCE"
+    position_sizing: "fractional"
+    paper_balance_usd: 10000
+    max_positions: 3
+    symbols:
+      BTCUSDT: {precision: 3, min_qty: 0.001}
+      ETHUSDT: {precision: 2, min_qty: 0.01}
+      SOLUSDT: {precision: 1, min_qty: 0.1}
+      XRPUSDT: {precision: 0, min_qty: 1}
+  
+  US_STOCKS:
+    enabled: false
+    data_source: "yfinance"
+    market_hours_key: "US_STOCK"
+    symbols: [AAPL, MSFT, NVDA, TSLA, AMZN, GOOGL, META, JPM, V, GS, MA, JNJ, UNH, PG, KO, WMT, MCD, HD, BA, CAT, XOM, CVX, CRM, NFLX, AMD, INTC, PYPL, SPY, QQQ, IWM]
+  
+  FOREX:
+    enabled: false
+    data_source: "yfinance"
+    market_hours_key: "FOREX"
+    symbols: [EURUSD=X, GBPUSD=X, USDJPY=X, AUDUSD=X, USDCHF=X, USDCAD=X, NZDUSD=X, EURGBP=X]

@@ -1,0 +1,98 @@
+{
+    "summary": {
+        "Total Trades": 146,
+        "WR": "41.1%",
+        "Net PnL": "INR 448,133",
+        "Max DD": "6.02%",
+        "PF": 1.79,
+        "Trades/Day": 1.17
+    },
+    "monthly": [
+        {
+            "Month": "2025-10",
+            "Trades": 4,
+            "WR": "100.0%",
+            "Net PnL": "INR 8,343",
+            "PF": 99,
+            "Regimes": "TRENDING_UP, TRENDING_DOWN"
+        },
+        {
+            "Month": "2025-11",
+            "Trades": 9,
+            "WR": "33.3%",
+            "Net PnL": "INR 1,573",
+            "PF": 1.34,
+            "Regimes": "TRENDING_UP, TRENDING_DOWN"
+        },
+        {
+            "Month": "2025-12",
+            "Trades": 11,
+            "WR": "45.5%",
+            "Net PnL": "INR 1,072",
+            "PF": 1.15,
+            "Regimes": "TRENDING_DOWN, TRENDING_UP"
+        },
+        {
+            "Month": "2026-01",
+            "Trades": 13,
+            "WR": "38.5%",
+            "Net PnL": "INR 8,073",
+            "PF": 1.49,
+            "Regimes": "TRENDING_DOWN"
+        },
+        {
+            "Month": "2026-02",
+            "Trades": 14,
+            "WR": "35.7%",
+            "Net PnL": "INR 37,696",
+            "PF": 2.11,
+            "Regimes": "TRENDING_DOWN, TRENDING_UP, CHOPPY"
+        },
+        {
+            "Month": "2026-03",
+            "Trades": 47,
+            "WR": "42.6%",
+            "Net PnL": "INR 270,806",
+            "PF": 2.09,
+            "Regimes": "TRENDING_DOWN, TRENDING_UP, CHOPPY, RANGING"
+        },
+        {
+            "Month": "2026-04",
+            "Trades": 48,
+            "WR": "37.5%",
+            "Net PnL": "INR 120,570",
+            "PF": 1.47,
+            "Regimes": "TRENDING_UP, TRENDING_DOWN"
+        }
+    ],
+    "strategies": [
+        {
+            "Strategy": "CANDLESTICK",
+            "Trades": 73,
+            "WR": "47.9%",
+            "Net PnL": "INR 271,060",
+            "Avg R": 0.42
+        },
+        {
+            "Strategy": "MEAN_REVERSION",
+            "Trades": 4,
+            "WR": "0.0%",
+            "Net PnL": "INR -5,423",
+            "Avg R": -1.0
+        },
+        {
+            "Strategy": "MOMENTUM_BREAKOUT",
+            "Trades": 33,
+            "WR": "36.4%",
+            "Net PnL": "INR 54,934",
+            "Avg R": 0.58
+        },
+        {
+            "Strategy": "VWAP_BOUNCE",
+            "Trades": 36,
+            "WR": "36.1%",
+            "Net PnL": "INR 127,562",
+            "Avg R": 0.04
+        }
+    ]
+}

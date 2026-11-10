@@ -1,0 +1,44 @@
+[
+  {
+    "symbol": "RELIANCE",
+    "date": "2025-10-28 11:40",
+    "time": "11:40",
+    "type": "PE",
+    "setup": "PULLBACK",
+    "qty": 295,
+    "entry": 1481.5173707499998,
+    "sl": 1498.45,
+    "target": 1439.1857976249994,
+    "outcome": "TIME_CUT_45M_STALLED",
+    "score": 6.35,
+    "pnl": -614.38
+  },
+  {
+    "symbol": "RELIANCE",
+    "date": "2025-10-28 12:05",
+    "time": "12:05",
+    "type": "CE",
+    "setup": "PULLBACK",
+    "qty": 291,
+    "entry": 1483.782670575,
+    "sl": 1466.65,
+    "target": 1526.6143470125003,
+    "outcome": "TIME_CUT_90M_FINAL",
+    "score": 6.0325,
+    "pnl": 616.14
+  },
+  {
+    "symbol": "RELIANCE",
+    "date": "2025-10-28 13:15",
+    "time": "13:15",
+    "type": "CE",
+    "setup": "TRAP_REVERSAL",
+    "qty": 268,
+    "entry": 1490.2891722,
+    "sl": 1471.65,
+    "target": 1536.8871026999996,
+    "outcome": "TIME_CUT_20M_LOSING",
+    "score": 7.010999999999999,
+    "pnl": -961.9
+  }
+]

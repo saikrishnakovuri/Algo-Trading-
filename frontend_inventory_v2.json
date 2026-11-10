@@ -1,0 +1,108 @@
+{
+  "phase": 2,
+  "generated_at": "2026-05-11T03:59:30.192703",
+  "tabs": [
+    {
+      "name": "Live P&L",
+      "component": "LivePnLTab"
+    },
+    {
+      "name": "System Settings",
+      "component": "SystemSettingsTab"
+    },
+    {
+      "name": "Regime Detection",
+      "component": "RegimeTab"
+    }
+  ],
+  "ui_elements": [
+    {
+      "tab": "BacktestTab.jsx",
+      "type": "button",
+      "label": "Run Backtest"
+    },
+    {
+      "tab": "CalendarTab.jsx",
+      "type": "button",
+      "label": "Add Date"
+    },
+    {
+      "tab": "ConfigsTab.jsx",
+      "type": "button",
+      "label": " loadConfig(name)}>{name}"
+    },
+    {
+      "tab": "ConfigsTab.jsx",
+      "type": "button",
+      "label": "Save"
+    },
+    {
+      "tab": "DashboardTab.jsx",
+      "type": "button",
+      "label": " api.system.start()}>Start"
+    },
+    {
+      "tab": "DashboardTab.jsx",
+      "type": "button",
+      "label": " api.system.stop()}>Stop"
+    },
+    {
+      "tab": "DocsTab.jsx",
+      "type": "button",
+      "label": " loadDoc(name)} style={{ display: 'block', width: '100%', marginBottom: '5px' }}>{name}"
+    },
+    {
+      "tab": "KillSwitch.jsx",
+      "type": "button",
+      "label": "\n      EMERGENCY KILL SWITCH\n    "
+    },
+    {
+      "tab": "NotificationsTab.jsx",
+      "type": "button",
+      "label": " api.notifications.test()}>Send Test Message"
+    },
+    {
+      "tab": "RiskGuardTab.jsx",
+      "type": "button",
+      "label": " api.riskguard.reset()}>Reset State"
+    },
+    {
+      "tab": "SaveBar.jsx",
+      "type": "button",
+      "label": "Save Changes"
+    },
+    {
+      "tab": "SaveBar.jsx",
+      "type": "button",
+      "label": "Revert"
+    },
+    {
+      "tab": "UniverseTab.jsx",
+      "type": "button",
+      "label": "Add Scrip"
+    }
+  ],
+  "api_calls_used": [
+    "backtest.history",
+    "backtest.run",
+    "configs.list",
+    "configs.get",
+    "configs.save",
+    "system.status",
+    "system.start",
+    "system.stop",
+    "docs.list",
+    "docs.get",
+    "logs.tail",
+    "notifications.subscriptions",
+    "notifications.test",
+    "regime.current",
+    "regime.history",
+    "riskguard.state",
+    "riskguard.reset",
+    "strategies.list",
+    "trades.history"
+  ],
+  "ws_subscriptions_used": [],
+  "save_buttons_present": []
+}

@@ -1,0 +1,46 @@
+regime_gating:
+  enabled: true
+  update_frequency_bars: 5    # Re-evaluate regime every 5 bars (25 minutes on 5m)
+  
+  # Which index to use for regime detection?
+  regime_index: "NIFTY_50"    # Use NIFTY 50 index data for regime classification
+  regime_index_token: "99926000"  # Angel One token for NIFTY 50
+  
+  # Strategy permissions per regime:
+  permissions:
+    TRENDING_UP:
+      MOMENTUM: {enabled: true, confidence_boost: 5}
+      MEAN_REVERSION: {enabled: true, confidence_penalty: 10}
+      SWEEP_RETEST: {enabled: true, confidence_boost: 0}
+      max_positions: 10
+      
+    TRENDING_DOWN:
+      MOMENTUM: {enabled: true, confidence_boost: 5}
+      MEAN_REVERSION: {enabled: true, confidence_penalty: 10}
+      SWEEP_RETEST: {enabled: true, confidence_boost: 5}
+      max_positions: 8
+      
+    RANGING:
+      MOMENTUM: {enabled: false}
+      MEAN_REVERSION: {enabled: true, confidence_boost: 10}
+      SWEEP_RETEST: {enabled: true, confidence_boost: 10}
+      max_positions: 10
+      
+    VOLATILE:
+      MOMENTUM: {enabled: true, confidence_penalty: 5}
+      MEAN_REVERSION: {enabled: false}
+      SWEEP_RETEST: {enabled: true, confidence_penalty: 5}
+      max_positions: 5
+      risk_per_trade_override: 0.005
+      
+    CHOPPY:
+      MOMENTUM: {enabled: false}
+      MEAN_REVERSION: {enabled: false}
+      SWEEP_RETEST: {enabled: false}
+      max_positions: 0
+      
+  # Transition rules:
+  transitions:
+    on_change_to_CHOPPY: "close_no_new"
+    on_change_to_VOLATILE: "tighten_stops"
+    cooldown_after_change_bars: 3

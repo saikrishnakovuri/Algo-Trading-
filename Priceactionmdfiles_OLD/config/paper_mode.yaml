@@ -1,0 +1,24 @@
+mode: PAPER    # PAPER | LIVE | BACKTEST
+
+paper_trading:
+  log_file: "logs/paper_trades.csv"
+  notify: true  # Print to console when trade would execute
+  track_pnl: true
+  
+  # Simulated execution
+  fill_model: "IMMEDIATE"  # Assume limit orders fill instantly
+  slippage_ticks: 1
+  commission_pct: 0.03
+
+live_trading:
+  broker: "angel_one"
+  max_capital_deployed: 250000  # 2.5L INR
+  max_risk_per_trade_pct: 0.45  # 0.25x Kelly
+  
+  # Safety overrides
+  hard_daily_loss_cap_pct: 2.0
+  hard_weekly_loss_cap_pct: 4.0
+  max_open_positions: 2
+  max_open_positions_v2: 10
+  no_new_trades_after: "14:30:00"
+  force_close_all_by: "15:10:00"

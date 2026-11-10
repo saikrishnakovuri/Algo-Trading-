@@ -1,0 +1,406 @@
+{
+  "phase": 2,
+  "generated_at": "2026-05-10T22:07:31.599189",
+  "tabs": [
+    {
+      "name": "Dashboard",
+      "route": "/",
+      "component": "Dashboard.jsx"
+    },
+    {
+      "name": "Trades",
+      "route": "/trades",
+      "component": "Trades.jsx"
+    },
+    {
+      "name": "AlertLogs",
+      "route": "/alerts",
+      "component": "AlertLogs.jsx"
+    },
+    {
+      "name": "NewTrade",
+      "route": "/new-trade",
+      "component": "NewTrade.jsx"
+    },
+    {
+      "name": "Analytics",
+      "route": "/analytics",
+      "component": "Analytics.jsx"
+    },
+    {
+      "name": "RiskLab",
+      "route": "/risk-lab",
+      "component": "RiskLab.jsx"
+    },
+    {
+      "name": "Backtesting",
+      "route": "/backtest",
+      "component": "Backtesting.jsx"
+    },
+    {
+      "name": "Integration",
+      "route": "/integration",
+      "component": "Integration.jsx"
+    },
+    {
+      "name": "Settings",
+      "route": "/settings",
+      "component": "Settings.jsx"
+    },
+    {
+      "name": "PADashboard",
+      "route": "/pa-engine",
+      "component": "PADashboard.jsx"
+    },
+    {
+      "name": "TradeJournal",
+      "route": "/journal",
+      "component": "TradeJournal.jsx"
+    },
+    {
+      "name": "ControlCenter",
+      "route": "/control-center",
+      "component": "ControlCenter.jsx"
+    },
+    {
+      "name": "MarketAnalysis",
+      "route": "/analysis",
+      "component": "MarketAnalysis.jsx"
+    },
+    {
+      "name": "ConfigExplorer",
+      "route": "/config-explorer",
+      "component": "ConfigExplorer.jsx"
+    }
+  ],
+  "ui_elements": [
+    {
+      "tab": "Backtesting",
+      "element_type": "button",
+      "label": "setConfig({...config, stocks: config.stocks.includ",
+      "interactive": true
+    },
+    {
+      "tab": "Backtesting",
+      "element_type": "button",
+      "label": "{activeJobId ?  : }\n              {activeJobId ? '",
+      "interactive": true
+    },
+    {
+      "tab": "Backtesting",
+      "element_type": "button",
+      "label": "View",
+      "interactive": true
+    },
+    {
+      "tab": "Backtesting",
+      "element_type": "form_input",
+      "interactive": true
+    },
+    {
+      "tab": "Backtesting",
+      "element_type": "form_input",
+      "interactive": true
+    },
+    {
+      "tab": "Backtesting",
+      "element_type": "form_input",
+      "interactive": true
+    },
+    {
+      "tab": "Backtesting",
+      "element_type": "form_input",
+      "interactive": true
+    },
+    {
+      "tab": "Backtesting",
+      "element_type": "form_input",
+      "interactive": true
+    },
+    {
+      "tab": "NewTrade",
+      "element_type": "button",
+      "label": "handleControl('resume-bot')}\n              disable",
+      "interactive": true
+    },
+    {
+      "tab": "NewTrade",
+      "element_type": "button",
+      "label": "handleControl('pause-bot')}\n              disabled",
+      "interactive": true
+    },
+    {
+      "tab": "NewTrade",
+      "element_type": "button",
+      "label": "setForm({...form, direction: 'CE'})}\n             ",
+      "interactive": true
+    },
+    {
+      "tab": "NewTrade",
+      "element_type": "button",
+      "label": "setForm({...form, direction: 'PE'})}\n             ",
+      "interactive": true
+    },
+    {
+      "tab": "NewTrade",
+      "element_type": "button",
+      "label": "{loading ?  : }\n              Execute Market Order",
+      "interactive": true
+    },
+    {
+      "tab": "NewTrade",
+      "element_type": "button",
+      "label": "handleControl('close-all')}\n                disabl",
+      "interactive": true
+    },
+    {
+      "tab": "NewTrade",
+      "element_type": "button",
+      "label": "handleControl('close-position', { trade_id: p.id }",
+      "interactive": true
+    },
+    {
+      "tab": "NewTrade",
+      "element_type": "form_input",
+      "interactive": true
+    },
+    {
+      "tab": "NewTrade",
+      "element_type": "form_input",
+      "interactive": true
+    },
+    {
+      "tab": "NewTrade",
+      "element_type": "form_input",
+      "interactive": true
+    },
+    {
+      "tab": "NewTrade",
+      "element_type": "form_input",
+      "interactive": true
+    },
+    {
+      "tab": "NewTrade",
+      "element_type": "form_input",
+      "interactive": true
+    },
+    {
+      "tab": "RiskLab",
+      "element_type": "form_input",
+      "interactive": true
+    },
+    {
+      "tab": "RiskLab",
+      "element_type": "form_input",
+      "interactive": true
+    },
+    {
+      "tab": "RiskLab",
+      "element_type": "form_input",
+      "interactive": true
+    },
+    {
+      "tab": "Settings",
+      "element_type": "button",
+      "label": "{saving ?  : }\n          SAVE CHANGES",
+      "interactive": true
+    },
+    {
+      "tab": "Settings",
+      "element_type": "button",
+      "label": "setSettings({...settings, bot_mode: 'PAPER'})}\n   ",
+      "interactive": true
+    },
+    {
+      "tab": "Settings",
+      "element_type": "button",
+      "label": "{\n                    if(window.confirm('WARNING: ",
+      "interactive": true
+    },
+    {
+      "tab": "Settings",
+      "element_type": "button",
+      "label": "{\n                      const current = settings.a",
+      "interactive": true
+    },
+    {
+      "tab": "Settings",
+      "element_type": "form_input",
+      "interactive": true
+    },
+    {
+      "tab": "Settings",
+      "element_type": "form_input",
+      "interactive": true
+    },
+    {
+      "tab": "Settings",
+      "element_type": "form_input",
+      "interactive": true
+    },
+    {
+      "tab": "Settings",
+      "element_type": "form_input",
+      "interactive": true
+    },
+    {
+      "tab": "Settings",
+      "element_type": "form_input",
+      "interactive": true
+    },
+    {
+      "tab": "Trades",
+      "element_type": "button",
+      "label": "Export CSV",
+      "interactive": true
+    },
+    {
+      "tab": "Trades",
+      "element_type": "form_input",
+      "interactive": true
+    },
+    {
+      "tab": "Trades",
+      "element_type": "form_input",
+      "interactive": true
+    },
+    {
+      "tab": "Trades",
+      "element_type": "form_input",
+      "interactive": true
+    },
+    {
+      "tab": "ConfigExplorer",
+      "element_type": "button",
+      "label": "{saving ? 'SAVING...' : 'SAVE CHANGES'}",
+      "interactive": true
+    },
+    {
+      "tab": "ConfigExplorer",
+      "element_type": "button",
+      "label": "loadFile(f)}\n                                class",
+      "interactive": true
+    },
+    {
+      "tab": "ControlCenter",
+      "element_type": "button",
+      "label": "sendControl('resume-bot')}\n                       ",
+      "interactive": true
+    },
+    {
+      "tab": "ControlCenter",
+      "element_type": "button",
+      "label": "sendControl('pause-bot')}\n                        ",
+      "interactive": true
+    },
+    {
+      "tab": "ControlCenter",
+      "element_type": "button",
+      "label": "sendControl('close-all')}\n                        ",
+      "interactive": true
+    },
+    {
+      "tab": "MarketAnalysis",
+      "element_type": "button",
+      "label": "REFRESH ANALYSIS",
+      "interactive": true
+    },
+    {
+      "tab": "MarketAnalysis",
+      "element_type": "button",
+      "label": "COMING SOON",
+      "interactive": true
+    },
+    {
+      "tab": "PADashboard",
+      "element_type": "button",
+      "label": "setActiveTab(tab)}\n                            cla",
+      "interactive": true
+    },
+    {
+      "tab": "PADashboard",
+      "element_type": "button",
+      "label": "toggle(s.name)}>\n                                {",
+      "interactive": true
+    },
+    {
+      "tab": "PADashboard",
+      "element_type": "button",
+      "label": "{saving ? 'SAVING...' : 'SAVE CONFIG'}",
+      "interactive": true
+    },
+    {
+      "tab": "PADashboard",
+      "element_type": "button",
+      "label": "{\n                                        const ac",
+      "interactive": true
+    },
+    {
+      "tab": "PADashboard",
+      "element_type": "button",
+      "label": "{\n                                        const ac",
+      "interactive": true
+    },
+    {
+      "tab": "PADashboard",
+      "element_type": "button",
+      "label": "loadFile(f.name)} \n                        classNa",
+      "interactive": true
+    },
+    {
+      "tab": "PADashboard",
+      "element_type": "form_input",
+      "interactive": true
+    },
+    {
+      "tab": "PADashboard",
+      "element_type": "form_input",
+      "interactive": true
+    },
+    {
+      "tab": "TradeJournal",
+      "element_type": "button",
+      "label": "setActiveTab(activeView === 'trades' ? 'analysis' ",
+      "interactive": true
+    },
+    {
+      "tab": "TradeJournal",
+      "element_type": "button",
+      "label": "IMPORT",
+      "interactive": true
+    },
+    {
+      "tab": "TradeJournal",
+      "element_type": "form_input",
+      "interactive": true
+    }
+  ],
+  "api_calls_used": [
+    "/api/backtest/${name}",
+    "/api/strategies",
+    "/api/analysis/smc",
+    "/api/control/${type}",
+    "/api/system/health",
+    "/api/content/${name}",
+    "GET /api/backtest/result/${activeJobId}",
+    "/api/trades?${params}",
+    "/api/analysis/indicators",
+    "/api/files",
+    "POST /api/control/${type}",
+    "/api/content/${selected}",
+    "GET /api/backtest/status/${activeJobId}",
+    "/api/config",
+    "/api/montecarlo",
+    "/api/live/context",
+    "/api/edge",
+    "/api/backtest/files",
+    "PUT /api/settings",
+    "/api/summary",
+    "/api/strategies/${encodeURIComponent(name)}/toggle",
+    "POST /api/backtest/run",
+    "/api/losses/analysis",
+    "/api/import-backtest"
+  ],
+  "ws_subscriptions_used": [],
+  "save_buttons_present": []
+}

@@ -1,0 +1,34 @@
+{
+    "summary": {
+        "Total Trades": 21,
+        "WR": "47.6%",
+        "Net PnL": "INR 8,993",
+        "Max DD": "1.26%",
+        "PF": 1.6,
+        "Trades/Day": 0.17
+    },
+    "monthly": [
+        {
+            "Month": "2026-05",
+            "Trades": 21,
+            "WR": "47.6%",
+            "Net PnL": "INR 8,993",
+            "PF": 1.6,
+            "Regimes": "TRENDING_DOWN, TRENDING_UP, BREAKOUT_SETUP"
+        }
+    ],
+    "strategies": [
+        {
+            "Strategy": "CANDLESTICK",
+            "Trades": 15,
+            "WR": "33.3%",
+            "Net PnL": "INR 6,740"
+        },
+        {
+            "Strategy": "MARKET_MEMORY",
+            "Trades": 6,
+            "WR": "83.3%",
+            "Net PnL": "INR 2,253"
+        }
+    ]
+}

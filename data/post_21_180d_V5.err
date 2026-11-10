@@ -1,0 +1,5 @@
+RiskGuard TRIPPED: Daily loss -38550.00 <= -30000.00
+RiskGuard cooldown (DAILY_LOSS) expired. Resuming.
+RiskGuard TRIPPED: Loss streak reached 5
+RiskGuard cooldown (LOSS_STREAK) expired. Resuming.
+RiskGuard TRIPPED: Loss streak reached 5

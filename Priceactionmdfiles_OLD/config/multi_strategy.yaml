@@ -1,0 +1,23 @@
+selector:
+  mode: highest_confidence
+  min_confidence_pct: 40
+  max_concurrent_trades: 3
+
+strategies:
+  momentum_breakout:
+    enabled: true
+    weight: 1.0
+  candlestick_patterns:
+    enabled: false
+    config_path: "config/candlestick.yaml"
+    weight: 1.0
+  mean_reversion:
+    enabled: true
+    config_path: "config/mean_reversion.yaml"
+    weight: 1.0
+
+backtest:
+  data_source: data/cache
+  default_interval: 5m
+  step_size: 3
+  capital: 1000000

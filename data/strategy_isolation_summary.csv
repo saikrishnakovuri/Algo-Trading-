@@ -1,0 +1,5 @@
+strategy,trades,wins,losses,win_pct,avg_win_r,avg_loss_r,expectancy_r,profit_factor,pnl_inr,max_dd_pct,top_exit_reason
+PULLBACK,2,0,2,0.0%,0.0,0.25,-0.25,0.0,-2475.51,0.1%,FORCE_CLOSE_15M_LOSER
+TRAP_REVERSAL,2,1,1,50.0%,0.02,0.04,-0.01,0.52,-89.27,0.02%,BREAKEVEN
+ZONE_REJECTION,26,4,22,15.4%,0.42,0.24,-0.138,0.32,-17585.15,2.06%,FORCE_CLOSE_15M_LOSER
+COMBINED (all),30,5,25,16.7%,0.34,0.23,-0.135,0.3,-20149.93,2.15%,FORCE_CLOSE_15M_LOSER

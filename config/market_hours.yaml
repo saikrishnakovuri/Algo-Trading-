@@ -1,0 +1,31 @@
+exchanges:
+  NSE:
+    open: "09:15"
+    close: "15:30"
+    entry_stop: "14:30"
+    timezone: "Asia/Kolkata"
+    is_24x7: false
+  MCX:
+    open: "09:00"
+    close: "23:30"
+    entry_stop: "23:00"
+    timezone: "Asia/Kolkata"
+    is_24x7: false
+  BINANCE:
+    open: "00:00"
+    close: "23:59"
+    entry_stop: "23:30"
+    timezone: "UTC"
+    is_24x7: true
+  US_STOCK:
+    open: "09:30"
+    close: "16:00"
+    entry_stop: "15:30"
+    timezone: "US/Eastern"
+    is_24x7: false
+  FOREX:
+    open: "00:00"
+    close: "23:59"
+    entry_stop: "23:30"
+    timezone: "UTC"
+    is_24x7: true

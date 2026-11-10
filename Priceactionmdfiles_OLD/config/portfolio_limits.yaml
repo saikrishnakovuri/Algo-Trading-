@@ -1,0 +1,37 @@
+portfolio_limits:
+  enabled: true
+  
+  # --- Sector Exposure Caps ---
+  sector_limits:
+    max_per_sector: 3              # Max 3 positions in same sector
+    max_sector_pct_of_capital: 30  # No more than 30% capital in one sector
+    
+  # --- Correlation Limits ---
+  correlation:
+    enabled: true
+    max_portfolio_correlation: 0.7  # Reject new trade if it raises avg correlation above 0.7
+    correlation_lookback_days: 30   # Use 30-day rolling correlation
+    correlation_matrix_file: "data/correlation_matrix.json"  # Pre-computed, refreshed daily
+  
+  # --- Directional Exposure ---
+  directional:
+    max_long_positions: 8          # Of 10 total, max 8 can be long
+    max_short_positions: 5         # Max 5 short
+    max_net_exposure_pct: 60       # Net (longs - shorts) / total ≤ 60%
+  
+  # --- Single Stock Limits ---
+  single_stock:
+    max_capital_per_stock_pct: 15  # No single position > 15% of capital
+    max_risk_per_stock_pct: 2      # No single position risk > 2% of capital
+    
+  # --- Beta-Weighted Exposure ---
+  beta_exposure:
+    enabled: true
+    max_portfolio_beta: 1.5        # Portfolio beta (weighted) must stay ≤ 1.5
+    # Uses beta_base from universe_full.yaml for each stock
+  
+  # --- Intraday Drawdown Circuit Breaker ---
+  circuit_breaker:
+    daily_loss_limit_pct: 3.0      # If daily P&L hits -3%, STOP all new trades
+    consecutive_loss_limit: 4      # If 4 consecutive losses, pause for 30 minutes
+    pause_duration_minutes: 30

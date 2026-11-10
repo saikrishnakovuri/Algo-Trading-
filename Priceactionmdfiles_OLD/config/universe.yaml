@@ -1,0 +1,87 @@
+universe:
+  name: "NIFTY50_EXTENDED"
+  # Default fallback if not found
+  default_beta: 1.0
+  
+  # symbol -> { sector, industry, index_membership, tags, beta_base }
+  # tags: USDINR_SENSITIVE, CRUDE_SENSITIVE, CURRENCY_SENSITIVE, GLOBAL_COMMODITIES, YIELD_SENSITIVE
+  mappings:
+    RELIANCE:
+      sector: "NIFTY_ENERGY"
+      industry: "Oil & Gas"
+      indices: ["NIFTY_50", "NIFTY_200"]
+      tags: ["CRUDE_SENSITIVE"]
+      beta_base: 1.15
+    HDFCBANK:
+      sector: "NIFTY_BANK"
+      industry: "Private Bank"
+      indices: ["NIFTY_50", "NIFTY_FINSERV"]
+      tags: ["YIELD_SENSITIVE"]
+      beta_base: 1.05
+    ICICIBANK:
+      sector: "NIFTY_BANK"
+      industry: "Private Bank"
+      indices: ["NIFTY_50", "NIFTY_FINSERV"]
+      tags: ["YIELD_SENSITIVE"]
+      beta_base: 1.10
+    INFY:
+      sector: "NIFTY_IT"
+      industry: "IT Services"
+      indices: ["NIFTY_50"]
+      tags: ["USDINR_SENSITIVE"]
+      beta_base: 0.95
+    TCS:
+      sector: "NIFTY_IT"
+      industry: "IT Services"
+      indices: ["NIFTY_50"]
+      tags: ["USDINR_SENSITIVE"]
+      beta_base: 0.85
+    ITC:
+      sector: "NIFTY_FMCG"
+      industry: "Tobacco/FMCG"
+      indices: ["NIFTY_50"]
+      tags: []
+      beta_base: 0.65
+    SBIN:
+      sector: "NIFTY_BANK"
+      industry: "PSU Bank"
+      indices: ["NIFTY_50", "NIFTY_PSE"]
+      tags: ["YIELD_SENSITIVE"]
+      beta_base: 1.25
+    BHARTIARTL:
+      sector: "NIFTY_MEDIA" # Or specialized sector
+      industry: "Telecom"
+      indices: ["NIFTY_50"]
+      tags: []
+      beta_base: 0.80
+    BAJFINANCE:
+      sector: "NIFTY_FINSERV"
+      industry: "NBFC"
+      indices: ["NIFTY_50"]
+      tags: ["YIELD_SENSITIVE"]
+      beta_base: 1.40
+    LT:
+      sector: "NIFTY_INFRA"
+      industry: "Engineering"
+      indices: ["NIFTY_50"]
+      tags: []
+      beta_base: 1.00
+    # Additional mappings would follow...
+    ASIANPAINT:
+      sector: "NIFTY_CONS_DURABLES"
+      industry: "Paints"
+      indices: ["NIFTY_50"]
+      tags: ["CRUDE_SENSITIVE"]
+      beta_base: 0.85
+    TATASTEEL:
+      sector: "NIFTY_METAL"
+      industry: "Steel"
+      indices: ["NIFTY_50"]
+      tags: ["GLOBAL_COMMODITIES"]
+      beta_base: 1.45
+    INDIGO:
+      sector: "NIFTY_CONS_DURABLES"
+      industry: "Aviation"
+      indices: ["NIFTY_200"]
+      tags: ["CRUDE_SENSITIVE"]
+      beta_base: 1.30

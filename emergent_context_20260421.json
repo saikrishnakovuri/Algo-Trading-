@@ -1,0 +1,1 @@
+{"threshold": 5.5, "strategies": ["TRAP_REVERSAL", "ZONE_REJECTION", "OB_MITIGATION"], "momentum_logic": "2-Stage (15m/30m)", "last_pnl": 21450, "status": "READY_FOR_PAPER"}

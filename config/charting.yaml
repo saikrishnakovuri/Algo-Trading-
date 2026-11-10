@@ -1,0 +1,10 @@
+charting:
+  default_timeframes: ["5m", "15m", "1h", "1D"]
+  volume_profile:
+    num_bins: 50
+    value_area_pct: 70        # 70% of volume defines the value area
+  session:
+    market_open: "09:15"
+    market_close: "15:30"
+    ib_duration_minutes: 30   # Initial Balance = first 30 min
+  cache_dir: "data/chart_cache/"

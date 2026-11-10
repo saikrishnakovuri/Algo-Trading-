@@ -1,0 +1,44 @@
+[
+  {
+    "symbol": "RELIANCE",
+    "date": "2026-02-26 11:40",
+    "time": "11:40",
+    "type": "CE",
+    "setup": "PULLBACK",
+    "qty": 190,
+    "entry": 1405.104050925,
+    "sl": 1378.85,
+    "target": 1470.7391782374998,
+    "outcome": "TIME_CUT_20M_LOSING",
+    "score": 4.3125,
+    "pnl": -57.77
+  },
+  {
+    "symbol": "RELIANCE",
+    "date": "2026-03-04 09:30",
+    "time": "09:30",
+    "type": "CE",
+    "setup": "PULLBACK",
+    "qty": 252,
+    "entry": 1316.31532875,
+    "sl": 1296.55,
+    "target": 1319.5714285714287,
+    "outcome": "TARGET HIT",
+    "score": 3.1875,
+    "pnl": 820.54
+  },
+  {
+    "symbol": "RELIANCE",
+    "date": "2026-03-06 09:55",
+    "time": "09:55",
+    "type": "CE",
+    "setup": "PULLBACK",
+    "qty": 242,
+    "entry": 1416.3152537250003,
+    "sl": 1395.65,
+    "target": 1467.9783880375007,
+    "outcome": "BREAKEVEN",
+    "score": 3.8625000000000003,
+    "pnl": -171.37
+  }
+]

@@ -1,0 +1,159 @@
+sizing:
+  base_risk_pct:
+    MONEY: 1.25
+    ELITE: 1.00
+    STRONG: 0.75
+    GOOD: 0.50
+    MINOR: 0.35
+    none: 0.35
+  kelly:
+    fraction: 0.25
+    min_trades_per_regime: 50
+    lookback_trades: 100
+    min_multiplier: 0.3
+    max_multiplier: 1.5
+  volatility_target:
+    target_annualised_pct: 15
+    lookback_sessions: 20
+    min_multiplier: 0.4
+    max_multiplier: 1.5
+  constraints:
+    position_cap_pct: 20
+    liquidity_cap_of_adv: 0.002       # 0.2% of avg daily turnover
+
+stop_loss:
+  zone_buffer_atr_by_regime:
+    TRENDING_HIGH_VOL: 0.35
+    TRENDING_LOW_VOL: 0.22
+    MEAN_REVERTING: 0.28
+  structure_buffer_atr: 0.15
+  chandelier_atr_multiplier:
+    TRENDING_HIGH_VOL: 2.0
+    TRENDING_LOW_VOL: 1.5
+    MEAN_REVERTING: 1.8
+  min_sl_distance_atr: 0.30
+  max_sl_distance_atr:
+    TRENDING_HIGH_VOL: 2.0
+    TRENDING_LOW_VOL: 3.5
+    MEAN_REVERTING: 2.5
+
+exits:
+  t1_min_r: 0.8
+  t2_range_r: [1.6, 2.5]
+  t3_min_r: 3.0
+  level_search_max_r: 4.0
+  allocations:
+    TRENDING_HIGH_VOL: [0.25, 0.35, 0.40]
+    TRENDING_LOW_VOL:  [0.33, 0.34, 0.33]
+    MEAN_REVERTING:    [0.50, 0.50, 0.00]
+  
+  # Phase 18: Advanced ATR Exit Overrides
+  strategy_overrides:
+    CANDLESTICK:       {sl_atr: 0.6, tp_atr: 1.5}
+    MOMENTUM_BREAKOUT: {sl_atr: 1.0, tp_atr: 3.5}
+    MEAN_REVERSION:    {sl_atr: 1.5, tp_atr: 2.5}
+
+trailing:
+  pre_be_trigger_r: 0.3
+  pre_be_reduction: 0.7
+  be_trigger_r: 0.5
+  be_secure_ticks: 1
+  dynamic_activation_trigger: {t1_hit: true, r_threshold: 1.2}
+  chandelier_atr_multiplier: 2.0
+  psar: {factor: 0.02, step: 0.02, max: 0.2}
+
+time_stop:
+  base_minutes:
+    TRAP_FADE: 20
+    TREND_CONTINUATION: 45
+    OB_MITIGATION: 35
+    BREAKOUT: 40
+  regime_multipliers:
+    TRENDING_HIGH_VOL: 1.2
+    TRENDING_LOW_VOL: 1.0
+    MEAN_REVERTING: 0.8
+  mid_check_favour_r: 0.2
+  mid_check_tighten_fraction: 0.5
+  be_extension_fraction: 0.5
+  hard_cutoffs:
+    window_a_close: "09:50:00"
+    window_b_close: "14:45:00"
+    expiry_close: "15:00:00"
+
+heat:
+  total_cap_pct: 2.5
+  sector_cap_pct: 1.5
+  per_stock_concurrency: 1
+  sector_direction_elite_after: 2
+  sector_direction_max: 3
+  correlation_lookback_days: 20
+  correlation_adjust_factor: 1.0        # ρ * this added to risk
+
+drawdown:
+  tiers:
+    tier1_threshold_pct: -0.5
+    tier2_threshold_pct: -1.0
+    tier3_threshold_pct: -1.5
+    halt_threshold_pct: -2.0
+  size_multipliers: [1.0, 0.75, 0.5, 0.25, 0.0]
+  min_tier_allowed: ["MINOR", "ELITE", "ELITE", "MONEY", null]
+  max_open_trades: [999, 999, 2, 1, 0]
+  consecutive_losses:
+    reduce_after: 3
+    reduce_multiplier: 0.5
+    reduce_for_next: 5
+    halt_after: 5
+    session_losses_halt: 3
+    session_reduce_multiplier: 0.5
+  weekly_guardrail_pct: -4.0
+
+execution:
+  slippage_ticks_by_tier:
+    high_liquidity: 1
+    medium_liquidity: 2
+    low_liquidity: 3
+  round_trip_cost_pct: 0.10
+  market_impact_threshold_adv: 0.001    # 0.1% of ADV
+  market_impact_bps_per_adv_unit: 30000
+  market_impact_cap_bps: 15
+  latency_alert_signal_to_order_ms: 500
+  latency_alert_order_to_fill_ms: 2000
+
+transaction_costs:
+  enabled: true
+  brokerage_per_lot: 20.0
+  stt_pct_sell_side: 0.05
+  exchange_txn_pct: 0.053
+  gst_pct_on_brokerage: 18.0
+  sebi_charges_pct: 0.0001
+  # Per-symbol slippage based on actual liquidity
+  slippage_pct_per_leg_by_symbol:
+    NIFTY: 0.12
+    BANKNIFTY: 0.18
+    FINNIFTY: 0.22
+    RELIANCE: 0.35
+    HDFCBANK: 0.35
+    ICICIBANK: 0.35
+    SBIN: 0.40
+  slippage_pct_per_leg_default: 0.30
+
+position_sizing:
+  max_notional_per_trade_pct_of_capital: 15.0
+  max_concurrent_positions: 3
+  fixed_risk_per_trade_pct: 1.0
+
+volatility_gate:
+  enabled: true
+  use_india_vix: true
+  india_vix_min_threshold: 13.0
+  fallback_atr_pct_of_price_min: 0.04
+  applies_to_strategies:
+    - VWAP_BOUNCE
+    - MOMENTUM_BREAKOUT
+    - CANDLESTICK
+
+session:
+  no_new_entry_after: "14:00"
+  force_exit_at: "15:15"
+
+
